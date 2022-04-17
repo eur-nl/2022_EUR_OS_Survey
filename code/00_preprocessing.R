@@ -17,39 +17,7 @@ library(tidyverse)
 # load custom function to split variable into multiple columns
 source(here("code", "functions", "split_into_multiple.R"))
 
-# Load data ----------------------------------------------------------------
-
-# EUR OS Survey, pseudonymized data (retrieved on April 14th 2022)
-EUR_OS_data <-
-  read_csv(
-    here("data", "20220414_EUR_OS_Survey_responses.csv"),
-    col_names = TRUE, # other option: as_vector(EUR_OS_data[2, ])
-    show_col_types = FALSE
-  )
-
-# ELS OS Survey (additional question), pseudonymized data (retrieved on April 14th 2022)
-ESL_OS_data <-
-  read_csv(
-    here("data", "20220414_ESL_OS_Survey_responses.csv"),
-    col_names = TRUE, # other option: as_vector(ESL_OS_data[2, ])
-    show_col_types = FALSE
-  )
-
-
-
-
-
-
-# merge datasets
-OS_data <- 
-  bind_rows(EUR_OS_data, ESL_OS_data) %>% 
-  slice(3:n()) %>% # discard first 2 rows with redundant and useless information
-# 
-# # change column names
-# names(OS_data) <- as_vector(OS_data[2, ])
-
-
-
+# Setup ----------------------------------------------------------------
 
 # separate questions into clusters:
 # 0 = demographics
@@ -76,7 +44,7 @@ levels_question <-
     "1" = "What is your experience with Open Access?",
     "1" = "The following are possible concerns that researchers could have about Open Access publishing. Which of these concerns would you agree with? Select all suitable options. - Selected Choice",
     "1" = "The following are possible concerns that researchers could have about Open Access publishing. Which of these concerns would you agree with? Select all suitable options. - Other - Text",
-    "1" = "Is there anything you want to share with us regarding your experiences with Open Access?",
+    "1" = "Is there anything you want to share with us regarding your experiences with Open Access?", # ESL-only question
     "2" = "In your opinion, how important are open data, materials, and/or code for your work?",
     "2" = "What is your experience with using open data, materials, and/or code developed by others?",
     "2" = "What is your experience with openly sharing data, materials, and/or code that you developed?",
@@ -106,14 +74,31 @@ levels_question <-
     "7" = "In what way do you expect to be recognized and rewarded? Select all suitable options. - Selected Choice",
     "7" = "In what way do you expect to be recognized and rewarded? Select all suitable options. - Other - Text",
     "8" = "Is there anything else you would like to mention about Open Science practices?"
-)
+  )
+
+# Load data ----------------------------------------------------------------
+
+# EUR OS Survey, pseudonymized data (retrieved on April 14th 2022)
+EUR_OS_data <-
+  read_csv(
+    here("data", "20220414_EUR_OS_Survey_responses.csv"),
+    col_names = TRUE, # other option: as_vector(EUR_OS_data[2, ])
+    show_col_types = FALSE
+  )
+
+# ELS OS Survey (additional question), pseudonymized data (retrieved on April 14th 2022)
+ESL_OS_data <-
+  read_csv(
+    here("data", "20220414_ESL_OS_Survey_responses.csv"),
+    col_names = TRUE, # other option: as_vector(ESL_OS_data[2, ])
+    show_col_types = FALSE
+  )
 
 # Clean data --------------------------------------------------------
 
-# subset of data with variables that can be plotted
 OS_data_clean <- 
-  OS_data %>% 
-  
+  full_join(EUR_OS_data, ESL_OS_data) %>% # merge EUR and ESL data
+  relocate(Q5.1, .after = "Q5_7_TEXT") # move ESL-only question on open access close to other open access questions
   filter(Finished == "True") # only keep completed surveys
   
   
@@ -121,7 +106,19 @@ OS_data_clean <-
   
   
   
-  
+
+# 
+# 
+# # merge datasets
+# OS_data <- 
+#   bind_rows(EUR_OS_data, ESL_OS_data) %>% 
+#   slice(3:n()) %>% # discard first 2 rows with redundant and useless information
+# # 
+# # # change column names
+# # names(OS_data) <- as_vector(OS_data[2, ])
+
+
+
   
   
   
