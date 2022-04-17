@@ -94,12 +94,54 @@ ESL_OS_data <-
     show_col_types = FALSE
   )
 
+# merge EUR and ESL data
+OS_data <- 
+  full_join(EUR_OS_data, ESL_OS_data)
+
+# save as .csv
+write_csv(
+  OS_data,
+  here("data", "preproc", "merged_OS_Survey_responses.csv")
+)
+
 # Clean data --------------------------------------------------------
 
 OS_data_clean <- 
-  full_join(EUR_OS_data, ESL_OS_data) %>% # merge EUR and ESL data
-  relocate(Q5.1, .after = "Q5_7_TEXT") # move ESL-only question on open access close to other open access questions
-  filter(Finished == "True") # only keep completed surveys
+  OS_data %>% 
+  relocate(Q5.1, .after = "Q5_7_TEXT") %>% # move ESL-only question on open access close to other open access questions
+  
+  
+  
+  
+  
+  
+  filter(Finished == "True") %>% # only keep completed surveys
+  
+  
+  
+  
+  select(-c("StartDate", "EndDate", "Status", "Progress", "Duration (in seconds)", # discard unnecessary columns
+            "Finished", "RecordedDate", "DistributionChannel", "UserLanguage"))
+
+
+
+
+
+
+`names<-`(as_vector(OS_data[1, ])) %>% 
+   slice(-c(1:2)) %>% # delete useless information
+  # convert to long format
+  pivot_longer(
+    3:tail(names(.), n = 1),
+    names_to = "question",
+    values_to = "value"
+  ) %>% 
+  # Multiple options can be selected for some questions
+  #
+  
+  
+  
+  
   
   
   
