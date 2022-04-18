@@ -20,7 +20,6 @@ source(here("code", "functions", "split_into_multiple.R"))
 # Setup --------------------------------------------------------
 
 # separate questions into clusters:
-# 0 = demographics
 # 1 = open access
 # 2 = open data, materials, and/or code
 # 3 = preregistration
@@ -33,46 +32,31 @@ source(here("code", "functions", "split_into_multiple.R"))
 # assign a cluster number to each question
 levels_question <- 
   c(
-    "0" = "What is your school affiliation? - Selected Choice",
-    "0" = "What is your school affiliation? - Other - Text", 
-    "0" = "Which department are you affiliated to? - Selected Choice",
-    "0" = "Which department are you affiliated to? - Other - Text",
-    "0" = "Which department are you affiliated to?",
-    "0" = "What is your position? - Selected Choice",
-    "0" = "What is your position? - Other - Text",
     "1" = "In your opinion, how important is Open Access for your work?",
     "1" = "What is your experience with Open Access?",
-    "1" = "The following are possible concerns that researchers could have about Open Access publishing. Which of these concerns would you agree with? Select all suitable options. - Selected Choice",
-    "1" = "The following are possible concerns that researchers could have about Open Access publishing. Which of these concerns would you agree with? Select all suitable options. - Other - Text",
+    "1" = "The following are possible concerns that researchers could have about Open Access publishing. Which of these concerns would you agree with?",
     "1" = "Is there anything you want to share with us regarding your experiences with Open Access?", # ESL-only question
     "2" = "In your opinion, how important are open data, materials, and/or code for your work?",
     "2" = "What is your experience with using open data, materials, and/or code developed by others?",
     "2" = "What is your experience with openly sharing data, materials, and/or code that you developed?",
     "2" = "Are you familiar with the FAIR principles for data and code?",
-    "2" = "The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with? Select all suitable options. - Selected Choice",
-    "2" = "The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with? Select all suitable options. - Other - Text",
+    "2" = "The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?",
     "3" = "In your opinion, how important is preregistration for your work?",
-    "3" ="What is your experience with study preregistration?",
-    "3" = "The following are possible concerns that researchers could have about preregistering their studies. Which of these concerns would you agree with? Select all suitable options. - Selected Choice",
-    "3" = "The following are possible concerns that researchers could have about preregistering their studies. Which of these concerns would you agree with? Select all suitable options. - Other - Text",
+    "3" = "What is your experience with study preregistration?",
+    "3" = "The following are possible concerns that researchers could have about preregistering their studies. Which of these concerns would you agree with?",
     "4" = "In your opinion, how important are open educational resources for your work?",
     "4" = "What is your experience with using open educational resources developed by others?",
     "4" = "What is your experience with openly sharing educational resources that you developed?",
-    "4" = "The following are possible concerns that researchers could have about making educational resources developed by them openly available. Which of these concerns would you agree with? Select all suitable options. - Selected Choice",
-    "4" = "The following are possible concerns that researchers could have about making educational resources developed by them openly available. Which of these concerns would you agree with? Select all suitable options. - Other - Text",
+    "4" = "The following are possible concerns that researchers could have about making educational resources developed by them openly available. Which of these concerns would you agree with?",
     "5" = "In your opinion, how important is to have an open dialogue with society in your work?",
     "5" = "What is your experience engaging with society?",
-    "5" = "The following are possible concerns that researchers could have about engaging with society.Which of these concerns would apply to you? Select all suitable options - Selected Choice",
-    "5" = "The following are possible concerns that researchers could have about engaging with society.Which of these concerns would apply to you? Select all suitable options - Other - Text",
-    "6" = "Do you expect EUR to support you in learning open science practices?",
-    "6" = "Which of the following open science practices would you like EUR to provide information or support for? Select all suitable options. - Selected Choice",
-    "6" = "Which of the following open science practices would you like EUR to provide information or support for? Select all suitable options. - Other - Text",
-    "6" = "What support services provided at EUR have you used to make your data FAIR? Select all suitable options.",
+    "5" = "The following are possible concerns that researchers could have about engaging with society. Which of these concerns would apply to you?",
+    "6" = "Do you expect EUR to support you in learning open science practices?", 
+    "6" = "Which of the following open science practices would you like EUR to provide information or support for?",
+    "6" = "What support services provided at EUR have you used to make your data FAIR?",
     "7" = "Do you feel recognized and rewarded by EUR (e.g. in the R&O cycle or appraisal conversation) for the Open Science activities you undertake?",
-    "7" = "In what way were you recognized and rewarded? Select all suitable options. - Selected Choice",
-    "7" = "In what way were you recognized and rewarded? Select all suitable options. - Other - Text",
-    "7" = "In what way do you expect to be recognized and rewarded? Select all suitable options. - Selected Choice",
-    "7" = "In what way do you expect to be recognized and rewarded? Select all suitable options. - Other - Text",
+    "7" = "In what way were you recognized and rewarded?",
+    "7" = "In what way do you expect to be recognized and rewarded?",
     "8" = "Is there anything else you would like to mention about Open Science practices?"
   )
 
@@ -105,21 +89,22 @@ write_csv(
   here("data", "preproc", "merged_OS_Survey_responses.csv")
 )
 
-# NOTE: the file 'merged_OS_Survey_responses.csv' is subsequently modified in Excel prior to loading in R:
-# multiple choices are manually separated with ";" instead of the default ",",
-# to be able to split them into separate columns (see below)
+# NOTE: the file 'merged_OS_Survey_responses.csv' is modified in Excel prior to loading in R:
+# multiple choices are manually separated with ";" instead of the default ","
+# to be able to split them into separate columns (see below).
+# The resulting file is saved as 'manual_merged_OS_Survey_responses.csv'
 
 # Clean data --------------------------------------------------------
 
 OS_data_clean <- 
   read_csv(
-    here("data", "preproc", "merged_OS_Survey_responses.csv"),
+    here("data", "preproc", "manual_merged_OS_Survey_responses.csv"),
     col_names = TRUE,
     show_col_types = FALSE
   ) %>% 
   `names<-`(as_vector(OS_data[1, ])) %>% # use questions as column names
   unite( # merge columns with school affiliation
-    "School", 
+    "school", 
     c(
       "What is your school affiliation? - Selected Choice",
       "What is your school affiliation? - Other - Text",
@@ -129,7 +114,7 @@ OS_data_clean <-
     na.rm = TRUE
     ) %>% 
   unite( # merge columns with department affiliation
-    "Department", 
+    "department", 
     c(
       "Which department are you affiliated to? - Selected Choice",
       "Which department are you affiliated to? - Other - Text",
@@ -142,7 +127,7 @@ OS_data_clean <-
     na.rm = TRUE
   ) %>% 
   unite( # merge columns with position
-    "Position", 
+    "position", 
     c(
       "What is your position? - Selected Choice",
       "What is your position? - Other - Text",
@@ -150,6 +135,89 @@ OS_data_clean <-
     sep = "_", 
     remove = TRUE, 
     na.rm = TRUE
+  ) %>% 
+  unite( # merge (multiple choice & free text) columns on concerns on open access 
+    "The following are possible concerns that researchers could have about Open Access publishing. Which of these concerns would you agree with?", 
+    c(
+      "The following are possible concerns that\nresearchers could have about Open Access publishing. \nWhich of these concerns would you agree with? Select all suitable options. - Selected Choice",
+      "The following are possible concerns that\nresearchers could have about Open Access publishing. \nWhich of these concerns would you agree with? Select all suitable options. - Other - Text",
+    ), 
+    sep = "_", 
+    remove = TRUE, 
+    na.rm = TRUE
+  ) %>% 
+  unite( # merge (multiple choice & free text) columns on concerns on open data/materials/code 
+    "The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?", 
+    c(
+      "The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. \n\nWhich of these concerns would you agree with? Select all suitable options. - Selected Choice",
+      "The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. \n\nWhich of these concerns would you agree with? Select all suitable options. - Other - Text",
+    ), 
+    sep = "_", 
+    remove = TRUE, 
+    na.rm = TRUE
+  ) %>% 
+  unite( # merge (multiple choice & free text) columns on concerns on preregistration 
+    "The following are possible concerns that researchers could have about preregistering their studies. Which of these concerns would you agree with?", 
+    c(
+      "The following are possible concerns that\nresearchers could have about preregistering their studies. Which of these concerns would you agree with? Select all suitable options. - Selected Choice",
+      "The following are possible concerns that\nresearchers could have about preregistering their studies. Which of these concerns would you agree with? Select all suitable options. - Other - Text",
+    ), 
+    sep = "_", 
+    remove = TRUE, 
+    na.rm = TRUE
+  ) %>% 
+  unite( # merge (multiple choice & free text) columns on concerns on open educational resources 
+    "The following are possible concerns that researchers could have about making educational resources developed by them openly available. Which of these concerns would you agree with?", 
+    c(
+      "The following are possible concerns that researchers could have about making educational resources developed by them openly available. \n Which of these concerns would you agree with? Select all suitable options. - Selected Choice",
+      "The following are possible concerns that researchers could have about making educational resources developed by them openly available. \n Which of these concerns would you agree with? Select all suitable options. - Other - Text",
+    ), 
+    sep = "_", 
+    remove = TRUE, 
+    na.rm = TRUE
+  ) %>% 
+  unite( # merge (multiple choice & free text) columns on concerns on societal engagement 
+    "The following are possible concerns that researchers could have about engaging with society. Which of these concerns would apply to you?", 
+    c(
+      "The following are possible concerns that\nresearchers could have about engaging with society.Which of these concerns would apply to you? Select all suitable options - Selected Choice",
+      "The following are possible concerns that\nresearchers could have about engaging with society.Which of these concerns would apply to you? Select all suitable options - Other - Text",
+    ), 
+    sep = "_", 
+    remove = TRUE, 
+    na.rm = TRUE
+  ) %>%
+  unite( # merge (multiple choice & free text) columns on EUR support 
+    "Which of the following open science practices would you like EUR to provide information or support for?", 
+    c(
+      "Which of the following open science practices would you like EUR to provide information or support for?Select all suitable options. - Selected Choice",
+      "Which of the following open science practices would you like EUR to provide information or support for?Select all suitable options. - Other - Text",
+    ), 
+    sep = "_", 
+    remove = TRUE, 
+    na.rm = TRUE
+  ) %>%
+  unite( # merge (multiple choice & free text) columns on EUR recognition and rewards 
+    "In what way were you recognized and rewarded?", 
+    c(
+      "In what way were you recognized and rewarded? \nSelect all suitable options. - Selected Choice",
+      "In what way were you recognized and rewarded? \nSelect all suitable options. - Other - Text",
+    ), 
+    sep = "_", 
+    remove = TRUE, 
+    na.rm = TRUE
+  ) %>%
+  unite( # merge (multiple choice & free text) columns on expected EUR recognition and rewards 
+    "In what way do you expect to be recognized and rewarded?", 
+    c(
+      "In what way do you expect to be recognized and rewarded?\nSelect all suitable options. - Selected Choice",
+      "In what way do you expect to be recognized and rewarded?\nSelect all suitable options. - Other - Text",
+    ), 
+    sep = "_", 
+    remove = TRUE, 
+    na.rm = TRUE
+  ) %>%
+  rename( # rename column (for better readability)
+    "What support services provided at EUR have you used to make your data FAIR?" = "What support services provided at EUR have you used to make your data FAIR?\nSelect all suitable options."
   ) %>% 
   slice(-c(1:2)) %>% # delete row with questions (Error: Can't transform a data frame with duplicate names)
   filter(Finished == "True") %>% # only keep completed surveys
@@ -162,49 +230,8 @@ OS_data_clean <-
     names_to = "question",
     values_to = "value"
   ) %>%
-  # Multiple options can be selected for some questions
-  # We need to separate answers into different columns
-  bind_cols(
-    split_into_multiple(
-      .$value,
-      pattern = ";",
-      into_prefix = "value"
-    )
-  )
-  
-
-
-
-  
-  
-  
-  
-
-
-
-
-
-
-
-
-
-  
-  
-
-
-
-
-
-  # select(-c(11, 12, 17, 22, 26, 29, 40, 42, 45, 47, 50)) %>%  # discard columns with free text
-  # rowid_to_column(var = "participant") %>%  # assign ID to each participant
-  # convert to long format
-  pivot_longer(
-    3:tail(names(.), n = 1),
-    names_to = "question",
-    values_to = "value"
-  ) %>% 
-  # Multiple options can be selected for some questions
-  # We need to separate answers into different columns
+  # multiple options can be selected for some questions;
+  # we need to separate answers into different columns
   bind_cols(
     split_into_multiple(
       .$value,
@@ -220,19 +247,17 @@ OS_data_clean <-
       .cols = everything(),
       .fns = ~ as_factor(.)
     )
-  ) %>% 
+  ) %>%  
   # add column with cluster
   mutate(
     cluster = fct_recode(question, !!!levels_question),
-    .after = "Finished"
+    .before = "question"
   )
-
-ERIM_OS_clean
 
 # save as .csv
 write_csv(
-  ERIM_OS_clean,
-  here("data", "preproc", "CLEAN_20210608_ERIM_OS_Survey.csv")
+  OS_data_clean,
+  here("data", "preproc", "CLEAN_OS_Survey_responses.csv")
 )
 
 # Cluster 0 ----------------------------------------------------------------
