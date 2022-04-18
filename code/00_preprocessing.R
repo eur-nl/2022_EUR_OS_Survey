@@ -82,7 +82,7 @@ levels_question <-
 EUR_OS_data <-
   read_csv(
     here("data", "20220414_EUR_OS_Survey_responses.csv"),
-    col_names = TRUE, # other option: as_vector(EUR_OS_data[2, ])
+    col_names = TRUE,
     show_col_types = FALSE
   )
 
@@ -90,7 +90,7 @@ EUR_OS_data <-
 ESL_OS_data <-
   read_csv(
     here("data", "20220414_ESL_OS_Survey_responses.csv"),
-    col_names = TRUE, # other option: as_vector(ESL_OS_data[2, ])
+    col_names = TRUE, 
     show_col_types = FALSE
   )
 
@@ -105,10 +105,18 @@ write_csv(
   here("data", "preproc", "merged_OS_Survey_responses.csv")
 )
 
+# NOTE: the file 'merged_OS_Survey_responses.csv' is subsequently modified in Excel prior to loading in R:
+# multiple choices are manually separated with ";" instead of the default ",",
+# to be able to split them into separate columns (see below)
+
 # Clean data --------------------------------------------------------
 
 OS_data_clean <- 
-  OS_data %>% 
+  read_csv(
+    here("data", "preproc", "merged_OS_Survey_responses.csv"),
+    col_names = TRUE,
+    show_col_types = FALSE
+  ) %>% 
   `names<-`(as_vector(OS_data[1, ])) %>% # use questions as column names
   unite( # merge columns with school affiliation
     "School", 
@@ -153,7 +161,16 @@ OS_data_clean <-
     "In your opinion, how important is Open Access for your work?":"Is there anything else you would like to mention about Open Science practices?", # keep demographics as columns
     names_to = "question",
     values_to = "value"
-  ) 
+  ) %>%
+  # Multiple options can be selected for some questions
+  # We need to separate answers into different columns
+  bind_cols(
+    split_into_multiple(
+      .$value,
+      pattern = ";",
+      into_prefix = "value"
+    )
+  )
   
 
 
