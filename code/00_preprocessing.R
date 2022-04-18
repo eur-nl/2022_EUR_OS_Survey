@@ -17,7 +17,7 @@ library(tidyverse)
 # load custom function to split variable into multiple columns
 source(here("code", "functions", "split_into_multiple.R"))
 
-# Setup ----------------------------------------------------------------
+# Setup --------------------------------------------------------
 
 # separate questions into clusters:
 # 0 = demographics
@@ -96,7 +96,8 @@ ESL_OS_data <-
 
 # merge EUR and ESL data
 OS_data <- 
-  full_join(EUR_OS_data, ESL_OS_data)
+  full_join(EUR_OS_data, ESL_OS_data) %>% 
+  relocate(Q5.1, .after = "Q5_7_TEXT") # move ESL-only question on open access close to other open access questions
 
 # save as .csv
 write_csv(
@@ -108,60 +109,68 @@ write_csv(
 
 OS_data_clean <- 
   OS_data %>% 
-  relocate(Q5.1, .after = "Q5_7_TEXT") %>% # move ESL-only question on open access close to other open access questions
-  
-  
-  
-  
-  
-  
+  `names<-`(as_vector(OS_data[1, ])) %>% # use questions as column names
+  unite( # merge columns with school affiliation
+    "School", 
+    c(
+      "What is your school affiliation? - Selected Choice",
+      "What is your school affiliation? - Other - Text",
+      ), 
+    sep = "_", 
+    remove = TRUE, 
+    na.rm = TRUE
+    ) %>% 
+  unite( # merge columns with department affiliation
+    "Department", 
+    c(
+      "Which department are you affiliated to? - Selected Choice",
+      "Which department are you affiliated to? - Other - Text",
+      "Which department are you affiliated to? - Selected Choice",
+      "Which department are you affiliated to? - Other - Text",
+      "Which department are you affiliated to?"  
+    ), 
+    sep = "_", 
+    remove = TRUE, 
+    na.rm = TRUE
+  ) %>% 
+  unite( # merge columns with position
+    "Position", 
+    c(
+      "What is your position? - Selected Choice",
+      "What is your position? - Other - Text",
+    ), 
+    sep = "_", 
+    remove = TRUE, 
+    na.rm = TRUE
+  ) %>% 
+  slice(-c(1:2)) %>% # delete row with questions (Error: Can't transform a data frame with duplicate names)
   filter(Finished == "True") %>% # only keep completed surveys
-  
-  
-  
-  
-  select(-c("StartDate", "EndDate", "Status", "Progress", "Duration (in seconds)", # discard unnecessary columns
-            "Finished", "RecordedDate", "DistributionChannel", "UserLanguage"))
-
-
-
-
-
-
-`names<-`(as_vector(OS_data[1, ])) %>% 
-   slice(-c(1:2)) %>% # delete useless information
+  rowid_to_column(var = "participant") %>%  # assign number to each participant
+  select(-c("Start Date", "End Date", "Response Type", "Progress", "Duration (in seconds)", # discard unnecessary columns
+            "Finished", "Recorded Date", "Response ID", "Distribution Channel", "User Language")) %>% 
   # convert to long format
   pivot_longer(
-    3:tail(names(.), n = 1),
+    "In your opinion, how important is Open Access for your work?":"Is there anything else you would like to mention about Open Science practices?", # keep demographics as columns
     names_to = "question",
     values_to = "value"
-  ) %>% 
-  # Multiple options can be selected for some questions
-  #
+  ) 
   
-  
-  
-  
-  
-  
+
+
+
   
   
   
   
 
-# 
-# 
-# # merge datasets
-# OS_data <- 
-#   bind_rows(EUR_OS_data, ESL_OS_data) %>% 
-#   slice(3:n()) %>% # discard first 2 rows with redundant and useless information
-# # 
-# # # change column names
-# # names(OS_data) <- as_vector(OS_data[2, ])
 
 
 
-  
+
+
+
+
+
   
   
 
