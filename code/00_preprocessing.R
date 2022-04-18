@@ -20,6 +20,7 @@ source(here("code", "functions", "split_into_multiple.R"))
 # Setup --------------------------------------------------------
 
 # separate questions into clusters:
+# 0 = demographics
 # 1 = open access
 # 2 = open data, materials, and/or code
 # 3 = preregistration
@@ -32,6 +33,9 @@ source(here("code", "functions", "split_into_multiple.R"))
 # assign a cluster number to each question
 levels_question <- 
   c(
+    "0" = "School",
+    "0" = "Department",
+    "0" = "Position",
     "1" = "In your opinion, how important is Open Access for your work?",
     "1" = "What is your experience with Open Access?",
     "1" = "The following are possible concerns that researchers could have about Open Access publishing. Which of these concerns would you agree with?",
@@ -104,7 +108,7 @@ OS_data_clean <-
   ) %>% 
   `names<-`(as_vector(OS_data[1, ])) %>% # use questions as column names
   unite( # merge columns with school affiliation
-    "school", 
+    "School", 
     c(
       "What is your school affiliation? - Selected Choice",
       "What is your school affiliation? - Other - Text",
@@ -114,7 +118,7 @@ OS_data_clean <-
     na.rm = TRUE
     ) %>% 
   unite( # merge columns with department affiliation
-    "department", 
+    "Department", 
     c(
       "Which department are you affiliated to? - Selected Choice",
       "Which department are you affiliated to? - Other - Text",
@@ -127,7 +131,7 @@ OS_data_clean <-
     na.rm = TRUE
   ) %>% 
   unite( # merge columns with position
-    "position", 
+    "Position", 
     c(
       "What is your position? - Selected Choice",
       "What is your position? - Other - Text",
@@ -219,14 +223,14 @@ OS_data_clean <-
   rename( # rename column (for better readability)
     "What support services provided at EUR have you used to make your data FAIR?" = "What support services provided at EUR have you used to make your data FAIR?\nSelect all suitable options."
   ) %>% 
-  slice(-c(1:2)) %>% # delete row with questions (Error: Can't transform a data frame with duplicate names)
+  slice(-c(1:2)) %>% # delete row with questions
   filter(Finished == "True") %>% # only keep completed surveys
-  rowid_to_column(var = "participant") %>%  # assign number to each participant
+  rowid_to_column(var = "Participant") %>%  # assign number to each participant
   select(-c("Start Date", "End Date", "Response Type", "Progress", "Duration (in seconds)", # discard unnecessary columns
             "Finished", "Recorded Date", "Response ID", "Distribution Channel", "User Language")) %>% 
   # convert to long format
   pivot_longer(
-    "In your opinion, how important is Open Access for your work?":"Is there anything else you would like to mention about Open Science practices?", # keep demographics as columns
+    "School":"Is there anything else you would like to mention about Open Science practices?", # keep participant as separate column
     names_to = "question",
     values_to = "value"
   ) %>%
@@ -265,7 +269,56 @@ write_csv(
 num_cluster <- 0
 
 cluster <-
-  ERIM_OS_clean %>%
+  OS_data_clean %>%
+  filter(cluster == num_cluster) %>% # keep only questions of relevant cluster
+  droplevels() %>% # drop unused levels
+  select(-cluster) %>% # drop unused column
+  select_if(~ sum(!is.na(.)) > 0) %>% # keep columns without NAs
+  drop_na() %>% # drop rows with missing values
+  rename("item" = "value_1") %>%
+  mutate(question = factor(
+    question,
+    levels = c(
+      "Which faculty are you from?",
+      "Which department are you affiliated to? [RSM]",
+      "Which department are you affiliated to? [ESE]",
+      "What is your position?",
+      "Are you member of any research institute affiliated with RSM or ESE?"
+    ),
+    ordered = TRUE
+  )) %>%
+  group_by(question, item) %>%
+  summarize(number_responses = n()) %>%
+  ungroup() %>%
+  group_by(question) %>%
+  mutate(
+    prop = number_responses / sum(number_responses), # proportion
+    perc = round(prop * 100, 2), # percentage
+    lab_perc = paste(perc, "%", sep = "") # percentage as text (for labels)
+  ) %>%
+  ungroup()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# old
+cluster <-
+  OS_data_clean %>%
   filter(
     Finished == "TRUE" & # keep only complete questionnaires
       cluster == num_cluster # keep only questions of relevant cluster
