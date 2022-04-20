@@ -480,7 +480,45 @@ write_csv(
 
 # Cluster 5 ----------------------------------------------------------------
 
+num_cluster <- 5
 
+cluster <-
+  OS_data_clean %>%
+  filter(cluster == num_cluster) %>% # keep only questions of relevant cluster
+  droplevels() %>% # drop unused levels
+  select(-cluster) %>% # drop unused column
+  select_if(~ sum(!is.na(.)) > 0) %>% # keep columns without NAs
+  rename("item" = "value_1") %>% # rename column (for better readability)
+  mutate(
+    question = factor( # assign order questions
+      question,
+      levels = c(
+        "In your opinion, how important is to have an open dialogue with society in your work?",
+        "What is your experience engaging with society?",
+        "The following are possible concerns that researchers could have about engaging with society. Which of these concerns would apply to you?"
+      ),
+      ordered = TRUE
+    ),
+    item = gsub("Other_", "", item) # delete "Other_" from free text responses
+  ) %>%
+  group_by(question, item) %>%
+  summarize( # count number of responses per question and item
+    number_responses = n(),
+    .groups = "keep"
+  ) %>%
+  ungroup() %>%
+  group_by(question) %>%
+  mutate(
+    perc = round(number_responses / sum(number_responses, na.rm = FALSE) * 100, 2), # percentage
+    lab_perc = paste(perc, "%", sep = "") # percentage as text (for labels)
+  ) %>%
+  ungroup()
+
+# save
+write_csv(
+  cluster,
+  here("data", "preproc", paste0("cluster_", num_cluster, ".csv"))
+)
 
 
 
