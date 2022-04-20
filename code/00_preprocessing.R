@@ -200,7 +200,7 @@ OS_data_clean <-
     remove = TRUE, 
     na.rm = TRUE
   ) %>%
-  unite( # merge (multiple choice & free text) columns on EUR recognition and rewards 
+  unite( # merge (multiple choice & free text) columns on current EUR recognition and rewards 
     "In what way were you recognized and rewarded?", 
     c(
       "In what way were you recognized and rewarded? \nSelect all suitable options. - Selected Choice",
@@ -223,7 +223,7 @@ OS_data_clean <-
   rename( # rename column (for better readability)
     "What support services provided at EUR have you used to make your data FAIR?" = "What support services provided at EUR have you used to make your data FAIR?\nSelect all suitable options."
   ) %>% 
-  slice(-c(1:2)) %>% # delete row with questions
+  slice(-c(1:2)) %>% # delete rows with redundant or unnecessary data
   filter(Finished == "True") %>% # only keep completed surveys
   rowid_to_column(var = "Participant") %>%  # assign number to each participant
   select(-c("Start Date", "End Date", "Response Type", "Progress", "Duration (in seconds)", # discard unnecessary columns
@@ -268,7 +268,7 @@ write_csv(
 
 num_cluster <- 0
 
-cluster_all <-
+cluster <-
   OS_data_clean %>%
   filter(cluster == num_cluster) %>% # keep only questions of relevant cluster
   droplevels() %>% # drop unused levels
@@ -287,13 +287,7 @@ cluster_all <-
     ordered = TRUE
   ),
   item = gsub("Other_.*", "Other", item) # group all other responses in "Other"
-  ) 
-
-# separate info on department (useful only in combination with school)
-# data on school and department
-cluster_school_department <- 
-  cluster_all %>% 
-  filter(question != "Position") %>% 
+  ) %>%
   group_by(question, item) %>%
   summarize( # count number of responses per question and item
     number_responses = n(),
@@ -302,47 +296,6 @@ cluster_school_department <-
   ungroup() %>%
   group_by(question) %>%
   mutate(
-    # prop = number_responses / sum(number_responses, na.rm = FALSE), # proportion
-    perc = round(number_responses / sum(number_responses, na.rm = FALSE) * 100, 2), # percentage
-    lab_perc = paste(perc, "%", sep = "") # percentage as text (for labels)
-  ) %>%
-  ungroup()
-
-
-
-
-# data on school and position
-cluster_school_position <- 
-  cluster_all %>% 
-  filter(question != "Department") %>% 
-  group_by(question, item) %>%
-  summarize( # count number of responses per question and item
-    number_responses = n(),
-    .groups = "keep"
-  ) %>%
-  ungroup() %>%
-  group_by(question) %>%
-  mutate(
-    # prop = number_responses / sum(number_responses, na.rm = FALSE), # proportion
-    perc = round(number_responses / sum(number_responses, na.rm = FALSE) * 100, 2), # percentage
-    lab_perc = paste(perc, "%", sep = "") # percentage as text (for labels)
-  ) %>%
-  ungroup()
-
-
-
-
-
-%>%
-  group_by(question, item) %>%
-  summarize( # count number of responses per question and item
-    number_responses = n(),
-    .groups = "keep"
-    ) %>%
-  ungroup() %>%
-  group_by(question) %>%
-  mutate(
-    # prop = number_responses / sum(number_responses, na.rm = FALSE), # proportion
     perc = round(number_responses / sum(number_responses, na.rm = FALSE) * 100, 2), # percentage
     lab_perc = paste(perc, "%", sep = "") # percentage as text (for labels)
   ) %>%
@@ -355,60 +308,13 @@ write_csv(
 )
 
 
+#################################
+# FROM HERE
+#################################
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-# old
-cluster <-
-  OS_data_clean %>%
-  filter(
-    Finished == "TRUE" & # keep only complete questionnaires
-      cluster == num_cluster # keep only questions of relevant cluster
-  ) %>%
-  droplevels() %>% # drop unused levels
-  select(-c(Finished, cluster)) %>% # drop unused columns
-  select_if(~ sum(!is.na(.)) > 0) %>% # keep columns without NAs
-  drop_na() %>% # drop rows with missing values
-  rename("item" = "value_1") %>%
-  mutate(question = factor(
-    question,
-    levels = c(
-      "Which faculty are you from?",
-      "Which department are you affiliated to? [RSM]",
-      "Which department are you affiliated to? [ESE]",
-      "What is your position?",
-      "Are you member of any research institute affiliated with RSM or ESE?"
-    ),
-    ordered = TRUE
-  )) %>%
-  group_by(question, item) %>%
-  summarize(number_responses = n()) %>%
-  ungroup() %>%
-  group_by(question) %>%
-  mutate(
-    prop = number_responses / sum(number_responses), # proportion
-    perc = round(prop * 100, 2), # percentage
-    lab_perc = paste(perc, "%", sep = "") # percentage as text (for labels)
-  ) %>%
-  ungroup()
-
-# save
-write_csv(
-  cluster,
-  here("data", "preproc", paste0("cluster", num_cluster, ".csv"))
-)
 
 # Cluster 1 ----------------------------------------------------------------
 
