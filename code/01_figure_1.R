@@ -1,8 +1,8 @@
 
 # RNG ---------------------------------------------------------------------
 
-seed_synth <- 135249315
-set.seed(seed_synth)
+seed_proj <- 52118 # A1Z26 cipher (https://www.boxentriq.com/code-breaking/letters-to-numbers)
+set.seed(seed_proj)
 
 # Install packages --------------------------------------------------------
 
@@ -18,23 +18,37 @@ library(tidyverse)
 library(ggrepel)
 library(patchwork)
 
-source(here("code", "theme_custom.R")) # custom ggplot2 theme
+source(here("code", "functions", "theme_custom.R")) # custom ggplot2 theme
 
 # Data ----------------------------------------------------------------
 
 cluster <-
   read_csv(
-    here("data", "preproc", "cluster0.csv"),
+    here("data", "preproc", "cluster_0.csv"),
     show_col_types = FALSE
   ) %>% 
   mutate(
     question = as_factor(question),
     item = as_factor(item)
-  ) %>% 
-  select(-c(prop, number_responses))
+  )
 
 # extract questions
 questions <- levels(cluster$question)
+
+
+#######################
+# FROM HERE
+#######################
+
+
+
+
+
+
+
+
+
+
 
 # Question 2, lollipop graph ----------------------------------------------------------------
 
