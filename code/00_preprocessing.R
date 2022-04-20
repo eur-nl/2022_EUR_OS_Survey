@@ -520,90 +520,38 @@ write_csv(
   here("data", "preproc", paste0("cluster_", num_cluster, ".csv"))
 )
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-num_cluster <- 5
-
-cluster <-
-  ERIM_OS_clean %>%
-  filter(
-    Finished == "TRUE" & # keep only complete questionnaires
-      cluster == num_cluster # keep only questions of relevant cluster
-  ) %>%
-  droplevels() %>% # drop unused levels
-  select(-c(Finished, cluster)) %>% # drop unused columns
-  select_if(~ sum(!is.na(.)) > 0) %>% # keep columns without NAs
-  rename("item" = "value_1") %>%
-  mutate(question = factor(
-    question,
-    levels = c(
-      "In your opinion, how important is pre-publication archiving for your field?",
-      "What is your experience with pre-publication archiving?",
-      "The following are possible concerns that researchers could have about uploading a manuscript to a pre-publication archive before submitting it for peer review. Which of these concerns would apply to you?"
-    ),
-    ordered = TRUE
-  )) %>%
-  group_by(question, item) %>%
-  summarize(number_responses = n()) %>%
-  ungroup() %>%
-  group_by(question) %>%
-  mutate(
-    prop = number_responses / sum(number_responses), # proportion
-    perc = round(prop * 100, 2), # percentage
-    lab_perc = paste(perc, "%", sep = "") # percentage as text (for labels)
-  ) %>%
-  ungroup()
-
-# save
-write_csv(
-  cluster,
-  here("data", "preproc", paste0("cluster", num_cluster, ".csv"))
-)
-
 # Cluster 6 ----------------------------------------------------------------
 
 num_cluster <- 6
 
 cluster <-
-  ERIM_OS_clean %>%
-  filter(
-    Finished == "TRUE" & # keep only complete questionnaires
-      cluster == num_cluster # keep only questions of relevant cluster
-  ) %>%
+  OS_data_clean %>%
+  filter(cluster == num_cluster) %>% # keep only questions of relevant cluster
   droplevels() %>% # drop unused levels
-  select(-c(Finished, cluster)) %>% # drop unused columns
+  select(-cluster) %>% # drop unused column
   select_if(~ sum(!is.na(.)) > 0) %>% # keep columns without NAs
-  rename("item" = "value_1") %>%
-  mutate(question = factor(
-    question,
-    levels = c(
-      "Approximately what proportion of your publications from the last 5 years are open access?",
-      "Many open access journals charge a fee for processing the article for publication. How have you managed payment of these fees?"
+  rename("item" = "value_1") %>% # rename column (for better readability)
+  mutate(
+    question = factor( # assign order questions
+      question,
+      levels = c(
+        "Do you expect EUR to support you in learning open science practices?",
+        "Which of the following open science practices would you like EUR to provide information or support for?",
+        "What support services provided at EUR have you used to make your data FAIR?"
+      ),
+      ordered = TRUE
     ),
-    ordered = TRUE
-  )) %>%
+    item = gsub("Other_", "", item) # delete "Other_" from free text responses
+  ) %>%
   group_by(question, item) %>%
-  summarize(number_responses = n()) %>%
+  summarize( # count number of responses per question and item
+    number_responses = n(),
+    .groups = "keep"
+  ) %>%
   ungroup() %>%
   group_by(question) %>%
   mutate(
-    prop = number_responses / sum(number_responses), # proportion
-    perc = round(prop * 100, 2), # percentage
+    perc = round(number_responses / sum(number_responses, na.rm = FALSE) * 100, 2), # percentage
     lab_perc = paste(perc, "%", sep = "") # percentage as text (for labels)
   ) %>%
   ungroup()
@@ -611,10 +559,33 @@ cluster <-
 # save
 write_csv(
   cluster,
-  here("data", "preproc", paste0("cluster", num_cluster, ".csv"))
+  here("data", "preproc", paste0("cluster_", num_cluster, ".csv"))
 )
 
 # Cluster 7 ----------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 num_cluster <- 7
 
