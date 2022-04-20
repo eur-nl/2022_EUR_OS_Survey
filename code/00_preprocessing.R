@@ -274,7 +274,6 @@ cluster <-
   droplevels() %>% # drop unused levels
   select(-cluster) %>% # drop unused column
   select_if(~ sum(!is.na(.)) > 0) %>% # keep columns without NAs
-  # drop_na() %>% # drop rows with missing values
   rename("item" = "value_1") %>% # rename column (for better readability)
   mutate(
     question = factor( # assign order questions
@@ -307,16 +306,75 @@ write_csv(
   here("data", "preproc", paste0("cluster_", num_cluster, ".csv"))
 )
 
-
-#################################
-# FROM HERE
-#################################
-
-
-
-
-
 # Cluster 1 ----------------------------------------------------------------
+
+num_cluster <- 1
+
+cluster <-
+  OS_data_clean %>%
+  filter(cluster == num_cluster) %>% # keep only questions of relevant cluster
+  droplevels() %>% # drop unused levels
+  select(-cluster) %>% # drop unused column
+  select_if(~ sum(!is.na(.)) > 0) %>% # keep columns without NAs
+  rename("item" = "value_1") %>% # rename column (for better readability)
+  mutate(
+    question = factor( # assign order questions
+      question,
+      levels = c(
+        "In your opinion, how important is Open Access for your work?",
+        "What is your experience with Open Access?",
+        "The following are possible concerns that researchers could have about Open Access publishing. Which of these concerns would you agree with?",
+        "Is there anything you want to share with us regarding your experiences with Open Access?" # ESL-only question
+      ),
+      ordered = TRUE
+    ),
+    item = gsub("Other_", "", item) # delete "Other_" from free text responses
+  ) %>%
+  group_by(question, item) %>%
+  summarize( # count number of responses per question and item
+    number_responses = n(),
+    .groups = "keep"
+  ) %>%
+  ungroup() %>%
+  group_by(question) %>%
+  mutate(
+    perc = round(number_responses / sum(number_responses, na.rm = FALSE) * 100, 2), # percentage
+    lab_perc = paste(perc, "%", sep = "") # percentage as text (for labels)
+  ) %>%
+  ungroup()
+
+# save
+write_csv(
+  cluster,
+  here("data", "preproc", paste0("cluster_", num_cluster, ".csv"))
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 num_cluster <- 1
 
