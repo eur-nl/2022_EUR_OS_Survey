@@ -606,64 +606,24 @@ write_csv(
 
 # Cluster 8 ----------------------------------------------------------------
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 num_cluster <- 8
 
 cluster <-
-  ERIM_OS_clean %>%
-  filter(
-    Finished == "TRUE" & # keep only complete questionnaires
-      cluster == num_cluster # keep only questions of relevant cluster
-  ) %>%
+  OS_data_clean %>%
+  filter(cluster == num_cluster) %>% # keep only questions of relevant cluster
   droplevels() %>% # drop unused levels
-  select(-c(Finished, cluster)) %>% # drop unused columns
+  select(-cluster) %>% # drop unused column
   select_if(~ sum(!is.na(.)) > 0) %>% # keep columns without NAs
-  filter(!is.na(value_1)) %>% # keep rows where response to value_1 is not NAs
-  rename("item" = "value_1") %>%
-  mutate(question = recode_factor(
-    question,
-    "Please indicate your awareness of each of the open science resources listed below [Open Science Framework]" = "Open Science Framework",    
-    "Please indicate your awareness of each of the open science resources listed below [GitHub]" = "GitHub",      
-    "Please indicate your awareness of each of the open science resources listed below [EUR data repository/Figshare]" = "EUR data repository/Figshare",
-    "Please indicate your awareness of each of the open science resources listed below [4TU Center for Research Data]" = "4TU Center for Research Data",
-    "Please indicate your awareness of each of the open science resources listed below [EUR SurfDrive]" = "EUR SurfDrive",
-    "Please indicate your awareness of each of the open science resources listed below [EUR Dropbox (not personal)]" = "EUR Dropbox (not personal)",
-    "Please indicate your awareness of each of the open science resources listed below [FAIR data principles]" = "FAIR data principles",
-    "Please indicate your awareness of each of the open science resources listed below [EUR RePub]" = "EUR RePub",
-    "Please indicate your awareness of each of the open science resources listed below [Zenodo]" = "Zenodo",                 
-    "Please indicate your awareness of each of the open science resources listed below [Other 1]" = "Other 1",
-    "Please indicate your awareness of each of the open science resources listed below [Other 2]" = "Other 2"
-  )
-  ) %>%
+  rename("item" = "value_1") %>% # rename column (for better readability)
   group_by(question, item) %>%
-  summarize(number_responses = n()) %>%
+  summarize( # count number of responses per question and item
+    number_responses = n(),
+    .groups = "keep"
+  ) %>%
   ungroup() %>%
   group_by(question) %>%
   mutate(
-    prop = number_responses / sum(number_responses), # proportion
-    perc = round(prop * 100, 2), # percentage
+    perc = round(number_responses / sum(number_responses, na.rm = FALSE) * 100, 2), # percentage
     lab_perc = paste(perc, "%", sep = "") # percentage as text (for labels)
   ) %>%
   ungroup()
@@ -671,7 +631,7 @@ cluster <-
 # save
 write_csv(
   cluster,
-  here("data", "preproc", paste0("cluster", num_cluster, ".csv"))
+  here("data", "preproc", paste0("cluster_", num_cluster, ".csv"))
 )
 
 # END ----------------------------------------------------------------
