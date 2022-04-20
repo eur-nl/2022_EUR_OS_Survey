@@ -141,7 +141,7 @@ Participant,cluster,question,value_1,value_2,value_3,value_4,value_5,value_6,val
 5,6,Which of the following open science practices would you like EUR to provide information or support for?,Open access publishing,"Open data, materials, and/or code",Preregistration,Open educational resources,Open engagement of societal actors,NA,NA,NA,NA
 5,6,What support services provided at EUR have you used to make your data FAIR?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 5,7,Do you feel recognized and rewarded by EUR (e.g. in the R&O cycle or appraisal conversation) for the Open Science activities you undertake?,Yes,NA,NA,NA,NA,NA,NA,NA,NA
-5,7,In what way were you recognized and rewarded?,"Freedom to choose and initiate my own projects,Praised by my colleagues/supervisor/manager",NA,NA,NA,NA,NA,NA,NA,NA
+5,7,In what way were you recognized and rewarded?,Freedom to choose and initiate my own projects,Praised by my colleagues/supervisor/manager,NA,NA,NA,NA,NA,NA,NA
 5,7,In what way do you expect to be recognized and rewarded?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 5,8,Is there anything else you would like to mention about Open Science practices?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 6,0,School,"Erasmus School of History, Culture and Communication (ESHCC)",NA,NA,NA,NA,NA,NA,NA,NA
@@ -344,7 +344,7 @@ Participant,cluster,question,value_1,value_2,value_3,value_4,value_5,value_6,val
 12,6,Which of the following open science practices would you like EUR to provide information or support for?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 12,6,What support services provided at EUR have you used to make your data FAIR?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 12,7,Do you feel recognized and rewarded by EUR (e.g. in the R&O cycle or appraisal conversation) for the Open Science activities you undertake?,Yes,NA,NA,NA,NA,NA,NA,NA,NA
-12,7,In what way were you recognized and rewarded?,"Freedom to choose and initiate my own projects,Trust from my colleagues/supervisor/manager,Praised by my colleagues/supervisor/manager",NA,NA,NA,NA,NA,NA,NA,NA
+12,7,In what way were you recognized and rewarded?,Freedom to choose and initiate my own projects,Trust from my colleagues/supervisor/manager,Praised by my colleagues/supervisor/manager,NA,NA,NA,NA,NA,NA
 12,7,In what way do you expect to be recognized and rewarded?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 12,8,Is there anything else you would like to mention about Open Science practices?,"I don't trust quality of papers that are published in open access journals (if you have to pay article charges). From a journal perspective it is fee for article payment, the more article the better (irrespective of the quality)..",NA,NA,NA,NA,NA,NA,NA,NA
 13,0,School,Erasmus School of Health Policy & Management (ESHPM),NA,NA,NA,NA,NA,NA,NA,NA
@@ -402,7 +402,7 @@ Participant,cluster,question,value_1,value_2,value_3,value_4,value_5,value_6,val
 14,6,Which of the following open science practices would you like EUR to provide information or support for?,Open access publishing,"Open data, materials, and/or code",Preregistration,Open educational resources,Open engagement of societal actors,NA,NA,NA,NA
 14,6,What support services provided at EUR have you used to make your data FAIR?,I attended a workshop on research data management,I looked up relevant information on the EUR website,"I got advice on FAIR data/research data management from an expert (e.g., research data steward)",NA,NA,NA,NA,NA,NA
 14,7,Do you feel recognized and rewarded by EUR (e.g. in the R&O cycle or appraisal conversation) for the Open Science activities you undertake?,Yes,NA,NA,NA,NA,NA,NA,NA,NA
-14,7,In what way were you recognized and rewarded?,"Freedom to choose and initiate my own projects,Trust from my colleagues/supervisor/manager,Praised by my colleagues/supervisor/manager",NA,NA,NA,NA,NA,NA,NA,NA
+14,7,In what way were you recognized and rewarded?,Freedom to choose and initiate my own projects,Trust from my colleagues/supervisor/manager,Praised by my colleagues/supervisor/manager,NA,NA,NA,NA,NA,NA
 14,7,In what way do you expect to be recognized and rewarded?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 14,8,Is there anything else you would like to mention about Open Science practices?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 15,0,School,Erasmus School of Health Policy & Management (ESHPM),NA,NA,NA,NA,NA,NA,NA,NA
@@ -605,7 +605,7 @@ Participant,cluster,question,value_1,value_2,value_3,value_4,value_5,value_6,val
 21,6,Which of the following open science practices would you like EUR to provide information or support for?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 21,6,What support services provided at EUR have you used to make your data FAIR?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 21,7,Do you feel recognized and rewarded by EUR (e.g. in the R&O cycle or appraisal conversation) for the Open Science activities you undertake?,Yes,NA,NA,NA,NA,NA,NA,NA,NA
-21,7,In what way were you recognized and rewarded?,"Freedom to choose and initiate my own projects,Trust from my colleagues/supervisor/manager",NA,NA,NA,NA,NA,NA,NA,NA
+21,7,In what way were you recognized and rewarded?,Freedom to choose and initiate my own projects,Trust from my colleagues/supervisor/manager,NA,NA,NA,NA,NA,NA,NA
 21,7,In what way do you expect to be recognized and rewarded?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 21,8,Is there anything else you would like to mention about Open Science practices?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 22,0,School,Other_I would rather not say,NA,NA,NA,NA,NA,NA,NA,NA
@@ -692,7 +692,7 @@ Participant,cluster,question,value_1,value_2,value_3,value_4,value_5,value_6,val
 24,6,Which of the following open science practices would you like EUR to provide information or support for?,Open access publishing,"Open data, materials, and/or code",Open educational resources,Open engagement of societal actors,NA,NA,NA,NA,NA
 24,6,What support services provided at EUR have you used to make your data FAIR?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 24,7,Do you feel recognized and rewarded by EUR (e.g. in the R&O cycle or appraisal conversation) for the Open Science activities you undertake?,Yes,NA,NA,NA,NA,NA,NA,NA,NA
-24,7,In what way were you recognized and rewarded?,"Freedom to choose and initiate my own projects,Trust from my colleagues/supervisor/manager",NA,NA,NA,NA,NA,NA,NA,NA
+24,7,In what way were you recognized and rewarded?,Freedom to choose and initiate my own projects,Trust from my colleagues/supervisor/manager,NA,NA,NA,NA,NA,NA,NA
 24,7,In what way do you expect to be recognized and rewarded?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 24,8,Is there anything else you would like to mention about Open Science practices?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 25,0,School,Erasmus School of Health Policy & Management (ESHPM),NA,NA,NA,NA,NA,NA,NA,NA
@@ -924,7 +924,7 @@ Participant,cluster,question,value_1,value_2,value_3,value_4,value_5,value_6,val
 32,6,Which of the following open science practices would you like EUR to provide information or support for?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 32,6,What support services provided at EUR have you used to make your data FAIR?,I don't know/prefer not to answer,NA,NA,NA,NA,NA,NA,NA,NA
 32,7,Do you feel recognized and rewarded by EUR (e.g. in the R&O cycle or appraisal conversation) for the Open Science activities you undertake?,Yes,NA,NA,NA,NA,NA,NA,NA,NA
-32,7,In what way were you recognized and rewarded?,"Freedom to choose and initiate my own projects,Trust from my colleagues/supervisor/manager",NA,NA,NA,NA,NA,NA,NA,NA
+32,7,In what way were you recognized and rewarded?,Freedom to choose and initiate my own projects,Trust from my colleagues/supervisor/manager,NA,NA,NA,NA,NA,NA,NA
 32,7,In what way do you expect to be recognized and rewarded?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 32,8,Is there anything else you would like to mention about Open Science practices?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 33,0,School,Erasmus School of Health Policy & Management (ESHPM),NA,NA,NA,NA,NA,NA,NA,NA
@@ -982,7 +982,7 @@ Participant,cluster,question,value_1,value_2,value_3,value_4,value_5,value_6,val
 34,6,Which of the following open science practices would you like EUR to provide information or support for?,Open access publishing,"Open data, materials, and/or code",Preregistration,Open engagement of societal actors,NA,NA,NA,NA,NA
 34,6,What support services provided at EUR have you used to make your data FAIR?,I looked up relevant information on the EUR website,"I am using available tools for FAIR data (e.g., EUR Data Repository)",NA,NA,NA,NA,NA,NA,NA
 34,7,Do you feel recognized and rewarded by EUR (e.g. in the R&O cycle or appraisal conversation) for the Open Science activities you undertake?,Yes,NA,NA,NA,NA,NA,NA,NA,NA
-34,7,In what way were you recognized and rewarded?,"Freedom to choose and initiate my own projects,Trust from my colleagues/supervisor/manager",NA,NA,NA,NA,NA,NA,NA,NA
+34,7,In what way were you recognized and rewarded?,Freedom to choose and initiate my own projects,Trust from my colleagues/supervisor/manager,NA,NA,NA,NA,NA,NA,NA
 34,7,In what way do you expect to be recognized and rewarded?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 34,8,Is there anything else you would like to mention about Open Science practices?,"I feel that sometimes EUR promotes Open Science as a goal in itself. To me and other researchers, it is a means towards an end. This leads to confusion/miscommunication",NA,NA,NA,NA,NA,NA,NA,NA
 35,0,School,Erasmus School of Philosophy (ESPHIL),NA,NA,NA,NA,NA,NA,NA,NA
@@ -1069,7 +1069,7 @@ Participant,cluster,question,value_1,value_2,value_3,value_4,value_5,value_6,val
 37,6,Which of the following open science practices would you like EUR to provide information or support for?,Open access publishing,Open educational resources,Open engagement of societal actors,NA,NA,NA,NA,NA,NA
 37,6,What support services provided at EUR have you used to make your data FAIR?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 37,7,Do you feel recognized and rewarded by EUR (e.g. in the R&O cycle or appraisal conversation) for the Open Science activities you undertake?,Yes,NA,NA,NA,NA,NA,NA,NA,NA
-37,7,In what way were you recognized and rewarded?,"Freedom to choose and initiate my own projects,Trust from my colleagues/supervisor/manager",NA,NA,NA,NA,NA,NA,NA,NA
+37,7,In what way were you recognized and rewarded?,Freedom to choose and initiate my own projects,Trust from my colleagues/supervisor/manager,NA,NA,NA,NA,NA,NA,NA
 37,7,In what way do you expect to be recognized and rewarded?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 37,8,Is there anything else you would like to mention about Open Science practices?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 38,0,School,Erasmus School of Philosophy (ESPHIL),NA,NA,NA,NA,NA,NA,NA,NA
@@ -1214,7 +1214,7 @@ Participant,cluster,question,value_1,value_2,value_3,value_4,value_5,value_6,val
 42,6,Which of the following open science practices would you like EUR to provide information or support for?,Open access publishing,"Open data, materials, and/or code",Open engagement of societal actors,NA,NA,NA,NA,NA,NA
 42,6,What support services provided at EUR have you used to make your data FAIR?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 42,7,Do you feel recognized and rewarded by EUR (e.g. in the R&O cycle or appraisal conversation) for the Open Science activities you undertake?,Yes,NA,NA,NA,NA,NA,NA,NA,NA
-42,7,In what way were you recognized and rewarded?,"Freedom to choose and initiate my own projects,Trust from my colleagues/supervisor/manager",NA,NA,NA,NA,NA,NA,NA,NA
+42,7,In what way were you recognized and rewarded?,Freedom to choose and initiate my own projects,Trust from my colleagues/supervisor/manager,NA,NA,NA,NA,NA,NA,NA
 42,7,In what way do you expect to be recognized and rewarded?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 42,8,Is there anything else you would like to mention about Open Science practices?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 43,0,School,Erasmus School of Philosophy (ESPHIL),NA,NA,NA,NA,NA,NA,NA,NA
@@ -2055,7 +2055,7 @@ Participant,cluster,question,value_1,value_2,value_3,value_4,value_5,value_6,val
 71,6,Which of the following open science practices would you like EUR to provide information or support for?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 71,6,What support services provided at EUR have you used to make your data FAIR?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 71,7,Do you feel recognized and rewarded by EUR (e.g. in the R&O cycle or appraisal conversation) for the Open Science activities you undertake?,Yes,NA,NA,NA,NA,NA,NA,NA,NA
-71,7,In what way were you recognized and rewarded?,"Trust from my colleagues/supervisor/manager,Praised by my colleagues/supervisor/manager,Received an award",NA,NA,NA,NA,NA,NA,NA,NA
+71,7,In what way were you recognized and rewarded?,Trust from my colleagues/supervisor/manager,Praised by my colleagues/supervisor/manager,Received an award,NA,NA,NA,NA,NA,NA
 71,7,In what way do you expect to be recognized and rewarded?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 71,8,Is there anything else you would like to mention about Open Science practices?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 72,0,School,Erasmus School of Social and Behavioural Sciences (ESSB),NA,NA,NA,NA,NA,NA,NA,NA
@@ -2084,7 +2084,7 @@ Participant,cluster,question,value_1,value_2,value_3,value_4,value_5,value_6,val
 72,6,Which of the following open science practices would you like EUR to provide information or support for?,Open access publishing,"Open data, materials, and/or code",Preregistration,Open educational resources,Open engagement of societal actors,NA,NA,NA,NA
 72,6,What support services provided at EUR have you used to make your data FAIR?,"I got advice on FAIR data/research data management from an expert (e.g., research data steward)",NA,NA,NA,NA,NA,NA,NA,NA
 72,7,Do you feel recognized and rewarded by EUR (e.g. in the R&O cycle or appraisal conversation) for the Open Science activities you undertake?,Yes,NA,NA,NA,NA,NA,NA,NA,NA
-72,7,In what way were you recognized and rewarded?,"Freedom to choose and initiate my own projects,Trust from my colleagues/supervisor/manager,Praised by my colleagues/supervisor/manager",NA,NA,NA,NA,NA,NA,NA,NA
+72,7,In what way were you recognized and rewarded?,Freedom to choose and initiate my own projects,Trust from my colleagues/supervisor/manager,Praised by my colleagues/supervisor/manager,NA,NA,NA,NA,NA,NA
 72,7,In what way do you expect to be recognized and rewarded?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 72,8,Is there anything else you would like to mention about Open Science practices?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 73,0,School,Erasmus School of Social and Behavioural Sciences (ESSB),NA,NA,NA,NA,NA,NA,NA,NA
@@ -2200,7 +2200,7 @@ Participant,cluster,question,value_1,value_2,value_3,value_4,value_5,value_6,val
 76,6,Which of the following open science practices would you like EUR to provide information or support for?,Open access publishing,"Open data, materials, and/or code",Preregistration,Open educational resources,Open engagement of societal actors,NA,NA,NA,NA
 76,6,What support services provided at EUR have you used to make your data FAIR?,"I got advice on FAIR data/research data management from an expert (e.g., research data steward)",NA,NA,NA,NA,NA,NA,NA,NA
 76,7,Do you feel recognized and rewarded by EUR (e.g. in the R&O cycle or appraisal conversation) for the Open Science activities you undertake?,Yes,NA,NA,NA,NA,NA,NA,NA,NA
-76,7,In what way were you recognized and rewarded?,"Freedom to choose and initiate my own projects,Trust from my colleagues/supervisor/manager,Praised by my colleagues/supervisor/manager",NA,NA,NA,NA,NA,NA,NA,NA
+76,7,In what way were you recognized and rewarded?,Freedom to choose and initiate my own projects,Trust from my colleagues/supervisor/manager,Praised by my colleagues/supervisor/manager,NA,NA,NA,NA,NA,NA
 76,7,In what way do you expect to be recognized and rewarded?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 76,8,Is there anything else you would like to mention about Open Science practices?,worrisome role of large publishers such as Elsevier (and hence Pure),NA,NA,NA,NA,NA,NA,NA,NA
 77,0,School,Erasmus School of Health Policy & Management (ESHPM),NA,NA,NA,NA,NA,NA,NA,NA
@@ -2258,7 +2258,7 @@ Participant,cluster,question,value_1,value_2,value_3,value_4,value_5,value_6,val
 78,6,Which of the following open science practices would you like EUR to provide information or support for?,"Open data, materials, and/or code",NA,NA,NA,NA,NA,NA,NA,NA
 78,6,What support services provided at EUR have you used to make your data FAIR?,I looked up relevant information on the EUR website,"I got advice on FAIR data/research data management from an expert (e.g., research data steward)","I am using available tools for FAIR data (e.g., EUR Data Repository)",NA,NA,NA,NA,NA,NA
 78,7,Do you feel recognized and rewarded by EUR (e.g. in the R&O cycle or appraisal conversation) for the Open Science activities you undertake?,Yes,NA,NA,NA,NA,NA,NA,NA,NA
-78,7,In what way were you recognized and rewarded?,"Freedom to choose and initiate my own projects,Trust from my colleagues/supervisor/manager,Praised by my colleagues/supervisor/manager",NA,NA,NA,NA,NA,NA,NA,NA
+78,7,In what way were you recognized and rewarded?,Freedom to choose and initiate my own projects,Trust from my colleagues/supervisor/manager,Praised by my colleagues/supervisor/manager,NA,NA,NA,NA,NA,NA
 78,7,In what way do you expect to be recognized and rewarded?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 78,8,Is there anything else you would like to mention about Open Science practices?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 79,0,School,Erasmus School of Health Policy & Management (ESHPM),NA,NA,NA,NA,NA,NA,NA,NA
@@ -2287,7 +2287,7 @@ Participant,cluster,question,value_1,value_2,value_3,value_4,value_5,value_6,val
 79,6,Which of the following open science practices would you like EUR to provide information or support for?,"Open data, materials, and/or code",Preregistration,NA,NA,NA,NA,NA,NA,NA
 79,6,What support services provided at EUR have you used to make your data FAIR?,I attended a workshop on research data management,I looked up relevant information on the EUR website,NA,NA,NA,NA,NA,NA,NA
 79,7,Do you feel recognized and rewarded by EUR (e.g. in the R&O cycle or appraisal conversation) for the Open Science activities you undertake?,Yes,NA,NA,NA,NA,NA,NA,NA,NA
-79,7,In what way were you recognized and rewarded?,"Trust from my colleagues/supervisor/manager,Praised by my colleagues/supervisor/manager",NA,NA,NA,NA,NA,NA,NA,NA
+79,7,In what way were you recognized and rewarded?,Trust from my colleagues/supervisor/manager,Praised by my colleagues/supervisor/manager,NA,NA,NA,NA,NA,NA,NA
 79,7,In what way do you expect to be recognized and rewarded?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 79,8,Is there anything else you would like to mention about Open Science practices?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 80,0,School,Erasmus School of Health Policy & Management (ESHPM),NA,NA,NA,NA,NA,NA,NA,NA
@@ -2316,7 +2316,7 @@ Participant,cluster,question,value_1,value_2,value_3,value_4,value_5,value_6,val
 80,6,Which of the following open science practices would you like EUR to provide information or support for?,Preregistration,Open educational resources,Open engagement of societal actors,NA,NA,NA,NA,NA,NA
 80,6,What support services provided at EUR have you used to make your data FAIR?,I attended a workshop on research data management,I looked up relevant information on the EUR website,"I got advice on FAIR data/research data management from an expert (e.g., research data steward)","I am using available tools for FAIR data (e.g., EUR Data Repository)",NA,NA,NA,NA,NA
 80,7,Do you feel recognized and rewarded by EUR (e.g. in the R&O cycle or appraisal conversation) for the Open Science activities you undertake?,Yes,NA,NA,NA,NA,NA,NA,NA,NA
-80,7,In what way were you recognized and rewarded?,"Freedom to choose and initiate my own projects,Trust from my colleagues/supervisor/manager,Received an award",NA,NA,NA,NA,NA,NA,NA,NA
+80,7,In what way were you recognized and rewarded?,Freedom to choose and initiate my own projects,Trust from my colleagues/supervisor/manager,Received an award,NA,NA,NA,NA,NA,NA
 80,7,In what way do you expect to be recognized and rewarded?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 80,8,Is there anything else you would like to mention about Open Science practices?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 81,0,School,Erasmus School of Health Policy & Management (ESHPM),NA,NA,NA,NA,NA,NA,NA,NA
@@ -2345,7 +2345,7 @@ Participant,cluster,question,value_1,value_2,value_3,value_4,value_5,value_6,val
 81,6,Which of the following open science practices would you like EUR to provide information or support for?,Open educational resources,Open engagement of societal actors,NA,NA,NA,NA,NA,NA,NA
 81,6,What support services provided at EUR have you used to make your data FAIR?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 81,7,Do you feel recognized and rewarded by EUR (e.g. in the R&O cycle or appraisal conversation) for the Open Science activities you undertake?,Yes,NA,NA,NA,NA,NA,NA,NA,NA
-81,7,In what way were you recognized and rewarded?,"Freedom to choose and initiate my own projects,Trust from my colleagues/supervisor/manager,Praised by my colleagues/supervisor/manager,Received a promotion",NA,NA,NA,NA,NA,NA,NA,NA
+81,7,In what way were you recognized and rewarded?,Freedom to choose and initiate my own projects,Trust from my colleagues/supervisor/manager,Praised by my colleagues/supervisor/manager,Received a promotion,NA,NA,NA,NA,NA
 81,7,In what way do you expect to be recognized and rewarded?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 81,8,Is there anything else you would like to mention about Open Science practices?,No,NA,NA,NA,NA,NA,NA,NA,NA
 82,0,School,Erasmus School of Health Policy & Management (ESHPM),NA,NA,NA,NA,NA,NA,NA,NA
@@ -2519,7 +2519,7 @@ Participant,cluster,question,value_1,value_2,value_3,value_4,value_5,value_6,val
 87,6,Which of the following open science practices would you like EUR to provide information or support for?,Open access publishing,"Open data, materials, and/or code",Preregistration,Open educational resources,Open engagement of societal actors,NA,NA,NA,NA
 87,6,What support services provided at EUR have you used to make your data FAIR?,I attended a workshop on research data management,I looked up relevant information on the EUR website,"I got advice on FAIR data/research data management from an expert (e.g., research data steward)",NA,NA,NA,NA,NA,NA
 87,7,Do you feel recognized and rewarded by EUR (e.g. in the R&O cycle or appraisal conversation) for the Open Science activities you undertake?,Yes,NA,NA,NA,NA,NA,NA,NA,NA
-87,7,In what way were you recognized and rewarded?,"Trust from my colleagues/supervisor/manager,Praised by my colleagues/supervisor/manager",NA,NA,NA,NA,NA,NA,NA,NA
+87,7,In what way were you recognized and rewarded?,Trust from my colleagues/supervisor/manager,Praised by my colleagues/supervisor/manager,NA,NA,NA,NA,NA,NA,NA
 87,7,In what way do you expect to be recognized and rewarded?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 87,8,Is there anything else you would like to mention about Open Science practices?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 88,0,School,Erasmus School of Social and Behavioural Sciences (ESSB),NA,NA,NA,NA,NA,NA,NA,NA
@@ -2548,7 +2548,7 @@ Participant,cluster,question,value_1,value_2,value_3,value_4,value_5,value_6,val
 88,6,Which of the following open science practices would you like EUR to provide information or support for?,"Open data, materials, and/or code",Open educational resources,NA,NA,NA,NA,NA,NA,NA
 88,6,What support services provided at EUR have you used to make your data FAIR?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 88,7,Do you feel recognized and rewarded by EUR (e.g. in the R&O cycle or appraisal conversation) for the Open Science activities you undertake?,Yes,NA,NA,NA,NA,NA,NA,NA,NA
-88,7,In what way were you recognized and rewarded?,"Freedom to choose and initiate my own projects,Praised by my colleagues/supervisor/manager",NA,NA,NA,NA,NA,NA,NA,NA
+88,7,In what way were you recognized and rewarded?,Freedom to choose and initiate my own projects,Praised by my colleagues/supervisor/manager,NA,NA,NA,NA,NA,NA,NA
 88,7,In what way do you expect to be recognized and rewarded?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 88,8,Is there anything else you would like to mention about Open Science practices?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 89,0,School,Erasmus School of Health Policy & Management (ESHPM),NA,NA,NA,NA,NA,NA,NA,NA
@@ -2722,7 +2722,7 @@ Participant,cluster,question,value_1,value_2,value_3,value_4,value_5,value_6,val
 94,6,Which of the following open science practices would you like EUR to provide information or support for?,Open access publishing,Preregistration,Open engagement of societal actors,NA,NA,NA,NA,NA,NA
 94,6,What support services provided at EUR have you used to make your data FAIR?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 94,7,Do you feel recognized and rewarded by EUR (e.g. in the R&O cycle or appraisal conversation) for the Open Science activities you undertake?,Yes,NA,NA,NA,NA,NA,NA,NA,NA
-94,7,In what way were you recognized and rewarded?,"Freedom to choose and initiate my own projects,Trust from my colleagues/supervisor/manager,Praised by my colleagues/supervisor/manager",NA,NA,NA,NA,NA,NA,NA,NA
+94,7,In what way were you recognized and rewarded?,Freedom to choose and initiate my own projects,Trust from my colleagues/supervisor/manager,Praised by my colleagues/supervisor/manager,NA,NA,NA,NA,NA,NA
 94,7,In what way do you expect to be recognized and rewarded?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 94,8,Is there anything else you would like to mention about Open Science practices?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 95,0,School,Erasmus School of Social and Behavioural Sciences (ESSB),NA,NA,NA,NA,NA,NA,NA,NA
@@ -2983,7 +2983,7 @@ Participant,cluster,question,value_1,value_2,value_3,value_4,value_5,value_6,val
 103,6,Which of the following open science practices would you like EUR to provide information or support for?,Open access publishing,"Open data, materials, and/or code",Open educational resources,Open engagement of societal actors,NA,NA,NA,NA,NA
 103,6,What support services provided at EUR have you used to make your data FAIR?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 103,7,Do you feel recognized and rewarded by EUR (e.g. in the R&O cycle or appraisal conversation) for the Open Science activities you undertake?,Yes,NA,NA,NA,NA,NA,NA,NA,NA
-103,7,In what way were you recognized and rewarded?,"Freedom to choose and initiate my own projects,Trust from my colleagues/supervisor/manager,Praised by my colleagues/supervisor/manager",NA,NA,NA,NA,NA,NA,NA,NA
+103,7,In what way were you recognized and rewarded?,Freedom to choose and initiate my own projects,Trust from my colleagues/supervisor/manager,Praised by my colleagues/supervisor/manager,NA,NA,NA,NA,NA,NA
 103,7,In what way do you expect to be recognized and rewarded?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 103,8,Is there anything else you would like to mention about Open Science practices?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 104,0,School,International Institute of Social Studies (ISS),NA,NA,NA,NA,NA,NA,NA,NA
@@ -3099,7 +3099,7 @@ Participant,cluster,question,value_1,value_2,value_3,value_4,value_5,value_6,val
 107,6,Which of the following open science practices would you like EUR to provide information or support for?,Open access publishing,"Open data, materials, and/or code",Preregistration,Open educational resources,Open engagement of societal actors,NA,NA,NA,NA
 107,6,What support services provided at EUR have you used to make your data FAIR?,I attended a workshop on research data management,I looked up relevant information on the EUR website,"I got advice on FAIR data/research data management from an expert (e.g., research data steward)","I am using available tools for FAIR data (e.g., EUR Data Repository)",NA,NA,NA,NA,NA
 107,7,Do you feel recognized and rewarded by EUR (e.g. in the R&O cycle or appraisal conversation) for the Open Science activities you undertake?,Yes,NA,NA,NA,NA,NA,NA,NA,NA
-107,7,In what way were you recognized and rewarded?,"Freedom to choose and initiate my own projects,Trust from my colleagues/supervisor/manager,Praised by my colleagues/supervisor/manager",NA,NA,NA,NA,NA,NA,NA,NA
+107,7,In what way were you recognized and rewarded?,Freedom to choose and initiate my own projects,Trust from my colleagues/supervisor/manager,Praised by my colleagues/supervisor/manager,NA,NA,NA,NA,NA,NA
 107,7,In what way do you expect to be recognized and rewarded?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 107,8,Is there anything else you would like to mention about Open Science practices?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 108,0,School,Erasmus School of Social and Behavioural Sciences (ESSB),NA,NA,NA,NA,NA,NA,NA,NA
@@ -3128,7 +3128,7 @@ Participant,cluster,question,value_1,value_2,value_3,value_4,value_5,value_6,val
 108,6,Which of the following open science practices would you like EUR to provide information or support for?,Open access publishing,Open educational resources,NA,NA,NA,NA,NA,NA,NA
 108,6,What support services provided at EUR have you used to make your data FAIR?,"I am using available tools for FAIR data (e.g., EUR Data Repository)",NA,NA,NA,NA,NA,NA,NA,NA
 108,7,Do you feel recognized and rewarded by EUR (e.g. in the R&O cycle or appraisal conversation) for the Open Science activities you undertake?,Yes,NA,NA,NA,NA,NA,NA,NA,NA
-108,7,In what way were you recognized and rewarded?,"Freedom to choose and initiate my own projects,More time for Open Science activities,Trust from my colleagues/supervisor/manager,Praised by my colleagues/supervisor/manager",NA,NA,NA,NA,NA,NA,NA,NA
+108,7,In what way were you recognized and rewarded?,Freedom to choose and initiate my own projects,More time for Open Science activities,Trust from my colleagues/supervisor/manager,Praised by my colleagues/supervisor/manager,NA,NA,NA,NA,NA
 108,7,In what way do you expect to be recognized and rewarded?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 108,8,Is there anything else you would like to mention about Open Science practices?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 109,0,School,Erasmus School of Social and Behavioural Sciences (ESSB),NA,NA,NA,NA,NA,NA,NA,NA
@@ -3940,7 +3940,7 @@ Participant,cluster,question,value_1,value_2,value_3,value_4,value_5,value_6,val
 136,6,Which of the following open science practices would you like EUR to provide information or support for?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 136,6,What support services provided at EUR have you used to make your data FAIR?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 136,7,Do you feel recognized and rewarded by EUR (e.g. in the R&O cycle or appraisal conversation) for the Open Science activities you undertake?,Yes,NA,NA,NA,NA,NA,NA,NA,NA
-136,7,In what way were you recognized and rewarded?,"Freedom to choose and initiate my own projects,Trust from my colleagues/supervisor/manager,Praised by my colleagues/supervisor/manager",NA,NA,NA,NA,NA,NA,NA,NA
+136,7,In what way were you recognized and rewarded?,Freedom to choose and initiate my own projects,Trust from my colleagues/supervisor/manager,Praised by my colleagues/supervisor/manager,NA,NA,NA,NA,NA,NA
 136,7,In what way do you expect to be recognized and rewarded?,NA,NA,NA,NA,NA,NA,NA,NA,NA
 136,8,Is there anything else you would like to mention about Open Science practices?,"Be aware of differences between disciplines, no one size fits all, inclusion in Pure should not be linked to open access, open access is a right of the employee and should not be turned into an obligation set by university on the employee (especially given that the EUR interprets article 25 Auteurswet so extensively, that employees are forced to break rules that publisher set. And please do note: article 25fa Aueteurswet does not apply if an emplyee has a contract with a foreign published under foreign law (we were told otherwise by the UB during an information session on open access, but that was legally incorrect information). And last bur not least: the EUR must be transparent on its open access obligations: why is the open access policy only accessible to employees and not to the outside world (including prospective employees who want to know what their obligations would be if they would become employees of the EUR? That does not fit with open access.",NA,NA,NA,NA,NA,NA,NA,NA
 137,0,School,Erasmus School of Law (ESL),NA,NA,NA,NA,NA,NA,NA,NA
