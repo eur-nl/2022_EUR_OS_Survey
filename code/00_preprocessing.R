@@ -31,7 +31,7 @@ source(here("code", "functions", "split_into_multiple.R"))
 # 8 = other
 
 # assign a cluster number to each question
-levels_question <- 
+levels_question <-
   c(
     "0" = "School",
     "0" = "Department",
@@ -55,7 +55,7 @@ levels_question <-
     "5" = "In your opinion, how important is to have an open dialogue with society in your work?",
     "5" = "What is your experience engaging with society?",
     "5" = "The following are possible concerns that researchers could have about engaging with society. Which of these concerns would apply to you?",
-    "6" = "Do you expect EUR to support you in learning open science practices?", 
+    "6" = "Do you expect EUR to support you in learning open science practices?",
     "6" = "Which of the following open science practices would you like EUR to provide information or support for?",
     "6" = "What support services provided at EUR have you used to make your data FAIR?",
     "7" = "Do you feel recognized and rewarded by EUR (e.g. in the R&O cycle or appraisal conversation) for the Open Science activities you undertake?",
@@ -64,7 +64,7 @@ levels_question <-
     "8" = "Is there anything else you would like to mention about Open Science practices?"
   )
 
-# Load data ----------------------------------------------------------------
+# Load & merge data ----------------------------------------------------------------
 
 # EUR OS Survey, pseudonymized data (retrieved on April 14th 2022)
 EUR_OS_data <-
@@ -78,13 +78,13 @@ EUR_OS_data <-
 ESL_OS_data <-
   read_csv(
     here("data", "20220414_ESL_OS_Survey_responses.csv"),
-    col_names = TRUE, 
+    col_names = TRUE,
     show_col_types = FALSE
   )
 
 # merge EUR and ESL data
-OS_data <- 
-  full_join(EUR_OS_data, ESL_OS_data) %>% 
+OS_data <-
+  full_join(EUR_OS_data, ESL_OS_data) %>%
   relocate(Q5.1, .after = "Q5_7_TEXT") # move ESL-only question on open access close to other open access questions
 
 # save as .csv
@@ -100,134 +100,136 @@ write_csv(
 
 # Clean data --------------------------------------------------------
 
-OS_data_clean <- 
-  read_csv(
+OS_data_clean <-
+  read_csv( # load manually modified data
     here("data", "preproc", "manual_merged_OS_Survey_responses.csv"),
     col_names = TRUE,
     show_col_types = FALSE
-  ) %>% 
+  ) %>%
   `names<-`(as_vector(OS_data[1, ])) %>% # use questions as column names
   unite( # merge columns with school affiliation
-    "School", 
+    "School",
     c(
       "What is your school affiliation? - Selected Choice",
       "What is your school affiliation? - Other - Text",
-      ), 
-    sep = "_", 
-    remove = TRUE, 
+    ),
+    sep = "_",
+    remove = TRUE,
     na.rm = TRUE
-    ) %>% 
+  ) %>%
   unite( # merge columns with department affiliation
-    "Department", 
+    "Department",
     c(
       "Which department are you affiliated to? - Selected Choice",
       "Which department are you affiliated to? - Other - Text",
       "Which department are you affiliated to? - Selected Choice",
       "Which department are you affiliated to? - Other - Text",
-      "Which department are you affiliated to?"  
-    ), 
-    sep = "_", 
-    remove = TRUE, 
+      "Which department are you affiliated to?"
+    ),
+    sep = "_",
+    remove = TRUE,
     na.rm = TRUE
-  ) %>% 
+  ) %>%
   unite( # merge columns with position
-    "Position", 
+    "Position",
     c(
       "What is your position? - Selected Choice",
       "What is your position? - Other - Text",
-    ), 
-    sep = "_", 
-    remove = TRUE, 
+    ),
+    sep = "_",
+    remove = TRUE,
     na.rm = TRUE
-  ) %>% 
-  unite( # merge (multiple choice & free text) columns on concerns on open access 
-    "The following are possible concerns that researchers could have about Open Access publishing. Which of these concerns would you agree with?", 
+  ) %>%
+  unite( # merge (multiple choice & free text) columns on concerns on open access
+    "The following are possible concerns that researchers could have about Open Access publishing. Which of these concerns would you agree with?",
     c(
       "The following are possible concerns that\nresearchers could have about Open Access publishing. \nWhich of these concerns would you agree with? Select all suitable options. - Selected Choice",
       "The following are possible concerns that\nresearchers could have about Open Access publishing. \nWhich of these concerns would you agree with? Select all suitable options. - Other - Text",
-    ), 
-    sep = "_", 
-    remove = TRUE, 
+    ),
+    sep = "_",
+    remove = TRUE,
     na.rm = TRUE
-  ) %>% 
-  unite( # merge (multiple choice & free text) columns on concerns on open data/materials/code 
-    "The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?", 
+  ) %>%
+  unite( # merge (multiple choice & free text) columns on concerns on open data/materials/code
+    "The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?",
     c(
       "The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. \n\nWhich of these concerns would you agree with? Select all suitable options. - Selected Choice",
       "The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. \n\nWhich of these concerns would you agree with? Select all suitable options. - Other - Text",
-    ), 
-    sep = "_", 
-    remove = TRUE, 
+    ),
+    sep = "_",
+    remove = TRUE,
     na.rm = TRUE
-  ) %>% 
-  unite( # merge (multiple choice & free text) columns on concerns on preregistration 
-    "The following are possible concerns that researchers could have about preregistering their studies. Which of these concerns would you agree with?", 
+  ) %>%
+  unite( # merge (multiple choice & free text) columns on concerns on preregistration
+    "The following are possible concerns that researchers could have about preregistering their studies. Which of these concerns would you agree with?",
     c(
       "The following are possible concerns that\nresearchers could have about preregistering their studies. Which of these concerns would you agree with? Select all suitable options. - Selected Choice",
       "The following are possible concerns that\nresearchers could have about preregistering their studies. Which of these concerns would you agree with? Select all suitable options. - Other - Text",
-    ), 
-    sep = "_", 
-    remove = TRUE, 
+    ),
+    sep = "_",
+    remove = TRUE,
     na.rm = TRUE
-  ) %>% 
-  unite( # merge (multiple choice & free text) columns on concerns on open educational resources 
-    "The following are possible concerns that researchers could have about making educational resources developed by them openly available. Which of these concerns would you agree with?", 
+  ) %>%
+  unite( # merge (multiple choice & free text) columns on concerns on open educational resources
+    "The following are possible concerns that researchers could have about making educational resources developed by them openly available. Which of these concerns would you agree with?",
     c(
       "The following are possible concerns that researchers could have about making educational resources developed by them openly available. \n Which of these concerns would you agree with? Select all suitable options. - Selected Choice",
       "The following are possible concerns that researchers could have about making educational resources developed by them openly available. \n Which of these concerns would you agree with? Select all suitable options. - Other - Text",
-    ), 
-    sep = "_", 
-    remove = TRUE, 
+    ),
+    sep = "_",
+    remove = TRUE,
     na.rm = TRUE
-  ) %>% 
-  unite( # merge (multiple choice & free text) columns on concerns on societal engagement 
-    "The following are possible concerns that researchers could have about engaging with society. Which of these concerns would apply to you?", 
+  ) %>%
+  unite( # merge (multiple choice & free text) columns on concerns on societal engagement
+    "The following are possible concerns that researchers could have about engaging with society. Which of these concerns would apply to you?",
     c(
       "The following are possible concerns that\nresearchers could have about engaging with society.Which of these concerns would apply to you? Select all suitable options - Selected Choice",
       "The following are possible concerns that\nresearchers could have about engaging with society.Which of these concerns would apply to you? Select all suitable options - Other - Text",
-    ), 
-    sep = "_", 
-    remove = TRUE, 
+    ),
+    sep = "_",
+    remove = TRUE,
     na.rm = TRUE
   ) %>%
-  unite( # merge (multiple choice & free text) columns on EUR support 
-    "Which of the following open science practices would you like EUR to provide information or support for?", 
+  unite( # merge (multiple choice & free text) columns on EUR support
+    "Which of the following open science practices would you like EUR to provide information or support for?",
     c(
       "Which of the following open science practices would you like EUR to provide information or support for?Select all suitable options. - Selected Choice",
       "Which of the following open science practices would you like EUR to provide information or support for?Select all suitable options. - Other - Text",
-    ), 
-    sep = "_", 
-    remove = TRUE, 
+    ),
+    sep = "_",
+    remove = TRUE,
     na.rm = TRUE
   ) %>%
-  unite( # merge (multiple choice & free text) columns on current EUR recognition and rewards 
-    "In what way were you recognized and rewarded?", 
+  unite( # merge (multiple choice & free text) columns on current EUR recognition and rewards
+    "In what way were you recognized and rewarded?",
     c(
       "In what way were you recognized and rewarded? \nSelect all suitable options. - Selected Choice",
       "In what way were you recognized and rewarded? \nSelect all suitable options. - Other - Text",
-    ), 
-    sep = "_", 
-    remove = TRUE, 
+    ),
+    sep = "_",
+    remove = TRUE,
     na.rm = TRUE
   ) %>%
-  unite( # merge (multiple choice & free text) columns on expected EUR recognition and rewards 
-    "In what way do you expect to be recognized and rewarded?", 
+  unite( # merge (multiple choice & free text) columns on expected EUR recognition and rewards
+    "In what way do you expect to be recognized and rewarded?",
     c(
       "In what way do you expect to be recognized and rewarded?\nSelect all suitable options. - Selected Choice",
       "In what way do you expect to be recognized and rewarded?\nSelect all suitable options. - Other - Text",
-    ), 
-    sep = "_", 
-    remove = TRUE, 
+    ),
+    sep = "_",
+    remove = TRUE,
     na.rm = TRUE
   ) %>%
   rename( # rename column (for better readability)
     "What support services provided at EUR have you used to make your data FAIR?" = "What support services provided at EUR have you used to make your data FAIR?\nSelect all suitable options."
-  ) %>% 
+  ) %>%
   slice(-c(1:2)) %>% # delete rows with redundant or unnecessary data
   filter(Finished == "True") %>% # only keep completed surveys
-  rowid_to_column(var = "Participant") %>%  # assign number to each participant
-  select(-c("Start Date", "End Date", "Response Type", "Progress", "Duration (in seconds)", # discard unnecessary columns
-            "Finished", "Recorded Date", "Response ID", "Distribution Channel", "User Language")) %>% 
+  rowid_to_column(var = "Participant") %>% # assign number to each participant
+  select(-c(
+    "Start Date", "End Date", "Response Type", "Progress", "Duration (in seconds)", # discard unnecessary columns
+    "Finished", "Recorded Date", "Response ID", "Distribution Channel", "User Language"
+  )) %>%
   # convert to long format
   pivot_longer(
     "School":"Is there anything else you would like to mention about Open Science practices?", # keep participant as separate column
@@ -242,16 +244,16 @@ OS_data_clean <-
       pattern = ";",
       into_prefix = "value"
     )
-  ) %>% 
+  ) %>%
   # delete column with redundant information
-  select(-value) %>% 
+  select(-value) %>%
   # convert all columns to factors
   mutate(
     across(
       .cols = everything(),
       .fns = ~ as_factor(.)
     )
-  ) %>%  
+  ) %>%
   # add column with cluster
   mutate(
     cluster = fct_recode(question, !!!levels_question),
@@ -277,23 +279,23 @@ cluster <-
   rename("item" = "value_1") %>% # rename column (for better readability)
   mutate(
     question = factor( # assign order questions
-    question,
-    levels = c(
-      "School",
-      "Position",
-      "Department"
+      question,
+      levels = c(
+        "School",
+        "Position",
+        "Department"
+      ),
+      ordered = TRUE
     ),
-    ordered = TRUE
-  ),
-  item = gsub("Other_.*", "Other", item) # group all other responses in "Other"
+    item = gsub("Other_.*", "Other", item) # group all other responses in "Other"
   ) %>%
+  mutate(item = recode(item, "Public Administration,Sociology" = "Other")) %>% # recode double department affiliation as "other"
   group_by(question, item) %>%
   summarize( # count number of responses per question and item
     number_responses = n(),
     .groups = "keep"
   ) %>%
   ungroup() %>%
-  mutate(item = recode(item, "Public Administration,Sociology" = "Other")) %>% # recode double department affiliation as "other"
   group_by(question) %>%
   mutate(
     perc = round(number_responses / sum(number_responses, na.rm = FALSE) * 100, 2), # percentage
