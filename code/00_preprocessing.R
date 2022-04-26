@@ -293,6 +293,7 @@ cluster <-
     .groups = "keep"
   ) %>%
   ungroup() %>%
+  mutate(item = recode(item, "Public Administration,Sociology" = "Other")) %>% # recode double department affiliation as "other"
   group_by(question) %>%
   mutate(
     perc = round(number_responses / sum(number_responses, na.rm = FALSE) * 100, 2), # percentage
