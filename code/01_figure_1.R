@@ -1,8 +1,8 @@
 
 # RNG ---------------------------------------------------------------------
 
-seed_synth <- 135249315
-set.seed(seed_synth)
+seed_proj <- 52118 # A1Z26 cipher (https://www.boxentriq.com/code-breaking/letters-to-numbers)
+set.seed(seed_proj)
 
 # Install packages --------------------------------------------------------
 
@@ -18,23 +18,61 @@ library(tidyverse)
 library(ggrepel)
 library(patchwork)
 
-source(here("code", "theme_custom.R")) # custom ggplot2 theme
+source(here("code", "functions", "theme_custom.R")) # custom ggplot2 theme
 
 # Data ----------------------------------------------------------------
 
 cluster <-
   read_csv(
-    here("data", "preproc", "cluster0.csv"),
+    here("data", "preproc", "cluster_0.csv"),
     show_col_types = FALSE
   ) %>% 
   mutate(
     question = as_factor(question),
     item = as_factor(item)
-  ) %>% 
-  select(-c(prop, number_responses))
+  )
 
 # extract questions
 questions <- levels(cluster$question)
+
+# Question 1, lollipop graph ----------------------------------------------------------------
+
+num_question <- 1
+
+data_cluster0_question1 <-
+  cluster %>%
+  filter(question == questions[num_question]) %>%
+  droplevels() %>%
+  mutate(
+    item = recode_factor( # recode item values too long to be displayed on axis
+      item,
+      "Erasmus School of Health Policy & Management (ESHPM)" = "ESHPM",
+      "Erasmus School of History, Culture and Communication (ESHCC)" = "ESHCC",
+      "Erasmus School of Law (ESL)" = "ESL",
+      "Erasmus School of Philosophy (ESPHIL)" = "ESPhil",
+      "Erasmus School of Social and Behavioural Sciences (ESSB)" = "ESSB",
+      "International Institute of Social Studies (ISS)" = "ISS"
+    )
+  )
+
+lollipop_cluster0_question1 <-
+  data_cluster0_question1 %>%
+  ggplot(aes(x = reorder(item, perc), y = perc)) +
+  geom_point(size = 6, color = "#0C8066") +
+  geom_segment(aes(x = item, xend = item, y = 0, yend = perc), color = "#012328") +
+  geom_label_repel(aes(item, perc, label = lab_perc), size = 4, nudge_y = 4, segment.alpha = 0, fill = "white", color = "#171C54") +
+  scale_y_continuous(
+    breaks = seq(0, 40, 10),
+    limits = c(0, 40)
+  ) +
+  labs(
+    title = "School",
+    x = ""
+  ) +
+  coord_flip() +
+  theme_custom
+
+lollipop_cluster0_question1
 
 # Question 2, lollipop graph ----------------------------------------------------------------
 
@@ -52,11 +90,11 @@ lollipop_cluster0_question2 <-
   geom_segment(aes(x = item, xend = item, y = 0, yend = perc), color = "#012328") +
   geom_label_repel(aes(item, perc, label = lab_perc), size = 4, nudge_y = 4, segment.alpha = 0, fill = "white", color = "#171C54") +
   scale_y_continuous(
-    breaks = seq(0, 30, 5),
-    limits = c(0, 30)
+    breaks = seq(0, 50, 10),
+    limits = c(0, 50)
   ) +
   labs(
-    title = "RSM",
+    title = "Position",
     x = ""
   ) +
   coord_flip() +
@@ -71,7 +109,8 @@ num_question <- 3
 data_cluster0_question3 <-
   cluster %>%
   filter(question == questions[num_question]) %>%
-  droplevels()
+  droplevels() %>%
+  mutate(item = as_factor(replace_na(as.character(item), "not indicated")))
 
 lollipop_cluster0_question3 <-
   data_cluster0_question3 %>%
@@ -80,11 +119,11 @@ lollipop_cluster0_question3 <-
   geom_segment(aes(x = item, xend = item, y = 0, yend = perc), color = "#012328") +
   geom_label_repel(aes(item, perc, label = lab_perc), size = 4, nudge_y = 4, segment.alpha = 0, fill = "white", color = "#171C54") +
   scale_y_continuous(
-    breaks = seq(0, 35, 5),
-    limits = c(0, 35)
+    breaks = seq(0, 80, 10),
+    limits = c(0, 80)
   ) +
   labs(
-    title = "ESE",
+    title = "Department",
     x = ""
   ) +
   coord_flip() +
@@ -95,9 +134,9 @@ lollipop_cluster0_question3
 # Merge in one figure ----------------------------------------------------------------
 
 lollipop_figure1 <-
-  lollipop_cluster0_question2 / lollipop_cluster0_question3 +
+  lollipop_cluster0_question1 / lollipop_cluster0_question2 / lollipop_cluster0_question3 +
   plot_annotation(
-    title = "Department affiliation"
+    title = "Respondent Characteristics"
   ) &
   theme(plot.title = element_text(size = 26, hjust = .5))
 
