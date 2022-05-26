@@ -1,7 +1,7 @@
 ---
-title: "Report of the 2021 ERIM Open Science Spring Survey"
+title: "Report of the 2022 EUR Open Science Survey"
 author: '[Dr. Lizette Guzman-Ramirez](https://www.linkedin.com/in/drlizguzman/), [Dr. Antonio Schettino](https://antonio-schettino.com/)'
-date: 2021-09-24
+date: 2022-05-26
 output:
   bookdown::html_document2:
     # # appearance
@@ -24,8 +24,8 @@ editor_options:
 ```{r doc-setup, include = FALSE}
 
 # RNG
-seed_synth <- 135249315
-set.seed(seed_synth)
+seed_proj <- 52118 # A1Z26 cipher (https://www.boxentriq.com/code-breaking/letters-to-numbers)
+set.seed(seed_proj)
 
 ### install packages
 # install.packages("bookdown")
@@ -62,34 +62,35 @@ kable_custom <- function(data, caption) {
 
 # Introduction
 
-The Erasmus Research Institute of Management (ERIM) is committed to making Open Science practices the norm among its researchers.
+<!-- The Erasmus Research Institute of Management (ERIM) is committed to making Open Science practices the norm among its researchers. -->
 
-Open Science increases transparency throughout the research cycle -- from hypothesis, methodology, observation, data collection, to analysis and publication --, resulting in increased research efficiency and enhanced research quality, visibility, and engagement. Open Science also enables the creation of new research questions and promotes collaborations and community building.
+<!-- Open Science increases transparency throughout the research cycle -- from hypothesis, methodology, observation, data collection, to analysis and publication --, resulting in increased research efficiency and enhanced research quality, visibility, and engagement. Open Science also enables the creation of new research questions and promotes collaborations and community building. -->
 
-For these reasons, ERIM wanted to have a baseline on what and how much open science practices its researchers are already engaging with and which ones they want to learn more about. These questions created the need to conduct a survey.
+<!-- For these reasons, ERIM wanted to have a baseline on what and how much open science practices its researchers are already engaging with and which ones they want to learn more about. These questions created the need to conduct a survey. -->
 
-The ESE and RSM Open Science Spring Survey was open to all researchers from the 6th of April to the 6th of May 2021. Questions were adapted from the [Swinburne Open Science Survey](https://osf.io/vpwf7/).
+<!-- The ESE and RSM Open Science Spring Survey was open to all researchers from the 6th of April to the 6th of May 2021. Questions were adapted from the [Swinburne Open Science Survey](https://osf.io/vpwf7/). -->
 
-The survey explored how researchers perceive and use open science practices. Eight main topics were covered:
+<!-- The survey explored how researchers perceive and use open science practices. Eight main topics were covered: -->
 
-1. Preregistration
-2. Open materials/code
-3. Open data
-4. Pre-publication archiving
-5. Open access
-6. General experience with open science practices
-7. Awareness of available tools
-8. Role of ERIM
+<!-- 1. Preregistration -->
+<!-- 2. Open materials/code -->
+<!-- 3. Open data -->
+<!-- 4. Pre-publication archiving -->
+<!-- 5. Open access -->
+<!-- 6. General experience with open science practices -->
+<!-- 7. Awareness of available tools -->
+<!-- 8. Role of ERIM -->
 
-This report displays the combined results (ESE and RSM) as well as separately for each school[^1].
+<!-- This report displays the combined results (ESE and RSM) as well as separately for each school[^1]. -->
 
-This is a living document that will be updated with new information and insights. For any comments or questions, please contact [Dr. Lizette Guzman-Ramirez](mailto:guzmanramirez@rsm.nl) (ERIM Research Data Steward) or [Dr. Antonio Schettino](mailto:schettino@eur.nl) (ERS Open Science Coordinator).
+<!-- This is a living document that will be updated with new information and insights. For any comments or questions, please contact [Dr. Lizette Guzman-Ramirez](mailto:guzmanramirez@rsm.nl) (ERIM Research Data Steward) or [Dr. Antonio Schettino](mailto:schettino@eur.nl) (ERS Open Science Coordinator). -->
 
 ```{r load-clean-data}
 
-ERIM_OS_clean <-
+EUR_OS <-
   read_csv(
-    here("data", "preproc", "Total", "CLEAN_20210608_ERIM_OS_Survey.csv") 
+    here("data", "preproc", "CLEAN_OS_Survey_responses.csv"),
+    col_types = c("flffccccccccc")
     )
 
 ```
@@ -98,36 +99,179 @@ ERIM_OS_clean <-
 
 ```{r complete-questionnaires-data}
 
-# percentage of (in)complete questionnaires
-ERIM_OS_clean_unfinished <- 
-  ERIM_OS_clean %>% 
+# percentage of (in)complete surveys
+EUR_OS_incomplete <-
+  EUR_OS %>% 
   group_by(participant) %>%
   summarize(survey = length(which(Finished == TRUE))/length(Finished)) %>%
+  ungroup() %>%
   count(survey) %>% 
   mutate(
-    survey = ifelse(survey == 0, "incomplete", "complete"),
+    survey = ifelse(survey == 1, "complete", "incomplete"),
     perc = round(n / sum(n) * 100, 2), # calculate percentage
     lab_perc = paste(round(n / sum(n) * 100, 2), "%", sep = "") # percentage as text (for plot labels)
   )
 
 ```
 
-A total of `r sum(ERIM_OS_clean_unfinished$n)` respondents started the survey, and `r pull(filter(ERIM_OS_clean_unfinished, survey == "complete"), n)` completed it.
+A total of `r sum(EUR_OS_incomplete$n)` respondents started the survey, and `r pull(filter(EUR_OS_incomplete, survey == "complete"), n)` completed it. An overview of response rate per school can be found in Table \@ref(tab:table1).
+
+(ref:table1) **Table 1**. Response rate per school.
+
+```{r table1}
+
+EUR_OS_incomplete_school <-
+  EUR_OS %>% 
+  filter(question == "School") %>% 
+  select_if(~ sum(!is.na(.)) > 0) %>%
+  pivot_wider(
+    id_cols = c(participant, Finished),
+    names_from = question,
+    values_from = value_1
+  ) %>% 
+  mutate(
+    School = gsub("Other_.*", "Other", School), # group all other responses in "Other"
+  School = recode( # use school abbreviations, for better readability
+    factor(School),
+    "Erasmus School of History, Culture and Communication (ESHCC)" = "ESHCC",
+    "Erasmus School of Health Policy & Management (ESHPM)" = "ESHPM",
+    "Erasmus School of Philosophy (ESPHIL)" = "ESPhil",
+    "Erasmus School of Social and Behavioural Sciences (ESSB)" = "ESSB",
+    "Erasmus School of Law (ESL)" = "ESL",
+    "International Institute of Social Studies (ISS)" = "ISS"
+    )
+    ) %>%
+  group_by(School) %>%
+  summarize(
+    n = n(),
+    perc = round(length(which(Finished == TRUE))/length(Finished) * 100, 2),
+    lab_perc = paste(perc, "%", sep = "")
+  )
+
+# table
+EUR_OS_incomplete_school %>%
+  select(-perc) %>% 
+  rename("completed survey" = lab_perc) %>% 
+  kable_custom(caption = "(ref:table1")
+
+```
+
+
+
+
+
+
+
+
+
+```{r school-position-response-rate-data}
+
+# number of researchers separately for ESE and RSM as of May 2021
+total_researchers <- 
+  tibble(
+    position = rep(
+      c(
+      "PhD student",
+      "Postdoc or researcher",
+      "Tenure track",
+      "Tenured faculty member"
+    ),
+    2
+    ),
+    school = rep(c("ESE", "RSM"), times = 1, each = 4),
+    total_researchers = c(
+      64, # ESE: PhD student
+      18, # ESE: Postdoc or researcher
+      81, # ESE: Tenure track
+      91, # ESE: Tenured faculty member
+      90, # RSM: PhD student
+      31, # RSM: Postdoc or researcher
+      74, # RSM: Tenure track
+      106  # RSM: Tenured faculty member
+    )
+  )
+
+ERIM_OS_school_position_response_rate <-
+  ERIM_OS_clean %>% 
+  filter(
+    Finished == TRUE &
+      question %in% c(
+        "Which faculty are you from?", 
+        "What is your position?"
+      )
+  ) %>% 
+  select_if(~ sum(!is.na(.)) > 0) %>% # keep columns without NAs
+  drop_na() %>% # drop rows with missing values
+  pivot_wider(
+    id_cols = participant,
+    names_from = question,
+    values_from = value_1
+  ) %>% 
+  mutate(
+    school = ifelse(`Which faculty are you from?` == "Rotterdam School of Management (RSM)", "RSM", "ESE"),
+    position = `What is your position?`
+  ) %>% 
+  select(participant, school, position) %>% 
+  group_by(school, position) %>% 
+  summarize(number_responses = n()) %>%
+  ungroup() %>% 
+  left_join(
+    .,
+    total_researchers,
+    by = c("school", "position")
+  ) %>%
+  pivot_wider(
+    id_cols = position,
+    names_from = school,
+    values_from = c(number_responses, total_researchers)
+  ) %>% 
+  add_row(position = "Total", number_responses_ESE = sum(.$number_responses_ESE), number_responses_RSM = sum(.$number_responses_RSM), total_researchers_ESE = sum(.$total_researchers_ESE), total_researchers_RSM = sum(.$total_researchers_RSM)) %>% 
+  group_by(position) %>% 
+  summarize(
+    ESE = number_responses_ESE / total_researchers_ESE * 100,
+    RSM = number_responses_RSM / total_researchers_RSM * 100,
+    Total = sum(number_responses_ESE, number_responses_RSM) / sum(total_researchers_ESE, total_researchers_RSM) * 100
+  ) %>% 
+  ungroup() 
+
+total_survey_response_rate <-
+  ERIM_OS_school_position_response_rate %>% 
+  filter(position == "Total") %>% 
+  pull(Total) %>% 
+  round(., 0) %>%
+  paste(., "%", sep = "")
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ```{r affiliation-data}
 
-ERIM_OS_demographics <-
+EUR_OS_demographics <-
   read_csv(
-    here("data", "preproc", "Total", "cluster0.csv")
+    here("data", "preproc", "cluster_0.csv"),
+    col_types = c("ffddc")
   )
 
 ```
 
-We asked participants their school, department, and research institute affiliation, together with their position.
+We asked participants their position, school, and department.
 
-`r pull(filter(ERIM_OS_demographics, item == "Rotterdam School of Management (RSM)"), lab_perc)` of the respondents were from RSM, while `r pull(filter(ERIM_OS_demographics, item == "Erasmus School of Economics (ESE)"), lab_perc)` were affiliated to ESE. For the percentages regarding the affiliation of respondents per department, see Figure \@ref(fig:figure1).
+`r pull(filter(EUR_OS_demographics, item == "Rotterdam School of Management (RSM)"), lab_perc)` of the respondents were from RSM, while `r pull(filter(ERIM_OS_demographics, item == "Erasmus School of Economics (ESE)"), lab_perc)` were affiliated to ESE. For the percentages regarding the affiliation of respondents per department, see Figure \@ref(fig:figure1).
 
-```{r figure1, fig.cap = "Affilliation per department.", out.width = '100%'}
+```{r figure1, fig.cap = "Affiliation per department.", out.width = '100%'}
 
 knitr::include_graphics(here("img", "Total", "figure01.png"))
 
