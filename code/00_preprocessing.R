@@ -224,7 +224,7 @@ OS_data_clean <-
     "What support services provided at EUR have you used to make your data FAIR?" = "What support services provided at EUR have you used to make your data FAIR?\nSelect all suitable options."
   ) %>%
   slice(-c(1:2)) %>% # delete rows with redundant or unnecessary data
-  rowid_to_column(var = "Participant") %>% # assign number to each participant
+  rowid_to_column(var = "participant") %>% # assign number to each participant
   select(-c(
     "Start Date", "End Date", "Response Type", "Progress", "Duration (in seconds)", # discard unnecessary columns
     "Recorded Date", "Response ID", "Distribution Channel", "User Language"
