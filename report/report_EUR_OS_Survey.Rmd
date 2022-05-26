@@ -24,7 +24,7 @@ editor_options:
 ```{r doc-setup, include = FALSE}
 
 # RNG
-seed_proj <- 52118 # A1Z26 cipher (https://www.boxentriq.com/code-breaking/letters-to-numbers)
+seed_proj <- 100
 set.seed(seed_proj)
 
 ### install packages
@@ -85,19 +85,24 @@ kable_custom <- function(data, caption) {
 
 <!-- This is a living document that will be updated with new information and insights. For any comments or questions, please contact [Dr. Lizette Guzman-Ramirez](mailto:guzmanramirez@rsm.nl) (ERIM Research Data Steward) or [Dr. Antonio Schettino](mailto:schettino@eur.nl) (ERS Open Science Coordinator). -->
 
-```{r load-clean-data}
+```{r all-data}
 
-EUR_OS <-
-  read_csv(
-    here("data", "preproc", "CLEAN_OS_Survey_responses.csv"),
-    col_types = c("flffccccccccc")
-    )
+EUR_OS <- readRDS(here("data", "preprocessed", "rds", "CLEAN_OS_Survey_responses.rds")) # all data
+EUR_OS_cluster0 <- readRDS(here("data", "preprocessed", "rds", "cluster_0.rds")) # cluster 0
+EUR_OS_cluster1 <- readRDS(here("data", "preprocessed", "rds", "cluster_1.rds")) # cluster 1
+EUR_OS_cluster2 <- readRDS(here("data", "preprocessed", "rds", "cluster_2.rds")) # cluster 2
+EUR_OS_cluster3 <- readRDS(here("data", "preprocessed", "rds", "cluster_3.rds")) # cluster 3
+EUR_OS_cluster4 <- readRDS(here("data", "preprocessed", "rds", "cluster_4.rds")) # cluster 4
+EUR_OS_cluster5 <- readRDS(here("data", "preprocessed", "rds", "cluster_5.rds")) # cluster 5
+EUR_OS_cluster6 <- readRDS(here("data", "preprocessed", "rds", "cluster_6.rds")) # cluster 6
+EUR_OS_cluster7 <- readRDS(here("data", "preprocessed", "rds", "cluster_7.rds")) # cluster 7
+EUR_OS_cluster8 <- readRDS(here("data", "preprocessed", "rds", "cluster_8.rds")) # cluster 8
 
 ```
 
 # Respondents {.tabset .tabset-pills}
 
-```{r complete-questionnaires-data}
+```{r complete-questionnaires}
 
 # percentage of (in)complete surveys
 EUR_OS_incomplete <-
@@ -125,32 +130,37 @@ A total of `r sum(EUR_OS_incomplete$n)` respondents started the survey, and `r p
 ```{r table-school}
 
 EUR_OS_incomplete_school <-
-  EUR_OS %>% 
-  filter(question == "School") %>% 
-  select_if(~ sum(!is.na(.)) > 0) %>%
-  pivot_wider(
-    id_cols = c(participant, Finished),
-    names_from = question,
-    values_from = value_1
-  ) %>% 
+  EUR_OS_cluster0 %>% 
+  filter(
+    question == "School" &
+      (value == "value_1" & !is.na(item))
+    ) %>% 
   mutate(
-    School = gsub("Other_.*", "Other", School), # group all other responses in "Other"
-    School = recode( # use school abbreviations, for better readability
-      factor(School),
+    item = recode( # use school abbreviations, for better readability
+      factor(item),
       "Erasmus School of History, Culture and Communication (ESHCC)" = "ESHCC",
       "Erasmus School of Health Policy & Management (ESHPM)" = "ESHPM",
       "Erasmus School of Philosophy (ESPHIL)" = "ESPhil",
       "Erasmus School of Social and Behavioural Sciences (ESSB)" = "ESSB",
       "Erasmus School of Law (ESL)" = "ESL",
-      "International Institute of Social Studies (ISS)" = "ISS"
+      "International Institute of Social Studies (ISS)" = "ISS",
+      "ESSB and ESHPM" = "Other", # double affiliation coded as "Other"
+      "I would rather not say" =  "Other" # non-disclosure coded as "Other"
     )
+  ) %>%
+  pivot_wider(
+    id_cols = c(participant, Finished),
+    names_from = question,
+    values_from = item
   ) %>%
   group_by(School) %>%
   summarize(
     n = n(),
     perc = round(length(which(Finished == TRUE))/length(Finished) * 100, 2),
-    lab_perc = paste(perc, "%", sep = "")
-  )
+    lab_perc = paste(perc, "%", sep = ""),
+    .groups = "keep"
+  ) %>% 
+  arrange(desc(n))
 
 # table
 EUR_OS_incomplete_school %>%
@@ -171,21 +181,38 @@ EUR_OS_incomplete_school %>%
 ```{r table-position}
 
 EUR_OS_incomplete_position <-
-  EUR_OS %>% 
-  filter(question == "Position") %>% 
-  select_if(~ sum(!is.na(.)) > 0) %>%
+  EUR_OS_cluster0 %>% 
+  filter(
+    question == "Position" &
+      (value == "value_1" & !is.na(item))
+    ) %>%
+  mutate(
+    item = recode(
+      factor(item),
+      "Senior lecturer" = "Lecturer",
+      "lecturer" = "Lecturer", 
+      "Research assistant" = "Other",
+      "Employee" = "Other",
+      "Support" = "Other",
+      "Educational advisor" = "Other",
+      "Not sure why this matters" = "Other",
+      "I would rather not say" =  "Other"
+    )
+  ) %>%
   pivot_wider(
     id_cols = c(participant, Finished),
     names_from = question,
-    values_from = value_1
-  ) %>% 
-  mutate(Position = gsub("Other_.*", "Other", Position)) %>% # group all other responses in "Other"
+    values_from = item
+  ) %>%
   group_by(Position) %>%
   summarize(
     n = n(),
     perc = round(length(which(Finished == TRUE))/length(Finished) * 100, 2),
-    lab_perc = paste(perc, "%", sep = "")
-  )
+    lab_perc = paste(perc, "%", sep = ""),
+    .groups = "keep"
+  ) %>% 
+  ungroup() %>% 
+  arrange(desc(n))
 
 # table
 EUR_OS_incomplete_position %>%
@@ -206,26 +233,36 @@ EUR_OS_incomplete_position %>%
 ```{r table-department}
 
 EUR_OS_incomplete_department <-
-  EUR_OS %>% 
-  filter(question %in% c("School", "Department")) %>% 
+  EUR_OS_cluster0 %>% 
+  filter(
+    question %in% c("School", "Department") &
+      (value == "value_1" & !is.na(item))
+    ) %>%
   mutate(
-    value_1 = recode(
-      factor(value_1),
-      "Erasmus School of History, Culture and Communication (ESHCC)" = "ESHCC",
-      "Erasmus School of Health Policy & Management (ESHPM)" = "ESHPM",
-      "Erasmus School of Philosophy (ESPHIL)" = "ESPhil",
-      "Erasmus School of Social and Behavioural Sciences (ESSB)" = "ESSB",
-      "Erasmus School of Law (ESL)" = "ESL",
-      "International Institute of Social Studies (ISS)" = "ISS",
-      "Public Administration,Sociology" = "Other", # double affiliation categorized as "Other"
-    ),
-    value_1 = gsub("Other_.*", "Other", value_1), # group all other responses in "Other"
-  ) %>% 
-  select(-c(value_2, value_3, value_4, value_5, value_6, value_7, value_8, value_9)) %>% # delete columns with no data
+    item = recode(
+      factor(item),
+      # recode school
+      "Senior lecturer" = "Lecturer",
+      "lecturer" = "Lecturer", 
+      "Research assistant" = "Other",
+      "Employee" = "Other",
+      "Support" = "Other",
+      "Educational advisor" = "Other",
+      "Not sure why this matters" = "Other",
+      "I would rather not say" =  "Other",
+      # recode department
+      "Erasmus SYNC Lab" = "Other",
+      "Strategy group: Communication and behavior change" = "Other",
+      "Strategy Group" = "Other",
+      "Strategy" = "Other",
+      "Public Administration,Sociology" = "Other",
+      "Support Staff" = "NA"
+    )
+  ) %>%
   pivot_wider(
     id_cols = c(participant, Finished),
     names_from = question,
-    values_from = value_1
+    values_from = item
   ) %>%
   group_by(School, Department) %>%
   summarize(
@@ -233,8 +270,7 @@ EUR_OS_incomplete_department <-
     perc = round(length(which(Finished == TRUE))/length(Finished) * 100, 2),
     lab_perc = paste(perc, "%", sep = ""),
     .groups = "keep"
-  ) %>% 
-  ungroup()
+  )
 
 # table
 EUR_OS_incomplete_department %>%
@@ -250,7 +286,28 @@ EUR_OS_incomplete_department %>%
 
 # {-}
 
-continue here
+# Open Access {.tabset .tabset-pills}
+
+## EUR
+
+###################################
+# CONTINUE FROM HERE
+###################################
+
+```{r oa-data}
+
+# EUR_OS_open_access <-
+#   read_csv(
+#     here("data", "preproc", "cluster_1.csv"),
+#     col_types = c("ffddc")
+#   )
+
+```
+
+
+
+
+
 
 
 
