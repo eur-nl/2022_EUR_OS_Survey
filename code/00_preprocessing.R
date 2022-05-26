@@ -74,7 +74,7 @@ EUR_OS_data <-
     show_col_types = FALSE
   )
 
-# ELS OS Survey (additional question), pseudonymized data (retrieved on April 14th 2022)
+# ESL OS Survey (additional question), pseudonymized data (retrieved on April 14th 2022)
 ESL_OS_data <-
   read_csv(
     here("data", "20220414_ESL_OS_Survey_responses.csv"),
