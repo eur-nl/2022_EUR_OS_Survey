@@ -81,7 +81,7 @@ The survey explored how researchers perceive and use open science practices. Eig
 7. Awareness of available tools
 8. Role of ERIM
 
-This report has all the total responses (combined ESE and RSM)[^1].
+This report displays the combined results (ESE and RSM) as well as separately for each school[^1].
 
 This is a living document that will be updated with new information and insights. For any comments or questions, please contact [Dr. Lizette Guzman-Ramirez](mailto:guzmanramirez@rsm.nl) (ERIM Research Data Steward) or [Dr. Antonio Schettino](mailto:schettino@eur.nl) (ERS Open Science Coordinator).
 
@@ -89,7 +89,7 @@ This is a living document that will be updated with new information and insights
 
 ERIM_OS_clean <-
   read_csv(
-    here("data", "preproc", "CLEAN_20210608_ERIM_OS_Survey.csv") 
+    here("data", "preproc", "Total", "CLEAN_20210608_ERIM_OS_Survey.csv") 
     )
 
 ```
@@ -118,7 +118,7 @@ A total of `r sum(ERIM_OS_clean_unfinished$n)` respondents started the survey, a
 
 ERIM_OS_demographics <-
   read_csv(
-    here("data", "preproc", "cluster0.csv")
+    here("data", "preproc", "Total", "cluster0.csv")
   )
 
 ```
@@ -129,7 +129,7 @@ We asked participants their school, department, and research institute affiliati
 
 ```{r figure1, fig.cap = "Affilliation per department.", out.width = '100%'}
 
-knitr::include_graphics(here("img", "figure1.png"))
+knitr::include_graphics(here("img", "Total", "figure01.png"))
 
 ```
 
@@ -228,28 +228,31 @@ ERIM_OS_school_position_response_rate %>%
 
 ```
 
-# Preregistration
+# Preregistration {.tabset .tabset-pills}
 
-```{r preregistration-data}
+## Total
+
+```{r total-preregistration-data}
 
 ERIM_OS_preregistration <-
   read_csv(
-    here("data", "preproc", "cluster2.csv")
+    here("data", "preproc", "Total", "cluster2.csv")
   )
 
 ```
 
-```{r preregistration-importance-data}
+```{r total-preregistration-importance-data}
 
 ERIM_OS_preregistration_importance <-
   ERIM_OS_preregistration %>% 
-  filter(question == "In your opinion, how important for your field is it that researchers preregister their studies?")
+  filter(question == "In your opinion, how important for your field is it that researchers preregister their studies?") %>% 
+  arrange(desc(perc))
 
 ```
 
 The answers to the question *`r ERIM_OS_preregistration_importance$question[1]`* reveal that respondents consider preregistration *`r ERIM_OS_preregistration_importance$item[1]`* or *`r ERIM_OS_preregistration_importance$item[2]`* (`r paste0(sum(ERIM_OS_preregistration_importance[1, "perc"], ERIM_OS_preregistration_importance[2, "perc"]), "%")`), while `r paste0(pull(filter(ERIM_OS_preregistration_importance, item == "Not at all important"), "perc"), "%")` believe that preregistration is *`r pull(filter(ERIM_OS_preregistration_importance, item == "Not at all important"), item)`*.
 
-```{r preregistration-experience-data}
+```{r total-preregistration-experience-data}
 
 ERIM_OS_preregistration_experience <-
   ERIM_OS_preregistration %>% 
@@ -257,15 +260,15 @@ ERIM_OS_preregistration_experience <-
 
 ```
 
-From the question *`r ERIM_OS_preregistration_experience$question[1]`*, we see that most respondents (`r pull(filter(ERIM_OS_preregistration_experience, item == "I am aware of study preregistration, but have not used it in my research"), lab_perc)`) are aware of preregistration but have not used it in their own projects. `r pull(filter(ERIM_OS_preregistration_experience, item == "I regularly preregister my studies"), lab_perc)` of the respondents regularly preregister their studies, while `r pull(filter(ERIM_OS_preregistration_experience, item == "Until now, I was unaware of study preregistration"), lab_perc)` had never heard of preregistration before answering this survey. More details can be found in Figure \@ref(fig:figure2).
+From the question *`r ERIM_OS_preregistration_experience$question[1]`*, we see that most respondents (`r pull(filter(ERIM_OS_preregistration_experience, item == "I am aware of study preregistration, but have not used it in my research"), lab_perc)`) are aware of preregistration but have not used it in their own projects. `r pull(filter(ERIM_OS_preregistration_experience, item == "I regularly preregister my studies"), lab_perc)` of the respondents regularly preregister their studies, while `r pull(filter(ERIM_OS_preregistration_experience, item == "Until now, I was unaware of study preregistration"), lab_perc)` had never heard of preregistration before answering this survey. More details can be found in Figure \@ref(fig:total-figure2).
 
-```{r figure2, fig.cap = "Preregistration: importance vs. experience.", out.width = '100%'}
+```{r total-figure2, fig.cap = "Preregistration: importance vs. experience.", out.width = '100%'}
 
-knitr::include_graphics(here("img", "figure2.png"))
+knitr::include_graphics(here("img", "Total", "figure02.png"))
 
 ```
 
-```{r preregistration-concerns-data}
+```{r total-preregistration-concerns-data}
 
 ERIM_OS_preregistration_concerns <-
   ERIM_OS_preregistration %>% 
@@ -280,26 +283,141 @@ Among the possible concerns that researchers could have about preregistering the
 * *`r ERIM_OS_preregistration_concerns$item[2]`* (`r ERIM_OS_preregistration_concerns[2, "lab_perc"]`)
 * *`r ERIM_OS_preregistration_concerns$item[3]`* (`r ERIM_OS_preregistration_concerns[3, "lab_perc"]`)
 
-<!-- These are your old top 3, which are different from mine because I am using complete surveys only -->
-<!-- Could you please verify that everything makes sense? -->
+```{r total-figure3, fig.cap = "Preregistration: concerns.", out.width = '100%'}
 
-<!-- 25.66% - I need to look at my data before I can decide how to best analyze it. -->
-<!-- 20.35% - Preregistration might lead to other people taking my research idea and implementing my plan. -->
-<!-- 19.47% - Preregistration prevents exploratory research. -->
-
-```{r figure3, fig.cap = "Preregistration: concerns.", out.width = '100%'}
-
-knitr::include_graphics(here("img", "figure3.png"))
+knitr::include_graphics(here("img", "Total", "figure03.png"))
 
 ```
 
-# Open materials/code
+## ESE
+
+```{r ESE-preregistration-data}
+
+ESE_preregistration <-
+  read_csv(
+    here("data", "preproc", "ESE", "cluster2.csv")
+  )
+
+```
+
+```{r ESE-preregistration-importance-data}
+
+ESE_preregistration_importance <-
+  ESE_preregistration %>% 
+  filter(question == "In your opinion, how important for your field is it that researchers preregister their studies?") %>% 
+  arrange(desc(perc))
+
+```
+
+The answers to the question *`r ESE_preregistration_importance$question[1]`* reveal that respondents consider preregistration *`r ESE_preregistration_importance$item[1]`* or *`r ESE_preregistration_importance$item[2]`* (`r paste0(sum(ESE_preregistration_importance[1, "perc"], ESE_preregistration_importance[2, "perc"]), "%")`), while `r paste0(pull(filter(ESE_preregistration_importance, item == "Not at all important"), "perc"), "%")` believe that preregistration is *`r pull(filter(ESE_preregistration_importance, item == "Not at all important"), item)`*.
+
+```{r ESE-preregistration-experience-data}
+
+ESE_preregistration_experience <-
+  ESE_preregistration %>% 
+  filter(question == "What is your experience with study preregistration?")
+
+```
+
+From the question *`r ESE_preregistration_experience$question[1]`*, we see that most respondents (`r pull(filter(ESE_preregistration_experience, item == "I am aware of study preregistration, but have not used it in my research"), lab_perc)`) are aware of preregistration but have not used it in their own projects. `r pull(filter(ESE_preregistration_experience, item == "I regularly preregister my studies"), lab_perc)` of the respondents regularly preregister their studies, while `r pull(filter(ESE_preregistration_experience, item == "Until now, I was unaware of study preregistration"), lab_perc)` had never heard of preregistration before answering this survey. More details can be found in Figure \@ref(fig:ESE-figure2).
+
+```{r ESE-figure2, fig.cap = "Preregistration: importance vs. experience.", out.width = '100%'}
+
+knitr::include_graphics(here("img", "ESE", "figure02.png"))
+
+```
+
+```{r ESE-preregistration-concerns-data}
+
+ESE_preregistration_concerns <-
+  ESE_preregistration %>% 
+  filter(question == "The following are possible concerns that researchers could have about preregistering their studies. Which of these concerns would apply to you?") %>% 
+  arrange(desc(perc))
+
+```
+
+Among the possible concerns that researchers could have about preregistering their studies, the top 3 were: 
+
+* *`r ESE_preregistration_concerns$item[1]`* (`r ESE_preregistration_concerns[1, "lab_perc"]`)
+* *`r ESE_preregistration_concerns$item[2]`* (`r ESE_preregistration_concerns[2, "lab_perc"]`)
+* *`r ESE_preregistration_concerns$item[3]`* (`r ESE_preregistration_concerns[3, "lab_perc"]`)
+
+```{r ESE-figure3, fig.cap = "Preregistration: concerns.", out.width = '100%'}
+
+knitr::include_graphics(here("img", "ESE", "figure03.png"))
+
+```
+
+## RSM
+
+```{r RSM-preregistration-data}
+
+RSM_preregistration <-
+  read_csv(
+    here("data", "preproc", "RSM", "cluster2.csv")
+  )
+
+```
+
+```{r RSM-preregistration-importance-data}
+
+RSM_preregistration_importance <-
+  RSM_preregistration %>% 
+  filter(question == "In your opinion, how important for your field is it that researchers preregister their studies?") %>% 
+  arrange(desc(perc))
+
+```
+
+The answers to the question *`r RSM_preregistration_importance$question[1]`* reveal that respondents consider preregistration *`r RSM_preregistration_importance$item[1]`* or *`r RSM_preregistration_importance$item[2]`* (`r paste0(sum(RSM_preregistration_importance[1, "perc"], RSM_preregistration_importance[2, "perc"]), "%")`), while `r paste0(pull(filter(RSM_preregistration_importance, item == "Not at all important"), "perc"), "%")` believe that preregistration is *`r pull(filter(RSM_preregistration_importance, item == "Not at all important"), item)`*.
+
+```{r RSM-preregistration-experience-data}
+
+RSM_preregistration_experience <-
+  RSM_preregistration %>% 
+  filter(question == "What is your experience with study preregistration?")
+
+```
+
+From the question *`r RSM_preregistration_experience$question[1]`*, we see that most respondents (`r pull(filter(RSM_preregistration_experience, item == "I am aware of study preregistration, but have not used it in my research"), lab_perc)`) are aware of preregistration but have not used it in their own projects. `r pull(filter(RSM_preregistration_experience, item == "I regularly preregister my studies"), lab_perc)` of the respondents regularly preregister their studies, while `r pull(filter(RSM_preregistration_experience, item == "Until now, I was unaware of study preregistration"), lab_perc)` had never heard of preregistration before answering this survey. More details can be found in Figure \@ref(fig:RSM-figure2).
+
+```{r RSM-figure2, fig.cap = "Preregistration: importance vs. experience.", out.width = '100%'}
+
+knitr::include_graphics(here("img", "RSM", "figure02.png"))
+
+```
+
+```{r RSM-preregistration-concerns-data}
+
+RSM_preregistration_concerns <-
+  RSM_preregistration %>% 
+  filter(question == "The following are possible concerns that researchers could have about preregistering their studies. Which of these concerns would apply to you?") %>% 
+  arrange(desc(perc))
+
+```
+
+Among the possible concerns that researchers could have about preregistering their studies, the top 3 were: 
+
+* *`r RSM_preregistration_concerns$item[1]`* (`r RSM_preregistration_concerns[1, "lab_perc"]`)
+* *`r RSM_preregistration_concerns$item[2]`* (`r RSM_preregistration_concerns[2, "lab_perc"]`)
+* *`r RSM_preregistration_concerns$item[3]`* (`r RSM_preregistration_concerns[3, "lab_perc"]`)
+
+```{r RSM-figure3, fig.cap = "Preregistration: concerns.", out.width = '100%'}
+
+knitr::include_graphics(here("img", "RSM", "figure03.png"))
+
+```
+
+# {-}
+
+# Open materials/code {.tabset .tabset-pills}
+
+## Total
 
 ```{r materials-data}
 
 ERIM_OS_materials <-
   read_csv(
-    here("data", "preproc", "cluster3.csv")
+    here("data", "preproc", "Total", "cluster3.csv")
   )
 
 ```
@@ -316,7 +434,7 @@ From the question *`r ERIM_OS_materials_importance$question[1]`*, we can see tha
 
 ```{r figure4, fig.cap = "Open materials and/or code: importance.", out.width = '100%'}
 
-knitr::include_graphics(here("img", "figure4.png"))
+knitr::include_graphics(here("img", "Total", "figure04.png"))
 
 ```
 
@@ -344,7 +462,7 @@ Based on these results, we observe that researchers at ESE and RSM share their m
 
 ```{r figure5, fig.cap = "Open materials and/or code: using vs. sharing.", out.width = '100%'}
 
-knitr::include_graphics(here("img", "figure5.png"))
+knitr::include_graphics(here("img", "Total", "figure05.png"))
 
 ```
 
@@ -363,21 +481,179 @@ Among the possible concerns that researchers could have about making their mater
 * *`r ERIM_OS_materials_concerns$item[3]`* (`r ERIM_OS_materials_concerns[3, "lab_perc"]`)
 * *`r ERIM_OS_materials_concerns$item[4]`* (`r ERIM_OS_materials_concerns[4, "lab_perc"]`)
 
-Notably, however, the majority of respondents (`r paste0(pull(filter(ERIM_OS_materials_concerns, item == "I do not share any of these concerns"), "perc"), "%")`) did not share any of the listed concerns (see Figure \@ref(fig:figure6)).
+`r paste0(pull(filter(ERIM_OS_materials_concerns, item == "I do not share any of these concerns"), "perc"), "%")` of respondents did not share any of the listed concerns (see Figure \@ref(fig:figure6)).
 
 ```{r figure6, fig.cap = "Open materials and/or code: concerns.", out.width = '100%'}
 
-knitr::include_graphics(here("img", "figure6.png"))
+knitr::include_graphics(here("img", "Total", "figure06.png"))
 
 ```
 
-# Open data
+## ESE
+
+```{r ESE-materials-data}
+
+ESE_materials <-
+  read_csv(
+    here("data", "preproc", "ESE", "cluster3.csv")
+  )
+
+```
+
+```{r ESE-materials-importance-data}
+
+ESE_materials_importance <-
+  ESE_materials %>% 
+  filter(question == "In your opinion, how important for your field is it that materials and/or code are openly available?") %>% 
+  arrange(desc(perc))
+
+```
+
+From the question *`r ESE_materials_importance$question[1]`*, we can see that `r paste0(format(sum(ESE_materials_importance[1, "perc"], ESE_materials_importance[2, "perc"], ESE_materials_importance[3, "perc"]), digits = 0), "%")` of respondents think that using open materials and/or code is *`r ESE_materials_importance$item[1]`*, *`r ESE_materials_importance$item[2]`*, or *`r ESE_materials_importance$item[3]`*. Nobody thinks that open materials and code are not important (see Figure \@ref(fig:ESE-figure4)).
+
+```{r ESE-figure4, fig.cap = "Open materials and/or code: importance.", out.width = '100%'}
+
+knitr::include_graphics(here("img", "ESE", "figure04.png"))
+
+```
+
+```{r ESE-materials-use-data}
+
+ESE_materials_use <-
+  ESE_materials %>% 
+  filter(question == "What is your experience with using open materials and/or code?")
+
+```
+
+The answers to the question *`r ESE_materials_use$question[1]`* reveal that `r paste0(pull(filter(ESE_materials_use, item == "I am aware of open materials and/or code, but have not used it in my research"), "perc"), "%")` of respondents are aware of open materials but do not use them, and `r paste0(pull(filter(ESE_materials_use, item == "I have some experience with open materials and/or code, but do not use them regularly"), "perc"), "%")` have some experience using open materials and/or code. A considerable amount of researchers (`r paste0(pull(filter(ESE_materials_use, item == "I regularly use and/or create open materials and/or code"), "perc"), "%")`) regularly use open materials and/or code, while only a small fraction of respondents (`r paste0(pull(filter(ESE_materials_use, item == "Until now, I hadn't heard of open materials and/or code"), "perc"), "%")`) had not heard of open materials and/or code before answering this survey. 
+
+```{r ESE-materials-sharing-data}
+
+ESE_materials_sharing <-
+  ESE_materials %>% 
+  filter(question == "What is your experience with sharing open materials and/or code?")
+
+```
+
+From the question *`r ESE_materials_sharing$question[1]`* we can see that `r paste0(pull(filter(ESE_materials_sharing, item == "I am aware of open materials and/or code, but have not shared my own"), "perc"), "%")` of respondents are aware of sharing materials and/or code, `r paste0(pull(filter(ESE_materials_sharing, item == "I have some experience with open materials and/or code, but do not share mine regularly"), "perc"), "%")` have some experience, and `r paste0(pull(filter(ESE_materials_sharing, item == "I regularly share open materials and/or code"), "perc"), "%")` regularly share open materials and/or code. More details can be found in Figure \@ref(fig:ESE-figure5).
+
+```{r ESE-figure5, fig.cap = "Open materials and/or code: using vs. sharing.", out.width = '100%'}
+
+knitr::include_graphics(here("img", "ESE", "figure05.png"))
+
+```
+
+```{r ESE-materials-concerns-data}
+
+ESE_materials_concerns <-
+  ESE_materials %>% 
+  filter(question == "The following are possible concerns that researchers could have about making their materials and/or code openly available. Which of these concerns would apply to you?") %>% 
+  arrange(desc(perc))
+
+```
+
+Among the possible concerns that researchers could have about making their materials and/or code openly available, the top 3 were: 
+
+* *`r ESE_materials_concerns$item[2]`* (`r ESE_materials_concerns[2, "lab_perc"]`)
+* *`r ESE_materials_concerns$item[3]`* (`r ESE_materials_concerns[3, "lab_perc"]`)
+* *`r ESE_materials_concerns$item[4]`* (`r ESE_materials_concerns[4, "lab_perc"]`)
+
+`r paste0(pull(filter(ESE_materials_concerns, item == "I do not share any of these concerns"), "perc"), "%")` of respondents did not share any of the listed concerns (see Figure \@ref(fig:ESE-figure6)).
+
+```{r ESE-figure6, fig.cap = "Open materials and/or code: concerns.", out.width = '100%'}
+
+knitr::include_graphics(here("img", "ESE", "figure06.png"))
+
+```
+
+## RSM
+
+```{r RSM-materials-data}
+
+RSM_materials <-
+  read_csv(
+    here("data", "preproc", "RSM", "cluster3.csv")
+  )
+
+```
+
+```{r RSM-materials-importance-data}
+
+RSM_materials_importance <-
+  RSM_materials %>% 
+  filter(question == "In your opinion, how important for your field is it that materials and/or code are openly available?") %>% 
+  arrange(desc(perc))
+
+```
+
+From the question *`r RSM_materials_importance$question[1]`*, we can see that `r paste0(format(sum(RSM_materials_importance[1, "perc"], RSM_materials_importance[2, "perc"], RSM_materials_importance[3, "perc"]), digits = 0), "%")` of respondents think that using open materials and/or code is *`r RSM_materials_importance$item[1]`*, *`r RSM_materials_importance$item[2]`*, or *`r RSM_materials_importance$item[3]`*, whereas `r paste0(pull(filter(RSM_materials_importance, item == "Not at all important"), "perc"), "%")` think it is *`r pull(filter(RSM_materials_importance, item == "Not at all important"), item)`* (see Figure \@ref(fig:RSM-figure4).)
+
+```{r RSM-figure4, fig.cap = "Open materials and/or code: importance.", out.width = '100%'}
+
+knitr::include_graphics(here("img", "RSM", "figure04.png"))
+
+```
+
+```{r RSM-materials-use-data}
+
+RSM_materials_use <-
+  RSM_materials %>% 
+  filter(question == "What is your experience with using open materials and/or code?")
+
+```
+
+The answers to the question *`r RSM_materials_use$question[1]`* reveal that `r paste0(pull(filter(RSM_materials_use, item == "I am aware of open materials and/or code, but have not used it in my research"), "perc"), "%")` of respondents are aware of open materials but do not use them, and that `r paste0(pull(filter(RSM_materials_use, item == "I have some experience with open materials and/or code, but do not use them regularly"), "perc"), "%")` have some experience using open materials and/or code. A considerable amount of researchers (`r paste0(pull(filter(RSM_materials_use, item == "I regularly use and/or create open materials and/or code"), "perc"), "%")`) regularly use open materials and/or code, while only a small fraction of respondents (`r paste0(pull(filter(RSM_materials_use, item == "Until now, I hadn't heard of open materials and/or code"), "perc"), "%")`) had not heard of open materials and/or code before answering this survey. 
+
+```{r RSM-materials-sharing-data}
+
+RSM_materials_sharing <-
+  RSM_materials %>% 
+  filter(question == "What is your experience with sharing open materials and/or code?")
+
+```
+
+From the question *`r RSM_materials_sharing$question[1]`* we can see that `r paste0(pull(filter(RSM_materials_sharing, item == "I am aware of open materials and/or code, but have not shared my own"), "perc"), "%")` of respondents are aware of sharing materials and/or code, `r paste0(pull(filter(RSM_materials_sharing, item == "I have some experience with open materials and/or code, but do not share mine regularly"), "perc"), "%")` have some experience, and `r paste0(pull(filter(RSM_materials_sharing, item == "I regularly share open materials and/or code"), "perc"), "%")` regularly share open materials and/or code. More details can be found in Figure \@ref(fig:RSM-figure5).
+
+```{r RSM-figure5, fig.cap = "Open materials and/or code: using vs. sharing.", out.width = '100%'}
+
+knitr::include_graphics(here("img", "RSM", "figure05.png"))
+
+```
+
+```{r RSM-materials-concerns-data}
+
+RSM_materials_concerns <-
+  RSM_materials %>% 
+  filter(question == "The following are possible concerns that researchers could have about making their materials and/or code openly available. Which of these concerns would apply to you?") %>% 
+  arrange(desc(perc))
+
+```
+
+Among the possible concerns that researchers could have about making their materials and/or code openly available, the top 3 were: 
+
+* *`r RSM_materials_concerns$item[2]`* (`r RSM_materials_concerns[2, "lab_perc"]`)
+* *`r RSM_materials_concerns$item[3]`* (`r RSM_materials_concerns[3, "lab_perc"]`)
+* *`r RSM_materials_concerns$item[4]`* (`r RSM_materials_concerns[4, "lab_perc"]`)
+
+`r paste0(pull(filter(RSM_materials_concerns, item == "I do not share any of these concerns"), "perc"), "%")` of respondents did not share any of the listed concerns (see Figure \@ref(fig:RSM-figure6)).
+
+```{r RSM-figure6, fig.cap = "Open materials and/or code: concerns.", out.width = '100%'}
+
+knitr::include_graphics(here("img", "RSM", "figure06.png"))
+
+```
+
+# {-}
+
+# Open data {.tabset .tabset-pills}
+
+## Total
 
 ```{r data-data}
 
 ERIM_OS_data <-
   read_csv(
-    here("data", "preproc", "cluster4.csv")
+    here("data", "preproc", "Total", "cluster4.csv")
   )
 
 ```
@@ -386,15 +662,16 @@ ERIM_OS_data <-
 
 ERIM_OS_data_importance <-
   ERIM_OS_data %>% 
-  filter(question == "In your opinion, how important for your field is it that data from published research are openly available?")
+  filter(question == "In your opinion, how important for your field is it that data from published research are openly available?") %>%
+  arrange(desc(perc))
 
 ```
 
-From the question *`r ERIM_OS_data_importance$question[1]`*, `r paste0(format(sum(ERIM_OS_data_importance[1, "perc"], ERIM_OS_data_importance[2, "perc"], ERIM_OS_data_importance[3, "perc"]), digits = 0), "%")` of respondents think that using open materials and/or code is *`r ERIM_OS_data_importance$item[1]`*, *`r ERIM_OS_data_importance$item[2]`*, or *`r ERIM_OS_data_importance$item[3]`*, whereas `r paste0(pull(filter(ERIM_OS_materials_importance, item == "Not at all important"), "perc"), "%")` think it is *`r pull(filter(ERIM_OS_materials_importance, item == "Not at all important"), item)`* (see Figure \@ref(fig:figure7)).
+From the question *`r ERIM_OS_data_importance$question[1]`*, `r paste0(format(sum(ERIM_OS_data_importance[1, "perc"], ERIM_OS_data_importance[2, "perc"], ERIM_OS_data_importance[3, "perc"]), digits = 0), "%")` of respondents think that using open materials and/or code is *`r ERIM_OS_data_importance$item[1]`*, *`r ERIM_OS_data_importance$item[2]`*, or *`r ERIM_OS_data_importance$item[3]`*, whereas `r paste0(pull(filter(ERIM_OS_data_importance, item == "Not at all important"), "perc"), "%")` think it is *`r pull(filter(ERIM_OS_data_importance, item == "Not at all important"), item)`* (see Figure \@ref(fig:figure7)).
 
 ```{r figure7, fig.cap = "Open data: importance.", out.width = '100%'}
 
-knitr::include_graphics(here("img", "figure7.png"))
+knitr::include_graphics(here("img", "Total", "figure07.png"))
 
 ```
 
@@ -416,13 +693,11 @@ ERIM_OS_data_sharing <-
 
 ```
 
-From the question *`r ERIM_OS_data_sharing$question[1]`* we can see that `r paste0(pull(filter(ERIM_OS_data_sharing, item == "I am aware of open data, but have not shared my data"), "perc"), "%")` of respondents are aware of sharing data, `r paste0(pull(filter(ERIM_OS_data_sharing, item == "I have some experience sharing open data, but not regularly"), "perc"), "%")` have some experience, and `r paste0(pull(filter(ERIM_OS_data_sharing, item == "I regularly share open data"), "perc"), "%")` regularly share open data.
-
-Based on these results, it seems that researchers at ESE and RSM have more experience using publicly available data rather than sharing their own data. More details can be found in Figure \@ref(fig:figure8).
+From the question *`r ERIM_OS_data_sharing$question[1]`* we can see that `r paste0(pull(filter(ERIM_OS_data_sharing, item == "I am aware of open data, but have not shared my data"), "perc"), "%")` of respondents are aware of sharing data, `r paste0(pull(filter(ERIM_OS_data_sharing, item == "I have some experience sharing open data, but not regularly"), "perc"), "%")` have some experience, and `r paste0(pull(filter(ERIM_OS_data_sharing, item == "I regularly share open data"), "perc"), "%")` regularly share open data. More details can be found in Figure \@ref(fig:figure8).
 
 ```{r figure8, fig.cap = "Open data: using vs. sharing.", out.width = '100%'}
 
-knitr::include_graphics(here("img", "figure8.png"))
+knitr::include_graphics(here("img", "Total", "figure08.png"))
 
 ```
 
@@ -441,21 +716,179 @@ Among the possible concerns that researchers could have about making their data 
 * *`r ERIM_OS_data_concerns$item[3]`* (`r ERIM_OS_data_concerns[3, "lab_perc"]`)
 * *`r ERIM_OS_data_concerns$item[4]`* (`r ERIM_OS_data_concerns[4, "lab_perc"]`)
 
-Notably, however, many respondents (`r paste0(pull(filter(ERIM_OS_data_concerns, item == "I do not share any of these concerns"), "perc"), "%")`) did not share any of the listed concerns (see Figure \@ref(fig:figure9)).
+`r paste0(pull(filter(ERIM_OS_data_concerns, item == "I do not share any of these concerns"), "perc"), "%")` of respondents did not share any of the listed concerns (see Figure \@ref(fig:figure9)).
 
 ```{r figure9, fig.cap = "Open data: concerns.", out.width = '100%'}
 
-knitr::include_graphics(here("img", "figure9.png"))
+knitr::include_graphics(here("img", "Total", "figure09.png"))
 
 ```
 
-# Pre-publication archiving
+## ESE
+
+```{r ESE-data-data}
+
+ESE_data <-
+  read_csv(
+    here("data", "preproc", "ESE", "cluster4.csv")
+  )
+
+```
+
+```{r ESE-data-importance-data}
+
+ESE_data_importance <-
+  ESE_data %>% 
+  filter(question == "In your opinion, how important for your field is it that data from published research are openly available?") %>%
+  arrange(desc(perc))
+
+```
+
+From the question *`r ESE_data_importance$question[1]`*, `r paste0(format(sum(ESE_data_importance[1, "perc"], ESE_data_importance[2, "perc"], ESE_data_importance[3, "perc"]), digits = 0), "%")` of respondents think that using open materials and/or code is *`r ESE_data_importance$item[1]`*, *`r ESE_data_importance$item[2]`*, or *`r ESE_data_importance$item[3]`*, whereas `r paste0(pull(filter(ESE_data_importance, item == "Not at all important"), "perc"), "%")` think it is *`r pull(filter(ESE_data_importance, item == "Not at all important"), item)`* (see Figure \@ref(fig:ESE-figure7)).
+
+```{r ESE-figure7, fig.cap = "Open data: importance.", out.width = '100%'}
+
+knitr::include_graphics(here("img", "ESE", "figure07.png"))
+
+```
+
+```{r ESE-data-use-data}
+
+ESE_data_use <-
+  ESE_data %>% 
+  filter(question == "What is your experience with using open data?")
+
+```
+
+The answers to the question *`r ESE_data_use$question[1]`* reveal that `r paste0(pull(filter(ESE_data_use, item == "I am aware of open data, but have not used this in my research"), "perc"), "%")` of respondents are aware of open data but have nor used it, and `r paste0(pull(filter(ESE_data_use, item == "I have some experience using open data, but do not use them regularly"), "perc"), "%")` have some experience using open data. `r paste0(pull(filter(ESE_data_use, item == "I regularly use open data"), "perc"), "%")` of researchers regularly use open data.
+
+```{r ESE-data-sharing-data}
+
+ESE_data_sharing <-
+  ESE_data %>% 
+  filter(question == "What is your experience with sharing open data?")
+
+```
+
+From the question *`r ESE_data_sharing$question[1]`* we can see that `r paste0(pull(filter(ESE_data_sharing, item == "I am aware of open data, but have not shared my data"), "perc"), "%")` of respondents are aware of sharing data, `r paste0(pull(filter(ESE_data_sharing, item == "I have some experience sharing open data, but not regularly"), "perc"), "%")` have some experience, and `r paste0(pull(filter(ESE_data_sharing, item == "I regularly share open data"), "perc"), "%")` regularly share open data. More details can be found in Figure \@ref(fig:ESE-figure8).
+
+```{r ESE-figure8, fig.cap = "Open data: using vs. sharing.", out.width = '100%'}
+
+knitr::include_graphics(here("img", "ESE", "figure08.png"))
+
+```
+
+```{r ESE-data-concerns-data}
+
+ESE_data_concerns <-
+  ESE_data %>% 
+  filter(question == "The following are possible concerns that researchers could have about making their data openly available. Which of these concerns would apply to you?") %>% 
+  arrange(desc(perc))
+
+```
+
+Among the possible concerns that researchers could have about making their data openly available, the top 3 were: 
+
+* *`r ESE_data_concerns$item[1]`* (`r ESE_data_concerns[1, "lab_perc"]`)
+* *`r ESE_data_concerns$item[3]`* (`r ESE_data_concerns[3, "lab_perc"]`)
+* *`r ESE_data_concerns$item[4]`* (`r ESE_data_concerns[4, "lab_perc"]`)
+
+`r paste0(pull(filter(ESE_data_concerns, item == "I do not share any of these concerns"), "perc"), "%")` of respondents did not share any of the listed concerns (see Figure \@ref(fig:ESE-figure9)).
+
+```{r ESE-figure9, fig.cap = "Open data: concerns.", out.width = '100%'}
+
+knitr::include_graphics(here("img", "ESE", "figure09.png"))
+
+```
+
+## RSM
+
+```{r RSM-data-data}
+
+RSM_data <-
+  read_csv(
+    here("data", "preproc", "RSM", "cluster4.csv")
+  )
+
+```
+
+```{r RSM-data-importance-data}
+
+RSM_data_importance <-
+  RSM_data %>% 
+  filter(question == "In your opinion, how important for your field is it that data from published research are openly available?") %>%
+  arrange(desc(perc))
+
+```
+
+From the question *`r RSM_data_importance$question[1]`*, `r paste0(format(sum(RSM_data_importance[1, "perc"], RSM_data_importance[2, "perc"], RSM_data_importance[3, "perc"]), digits = 0), "%")` of respondents think that using open materials and/or code is *`r RSM_data_importance$item[1]`*, *`r RSM_data_importance$item[2]`*, or *`r RSM_data_importance$item[3]`*, whereas `r paste0(pull(filter(RSM_data_importance, item == "Not at all important"), "perc"), "%")` think it is *`r pull(filter(RSM_data_importance, item == "Not at all important"), item)`* (see Figure \@ref(fig:RSM-figure7)).
+
+```{r RSM-figure7, fig.cap = "Open data: importance.", out.width = '100%'}
+
+knitr::include_graphics(here("img", "RSM", "figure07.png"))
+
+```
+
+```{r RSM-data-use-data}
+
+RSM_data_use <-
+  RSM_data %>% 
+  filter(question == "What is your experience with using open data?")
+
+```
+
+The answers to the question *`r RSM_data_use$question[1]`* reveal that `r paste0(pull(filter(RSM_data_use, item == "I am aware of open data, but have not used this in my research"), "perc"), "%")` of respondents are aware of open data but have nor used it, and `r paste0(pull(filter(RSM_data_use, item == "I have some experience using open data, but do not use them regularly"), "perc"), "%")` have some experience using open data. `r paste0(pull(filter(RSM_data_use, item == "I regularly use open data"), "perc"), "%")` of researchers regularly use open data, while only a small fraction of respondents (`r paste0(pull(filter(RSM_data_use, item == "Until now, I was unaware of open data"), "perc"), "%")`) had not heard of open data before answering this survey.
+
+```{r RSM-data-sharing-data}
+
+RSM_data_sharing <-
+  RSM_data %>% 
+  filter(question == "What is your experience with sharing open data?")
+
+```
+
+From the question *`r RSM_data_sharing$question[1]`* we can see that `r paste0(pull(filter(RSM_data_sharing, item == "I am aware of open data, but have not shared my data"), "perc"), "%")` of respondents are aware of sharing data, `r paste0(pull(filter(RSM_data_sharing, item == "I have some experience sharing open data, but not regularly"), "perc"), "%")` have some experience, and `r paste0(pull(filter(RSM_data_sharing, item == "I regularly share open data"), "perc"), "%")` regularly share open data. More details can be found in Figure \@ref(fig:RSM-figure8).
+
+```{r RSM-figure8, fig.cap = "Open data: using vs. sharing.", out.width = '100%'}
+
+knitr::include_graphics(here("img", "RSM", "figure08.png"))
+
+```
+
+```{r RSM-data-concerns-data}
+
+RSM_data_concerns <-
+  RSM_data %>% 
+  filter(question == "The following are possible concerns that researchers could have about making their data openly available. Which of these concerns would apply to you?") %>% 
+  arrange(desc(perc))
+
+```
+
+Among the possible concerns that researchers could have about making their data openly available, the top 3 were: 
+
+* *`r RSM_data_concerns$item[1]`* (`r RSM_data_concerns[1, "lab_perc"]`)
+* *`r RSM_data_concerns$item[3]`* (`r RSM_data_concerns[3, "lab_perc"]`)
+* *`r RSM_data_concerns$item[4]`* (`r RSM_data_concerns[4, "lab_perc"]`)
+
+`r paste0(pull(filter(RSM_data_concerns, item == "I do not share any of these concerns"), "perc"), "%")` of respondents did not share any of the listed concerns (see Figure \@ref(fig:RSM-figure9)).
+
+```{r RSM-figure9, fig.cap = "Open data: concerns.", out.width = '100%'}
+
+knitr::include_graphics(here("img", "RSM", "figure09.png"))
+
+```
+
+# {-}
+
+# Pre-publication archiving {.tabset .tabset-pills}
+
+## Total
 
 ```{r archiving-data}
 
 ERIM_OS_archiving <-
   read_csv(
-    here("data", "preproc", "cluster5.csv")
+    here("data", "preproc", "Total", "cluster5.csv")
   )
 
 ```
@@ -482,7 +915,7 @@ From the question *`r ERIM_OS_archiving_experience$question[1]`*, we see that mo
 
 ```{r figure10, fig.cap = "Pre-publication: importance vs. experience.", out.width = '100%'}
 
-knitr::include_graphics(here("img", "figure10.png"))
+knitr::include_graphics(here("img", "Total", "figure10.png"))
 
 ```
 
@@ -501,21 +934,147 @@ Among the possible concerns that researchers could have about uploading a manusc
 * *`r ERIM_OS_archiving_concerns$item[3]`* (`r ERIM_OS_archiving_concerns[3, "lab_perc"]`)
 * *`r ERIM_OS_archiving_concerns$item[4]`* (`r ERIM_OS_archiving_concerns[4, "lab_perc"]`)
 
-Notably, however, many respondents (`r paste0(pull(filter(ERIM_OS_archiving_concerns, item == "I do not share any of these concerns"), "perc"), "%")`) did not share any of the listed concerns (see Figure \@ref(fig:figure11)).
+`r paste0(pull(filter(ERIM_OS_archiving_concerns, item == "I do not share any of these concerns"), "perc"), "%")` of respondents did not share any of the listed concerns (see Figure \@ref(fig:figure11)).
 
 ```{r figure11, fig.cap = "Pre-publication: concerns.", out.width = '100%'}
 
-knitr::include_graphics(here("img", "figure11.png"))
+knitr::include_graphics(here("img", "Total", "figure11.png"))
 
 ```
 
-# Open access
+## ESE
+
+```{r ESE-archiving-data}
+
+ESE_archiving <-
+  read_csv(
+    here("data", "preproc", "ESE", "cluster5.csv")
+  )
+
+```
+
+```{r ESE-archiving-importance-data}
+
+ESE_archiving_importance <-
+  ESE_archiving %>% 
+  filter(question == "In your opinion, how important is pre-publication archiving for your field?") %>% 
+  arrange(desc(perc))
+
+```
+
+The answers to the question *`r ESE_archiving_importance$question[1]`* reveal that respondents consider pre-publication archiving *`r ESE_archiving_importance$item[1]`* or *`r ESE_archiving_importance$item[2]`* (`r paste0(sum(ESE_archiving_importance[1, "perc"], ESE_archiving_importance[2, "perc"]), "%")`), while `r paste0(pull(filter(ESE_archiving_importance, item == "Not at all important"), "perc"), "%")` believe that pre-publication archiving is *`r pull(filter(ESE_archiving_importance, item == "Not at all important"), item)`*.
+
+```{r ESE-archiving-experience-data}
+
+ESE_archiving_experience <-
+  ESE_archiving %>% 
+  filter(question == "What is your experience with pre-publication archiving?")
+
+```
+
+From the question *`r ESE_archiving_experience$question[1]`*, we see that `r pull(filter(ESE_archiving_experience, item == "I am aware of pre-publication archiving but have not used it"), lab_perc)` of respondents are aware of pre-publication archiving but have not used it in their own projects. `r pull(filter(ESE_archiving_experience, item == "I have extensive experience with preprint archiving"), lab_perc)` of respondents have extensive experience with pre-publication archiving, while `r pull(filter(ESE_archiving_experience, item == "Until now, I was unaware of \"pre-publication archiving\""), lab_perc)` had never heard of pre-publication archiving before answering this survey. More details can be found in Figure \@ref(fig:ESE-figure10).
+
+```{r ESE-figure10, fig.cap = "Pre-publication: importance vs. experience.", out.width = '100%'}
+
+knitr::include_graphics(here("img", "ESE", "figure10.png"))
+
+```
+
+```{r ESE-archiving-concerns-data}
+
+ESE_archiving_concerns <-
+  ESE_archiving %>% 
+  filter(question == "The following are possible concerns that researchers could have about uploading a manuscript to a pre-publication archive before submitting it for peer review. Which of these concerns would apply to you?") %>% 
+  arrange(desc(perc))
+
+```
+
+Among the possible concerns that researchers could have about uploading a manuscript to a pre-publication archive before submitting it for peer review, the top 3 were: 
+
+* *`r ESE_archiving_concerns$item[2]`* (`r ESE_archiving_concerns[2, "lab_perc"]`)
+* *`r ESE_archiving_concerns$item[3]`* (`r ESE_archiving_concerns[3, "lab_perc"]`)
+* *`r ESE_archiving_concerns$item[4]`* (`r ESE_archiving_concerns[4, "lab_perc"]`)
+
+`r paste0(pull(filter(ESE_archiving_concerns, item == "I do not share any of these concerns"), "perc"), "%")` of respondents did not share any of the listed concerns (see Figure \@ref(fig:ESE-figure11)).
+
+```{r ESE-figure11, fig.cap = "Pre-publication: concerns.", out.width = '100%'}
+
+knitr::include_graphics(here("img", "ESE", "figure11.png"))
+
+```
+
+## RSM
+
+```{r RSM-archiving-data}
+
+RSM_archiving <-
+  read_csv(
+    here("data", "preproc", "RSM", "cluster5.csv")
+  )
+
+```
+
+```{r RSM-archiving-importance-data}
+
+RSM_archiving_importance <-
+  RSM_archiving %>% 
+  filter(question == "In your opinion, how important is pre-publication archiving for your field?") %>% 
+  arrange(desc(perc))
+
+```
+
+The answers to the question *`r RSM_archiving_importance$question[1]`* reveal that respondents consider pre-publication archiving *`r RSM_archiving_importance$item[1]`* or *`r RSM_archiving_importance$item[2]`* (`r paste0(sum(RSM_archiving_importance[1, "perc"], RSM_archiving_importance[2, "perc"]), "%")`).
+
+```{r RSM-archiving-experience-data}
+
+RSM_archiving_experience <-
+  RSM_archiving %>% 
+  filter(question == "What is your experience with pre-publication archiving?")
+
+```
+
+From the question *`r RSM_archiving_experience$question[1]`*, we see that `r pull(filter(RSM_archiving_experience, item == "I am aware of pre-publication archiving but have not used it"), lab_perc)` of respondents are aware of pre-publication archiving but have not used it in their own projects. `r pull(filter(RSM_archiving_experience, item == "I have extensive experience with preprint archiving"), lab_perc)` of respondents have extensive experience with pre-publication archiving, while `r pull(filter(RSM_archiving_experience, item == "Until now, I was unaware of \"pre-publication archiving\""), lab_perc)` had never heard of pre-publication archiving before answering this survey. More details can be found in Figure \@ref(fig:RSM-figure10).
+
+```{r RSM-figure10, fig.cap = "Pre-publication: importance vs. experience.", out.width = '100%'}
+
+knitr::include_graphics(here("img", "RSM", "figure10.png"))
+
+```
+
+```{r RSM-archiving-concerns-data}
+
+RSM_archiving_concerns <-
+  RSM_archiving %>% 
+  filter(question == "The following are possible concerns that researchers could have about uploading a manuscript to a pre-publication archive before submitting it for peer review. Which of these concerns would apply to you?") %>% 
+  arrange(desc(perc))
+
+```
+
+Among the possible concerns that researchers could have about uploading a manuscript to a pre-publication archive before submitting it for peer review, the top 3 were: 
+
+* *`r RSM_archiving_concerns$item[1]`* (`r RSM_archiving_concerns[1, "lab_perc"]`)
+* *`r RSM_archiving_concerns$item[2]`* (`r RSM_archiving_concerns[2, "lab_perc"]`)
+* *`r RSM_archiving_concerns$item[4]`* (`r RSM_archiving_concerns[4, "lab_perc"]`)
+
+`r paste0(pull(filter(ESE_archiving_concerns, item == "I do not share any of these concerns"), "perc"), "%")` of respondents did not share any of the listed concerns (see Figure \@ref(fig:RSM-figure11)).
+
+```{r RSM-figure11, fig.cap = "Pre-publication: concerns.", out.width = '100%'}
+
+knitr::include_graphics(here("img", "RSM", "figure11.png"))
+
+```
+
+# {-}
+
+# Open access {.tabset .tabset-pills}
+
+## Total
 
 ```{r oa-data}
 
 ERIM_OS_oa <-
   read_csv(
-    here("data", "preproc", "cluster6.csv")
+    here("data", "preproc", "Total", "cluster6.csv")
   )
 
 ```
@@ -558,13 +1117,115 @@ ERIM_OS_oa_apc %>%
 
 ```
 
-# General experiences with open science practices 
+## ESE
+
+```{r ESE-oa-data}
+
+ESE_oa <-
+  read_csv(
+    here("data", "preproc", "ESE", "cluster6.csv")
+  )
+
+```
+
+```{r ESE-oa-pubs-proportion-data}
+
+ESE_oa_pubs <-
+  ESE_oa %>% 
+  filter(question == "Approximately what proportion of your publications from the last 5 years are open access?")
+
+```
+
+When asked *`r ESE_oa_pubs$question[1]`*, `r paste0(pull(filter(ESE_oa_pubs, item == "All"), "perc"), "%")` of respondents declared to have published all their papers open access, whereas `r paste0(pull(filter(ESE_oa_pubs, item == "None"), "perc"), "%")` have none of their publications open access (see details in Table \@ref(tab:ESE-oa-pubs-proportion-table)).
+
+```{r ESE-oa-pubs-proportion-table}
+
+ESE_oa_pubs %>% 
+  arrange(desc(perc)) %>% 
+  select(response = item, percentage = lab_perc) %>% 
+  kable_custom(caption = ESE_oa_pubs$question[1])
+
+```
+
+```{r ESE-oa-pubs-apc-data}
+
+ESE_oa_apc <-
+  ESE_oa %>% 
+  filter(question == "Many open access journals charge a fee for processing the article for publication. How have you managed payment of these fees?")
+
+```
+
+When asked how they paid article processing charges (APCs) for open access publications, `r pull(filter(ESE_oa_apc, item == "It was paid under the \"blanket agreement\" between VSNU and selected academic publishers"), lab_perc)` of respondents declared that APCs were covered by the "blanket agreement" between VSNU and selected academic publishers. More details can be found in Table \@ref(tab:ESE-oa-pubs-apc-table).
+
+```{r ESE-oa-pubs-apc-table}
+
+ESE_oa_apc %>% 
+  arrange(desc(perc)) %>% 
+  select(response = item, percentage = lab_perc) %>% 
+  kable_custom(caption = ESE_oa_apc$question[1])
+
+```
+
+## RSM
+
+```{r RSM-oa-data}
+
+RSM_oa <-
+  read_csv(
+    here("data", "preproc", "RSM", "cluster6.csv")
+  )
+
+```
+
+```{r RSM-oa-pubs-proportion-data}
+
+RSM_oa_pubs <-
+  RSM_oa %>% 
+  filter(question == "Approximately what proportion of your publications from the last 5 years are open access?")
+
+```
+
+When asked *`r RSM_oa_pubs$question[1]`*, `r paste0(pull(filter(RSM_oa_pubs, item == "All"), "perc"), "%")` of respondents declared to have published all their papers open access, whereas `r paste0(pull(filter(RSM_oa_pubs, item == "None"), "perc"), "%")` have none of their publications open access (see details in Table \@ref(tab:RSM-oa-pubs-proportion-table)).
+
+```{r RSM-oa-pubs-proportion-table}
+
+RSM_oa_pubs %>% 
+  arrange(desc(perc)) %>% 
+  select(response = item, percentage = lab_perc) %>% 
+  kable_custom(caption = RSM_oa_pubs$question[1])
+
+```
+
+```{r RSM-oa-pubs-apc-data}
+
+RSM_oa_apc <-
+  RSM_oa %>% 
+  filter(question == "Many open access journals charge a fee for processing the article for publication. How have you managed payment of these fees?")
+
+```
+
+When asked how they paid article processing charges (APCs) for open access publications, `r pull(filter(RSM_oa_apc, item == "It was paid under the \"blanket agreement\" between VSNU and selected academic publishers"), lab_perc)` of respondents declared that APCs were covered by the "blanket agreement" between VSNU and selected academic publishers. More details can be found in Table \@ref(tab:RSM-oa-pubs-apc-table).
+
+```{r RSM-oa-pubs-apc-table}
+
+RSM_oa_apc %>% 
+  arrange(desc(perc)) %>% 
+  select(response = item, percentage = lab_perc) %>% 
+  kable_custom(caption = RSM_oa_apc$question[1])
+
+```
+
+# {-}
+
+# General experiences with open science practices  {.tabset .tabset-pills}
+
+## Total
 
 ```{r general-data}
 
 ERIM_OS_general <-
   read_csv(
-    here("data", "preproc", "cluster1.csv")
+    here("data", "preproc", "Total", "cluster1.csv")
   )
 
 ```
@@ -581,7 +1242,7 @@ When asked *`r ERIM_OS_general_experience$question[1]`*, `r pull(filter(ERIM_OS_
 
 ```{r figure12, fig.cap = "Open science practices: experience.", out.width = '100%'}
 
-knitr::include_graphics(here("img", "figure12.png"))
+knitr::include_graphics(here("img", "Total", "figure12.png"))
 
 ```
 
@@ -612,7 +1273,7 @@ During March 2021 ERIM launched an ORCID campaign. When asked about participatio
 
 ERIM_OS_general_concerns <-
   read_csv(
-    here("data", "preproc", "cluster7.csv")
+    here("data", "preproc", "Total", "cluster7.csv")
   ) %>% 
   arrange(desc(perc))
 
@@ -628,17 +1289,169 @@ For details, see Figure \@ref(fig:figure13).
 
 ```{r figure13, fig.cap = "Open science: barriers.", out.width = '100%'}
 
-knitr::include_graphics(here("img", "figure13.png"))
+knitr::include_graphics(here("img", "Total", "figure13.png"))
 
 ```
 
-# Awareness of available tools
+## ESE
+
+```{r ESE-general-data}
+
+ESE_general <-
+  read_csv(
+    here("data", "preproc", "ESE", "cluster1.csv")
+  )
+
+```
+
+```{r ESE-general-experience-data}
+
+ESE_general_experience <-
+  ESE_general %>% 
+  filter(question == "What is your experience with open science practices?")
+
+```
+
+When asked *`r ESE_general_experience$question[1]`*, `r pull(filter(ESE_general_experience, item == "I have some experience with open science practices"), lab_perc)` of respondents have some experience with open science practices, `r pull(filter(ESE_general_experience, item == "I have extensive experience with open science practices"), lab_perc)` have extensive experience, and `r pull(filter(ESE_general_experience, item == "I am aware, but have not used open science practices in my research"), lab_perc)` are aware but have not used any open science practices in their research (see Figure \@ref(fig:ESE-figure12)).
+
+```{r ESE-figure12, fig.cap = "Open science practices: experience.", out.width = '100%'}
+
+knitr::include_graphics(here("img", "ESE", "figure12.png"))
+
+```
+
+```{r ESE-general-sharing-data}
+
+ESE_general_sharing <-
+  ESE_general %>% 
+  filter(question == "Are you sharing your knowledge about open science practices with others?") %>% 
+  arrange(desc(perc))
+
+```
+
+When asked *`r ESE_general_sharing$question[1]`*, `r pull(filter(ESE_general_sharing, item == "I share my knowledge with my colleagues informally"), lab_perc)` of respondents share their knowledge informally with colleagues, `r pull(filter(ESE_general_sharing, item == "I share my knowledge with my colleagues by offering seminars and/or giving talks"), lab_perc)` give seminars and/or talks, and `r pull(filter(ESE_general_sharing, item == "I share my knowledge with my students or fellow research students"), lab_perc)` discuss open science with students or fellow research students. The remaining respondents use other means of sharing knowledge (`r pull(filter(ESE_general_sharing, item == "Other"), lab_perc)`), do not share their knowledge (`r pull(filter(ESE_general_sharing, item == "No"), lab_perc)`), or do not know/prefer not to answer (`r pull(filter(ESE_general_sharing, item == "I don’t know/prefer not to answer"), lab_perc)`).
+
+```{r ESE-general-ORCID-data}
+
+ESE_general_ORCID <-
+  ESE_general %>% 
+  filter(question == "During March 2021 ERIM launched an ORCID campaign. Did you participate in it and got your own ORCID iD?") %>% 
+  arrange(desc(perc))
+
+```
+
+During March 2021 ERIM launched an ORCID campaign. When asked about participation and creation of an ORCID record,
+`r pull(filter(ESE_general_ORCID, item == "No, I did not participate since I already had an ORCID iD"), lab_perc)` of respondents declared not to have participated since they already had it, while `r pull(filter(ESE_general_ORCID, item == "Yes, I participated and got an ORCID iD"), lab_perc)` did participate and get an ORCID ID.
+                                                
+```{r ESE-general-concerns-data}
+
+ESE_general_concerns <-
+  read_csv(
+    here("data", "preproc", "ESE", "cluster7.csv")
+  ) %>% 
+  arrange(desc(perc))
+
+```
+
+Among the perceived barriers to the uptake of open science practices, the top 3 were: 
+
+* *`r ESE_general_concerns$item[1]`* (`r ESE_general_concerns[1, "lab_perc"]`)
+* *`r ESE_general_concerns$item[3]`* (`r ESE_general_concerns[3, "lab_perc"]`)
+* *`r ESE_general_concerns$item[4]`* (`r ESE_general_concerns[4, "lab_perc"]`)
+
+For details, see Figure \@ref(fig:ESE-figure13).
+
+```{r ESE-figure13, fig.cap = "Open science: barriers.", out.width = '100%'}
+
+knitr::include_graphics(here("img", "ESE", "figure13.png"))
+
+```
+
+## RSM
+
+```{r RSM-general-data}
+
+RSM_general <-
+  read_csv(
+    here("data", "preproc", "RSM", "cluster1.csv")
+  )
+
+```
+
+```{r RSM-general-experience-data}
+
+RSM_general_experience <-
+  RSM_general %>% 
+  filter(question == "What is your experience with open science practices?")
+
+```
+
+When asked *`r RSM_general_experience$question[1]`*, `r pull(filter(RSM_general_experience, item == "I have some experience with open science practices"), lab_perc)` of respondents have some experience with open science practices, `r pull(filter(RSM_general_experience, item == "I have extensive experience with open science practices"), lab_perc)` have extensive experience, and `r pull(filter(RSM_general_experience, item == "I am aware, but have not used open science practices in my research"), lab_perc)` are aware but have not used any open science practices in their research (see Figure \@ref(fig:RSM-figure12)).
+
+```{r RSM-figure12, fig.cap = "Open science practices: experience.", out.width = '100%'}
+
+knitr::include_graphics(here("img", "RSM", "figure12.png"))
+
+```
+
+```{r RSM-general-sharing-data}
+
+RSM_general_sharing <-
+  RSM_general %>% 
+  filter(question == "Are you sharing your knowledge about open science practices with others?") %>% 
+  arrange(desc(perc))
+
+```
+
+When asked *`r RSM_general_sharing$question[1]`*, `r pull(filter(RSM_general_sharing, item == "I share my knowledge with my colleagues informally"), lab_perc)` of respondents share their knowledge informally with colleagues, `r pull(filter(RSM_general_sharing, item == "I share my knowledge with my colleagues by offering seminars and/or giving talks"), lab_perc)` give seminars and/or talks, and `r pull(filter(RSM_general_sharing, item == "I share my knowledge with my students or fellow research students"), lab_perc)` discuss open science with students or fellow research students. The remaining respondents use other means of sharing knowledge (`r pull(filter(RSM_general_sharing, item == "Other"), lab_perc)`), do not share their knowledge (`r pull(filter(RSM_general_sharing, item == "No"), lab_perc)`), or do not know/prefer not to answer (`r pull(filter(RSM_general_sharing, item == "I don’t know/prefer not to answer"), lab_perc)`).
+
+```{r RSM-general-ORCID-data}
+
+RSM_general_ORCID <-
+  RSM_general %>% 
+  filter(question == "During March 2021 ERIM launched an ORCID campaign. Did you participate in it and got your own ORCID iD?") %>% 
+  arrange(desc(perc))
+
+```
+
+During March 2021 ERIM launched an ORCID campaign. When asked about participation and creation of an ORCID record,
+`r pull(filter(RSM_general_ORCID, item == "No, I did not participate since I already had an ORCID iD"), lab_perc)` of respondents declared not to have participated since they already had it, while `r pull(filter(RSM_general_ORCID, item == "Yes, I participated and got an ORCID iD"), lab_perc)` did participate and get an ORCID ID.
+                                                
+```{r RSM-general-concerns-data}
+
+RSM_general_concerns <-
+  read_csv(
+    here("data", "preproc", "RSM", "cluster7.csv")
+  ) %>% 
+  arrange(desc(perc))
+
+```
+
+Among the perceived barriers to the uptake of open science practices, the top 3 were: 
+
+* *`r RSM_general_concerns$item[1]`* (`r RSM_general_concerns[1, "lab_perc"]`)
+* *`r RSM_general_concerns$item[2]`* (`r RSM_general_concerns[2, "lab_perc"]`)
+* *`r RSM_general_concerns$item[3]`* (`r RSM_general_concerns[3, "lab_perc"]`)
+
+For details, see Figure \@ref(fig:RSM-figure13).
+
+```{r RSM-figure13, fig.cap = "Open science: barriers.", out.width = '100%'}
+
+knitr::include_graphics(here("img", "RSM", "figure13.png"))
+
+```
+
+# {-}
+
+# Awareness of available tools {.tabset .tabset-pills}
+
+## Total
 
 ```{r tools-data}
 
 ERIM_OS_tools <-
   read_csv(
-    here("data", "preproc", "cluster8.csv")
+    here("data", "preproc", "Total", "cluster8.csv")
   ) %>% 
   arrange(desc(item), desc(perc))
 
@@ -648,17 +1461,61 @@ We asked researchers to indicate their awareness of some popular open science re
 
 ```{r figure14, fig.cap = "Open science tools: awareness.", out.width = '100%'}
 
-knitr::include_graphics(here("img", "figure14.png"))
+knitr::include_graphics(here("img", "Total", "figure14.png"))
 
 ```
 
-# Role of ERIM
+## ESE
+
+```{r ESE-tools-data}
+
+ESE_tools <-
+  read_csv(
+    here("data", "preproc", "ESE", "cluster8.csv")
+  ) %>% 
+  arrange(desc(item), desc(perc))
+
+```
+
+We asked researchers to indicate their awareness of some popular open science resources. Notably, services hosted or approved by EUR are frequently in use, for example Dropbox for Business (`r pull(filter(ESE_tools, question == "EUR Dropbox (not personal)" & item == "I use this"), lab_perc)`), SurfDrive (`r pull(filter(ESE_tools, question == "EUR SurfDrive" & item == "I use this"), lab_perc)`), and EUR RePub (`r pull(filter(ESE_tools, question == "EUR RePub" & item == "I use this"), lab_perc)`). An overview of all responses can be found in Figure \@ref(fig:ESE-figure14). 
+
+```{r ESE-figure14, fig.cap = "Open science tools: awareness.", out.width = '100%'}
+
+knitr::include_graphics(here("img", "ESE", "figure14.png"))
+
+```
+
+## RSM
+
+```{r RSM-tools-data}
+
+RSM_tools <-
+  read_csv(
+    here("data", "preproc", "RSM", "cluster8.csv")
+  ) %>% 
+  arrange(desc(item), desc(perc))
+
+```
+
+We asked researchers to indicate their awareness of some popular open science resources. Notably, services hosted or approved by EUR are frequently in use, for example Dropbox for Business (`r pull(filter(RSM_tools, question == "EUR Dropbox (not personal)" & item == "I use this"), lab_perc)`), SurfDrive (`r pull(filter(RSM_tools, question == "EUR SurfDrive" & item == "I use this"), lab_perc)`), and EUR RePub (`r pull(filter(RSM_tools, question == "EUR RePub" & item == "I use this"), lab_perc)`). An overview of all responses can be found in Figure \@ref(fig:RSM-figure14). 
+
+```{r RSM-figure14, fig.cap = "Open science tools: awareness.", out.width = '100%'}
+
+knitr::include_graphics(here("img", "RSM", "figure14.png"))
+
+```
+
+# {-}
+
+# Role of ERIM {.tabset .tabset-pills}
+
+## Total
 
 ```{r support-data}
 
 ERIM_OS_support <-
   read_csv(
-    here("data", "preproc", "cluster9.csv")
+    here("data", "preproc", "Total", "cluster9.csv")
   )
 
 ```
@@ -697,6 +1554,100 @@ ERIM_OS_support_practice %>%
   kable_custom(caption = ERIM_OS_support_practice$question[1])
 
 ```
+
+## ESE
+
+```{r ESE-support-data}
+
+ESE_support <-
+  read_csv(
+    here("data", "preproc", "ESE", "cluster9.csv")
+  )
+
+```
+
+```{r ESE-support-expectations-data}
+
+ESE_support_expectations <-
+  ESE_support %>% 
+  filter(question == "Do you expect that ERIM supports you in learning open science practices?")
+
+```
+
+Finally, researchers were asked *`r ESE_support_expectations$question[1]`*. `r pull(filter(ESE_support_expectations, item == "Yes"), lab_perc)` of respondents said *`r pull(filter(ESE_support_expectations, item == "Yes"), item)`* whereas `r pull(filter(ESE_support_expectations, item == "No"), lab_perc)` said *`r pull(filter(ESE_support_expectations, item == "No"), item)`*.
+
+```{r ESE-support-practice-data}
+
+ESE_support_practice <-
+  ESE_support %>% 
+  filter(question == "Which of the following open science practices would you like ERIM to provide information or support for?") %>% 
+  arrange(desc(perc))
+
+```
+
+When specifically asked *`r ESE_support_practice$question[1]`*, the top 3 were:
+
+* *`r ESE_support_practice$item[1]`* (`r ESE_support_practice[1, "lab_perc"]`)
+* *`r ESE_support_practice$item[2]`* (`r ESE_support_practice[2, "lab_perc"]`)
+* *`r ESE_support_practice$item[3]`* (`r ESE_support_practice[3, "lab_perc"]`)
+
+For an overview, see Table \@ref(tab:ESE-support-practice-table).
+
+```{r ESE-support-practice-table}
+
+ESE_support_practice %>% 
+ select(response = item, percentage = lab_perc) %>% 
+  kable_custom(caption = ESE_support_practice$question[1])
+
+```
+
+## RSM
+
+```{r RSM-support-data}
+
+RSM_support <-
+  read_csv(
+    here("data", "preproc", "RSM", "cluster9.csv")
+  )
+
+```
+
+```{r RSM-support-expectations-data}
+
+RSM_support_expectations <-
+  RSM_support %>% 
+  filter(question == "Do you expect that ERIM supports you in learning open science practices?")
+
+```
+
+Finally, researchers were asked *`r RSM_support_expectations$question[1]`*. `r pull(filter(RSM_support_expectations, item == "Yes"), lab_perc)` of respondents said *`r pull(filter(RSM_support_expectations, item == "Yes"), item)`* whereas `r pull(filter(RSM_support_expectations, item == "No"), lab_perc)` said *`r pull(filter(RSM_support_expectations, item == "No"), item)`*.
+
+```{r RSM-support-practice-data}
+
+RSM_support_practice <-
+  RSM_support %>% 
+  filter(question == "Which of the following open science practices would you like ERIM to provide information or support for?") %>% 
+  arrange(desc(perc))
+
+```
+
+When specifically asked *`r RSM_support_practice$question[1]`*, the top 3 were:
+
+* *`r RSM_support_practice$item[1]`* (`r RSM_support_practice[1, "lab_perc"]`)
+* *`r RSM_support_practice$item[2]`* (`r RSM_support_practice[2, "lab_perc"]`)
+* *`r RSM_support_practice$item[3]`* (`r RSM_support_practice[3, "lab_perc"]`)
+
+For an overview, see Table \@ref(tab:RSM-support-practice-table).
+
+```{r RSM-support-practice-table}
+
+RSM_support_practice %>% 
+ select(response = item, percentage = lab_perc) %>% 
+  kable_custom(caption = RSM_support_practice$question[1])
+
+```
+
+# {-}
 
 # Strategy towards an open science culture at ERIM
 
