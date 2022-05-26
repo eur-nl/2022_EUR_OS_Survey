@@ -114,7 +114,7 @@ EUR_OS_incomplete <-
 
 ```
 
-A total of `r sum(EUR_OS_incomplete$n)` respondents started the survey, and `r pull(filter(EUR_OS_incomplete, survey == "complete"), n)` completed it. An overview of response rate per school can be found in Table \@ref(tab:table1).
+A total of `r sum(EUR_OS_incomplete$n)` respondents started the survey, and `r pull(filter(EUR_OS_incomplete, survey == "complete"), n)` completed it. Separate response rates per school and position can be found in Table \@ref(tab:table1) and Table \@ref(tab:table2), respectively.
 
 (ref:table1) Response rate per school.
 
@@ -161,6 +161,46 @@ EUR_OS_incomplete_school %>%
   )
 
 ```
+
+(ref:table2) Response rate per position
+
+(ref:table2-footnote) NA indicates no response.
+
+```{r table2}
+
+EUR_OS_incomplete_position <-
+  EUR_OS %>% 
+  filter(question == "Position") %>% 
+  select_if(~ sum(!is.na(.)) > 0) %>%
+  pivot_wider(
+    id_cols = c(participant, Finished),
+    names_from = question,
+    values_from = value_1
+  ) %>% 
+  mutate(Position = gsub("Other_.*", "Other", Position)) %>% # group all other responses in "Other"
+  group_by(Position) %>%
+  summarize(
+    n = n(),
+    perc = round(length(which(Finished == TRUE))/length(Finished) * 100, 2),
+    lab_perc = paste(perc, "%", sep = "")
+  )
+
+# table
+EUR_OS_incomplete_position %>%
+  select(-perc) %>% 
+  rename("completed survey" = lab_perc) %>% 
+  kable_custom(caption = "(ref:table2)") %>% 
+  footnote(
+    general = "(ref:table2-footnote)",
+    footnote_as_chunk = TRUE
+  )
+
+```
+
+
+
+
+
 
 
 
