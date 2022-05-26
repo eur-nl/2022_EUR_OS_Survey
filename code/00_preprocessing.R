@@ -244,20 +244,12 @@ OS_data_clean <-
       into_prefix = "value"
     )
   ) %>%
-  # delete column with redundant information
-  select(-value) %>%
-  # convert all columns to factors
   mutate(
-    across(
-      .cols = everything(),
-      .fns = ~ as_factor(.)
-    )
-  ) %>%
-  # add column with cluster
-  mutate(
-    cluster = fct_recode(question, !!!levels_question),
-    .before = "question"
-  )
+    cluster = fct_recode(question, !!!levels_question), # add column with cluster
+    Finished = as.logical(Finished) # convert "Finished" as logical
+  ) %>% 
+  select(-value) %>% # delete column with redundant information
+  relocate(cluster, .before = "question") # move cluster before question
 
 # save as .rds (to keep formatting in R)
 saveRDS(
