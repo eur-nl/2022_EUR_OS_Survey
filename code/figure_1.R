@@ -102,39 +102,10 @@ lollipop_cluster0_question2 <-
 
 lollipop_cluster0_question2
 
-# Question 3, lollipop graph ----------------------------------------------------------------
-
-num_question <- 3
-
-data_cluster0_question3 <-
-  cluster %>%
-  filter(question == questions[num_question]) %>%
-  droplevels() %>%
-  mutate(item = as_factor(replace_na(as.character(item), "not indicated")))
-
-lollipop_cluster0_question3 <-
-  data_cluster0_question3 %>%
-  ggplot(aes(x = reorder(item, perc), y = perc)) +
-  geom_point(size = 6, color = "#0C8066") +
-  geom_segment(aes(x = item, xend = item, y = 0, yend = perc), color = "#012328") +
-  geom_label_repel(aes(item, perc, label = lab_perc), size = 4, nudge_y = 4, segment.alpha = 0, fill = "white", color = "#171C54") +
-  scale_y_continuous(
-    breaks = seq(0, 80, 10),
-    limits = c(0, 80)
-  ) +
-  labs(
-    title = "Department",
-    x = ""
-  ) +
-  coord_flip() +
-  theme_custom
-
-lollipop_cluster0_question3
-
 # Merge in one figure ----------------------------------------------------------------
 
 lollipop_figure1 <-
-  lollipop_cluster0_question1 / lollipop_cluster0_question2 / lollipop_cluster0_question3 +
+  lollipop_cluster0_question1 / lollipop_cluster0_question2 +
   plot_annotation(
     title = "Respondent Characteristics"
   ) &
