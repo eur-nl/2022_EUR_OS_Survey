@@ -1,7 +1,7 @@
 
 # RNG ---------------------------------------------------------------------
 
-seed_proj <- 52118 # A1Z26 cipher (https://www.boxentriq.com/code-breaking/letters-to-numbers)
+seed_proj <- 100
 set.seed(seed_proj)
 
 # Install packages --------------------------------------------------------
@@ -69,7 +69,7 @@ levels_question <-
 # EUR OS Survey, pseudonymized data (retrieved on April 14th 2022)
 EUR_OS_data <-
   read_csv(
-    here("data", "20220414_EUR_OS_Survey_responses.csv"),
+    here("data", "raw", "20220414_EUR_OS_Survey_responses.csv"),
     col_names = TRUE,
     show_col_types = FALSE
   )
@@ -77,7 +77,7 @@ EUR_OS_data <-
 # ESL OS Survey (additional question), pseudonymized data (retrieved on April 14th 2022)
 ESL_OS_data <-
   read_csv(
-    here("data", "20220414_ESL_OS_Survey_responses.csv"),
+    here("data", "raw", "20220414_ESL_OS_Survey_responses.csv"),
     col_names = TRUE,
     show_col_types = FALSE
   )
@@ -90,7 +90,7 @@ OS_data <-
 # save as .csv
 write_csv(
   OS_data,
-  here("data", "preproc", "merged_OS_Survey_responses.csv")
+  here("data", "preprocessed", "merged_OS_Survey_responses.csv")
 )
 
 # NOTE: the file 'merged_OS_Survey_responses.csv' is modified in Excel prior to loading in R:
@@ -102,7 +102,7 @@ write_csv(
 
 OS_data_clean <-
   read_csv( # load manually modified data
-    here("data", "preproc", "manual_merged_OS_Survey_responses.csv"),
+    here("data", "preprocessed", "manual_merged_OS_Survey_responses.csv"),
     col_names = TRUE,
     show_col_types = FALSE
   ) %>%
@@ -259,408 +259,48 @@ OS_data_clean <-
     .before = "question"
   )
 
-# save as .csv
+# save as .rds (to keep formatting in R)
+saveRDS(
+  OS_data_clean, 
+  file = here("data", "preprocessed", "rds", "CLEAN_OS_Survey_responses.rds"),
+  compress = TRUE
+  )
+
+# save as .csv (for use with other software)
 write_csv(
   OS_data_clean,
-  here("data", "preproc", "CLEAN_OS_Survey_responses.csv")
+  here("data", "preprocessed", "csv", "CLEAN_OS_Survey_responses.csv")
 )
 
-# Cluster 0 ----------------------------------------------------------------
+# Save cluster data in separate files ----------------------------------------------------------------
 
-num_cluster <- 0
-
-cluster <-
-  OS_data_clean %>%
-  filter(
-    cluster == num_cluster & # keep only questions of relevant cluster
-      Finished == "True" # only keep completed surveys
-    ) %>% 
-  droplevels() %>% # drop unused levels
-  select(-cluster) %>% # drop unused column
-  select_if(~ sum(!is.na(.)) > 0) %>% # keep columns without NAs
-  rename("item" = "value_1") %>% # rename column (for better readability)
-  mutate(
-    question = factor( # assign order questions
-      question,
-      levels = c(
-        "School",
-        "Position",
-        "Department"
-      ),
-      ordered = TRUE
-    ),
-    item = gsub("Other_.*", "Other", item) # group all other responses in "Other"
-  ) %>%
-  mutate(item = recode(item, "Public Administration,Sociology" = "Other")) %>% # recode double department affiliation as "other"
-  group_by(question, item) %>%
-  summarize( # count number of responses per question and item
-    number_responses = n(),
-    .groups = "keep"
-  ) %>%
-  ungroup() %>%
-  group_by(question) %>%
-  mutate(
-    perc = round(number_responses / sum(number_responses, na.rm = FALSE) * 100, 2), # percentage
-    lab_perc = paste(perc, "%", sep = "") # percentage as text (for labels)
-  ) %>%
-  ungroup()
-
-# save
-write_csv(
-  cluster,
-  here("data", "preproc", paste0("cluster_", num_cluster, ".csv"))
-)
-
-# Cluster 1 ----------------------------------------------------------------
-
-num_cluster <- 1
-
-cluster <-
-  OS_data_clean %>%
-  filter(
-    cluster == num_cluster & # keep only questions of relevant cluster
-      Finished == "True" # only keep completed surveys
-  ) %>% 
-  droplevels() %>% # drop unused levels
-  select(-cluster) %>% # drop unused column
-  select_if(~ sum(!is.na(.)) > 0) %>% # keep columns without NAs
-  rename("item" = "value_1") %>% # rename column (for better readability)
-  mutate(
-    question = factor( # assign order questions
-      question,
-      levels = c(
-        "In your opinion, how important is Open Access for your work?",
-        "What is your experience with Open Access?",
-        "The following are possible concerns that researchers could have about Open Access publishing. Which of these concerns would you agree with?",
-        "Is there anything you want to share with us regarding your experiences with Open Access?" # ESL-only question
-      ),
-      ordered = TRUE
-    ),
-    item = gsub("Other_", "", item) # delete "Other_" from free text responses
-  ) %>%
-  group_by(question, item) %>%
-  summarize( # count number of responses per question and item
-    number_responses = n(),
-    .groups = "keep"
-  ) %>%
-  ungroup() %>%
-  group_by(question) %>%
-  mutate(
-    perc = round(number_responses / sum(number_responses, na.rm = FALSE) * 100, 2), # percentage
-    lab_perc = paste(perc, "%", sep = "") # percentage as text (for labels)
-  ) %>%
-  ungroup()
-
-# save
-write_csv(
-  cluster,
-  here("data", "preproc", paste0("cluster_", num_cluster, ".csv"))
-)
-
-# Cluster 2 ----------------------------------------------------------------
-
-num_cluster <- 2
-
-cluster <-
-  OS_data_clean %>%
-  filter(
-    cluster == num_cluster & # keep only questions of relevant cluster
-      Finished == "True" # only keep completed surveys
-  ) %>% 
-  droplevels() %>% # drop unused levels
-  select(-cluster) %>% # drop unused column
-  select_if(~ sum(!is.na(.)) > 0) %>% # keep columns without NAs
-  rename("item" = "value_1") %>% # rename column (for better readability)
-  mutate(
-    question = factor( # assign order questions
-      question,
-      levels = c(
-        "In your opinion, how important are open data, materials, and/or code for your work?",
-        "What is your experience with using open data, materials, and/or code developed by others?",
-        "What is your experience with openly sharing data, materials, and/or code that you developed?",
-        "Are you familiar with the FAIR principles for data and code?",
-        "The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?"
-      ),
-      ordered = TRUE
-    ),
-    item = gsub("Other_", "", item) # delete "Other_" from free text responses
-  ) %>%
-  group_by(question, item) %>%
-  summarize( # count number of responses per question and item
-    number_responses = n(),
-    .groups = "keep"
-  ) %>%
-  ungroup() %>%
-  group_by(question) %>%
-  mutate(
-    perc = round(number_responses / sum(number_responses, na.rm = FALSE) * 100, 2), # percentage
-    lab_perc = paste(perc, "%", sep = "") # percentage as text (for labels)
-  ) %>%
-  ungroup()
-
-# save
-write_csv(
-  cluster,
-  here("data", "preproc", paste0("cluster_", num_cluster, ".csv"))
-)
-
-# Cluster 3 ----------------------------------------------------------------
-
-num_cluster <- 3
-
-cluster <-
-  OS_data_clean %>%
-  filter(
-    cluster == num_cluster & # keep only questions of relevant cluster
-      Finished == "True" # only keep completed surveys
-  ) %>% 
-  droplevels() %>% # drop unused levels
-  select(-cluster) %>% # drop unused column
-  select_if(~ sum(!is.na(.)) > 0) %>% # keep columns without NAs
-  rename("item" = "value_1") %>% # rename column (for better readability)
-  mutate(
-    question = factor( # assign order questions
-      question,
-      levels = c(
-        "In your opinion, how important is preregistration for your work?",
-        "What is your experience with study preregistration?",
-        "The following are possible concerns that researchers could have about preregistering their studies. Which of these concerns would you agree with?"
-      ),
-      ordered = TRUE
-    ),
-    item = gsub("Other_", "", item) # delete "Other_" from free text responses
-  ) %>%
-  group_by(question, item) %>%
-  summarize( # count number of responses per question and item
-    number_responses = n(),
-    .groups = "keep"
-  ) %>%
-  ungroup() %>%
-  group_by(question) %>%
-  mutate(
-    perc = round(number_responses / sum(number_responses, na.rm = FALSE) * 100, 2), # percentage
-    lab_perc = paste(perc, "%", sep = "") # percentage as text (for labels)
-  ) %>%
-  ungroup()
-
-# save
-write_csv(
-  cluster,
-  here("data", "preproc", paste0("cluster_", num_cluster, ".csv"))
-)
-
-# Cluster 4 ----------------------------------------------------------------
-
-num_cluster <- 4
-
-cluster <-
-  OS_data_clean %>%
-  filter(
-    cluster == num_cluster & # keep only questions of relevant cluster
-      Finished == "True" # only keep completed surveys
-  ) %>% 
-  droplevels() %>% # drop unused levels
-  select(-cluster) %>% # drop unused column
-  select_if(~ sum(!is.na(.)) > 0) %>% # keep columns without NAs
-  rename("item" = "value_1") %>% # rename column (for better readability)
-  mutate(
-    question = factor( # assign order questions
-      question,
-      levels = c(
-        "In your opinion, how important are open educational resources for your work?",
-        "What is your experience with using open educational resources developed by others?",
-        "What is your experience with openly sharing educational resources that you developed?",
-        "The following are possible concerns that researchers could have about making educational resources developed by them openly available. Which of these concerns would you agree with?"
-      ),
-      ordered = TRUE
-    ),
-    item = gsub("Other_", "", item) # delete "Other_" from free text responses
-  ) %>%
-  group_by(question, item) %>%
-  summarize( # count number of responses per question and item
-    number_responses = n(),
-    .groups = "keep"
-  ) %>%
-  ungroup() %>%
-  group_by(question) %>%
-  mutate(
-    perc = round(number_responses / sum(number_responses, na.rm = FALSE) * 100, 2), # percentage
-    lab_perc = paste(perc, "%", sep = "") # percentage as text (for labels)
-  ) %>%
-  ungroup()
-
-# save
-write_csv(
-  cluster,
-  here("data", "preproc", paste0("cluster_", num_cluster, ".csv"))
-)
-
-# Cluster 5 ----------------------------------------------------------------
-
-num_cluster <- 5
-
-cluster <-
-  OS_data_clean %>%
-  filter(
-    cluster == num_cluster & # keep only questions of relevant cluster
-      Finished == "True" # only keep completed surveys
-  ) %>% 
-  droplevels() %>% # drop unused levels
-  select(-cluster) %>% # drop unused column
-  select_if(~ sum(!is.na(.)) > 0) %>% # keep columns without NAs
-  rename("item" = "value_1") %>% # rename column (for better readability)
-  mutate(
-    question = factor( # assign order questions
-      question,
-      levels = c(
-        "In your opinion, how important is to have an open dialogue with society in your work?",
-        "What is your experience engaging with society?",
-        "The following are possible concerns that researchers could have about engaging with society. Which of these concerns would apply to you?"
-      ),
-      ordered = TRUE
-    ),
-    item = gsub("Other_", "", item) # delete "Other_" from free text responses
-  ) %>%
-  group_by(question, item) %>%
-  summarize( # count number of responses per question and item
-    number_responses = n(),
-    .groups = "keep"
-  ) %>%
-  ungroup() %>%
-  group_by(question) %>%
-  mutate(
-    perc = round(number_responses / sum(number_responses, na.rm = FALSE) * 100, 2), # percentage
-    lab_perc = paste(perc, "%", sep = "") # percentage as text (for labels)
-  ) %>%
-  ungroup()
-
-# save
-write_csv(
-  cluster,
-  here("data", "preproc", paste0("cluster_", num_cluster, ".csv"))
-)
-
-# Cluster 6 ----------------------------------------------------------------
-
-num_cluster <- 6
-
-cluster <-
-  OS_data_clean %>%
-  filter(
-    cluster == num_cluster & # keep only questions of relevant cluster
-      Finished == "True" # only keep completed surveys
-  ) %>% 
-  droplevels() %>% # drop unused levels
-  select(-cluster) %>% # drop unused column
-  select_if(~ sum(!is.na(.)) > 0) %>% # keep columns without NAs
-  rename("item" = "value_1") %>% # rename column (for better readability)
-  mutate(
-    question = factor( # assign order questions
-      question,
-      levels = c(
-        "Do you expect EUR to support you in learning open science practices?",
-        "Which of the following open science practices would you like EUR to provide information or support for?",
-        "What support services provided at EUR have you used to make your data FAIR?"
-      ),
-      ordered = TRUE
-    ),
-    item = gsub("Other_", "", item) # delete "Other_" from free text responses
-  ) %>%
-  group_by(question, item) %>%
-  summarize( # count number of responses per question and item
-    number_responses = n(),
-    .groups = "keep"
-  ) %>%
-  ungroup() %>%
-  group_by(question) %>%
-  mutate(
-    perc = round(number_responses / sum(number_responses, na.rm = FALSE) * 100, 2), # percentage
-    lab_perc = paste(perc, "%", sep = "") # percentage as text (for labels)
-  ) %>%
-  ungroup()
-
-# save
-write_csv(
-  cluster,
-  here("data", "preproc", paste0("cluster_", num_cluster, ".csv"))
-)
-
-# Cluster 7 ----------------------------------------------------------------
-
-num_cluster <- 7
-
-cluster <-
-  OS_data_clean %>%
-  filter(
-    cluster == num_cluster & # keep only questions of relevant cluster
-      Finished == "True" # only keep completed surveys
-  ) %>% 
-  droplevels() %>% # drop unused levels
-  select(-cluster) %>% # drop unused column
-  select_if(~ sum(!is.na(.)) > 0) %>% # keep columns without NAs
-  rename("item" = "value_1") %>% # rename column (for better readability)
-  mutate(
-    question = factor( # assign order questions
-      question,
-      levels = c(
-        "Do you feel recognized and rewarded by EUR (e.g. in the R&O cycle or appraisal conversation) for the Open Science activities you undertake?",
-        "In what way were you recognized and rewarded?",
-        "In what way do you expect to be recognized and rewarded?"
-      ),
-      ordered = TRUE
-    ),
-    item = gsub("Other_", "", item) # delete "Other_" from free text responses
-  ) %>%
-  group_by(question, item) %>%
-  summarize( # count number of responses per question and item
-    number_responses = n(),
-    .groups = "keep"
-  ) %>%
-  ungroup() %>%
-  group_by(question) %>%
-  mutate(
-    perc = round(number_responses / sum(number_responses, na.rm = FALSE) * 100, 2), # percentage
-    lab_perc = paste(perc, "%", sep = "") # percentage as text (for labels)
-  ) %>%
-  ungroup()
-
-# save
-write_csv(
-  cluster,
-  here("data", "preproc", paste0("cluster_", num_cluster, ".csv"))
-)
-
-# Cluster 8 ----------------------------------------------------------------
-
-num_cluster <- 8
-
-cluster <-
-  OS_data_clean %>%
-  filter(
-    cluster == num_cluster & # keep only questions of relevant cluster
-      Finished == "True" # only keep completed surveys
-  ) %>% 
-  droplevels() %>% # drop unused levels
-  select(-cluster) %>% # drop unused column
-  select_if(~ sum(!is.na(.)) > 0) %>% # keep columns without NAs
-  rename("item" = "value_1") %>% # rename column (for better readability)
-  group_by(question, item) %>%
-  summarize( # count number of responses per question and item
-    number_responses = n(),
-    .groups = "keep"
-  ) %>%
-  ungroup() %>%
-  group_by(question) %>%
-  mutate(
-    perc = round(number_responses / sum(number_responses, na.rm = FALSE) * 100, 2), # percentage
-    lab_perc = paste(perc, "%", sep = "") # percentage as text (for labels)
-  ) %>%
-  ungroup()
-
-# save
-write_csv(
-  cluster,
-  here("data", "preproc", paste0("cluster_", num_cluster, ".csv"))
-)
+for(i in levels(OS_data_clean$cluster)) {
+  
+  cluster <- 
+    OS_data_clean %>% 
+    filter(cluster == i) %>% # keep only questions of relevant cluster
+    droplevels() %>% # drop unused levels
+    select_if(~ sum(!is.na(.)) > 0) %>% # keep columns without NAs
+    pivot_longer( # convert to long format
+      "value_1":tail(names(.), 1),
+      names_to = "value",
+      values_to = "item"
+    ) %>%
+    mutate(item = gsub("Other_", "", item)) # delete "Other_" from free text responses
+  
+  # save as .rds (to keep formatting in R)
+  saveRDS(
+    cluster, 
+    file = here("data", "preprocessed", "rds", paste0("cluster_", i, ".rds")),
+    compress = TRUE
+  )
+  
+  # save as .csv (for use with other software)
+  write_csv(
+    cluster,
+    file = here("data", "preprocessed", "csv", paste0("cluster_", i, ".csv"))
+  )
+  
+}
 
 # END ----------------------------------------------------------------
