@@ -224,11 +224,10 @@ OS_data_clean <-
     "What support services provided at EUR have you used to make your data FAIR?" = "What support services provided at EUR have you used to make your data FAIR?\nSelect all suitable options."
   ) %>%
   slice(-c(1:2)) %>% # delete rows with redundant or unnecessary data
-  filter(Finished == "True") %>% # only keep completed surveys
   rowid_to_column(var = "Participant") %>% # assign number to each participant
   select(-c(
     "Start Date", "End Date", "Response Type", "Progress", "Duration (in seconds)", # discard unnecessary columns
-    "Finished", "Recorded Date", "Response ID", "Distribution Channel", "User Language"
+    "Recorded Date", "Response ID", "Distribution Channel", "User Language"
   )) %>%
   # convert to long format
   pivot_longer(
@@ -272,7 +271,10 @@ num_cluster <- 0
 
 cluster <-
   OS_data_clean %>%
-  filter(cluster == num_cluster) %>% # keep only questions of relevant cluster
+  filter(
+    cluster == num_cluster & # keep only questions of relevant cluster
+      Finished == "True" # only keep completed surveys
+    ) %>% 
   droplevels() %>% # drop unused levels
   select(-cluster) %>% # drop unused column
   select_if(~ sum(!is.na(.)) > 0) %>% # keep columns without NAs
@@ -315,7 +317,10 @@ num_cluster <- 1
 
 cluster <-
   OS_data_clean %>%
-  filter(cluster == num_cluster) %>% # keep only questions of relevant cluster
+  filter(
+    cluster == num_cluster & # keep only questions of relevant cluster
+      Finished == "True" # only keep completed surveys
+  ) %>% 
   droplevels() %>% # drop unused levels
   select(-cluster) %>% # drop unused column
   select_if(~ sum(!is.na(.)) > 0) %>% # keep columns without NAs
@@ -358,7 +363,10 @@ num_cluster <- 2
 
 cluster <-
   OS_data_clean %>%
-  filter(cluster == num_cluster) %>% # keep only questions of relevant cluster
+  filter(
+    cluster == num_cluster & # keep only questions of relevant cluster
+      Finished == "True" # only keep completed surveys
+  ) %>% 
   droplevels() %>% # drop unused levels
   select(-cluster) %>% # drop unused column
   select_if(~ sum(!is.na(.)) > 0) %>% # keep columns without NAs
@@ -402,7 +410,10 @@ num_cluster <- 3
 
 cluster <-
   OS_data_clean %>%
-  filter(cluster == num_cluster) %>% # keep only questions of relevant cluster
+  filter(
+    cluster == num_cluster & # keep only questions of relevant cluster
+      Finished == "True" # only keep completed surveys
+  ) %>% 
   droplevels() %>% # drop unused levels
   select(-cluster) %>% # drop unused column
   select_if(~ sum(!is.na(.)) > 0) %>% # keep columns without NAs
@@ -444,7 +455,10 @@ num_cluster <- 4
 
 cluster <-
   OS_data_clean %>%
-  filter(cluster == num_cluster) %>% # keep only questions of relevant cluster
+  filter(
+    cluster == num_cluster & # keep only questions of relevant cluster
+      Finished == "True" # only keep completed surveys
+  ) %>% 
   droplevels() %>% # drop unused levels
   select(-cluster) %>% # drop unused column
   select_if(~ sum(!is.na(.)) > 0) %>% # keep columns without NAs
@@ -487,7 +501,10 @@ num_cluster <- 5
 
 cluster <-
   OS_data_clean %>%
-  filter(cluster == num_cluster) %>% # keep only questions of relevant cluster
+  filter(
+    cluster == num_cluster & # keep only questions of relevant cluster
+      Finished == "True" # only keep completed surveys
+  ) %>% 
   droplevels() %>% # drop unused levels
   select(-cluster) %>% # drop unused column
   select_if(~ sum(!is.na(.)) > 0) %>% # keep columns without NAs
@@ -529,7 +546,10 @@ num_cluster <- 6
 
 cluster <-
   OS_data_clean %>%
-  filter(cluster == num_cluster) %>% # keep only questions of relevant cluster
+  filter(
+    cluster == num_cluster & # keep only questions of relevant cluster
+      Finished == "True" # only keep completed surveys
+  ) %>% 
   droplevels() %>% # drop unused levels
   select(-cluster) %>% # drop unused column
   select_if(~ sum(!is.na(.)) > 0) %>% # keep columns without NAs
@@ -571,7 +591,10 @@ num_cluster <- 7
 
 cluster <-
   OS_data_clean %>%
-  filter(cluster == num_cluster) %>% # keep only questions of relevant cluster
+  filter(
+    cluster == num_cluster & # keep only questions of relevant cluster
+      Finished == "True" # only keep completed surveys
+  ) %>% 
   droplevels() %>% # drop unused levels
   select(-cluster) %>% # drop unused column
   select_if(~ sum(!is.na(.)) > 0) %>% # keep columns without NAs
@@ -613,7 +636,10 @@ num_cluster <- 8
 
 cluster <-
   OS_data_clean %>%
-  filter(cluster == num_cluster) %>% # keep only questions of relevant cluster
+  filter(
+    cluster == num_cluster & # keep only questions of relevant cluster
+      Finished == "True" # only keep completed surveys
+  ) %>% 
   droplevels() %>% # drop unused levels
   select(-cluster) %>% # drop unused column
   select_if(~ sum(!is.na(.)) > 0) %>% # keep columns without NAs
