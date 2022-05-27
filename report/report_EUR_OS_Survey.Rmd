@@ -60,6 +60,21 @@ kable_custom <- function(data, caption) {
 ***
 ***
 
+```{r all-data}
+
+EUR_OS <- readRDS(here("data", "preprocessed", "rds", "CLEAN_OS_Survey_responses.rds")) # all data
+EUR_OS_cluster0 <- readRDS(here("data", "preprocessed", "rds", "cluster_0.rds")) # cluster 0
+EUR_OS_cluster1 <- readRDS(here("data", "preprocessed", "rds", "cluster_1.rds")) # cluster 1
+EUR_OS_cluster2 <- readRDS(here("data", "preprocessed", "rds", "cluster_2.rds")) # cluster 2
+EUR_OS_cluster3 <- readRDS(here("data", "preprocessed", "rds", "cluster_3.rds")) # cluster 3
+EUR_OS_cluster4 <- readRDS(here("data", "preprocessed", "rds", "cluster_4.rds")) # cluster 4
+EUR_OS_cluster5 <- readRDS(here("data", "preprocessed", "rds", "cluster_5.rds")) # cluster 5
+EUR_OS_cluster6 <- readRDS(here("data", "preprocessed", "rds", "cluster_6.rds")) # cluster 6
+EUR_OS_cluster7 <- readRDS(here("data", "preprocessed", "rds", "cluster_7.rds")) # cluster 7
+EUR_OS_cluster8 <- readRDS(here("data", "preprocessed", "rds", "cluster_8.rds")) # cluster 8
+
+```
+
 # Introduction
 
 <!-- The Erasmus Research Institute of Management (ERIM) is committed to making Open Science practices the norm among its researchers. -->
@@ -84,21 +99,6 @@ kable_custom <- function(data, caption) {
 <!-- This report displays the combined results (ESE and RSM) as well as separately for each school[^1]. -->
 
 <!-- This is a living document that will be updated with new information and insights. For any comments or questions, please contact [Dr. Lizette Guzman-Ramirez](mailto:guzmanramirez@rsm.nl) (ERIM Research Data Steward) or [Dr. Antonio Schettino](mailto:schettino@eur.nl) (ERS Open Science Coordinator). -->
-
-```{r all-data}
-
-EUR_OS <- readRDS(here("data", "preprocessed", "rds", "CLEAN_OS_Survey_responses.rds")) # all data
-EUR_OS_cluster0 <- readRDS(here("data", "preprocessed", "rds", "cluster_0.rds")) # cluster 0
-EUR_OS_cluster1 <- readRDS(here("data", "preprocessed", "rds", "cluster_1.rds")) # cluster 1
-EUR_OS_cluster2 <- readRDS(here("data", "preprocessed", "rds", "cluster_2.rds")) # cluster 2
-EUR_OS_cluster3 <- readRDS(here("data", "preprocessed", "rds", "cluster_3.rds")) # cluster 3
-EUR_OS_cluster4 <- readRDS(here("data", "preprocessed", "rds", "cluster_4.rds")) # cluster 4
-EUR_OS_cluster5 <- readRDS(here("data", "preprocessed", "rds", "cluster_5.rds")) # cluster 5
-EUR_OS_cluster6 <- readRDS(here("data", "preprocessed", "rds", "cluster_6.rds")) # cluster 6
-EUR_OS_cluster7 <- readRDS(here("data", "preprocessed", "rds", "cluster_7.rds")) # cluster 7
-EUR_OS_cluster8 <- readRDS(here("data", "preprocessed", "rds", "cluster_8.rds")) # cluster 8
-
-```
 
 # Respondents {.tabset .tabset-pills}
 
@@ -296,14 +296,53 @@ EUR_OS_incomplete_department %>%
 
 ```{r oa-data}
 
-# EUR_OS_open_access <-
-#   read_csv(
-#     here("data", "preproc", "cluster_1.csv"),
-#     col_types = c("ffddc")
-#   )
+EUR_OS_open_access <-
+  EUR_OS_cluster1 %>% 
+  filter(Finished == TRUE) %>% 
+  droplevels()
 
 ```
 
+```{r oa-data-importance}
+
+EUR_OS_open_access_importance <-
+  EUR_OS_open_access %>% 
+  filter(question %in% c("School",
+                         "In your opinion, how important is Open Access for your work?")
+                         ) %>%
+  droplevels() %>% 
+  mutate( # order levels
+    item = fct_explicit_na(item, "NA"),
+    item = fct_relevel( # relevel or reorder?
+      item, 
+      "Extremely important", 
+      "Very important",
+      "Moderately important",
+      "Slightly important", 
+      "Not at all important",
+      "I don’t know/prefer not to answer",
+      "NA"
+      )
+    ) %>% 
+    group_by(School, Department) %>%
+  summarize(
+    n = n(),
+    perc = round(length(which(Finished == TRUE))/length(Finished) * 100, 2),
+    lab_perc = paste(perc, "%", sep = ""),
+    .groups = "keep"
+  )
+  
+  
+  
+  
+  arrange(desc(perc))
+
+```
+
+
+
+
+From the question *`r ERIM_OS_data_importance$question[1]`*, `r paste0(format(sum(ERIM_OS_data_importance[1, "perc"], ERIM_OS_data_importance[2, "perc"], ERIM_OS_data_importance[3, "perc"]), digits = 0), "%")` of respondents think that using open materials and/or code is *`r ERIM_OS_data_importance$item[1]`*, *`r ERIM_OS_data_importance$item[2]`*, or *`r ERIM_OS_data_importance$item[3]`*, whereas `r paste0(pull(filter(ERIM_OS_data_importance, item == "Not at all important"), "perc"), "%")` think it is *`r pull(filter(ERIM_OS_data_importance, item == "Not at all important"), item)`* (see Figure \@ref(fig:figure7)).
 
 
 
