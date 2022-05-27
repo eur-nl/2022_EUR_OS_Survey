@@ -62,6 +62,7 @@ kable_custom <- function(data, caption) {
 
 ```{r all-data}
 
+# load all data
 EUR_OS <- readRDS(here("data", "preprocessed", "rds", "CLEAN_OS_Survey_responses.rds")) # all data
 EUR_OS_cluster0 <- readRDS(here("data", "preprocessed", "rds", "cluster_0.rds")) # cluster 0
 EUR_OS_cluster1 <- readRDS(here("data", "preprocessed", "rds", "cluster_1.rds")) # cluster 1
@@ -72,6 +73,43 @@ EUR_OS_cluster5 <- readRDS(here("data", "preprocessed", "rds", "cluster_5.rds"))
 EUR_OS_cluster6 <- readRDS(here("data", "preprocessed", "rds", "cluster_6.rds")) # cluster 6
 EUR_OS_cluster7 <- readRDS(here("data", "preprocessed", "rds", "cluster_7.rds")) # cluster 7
 EUR_OS_cluster8 <- readRDS(here("data", "preprocessed", "rds", "cluster_8.rds")) # cluster 8
+
+# cluster0
+EUR_OS_cluster0 <- 
+  EUR_OS_cluster0 %>%
+  # filter(value == "value_1" & !is.na(item)) %>%
+  filter(value == "value_1") %>% 
+  mutate(
+    # recode school
+    item = recode(
+      factor(item),
+      "Erasmus School of History, Culture and Communication (ESHCC)" = "ESHCC",
+      "Erasmus School of Health Policy & Management (ESHPM)" = "ESHPM",
+      "Erasmus School of Philosophy (ESPHIL)" = "ESPhil",
+      "Erasmus School of Social and Behavioural Sciences (ESSB)" = "ESSB",
+      "Erasmus School of Law (ESL)" = "ESL",
+      "International Institute of Social Studies (ISS)" = "ISS",
+      "EUC" = "Other", # too few responses
+      "ESSB and ESHPM" = "Other", # double affiliation coded as "Other"
+      "I would rather not say" =  "Other", # non-disclosure coded as "Other"
+      # recode position
+      "Senior lecturer" = "Lecturer",
+      "lecturer" = "Lecturer", 
+      "Research assistant" = "Other",
+      "Employee" = "Other",
+      "Support" = "Other",
+      "Support Staff" = "Other",
+      "Educational advisor" = "Other",
+      "Not sure why this matters" = "Other",
+      # recode department
+      "Erasmus SYNC Lab" = "Other",
+      "Strategy group: Communication and behavior change" = "Other",
+      "Strategy Group" = "Other",
+      "Strategy" = "Other",
+      "strategy" = "Other",
+      "Public Administration,Sociology" = "Other" # double affiliation coded as "Other"
+      )
+  )
 
 ```
 
@@ -106,7 +144,7 @@ EUR_OS_cluster8 <- readRDS(here("data", "preprocessed", "rds", "cluster_8.rds"))
 
 # percentage of (in)complete surveys
 EUR_OS_incomplete <-
-  EUR_OS %>% 
+  EUR_OS_cluster0 %>% 
   group_by(participant) %>%
   summarize(survey = length(which(Finished == TRUE))/length(Finished)) %>%
   ungroup() %>%
@@ -131,23 +169,7 @@ A total of `r sum(EUR_OS_incomplete$n)` respondents started the survey, and `r p
 
 EUR_OS_incomplete_school <-
   EUR_OS_cluster0 %>% 
-  filter(
-    question == "School" &
-      (value == "value_1" & !is.na(item))
-    ) %>% 
-  mutate(
-    item = recode( # use school abbreviations, for better readability
-      factor(item),
-      "Erasmus School of History, Culture and Communication (ESHCC)" = "ESHCC",
-      "Erasmus School of Health Policy & Management (ESHPM)" = "ESHPM",
-      "Erasmus School of Philosophy (ESPHIL)" = "ESPhil",
-      "Erasmus School of Social and Behavioural Sciences (ESSB)" = "ESSB",
-      "Erasmus School of Law (ESL)" = "ESL",
-      "International Institute of Social Studies (ISS)" = "ISS",
-      "ESSB and ESHPM" = "Other", # double affiliation coded as "Other"
-      "I would rather not say" =  "Other" # non-disclosure coded as "Other"
-    )
-  ) %>%
+  filter(question == "School") %>% 
   pivot_wider(
     id_cols = c(participant, Finished),
     names_from = question,
@@ -182,23 +204,7 @@ EUR_OS_incomplete_school %>%
 
 EUR_OS_incomplete_position <-
   EUR_OS_cluster0 %>% 
-  filter(
-    question == "Position" &
-      (value == "value_1" & !is.na(item))
-    ) %>%
-  mutate(
-    item = recode(
-      factor(item),
-      "Senior lecturer" = "Lecturer",
-      "lecturer" = "Lecturer", 
-      "Research assistant" = "Other",
-      "Employee" = "Other",
-      "Support" = "Other",
-      "Educational advisor" = "Other",
-      "Not sure why this matters" = "Other",
-      "I would rather not say" =  "Other"
-    )
-  ) %>%
+  filter(question == "Position") %>%
   pivot_wider(
     id_cols = c(participant, Finished),
     names_from = question,
@@ -234,31 +240,7 @@ EUR_OS_incomplete_position %>%
 
 EUR_OS_incomplete_department <-
   EUR_OS_cluster0 %>% 
-  filter(
-    question %in% c("School", "Department") &
-      (value == "value_1" & !is.na(item))
-    ) %>%
-  mutate(
-    item = recode(
-      factor(item),
-      # recode school
-      "Senior lecturer" = "Lecturer",
-      "lecturer" = "Lecturer", 
-      "Research assistant" = "Other",
-      "Employee" = "Other",
-      "Support" = "Other",
-      "Educational advisor" = "Other",
-      "Not sure why this matters" = "Other",
-      "I would rather not say" =  "Other",
-      # recode department
-      "Erasmus SYNC Lab" = "Other",
-      "Strategy group: Communication and behavior change" = "Other",
-      "Strategy Group" = "Other",
-      "Strategy" = "Other",
-      "Public Administration,Sociology" = "Other",
-      "Support Staff" = "NA"
-    )
-  ) %>%
+  filter(question %in% c("School", "Department")) %>%
   pivot_wider(
     id_cols = c(participant, Finished),
     names_from = question,
@@ -324,7 +306,13 @@ EUR_OS_open_access_importance <-
       "NA"
       )
     ) %>% 
-    group_by(School, Department) %>%
+  filter(item != "NA") %>% 
+    pivot_wider(
+    id_cols = participant,
+    names_from = question,
+    values_from = item
+  ) %>%
+  group_by(School) %>%
   summarize(
     n = n(),
     perc = round(length(which(Finished == TRUE))/length(Finished) * 100, 2),
