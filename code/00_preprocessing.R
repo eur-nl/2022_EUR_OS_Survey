@@ -269,6 +269,80 @@ write_csv(
   here("data", "preprocessed", "csv", "CLEAN_OS_Survey_responses.csv")
 )
 
+# Cluster 0 ----------------------------------------------------------------
+
+cluster0 <- 
+  OS_data_clean %>%
+  filter(cluster == "0") %>% # keep questions of cluster0
+  droplevels() %>% # drop unused levels
+  select_if(~ sum(!is.na(.)) > 0) %>% # keep columns without NAs
+  pivot_longer( # convert to long format
+    "value_1":tail(names(.), 1),
+    names_to = "value",
+    values_to = "item"
+  ) %>%
+  mutate(item = gsub("Other_", "", item)) %>% # delete "Other_" from free text responses
+  filter(value == "value_1") %>% 
+  mutate(
+    # recode school
+    item = recode(
+      factor(item),
+      "Erasmus School of History, Culture and Communication (ESHCC)" = "ESHCC",
+      "Erasmus School of Health Policy & Management (ESHPM)" = "ESHPM",
+      "Erasmus School of Philosophy (ESPHIL)" = "ESPhil",
+      "Erasmus School of Social and Behavioural Sciences (ESSB)" = "ESSB",
+      "Erasmus School of Law (ESL)" = "ESL",
+      "International Institute of Social Studies (ISS)" = "ISS",
+      "EUC" = "Other", # too few responses
+      "ESSB and ESHPM" = "Other", # double affiliation coded as "Other"
+      "I would rather not say" =  "Other", # non-disclosure coded as "Other"
+      # recode position
+      "Senior lecturer" = "Lecturer",
+      "lecturer" = "Lecturer", 
+      "Research assistant" = "Other",
+      "Employee" = "Other",
+      "Support" = "Other",
+      "Support Staff" = "Other",
+      "Educational advisor" = "Other",
+      "Not sure why this matters" = "Other",
+      # recode department
+      "Erasmus SYNC Lab" = "Other",
+      "Strategy group: Communication and behavior change" = "Other",
+      "Strategy Group" = "Other",
+      "Strategy" = "Other",
+      "strategy" = "Other",
+      "Public Administration,Sociology" = "Other" # double affiliation coded as "Other"
+    )
+  )
+
+# save as .rds (to keep formatting in R)
+saveRDS(
+  cluster0,
+  file = here("data", "preprocessed", "rds", "cluster_0.rds"),
+  compress = TRUE
+)
+
+# save as .csv (for use with other software)
+write_csv(
+  cluster0,
+  file = here("data", "preprocessed", "csv", "cluster_0.csv")
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Save cluster data in separate files ----------------------------------------------------------------
 
 # save cluster0 separately

@@ -1,1213 +1,607 @@
 participant,Finished,cluster,question,value,item
-1,TRUE,0,School,value_1,"Erasmus School of History, Culture and Communication (ESHCC)"
-1,TRUE,0,School,value_2,NA
+1,TRUE,0,School,value_1,ESHCC
 1,TRUE,0,Department,value_1,History
-1,TRUE,0,Department,value_2,NA
 1,TRUE,0,Position,value_1,PhD candidate
-1,TRUE,0,Position,value_2,NA
-2,TRUE,0,School,value_1,"Erasmus School of History, Culture and Communication (ESHCC)"
-2,TRUE,0,School,value_2,NA
+2,TRUE,0,School,value_1,ESHCC
 2,TRUE,0,Department,value_1,Arts & Culture
-2,TRUE,0,Department,value_2,NA
 2,TRUE,0,Position,value_1,Lecturer
-2,TRUE,0,Position,value_2,NA
-3,TRUE,0,School,value_1,"Erasmus School of History, Culture and Communication (ESHCC)"
-3,TRUE,0,School,value_2,NA
+3,TRUE,0,School,value_1,ESHCC
 3,TRUE,0,Department,value_1,History
-3,TRUE,0,Department,value_2,NA
 3,TRUE,0,Position,value_1,PhD candidate
-3,TRUE,0,Position,value_2,NA
-4,TRUE,0,School,value_1,"Erasmus School of History, Culture and Communication (ESHCC)"
-4,TRUE,0,School,value_2,NA
+4,TRUE,0,School,value_1,ESHCC
 4,TRUE,0,Department,value_1,Arts & Culture
-4,TRUE,0,Department,value_2,NA
 4,TRUE,0,Position,value_1,Assistant Professor
-4,TRUE,0,Position,value_2,NA
-5,TRUE,0,School,value_1,"Erasmus School of History, Culture and Communication (ESHCC)"
-5,TRUE,0,School,value_2,NA
+5,TRUE,0,School,value_1,ESHCC
 5,TRUE,0,Department,value_1,History
-5,TRUE,0,Department,value_2,NA
 5,TRUE,0,Position,value_1,Assistant Professor
-5,TRUE,0,Position,value_2,NA
-6,TRUE,0,School,value_1,"Erasmus School of History, Culture and Communication (ESHCC)"
-6,TRUE,0,School,value_2,NA
+6,TRUE,0,School,value_1,ESHCC
 6,TRUE,0,Department,value_1,History
-6,TRUE,0,Department,value_2,NA
 6,TRUE,0,Position,value_1,Assistant Professor
-6,TRUE,0,Position,value_2,NA
-7,TRUE,0,School,value_1,"Erasmus School of History, Culture and Communication (ESHCC)"
-7,TRUE,0,School,value_2,NA
+7,TRUE,0,School,value_1,ESHCC
 7,TRUE,0,Department,value_1,Arts & Culture
-7,TRUE,0,Department,value_2,NA
 7,TRUE,0,Position,value_1,Lecturer
-7,TRUE,0,Position,value_2,NA
-8,TRUE,0,School,value_1,"Erasmus School of History, Culture and Communication (ESHCC)"
-8,TRUE,0,School,value_2,NA
+8,TRUE,0,School,value_1,ESHCC
 8,TRUE,0,Department,value_1,History
-8,TRUE,0,Department,value_2,NA
 8,TRUE,0,Position,value_1,Other
-8,TRUE,0,Position,value_2,NA
-9,TRUE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-9,TRUE,0,School,value_2,NA
+9,TRUE,0,School,value_1,ESHPM
 9,TRUE,0,Department,value_1,NA
-9,TRUE,0,Department,value_2,NA
 9,TRUE,0,Position,value_1,Assistant Professor
-9,TRUE,0,Position,value_2,NA
-10,TRUE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-10,TRUE,0,School,value_2,NA
+10,TRUE,0,School,value_1,ESHPM
 10,TRUE,0,Department,value_1,NA
-10,TRUE,0,Department,value_2,NA
 10,TRUE,0,Position,value_1,Assistant Professor
-10,TRUE,0,Position,value_2,NA
-11,TRUE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-11,TRUE,0,School,value_2,NA
+11,TRUE,0,School,value_1,ESHPM
 11,TRUE,0,Department,value_1,NA
-11,TRUE,0,Department,value_2,NA
 11,TRUE,0,Position,value_1,PhD candidate
-11,TRUE,0,Position,value_2,NA
-12,TRUE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-12,TRUE,0,School,value_2,NA
+12,TRUE,0,School,value_1,ESHPM
 12,TRUE,0,Department,value_1,NA
-12,TRUE,0,Department,value_2,NA
 12,TRUE,0,Position,value_1,Postdoc or researcher
-12,TRUE,0,Position,value_2,NA
-13,TRUE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-13,TRUE,0,School,value_2,NA
+13,TRUE,0,School,value_1,ESHPM
 13,TRUE,0,Department,value_1,NA
-13,TRUE,0,Department,value_2,NA
 13,TRUE,0,Position,value_1,Assistant Professor
-13,TRUE,0,Position,value_2,NA
-14,TRUE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-14,TRUE,0,School,value_2,NA
+14,TRUE,0,School,value_1,ESHPM
 14,TRUE,0,Department,value_1,NA
-14,TRUE,0,Department,value_2,NA
 14,TRUE,0,Position,value_1,Associate Professor
-14,TRUE,0,Position,value_2,NA
-15,TRUE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-15,TRUE,0,School,value_2,NA
+15,TRUE,0,School,value_1,ESHPM
 15,TRUE,0,Department,value_1,NA
-15,TRUE,0,Department,value_2,NA
 15,TRUE,0,Position,value_1,Postdoc or researcher
-15,TRUE,0,Position,value_2,NA
-16,TRUE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-16,TRUE,0,School,value_2,NA
+16,TRUE,0,School,value_1,ESHPM
 16,TRUE,0,Department,value_1,NA
-16,TRUE,0,Department,value_2,NA
 16,TRUE,0,Position,value_1,Assistant Professor
-16,TRUE,0,Position,value_2,NA
-17,TRUE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-17,TRUE,0,School,value_2,NA
+17,TRUE,0,School,value_1,ESHPM
 17,TRUE,0,Department,value_1,NA
-17,TRUE,0,Department,value_2,NA
 17,TRUE,0,Position,value_1,PhD candidate
-17,TRUE,0,Position,value_2,NA
-18,TRUE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-18,TRUE,0,School,value_2,NA
+18,TRUE,0,School,value_1,ESHPM
 18,TRUE,0,Department,value_1,NA
-18,TRUE,0,Department,value_2,NA
 18,TRUE,0,Position,value_1,Assistant Professor
-18,TRUE,0,Position,value_2,NA
-19,TRUE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-19,TRUE,0,School,value_2,NA
+19,TRUE,0,School,value_1,ESHPM
 19,TRUE,0,Department,value_1,NA
-19,TRUE,0,Department,value_2,NA
 19,TRUE,0,Position,value_1,Assistant Professor
-19,TRUE,0,Position,value_2,NA
-20,TRUE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-20,TRUE,0,School,value_2,NA
+20,TRUE,0,School,value_1,ESHPM
 20,TRUE,0,Department,value_1,NA
-20,TRUE,0,Department,value_2,NA
 20,TRUE,0,Position,value_1,Assistant Professor
-20,TRUE,0,Position,value_2,NA
-21,TRUE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-21,TRUE,0,School,value_2,NA
+21,TRUE,0,School,value_1,ESHPM
 21,TRUE,0,Department,value_1,NA
-21,TRUE,0,Department,value_2,NA
 21,TRUE,0,Position,value_1,Associate Professor
-21,TRUE,0,Position,value_2,NA
-22,TRUE,0,School,value_1,I would rather not say
-22,TRUE,0,School,value_2,NA
+22,TRUE,0,School,value_1,Other
 22,TRUE,0,Department,value_1,NA
-22,TRUE,0,Department,value_2,NA
-22,TRUE,0,Position,value_1,I would rather not say
-22,TRUE,0,Position,value_2,NA
-23,TRUE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-23,TRUE,0,School,value_2,NA
+22,TRUE,0,Position,value_1,Other
+23,TRUE,0,School,value_1,ESHPM
 23,TRUE,0,Department,value_1,NA
-23,TRUE,0,Department,value_2,NA
 23,TRUE,0,Position,value_1,PhD candidate
-23,TRUE,0,Position,value_2,NA
-24,TRUE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-24,TRUE,0,School,value_2,NA
+24,TRUE,0,School,value_1,ESHPM
 24,TRUE,0,Department,value_1,NA
-24,TRUE,0,Department,value_2,NA
 24,TRUE,0,Position,value_1,Full Professor
-24,TRUE,0,Position,value_2,NA
-25,TRUE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-25,TRUE,0,School,value_2,NA
+25,TRUE,0,School,value_1,ESHPM
 25,TRUE,0,Department,value_1,NA
-25,TRUE,0,Department,value_2,NA
 25,TRUE,0,Position,value_1,PhD candidate
-25,TRUE,0,Position,value_2,NA
-26,TRUE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-26,TRUE,0,School,value_2,NA
+26,TRUE,0,School,value_1,ESHPM
 26,TRUE,0,Department,value_1,NA
-26,TRUE,0,Department,value_2,NA
 26,TRUE,0,Position,value_1,PhD candidate
-26,TRUE,0,Position,value_2,NA
-27,TRUE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-27,TRUE,0,School,value_2,NA
+27,TRUE,0,School,value_1,ESHPM
 27,TRUE,0,Department,value_1,NA
-27,TRUE,0,Department,value_2,NA
 27,TRUE,0,Position,value_1,PhD candidate
-27,TRUE,0,Position,value_2,NA
-28,TRUE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-28,TRUE,0,School,value_2,NA
+28,TRUE,0,School,value_1,ESHPM
 28,TRUE,0,Department,value_1,NA
-28,TRUE,0,Department,value_2,NA
 28,TRUE,0,Position,value_1,Assistant Professor
-28,TRUE,0,Position,value_2,NA
-29,TRUE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-29,TRUE,0,School,value_2,NA
+29,TRUE,0,School,value_1,ESHPM
 29,TRUE,0,Department,value_1,NA
-29,TRUE,0,Department,value_2,NA
 29,TRUE,0,Position,value_1,Assistant Professor
-29,TRUE,0,Position,value_2,NA
-30,TRUE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-30,TRUE,0,School,value_2,NA
+30,TRUE,0,School,value_1,ESHPM
 30,TRUE,0,Department,value_1,NA
-30,TRUE,0,Department,value_2,NA
 30,TRUE,0,Position,value_1,Full Professor
-30,TRUE,0,Position,value_2,NA
-31,TRUE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-31,TRUE,0,School,value_2,NA
+31,TRUE,0,School,value_1,ESHPM
 31,TRUE,0,Department,value_1,NA
-31,TRUE,0,Department,value_2,NA
 31,TRUE,0,Position,value_1,Assistant Professor
-31,TRUE,0,Position,value_2,NA
-32,TRUE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-32,TRUE,0,School,value_2,NA
+32,TRUE,0,School,value_1,ESHPM
 32,TRUE,0,Department,value_1,NA
-32,TRUE,0,Department,value_2,NA
 32,TRUE,0,Position,value_1,Assistant Professor
-32,TRUE,0,Position,value_2,NA
-33,TRUE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-33,TRUE,0,School,value_2,NA
+33,TRUE,0,School,value_1,ESHPM
 33,TRUE,0,Department,value_1,NA
-33,TRUE,0,Department,value_2,NA
 33,TRUE,0,Position,value_1,Associate Professor
-33,TRUE,0,Position,value_2,NA
-34,TRUE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-34,TRUE,0,School,value_2,NA
+34,TRUE,0,School,value_1,ESHPM
 34,TRUE,0,Department,value_1,NA
-34,TRUE,0,Department,value_2,NA
 34,TRUE,0,Position,value_1,Associate Professor
-34,TRUE,0,Position,value_2,NA
-35,TRUE,0,School,value_1,Erasmus School of Philosophy (ESPHIL)
-35,TRUE,0,School,value_2,NA
+35,TRUE,0,School,value_1,ESPhil
 35,TRUE,0,Department,value_1,NA
-35,TRUE,0,Department,value_2,NA
 35,TRUE,0,Position,value_1,PhD candidate
-35,TRUE,0,Position,value_2,NA
-36,TRUE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-36,TRUE,0,School,value_2,NA
+36,TRUE,0,School,value_1,ESHPM
 36,TRUE,0,Department,value_1,NA
-36,TRUE,0,Department,value_2,NA
 36,TRUE,0,Position,value_1,Postdoc or researcher
-36,TRUE,0,Position,value_2,NA
-37,TRUE,0,School,value_1,Erasmus School of Philosophy (ESPHIL)
-37,TRUE,0,School,value_2,NA
+37,TRUE,0,School,value_1,ESPhil
 37,TRUE,0,Department,value_1,NA
-37,TRUE,0,Department,value_2,NA
 37,TRUE,0,Position,value_1,Associate Professor
-37,TRUE,0,Position,value_2,NA
-38,TRUE,0,School,value_1,Erasmus School of Philosophy (ESPHIL)
-38,TRUE,0,School,value_2,NA
+38,TRUE,0,School,value_1,ESPhil
 38,TRUE,0,Department,value_1,NA
-38,TRUE,0,Department,value_2,NA
 38,TRUE,0,Position,value_1,Full Professor
-38,TRUE,0,Position,value_2,NA
-39,TRUE,0,School,value_1,Erasmus School of Philosophy (ESPHIL)
-39,TRUE,0,School,value_2,NA
+39,TRUE,0,School,value_1,ESPhil
 39,TRUE,0,Department,value_1,NA
-39,TRUE,0,Department,value_2,NA
 39,TRUE,0,Position,value_1,PhD candidate
-39,TRUE,0,Position,value_2,NA
-40,TRUE,0,School,value_1,Erasmus School of Philosophy (ESPHIL)
-40,TRUE,0,School,value_2,NA
+40,TRUE,0,School,value_1,ESPhil
 40,TRUE,0,Department,value_1,NA
-40,TRUE,0,Department,value_2,NA
 40,TRUE,0,Position,value_1,Full Professor
-40,TRUE,0,Position,value_2,NA
-41,TRUE,0,School,value_1,Erasmus School of Philosophy (ESPHIL)
-41,TRUE,0,School,value_2,NA
+41,TRUE,0,School,value_1,ESPhil
 41,TRUE,0,Department,value_1,NA
-41,TRUE,0,Department,value_2,NA
 41,TRUE,0,Position,value_1,PhD candidate
-41,TRUE,0,Position,value_2,NA
-42,TRUE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-42,TRUE,0,School,value_2,NA
+42,TRUE,0,School,value_1,ESHPM
 42,TRUE,0,Department,value_1,NA
-42,TRUE,0,Department,value_2,NA
 42,TRUE,0,Position,value_1,PhD candidate
-42,TRUE,0,Position,value_2,NA
-43,TRUE,0,School,value_1,Erasmus School of Philosophy (ESPHIL)
-43,TRUE,0,School,value_2,NA
+43,TRUE,0,School,value_1,ESPhil
 43,TRUE,0,Department,value_1,NA
-43,TRUE,0,Department,value_2,NA
 43,TRUE,0,Position,value_1,PhD candidate
-43,TRUE,0,Position,value_2,NA
-44,TRUE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-44,TRUE,0,School,value_2,NA
+44,TRUE,0,School,value_1,ESHPM
 44,TRUE,0,Department,value_1,NA
-44,TRUE,0,Department,value_2,NA
 44,TRUE,0,Position,value_1,PhD candidate
-44,TRUE,0,Position,value_2,NA
-45,TRUE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-45,TRUE,0,School,value_2,NA
+45,TRUE,0,School,value_1,ESHPM
 45,TRUE,0,Department,value_1,NA
-45,TRUE,0,Department,value_2,NA
 45,TRUE,0,Position,value_1,PhD candidate
-45,TRUE,0,Position,value_2,NA
-46,TRUE,0,School,value_1,Erasmus School of Philosophy (ESPHIL)
-46,TRUE,0,School,value_2,NA
+46,TRUE,0,School,value_1,ESPhil
 46,TRUE,0,Department,value_1,NA
-46,TRUE,0,Department,value_2,NA
 46,TRUE,0,Position,value_1,PhD candidate
-46,TRUE,0,Position,value_2,NA
-47,TRUE,0,School,value_1,Erasmus School of Philosophy (ESPHIL)
-47,TRUE,0,School,value_2,NA
+47,TRUE,0,School,value_1,ESPhil
 47,TRUE,0,Department,value_1,NA
-47,TRUE,0,Department,value_2,NA
 47,TRUE,0,Position,value_1,Associate Professor
-47,TRUE,0,Position,value_2,NA
-48,TRUE,0,School,value_1,Erasmus School of Philosophy (ESPHIL)
-48,TRUE,0,School,value_2,NA
+48,TRUE,0,School,value_1,ESPhil
 48,TRUE,0,Department,value_1,NA
-48,TRUE,0,Department,value_2,NA
 48,TRUE,0,Position,value_1,Full Professor
-48,TRUE,0,Position,value_2,NA
-49,TRUE,0,School,value_1,International Institute of Social Studies (ISS)
-49,TRUE,0,School,value_2,NA
+49,TRUE,0,School,value_1,ISS
 49,TRUE,0,Department,value_1,NA
-49,TRUE,0,Department,value_2,NA
 49,TRUE,0,Position,value_1,Full Professor
-49,TRUE,0,Position,value_2,NA
-50,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-50,TRUE,0,School,value_2,NA
+50,TRUE,0,School,value_1,ESSB
 50,TRUE,0,Department,value_1,Public Administration
-50,TRUE,0,Department,value_2,NA
 50,TRUE,0,Position,value_1,Full Professor
-50,TRUE,0,Position,value_2,NA
-51,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-51,TRUE,0,School,value_2,NA
+51,TRUE,0,School,value_1,ESSB
 51,TRUE,0,Department,value_1,Pedagogical Sciences
-51,TRUE,0,Department,value_2,NA
 51,TRUE,0,Position,value_1,PhD candidate
-51,TRUE,0,Position,value_2,NA
-52,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-52,TRUE,0,School,value_2,NA
+52,TRUE,0,School,value_1,ESSB
 52,TRUE,0,Department,value_1,Pedagogical Sciences
-52,TRUE,0,Department,value_2,NA
 52,TRUE,0,Position,value_1,PhD candidate
-52,TRUE,0,Position,value_2,NA
-53,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-53,TRUE,0,School,value_2,NA
+53,TRUE,0,School,value_1,ESSB
 53,TRUE,0,Department,value_1,Psychology
-53,TRUE,0,Department,value_2,NA
 53,TRUE,0,Position,value_1,PhD candidate
-53,TRUE,0,Position,value_2,NA
-54,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-54,TRUE,0,School,value_2,NA
+54,TRUE,0,School,value_1,ESSB
 54,TRUE,0,Department,value_1,Psychology
-54,TRUE,0,Department,value_2,NA
 54,TRUE,0,Position,value_1,Full Professor
-54,TRUE,0,Position,value_2,NA
-55,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-55,TRUE,0,School,value_2,NA
+55,TRUE,0,School,value_1,ESSB
 55,TRUE,0,Department,value_1,Public Administration
-55,TRUE,0,Department,value_2,NA
 55,TRUE,0,Position,value_1,Full Professor
-55,TRUE,0,Position,value_2,NA
-56,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-56,TRUE,0,School,value_2,NA
+56,TRUE,0,School,value_1,ESSB
 56,TRUE,0,Department,value_1,Psychology
-56,TRUE,0,Department,value_2,NA
 56,TRUE,0,Position,value_1,Postdoc or researcher
-56,TRUE,0,Position,value_2,NA
-57,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-57,TRUE,0,School,value_2,NA
+57,TRUE,0,School,value_1,ESSB
 57,TRUE,0,Department,value_1,Public Administration
-57,TRUE,0,Department,value_2,NA
 57,TRUE,0,Position,value_1,Full Professor
-57,TRUE,0,Position,value_2,NA
-58,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-58,TRUE,0,School,value_2,NA
-58,TRUE,0,Department,value_1,Strategy group: Communication and behavior change
-58,TRUE,0,Department,value_2,NA
+58,TRUE,0,School,value_1,ESSB
+58,TRUE,0,Department,value_1,Other
 58,TRUE,0,Position,value_1,Postdoc or researcher
-58,TRUE,0,Position,value_2,NA
-59,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-59,TRUE,0,School,value_2,NA
+59,TRUE,0,School,value_1,ESSB
 59,TRUE,0,Department,value_1,Sociology
-59,TRUE,0,Department,value_2,NA
 59,TRUE,0,Position,value_1,Full Professor
-59,TRUE,0,Position,value_2,NA
-60,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-60,TRUE,0,School,value_2,NA
+60,TRUE,0,School,value_1,ESSB
 60,TRUE,0,Department,value_1,Pedagogical Sciences
-60,TRUE,0,Department,value_2,NA
 60,TRUE,0,Position,value_1,PhD candidate
-60,TRUE,0,Position,value_2,NA
-61,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-61,TRUE,0,School,value_2,NA
+61,TRUE,0,School,value_1,ESSB
 61,TRUE,0,Department,value_1,Public Administration
-61,TRUE,0,Department,value_2,Sociology
-61,TRUE,0,Position,value_1,Support
-61,TRUE,0,Position,value_2,NA
-62,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-62,TRUE,0,School,value_2,NA
+61,TRUE,0,Position,value_1,Other
+62,TRUE,0,School,value_1,ESSB
 62,TRUE,0,Department,value_1,Public Administration
-62,TRUE,0,Department,value_2,NA
 62,TRUE,0,Position,value_1,Assistant Professor
-62,TRUE,0,Position,value_2,NA
-63,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-63,TRUE,0,School,value_2,NA
+63,TRUE,0,School,value_1,ESSB
 63,TRUE,0,Department,value_1,Psychology
-63,TRUE,0,Department,value_2,NA
 63,TRUE,0,Position,value_1,Assistant Professor
-63,TRUE,0,Position,value_2,NA
-64,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-64,TRUE,0,School,value_2,NA
+64,TRUE,0,School,value_1,ESSB
 64,TRUE,0,Department,value_1,Pedagogical Sciences
-64,TRUE,0,Department,value_2,NA
 64,TRUE,0,Position,value_1,Postdoc or researcher
-64,TRUE,0,Position,value_2,NA
-65,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-65,TRUE,0,School,value_2,NA
+65,TRUE,0,School,value_1,ESSB
 65,TRUE,0,Department,value_1,Psychology
-65,TRUE,0,Department,value_2,NA
 65,TRUE,0,Position,value_1,PhD candidate
-65,TRUE,0,Position,value_2,NA
-66,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-66,TRUE,0,School,value_2,NA
-66,TRUE,0,Department,value_1,strategy
-66,TRUE,0,Department,value_2,NA
+66,TRUE,0,School,value_1,ESSB
+66,TRUE,0,Department,value_1,Other
 66,TRUE,0,Position,value_1,Full Professor
-66,TRUE,0,Position,value_2,NA
-67,TRUE,0,School,value_1,ESSB and ESHPM
-67,TRUE,0,School,value_2,NA
+67,TRUE,0,School,value_1,Other
 67,TRUE,0,Department,value_1,NA
-67,TRUE,0,Department,value_2,NA
 67,TRUE,0,Position,value_1,PhD candidate
-67,TRUE,0,Position,value_2,NA
-68,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-68,TRUE,0,School,value_2,NA
+68,TRUE,0,School,value_1,ESSB
 68,TRUE,0,Department,value_1,Sociology
-68,TRUE,0,Department,value_2,NA
 68,TRUE,0,Position,value_1,Assistant Professor
-68,TRUE,0,Position,value_2,NA
-69,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-69,TRUE,0,School,value_2,NA
+69,TRUE,0,School,value_1,ESSB
 69,TRUE,0,Department,value_1,Sociology
-69,TRUE,0,Department,value_2,NA
 69,TRUE,0,Position,value_1,Full Professor
-69,TRUE,0,Position,value_2,NA
-70,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-70,TRUE,0,School,value_2,NA
+70,TRUE,0,School,value_1,ESSB
 70,TRUE,0,Department,value_1,Psychology
-70,TRUE,0,Department,value_2,NA
 70,TRUE,0,Position,value_1,Assistant Professor
-70,TRUE,0,Position,value_2,NA
-71,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-71,TRUE,0,School,value_2,NA
+71,TRUE,0,School,value_1,ESSB
 71,TRUE,0,Department,value_1,Pedagogical Sciences
-71,TRUE,0,Department,value_2,NA
 71,TRUE,0,Position,value_1,PhD candidate
-71,TRUE,0,Position,value_2,NA
-72,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-72,TRUE,0,School,value_2,NA
+72,TRUE,0,School,value_1,ESSB
 72,TRUE,0,Department,value_1,Psychology
-72,TRUE,0,Department,value_2,NA
 72,TRUE,0,Position,value_1,Postdoc or researcher
-72,TRUE,0,Position,value_2,NA
-73,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-73,TRUE,0,School,value_2,NA
+73,TRUE,0,School,value_1,ESSB
 73,TRUE,0,Department,value_1,Public Administration
-73,TRUE,0,Department,value_2,NA
 73,TRUE,0,Position,value_1,Assistant Professor
-73,TRUE,0,Position,value_2,NA
-74,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-74,TRUE,0,School,value_2,NA
+74,TRUE,0,School,value_1,ESSB
 74,TRUE,0,Department,value_1,Psychology
-74,TRUE,0,Department,value_2,NA
 74,TRUE,0,Position,value_1,Full Professor
-74,TRUE,0,Position,value_2,NA
-75,TRUE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-75,TRUE,0,School,value_2,NA
+75,TRUE,0,School,value_1,ESHPM
 75,TRUE,0,Department,value_1,NA
-75,TRUE,0,Department,value_2,NA
 75,TRUE,0,Position,value_1,PhD candidate
-75,TRUE,0,Position,value_2,NA
-76,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-76,TRUE,0,School,value_2,NA
+76,TRUE,0,School,value_1,ESSB
 76,TRUE,0,Department,value_1,Pedagogical Sciences
-76,TRUE,0,Department,value_2,NA
 76,TRUE,0,Position,value_1,Full Professor
-76,TRUE,0,Position,value_2,NA
-77,TRUE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-77,TRUE,0,School,value_2,NA
+77,TRUE,0,School,value_1,ESHPM
 77,TRUE,0,Department,value_1,NA
-77,TRUE,0,Department,value_2,NA
 77,TRUE,0,Position,value_1,Assistant Professor
-77,TRUE,0,Position,value_2,NA
-78,TRUE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-78,TRUE,0,School,value_2,NA
+78,TRUE,0,School,value_1,ESHPM
 78,TRUE,0,Department,value_1,NA
-78,TRUE,0,Department,value_2,NA
 78,TRUE,0,Position,value_1,Assistant Professor
-78,TRUE,0,Position,value_2,NA
-79,TRUE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-79,TRUE,0,School,value_2,NA
+79,TRUE,0,School,value_1,ESHPM
 79,TRUE,0,Department,value_1,NA
-79,TRUE,0,Department,value_2,NA
 79,TRUE,0,Position,value_1,Assistant Professor
-79,TRUE,0,Position,value_2,NA
-80,TRUE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-80,TRUE,0,School,value_2,NA
+80,TRUE,0,School,value_1,ESHPM
 80,TRUE,0,Department,value_1,NA
-80,TRUE,0,Department,value_2,NA
 80,TRUE,0,Position,value_1,Postdoc or researcher
-80,TRUE,0,Position,value_2,NA
-81,TRUE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-81,TRUE,0,School,value_2,NA
+81,TRUE,0,School,value_1,ESHPM
 81,TRUE,0,Department,value_1,NA
-81,TRUE,0,Department,value_2,NA
 81,TRUE,0,Position,value_1,Assistant Professor
-81,TRUE,0,Position,value_2,NA
-82,TRUE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-82,TRUE,0,School,value_2,NA
+82,TRUE,0,School,value_1,ESHPM
 82,TRUE,0,Department,value_1,NA
-82,TRUE,0,Department,value_2,NA
 82,TRUE,0,Position,value_1,Full Professor
-82,TRUE,0,Position,value_2,NA
-83,TRUE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-83,TRUE,0,School,value_2,NA
+83,TRUE,0,School,value_1,ESHPM
 83,TRUE,0,Department,value_1,NA
-83,TRUE,0,Department,value_2,NA
 83,TRUE,0,Position,value_1,Assistant Professor
-83,TRUE,0,Position,value_2,NA
-84,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-84,TRUE,0,School,value_2,NA
+84,TRUE,0,School,value_1,ESSB
 84,TRUE,0,Department,value_1,Psychology
-84,TRUE,0,Department,value_2,NA
 84,TRUE,0,Position,value_1,PhD candidate
-84,TRUE,0,Position,value_2,NA
-85,TRUE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-85,TRUE,0,School,value_2,NA
+85,TRUE,0,School,value_1,ESHPM
 85,TRUE,0,Department,value_1,NA
-85,TRUE,0,Department,value_2,NA
 85,TRUE,0,Position,value_1,PhD candidate
-85,TRUE,0,Position,value_2,NA
-86,TRUE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-86,TRUE,0,School,value_2,NA
+86,TRUE,0,School,value_1,ESHPM
 86,TRUE,0,Department,value_1,NA
-86,TRUE,0,Department,value_2,NA
 86,TRUE,0,Position,value_1,Full Professor
-86,TRUE,0,Position,value_2,NA
-87,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-87,TRUE,0,School,value_2,NA
+87,TRUE,0,School,value_1,ESSB
 87,TRUE,0,Department,value_1,Pedagogical Sciences
-87,TRUE,0,Department,value_2,NA
 87,TRUE,0,Position,value_1,Associate Professor
-87,TRUE,0,Position,value_2,NA
-88,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-88,TRUE,0,School,value_2,NA
+88,TRUE,0,School,value_1,ESSB
 88,TRUE,0,Department,value_1,Public Administration
-88,TRUE,0,Department,value_2,NA
 88,TRUE,0,Position,value_1,Assistant Professor
-88,TRUE,0,Position,value_2,NA
-89,TRUE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-89,TRUE,0,School,value_2,NA
+89,TRUE,0,School,value_1,ESHPM
 89,TRUE,0,Department,value_1,NA
-89,TRUE,0,Department,value_2,NA
 89,TRUE,0,Position,value_1,Assistant Professor
-89,TRUE,0,Position,value_2,NA
-90,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-90,TRUE,0,School,value_2,NA
+90,TRUE,0,School,value_1,ESSB
 90,TRUE,0,Department,value_1,Pedagogical Sciences
-90,TRUE,0,Department,value_2,NA
 90,TRUE,0,Position,value_1,Associate Professor
-90,TRUE,0,Position,value_2,NA
-91,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-91,TRUE,0,School,value_2,NA
+91,TRUE,0,School,value_1,ESSB
 91,TRUE,0,Department,value_1,Psychology
-91,TRUE,0,Department,value_2,NA
 91,TRUE,0,Position,value_1,PhD candidate
-91,TRUE,0,Position,value_2,NA
-92,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-92,TRUE,0,School,value_2,NA
+92,TRUE,0,School,value_1,ESSB
 92,TRUE,0,Department,value_1,Pedagogical Sciences
-92,TRUE,0,Department,value_2,NA
 92,TRUE,0,Position,value_1,Assistant Professor
-92,TRUE,0,Position,value_2,NA
-93,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-93,TRUE,0,School,value_2,NA
+93,TRUE,0,School,value_1,ESSB
 93,TRUE,0,Department,value_1,Public Administration
-93,TRUE,0,Department,value_2,NA
 93,TRUE,0,Position,value_1,Assistant Professor
-93,TRUE,0,Position,value_2,NA
-94,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-94,TRUE,0,School,value_2,NA
+94,TRUE,0,School,value_1,ESSB
 94,TRUE,0,Department,value_1,Pedagogical Sciences
-94,TRUE,0,Department,value_2,NA
 94,TRUE,0,Position,value_1,PhD candidate
-94,TRUE,0,Position,value_2,NA
-95,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-95,TRUE,0,School,value_2,NA
+95,TRUE,0,School,value_1,ESSB
 95,TRUE,0,Department,value_1,Psychology
-95,TRUE,0,Department,value_2,NA
 95,TRUE,0,Position,value_1,PhD candidate
-95,TRUE,0,Position,value_2,NA
-96,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-96,TRUE,0,School,value_2,NA
+96,TRUE,0,School,value_1,ESSB
 96,TRUE,0,Department,value_1,Psychology
-96,TRUE,0,Department,value_2,NA
 96,TRUE,0,Position,value_1,Assistant Professor
-96,TRUE,0,Position,value_2,NA
-97,TRUE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-97,TRUE,0,School,value_2,NA
+97,TRUE,0,School,value_1,ESHPM
 97,TRUE,0,Department,value_1,NA
-97,TRUE,0,Department,value_2,NA
 97,TRUE,0,Position,value_1,Associate Professor
-97,TRUE,0,Position,value_2,NA
-98,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-98,TRUE,0,School,value_2,NA
+98,TRUE,0,School,value_1,ESSB
 98,TRUE,0,Department,value_1,Other
-98,TRUE,0,Department,value_2,NA
 98,TRUE,0,Position,value_1,Other
-98,TRUE,0,Position,value_2,NA
-99,TRUE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-99,TRUE,0,School,value_2,NA
+99,TRUE,0,School,value_1,ESHPM
 99,TRUE,0,Department,value_1,NA
-99,TRUE,0,Department,value_2,NA
 99,TRUE,0,Position,value_1,PhD candidate
-99,TRUE,0,Position,value_2,NA
-100,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-100,TRUE,0,School,value_2,NA
+100,TRUE,0,School,value_1,ESSB
 100,TRUE,0,Department,value_1,Psychology
-100,TRUE,0,Department,value_2,NA
 100,TRUE,0,Position,value_1,Assistant Professor
-100,TRUE,0,Position,value_2,NA
-101,TRUE,0,School,value_1,International Institute of Social Studies (ISS)
-101,TRUE,0,School,value_2,NA
+101,TRUE,0,School,value_1,ISS
 101,TRUE,0,Department,value_1,NA
-101,TRUE,0,Department,value_2,NA
 101,TRUE,0,Position,value_1,Assistant Professor
-101,TRUE,0,Position,value_2,NA
-102,TRUE,0,School,value_1,International Institute of Social Studies (ISS)
-102,TRUE,0,School,value_2,NA
+102,TRUE,0,School,value_1,ISS
 102,TRUE,0,Department,value_1,NA
-102,TRUE,0,Department,value_2,NA
 102,TRUE,0,Position,value_1,Full Professor
-102,TRUE,0,Position,value_2,NA
-103,TRUE,0,School,value_1,International Institute of Social Studies (ISS)
-103,TRUE,0,School,value_2,NA
+103,TRUE,0,School,value_1,ISS
 103,TRUE,0,Department,value_1,NA
-103,TRUE,0,Department,value_2,NA
 103,TRUE,0,Position,value_1,Full Professor
-103,TRUE,0,Position,value_2,NA
-104,TRUE,0,School,value_1,International Institute of Social Studies (ISS)
-104,TRUE,0,School,value_2,NA
+104,TRUE,0,School,value_1,ISS
 104,TRUE,0,Department,value_1,NA
-104,TRUE,0,Department,value_2,NA
 104,TRUE,0,Position,value_1,Associate Professor
-104,TRUE,0,Position,value_2,NA
-105,TRUE,0,School,value_1,International Institute of Social Studies (ISS)
-105,TRUE,0,School,value_2,NA
+105,TRUE,0,School,value_1,ISS
 105,TRUE,0,Department,value_1,NA
-105,TRUE,0,Department,value_2,NA
 105,TRUE,0,Position,value_1,PhD candidate
-105,TRUE,0,Position,value_2,NA
-106,TRUE,0,School,value_1,International Institute of Social Studies (ISS)
-106,TRUE,0,School,value_2,NA
+106,TRUE,0,School,value_1,ISS
 106,TRUE,0,Department,value_1,NA
-106,TRUE,0,Department,value_2,NA
 106,TRUE,0,Position,value_1,Full Professor
-106,TRUE,0,Position,value_2,NA
-107,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-107,TRUE,0,School,value_2,NA
-107,TRUE,0,Department,value_1,Strategy Group
-107,TRUE,0,Department,value_2,NA
+107,TRUE,0,School,value_1,ESSB
+107,TRUE,0,Department,value_1,Other
 107,TRUE,0,Position,value_1,Postdoc or researcher
-107,TRUE,0,Position,value_2,NA
-108,FALSE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-108,FALSE,0,School,value_2,NA
+108,FALSE,0,School,value_1,ESSB
 108,FALSE,0,Department,value_1,Sociology
-108,FALSE,0,Department,value_2,NA
 108,FALSE,0,Position,value_1,PhD candidate
-108,FALSE,0,Position,value_2,NA
-109,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-109,TRUE,0,School,value_2,NA
-109,TRUE,0,Department,value_1,Erasmus SYNC Lab
-109,TRUE,0,Department,value_2,NA
+109,TRUE,0,School,value_1,ESSB
+109,TRUE,0,Department,value_1,Other
 109,TRUE,0,Position,value_1,PhD candidate
-109,TRUE,0,Position,value_2,NA
-110,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-110,TRUE,0,School,value_2,NA
+110,TRUE,0,School,value_1,ESSB
 110,TRUE,0,Department,value_1,Sociology
-110,TRUE,0,Department,value_2,NA
 110,TRUE,0,Position,value_1,Assistant Professor
-110,TRUE,0,Position,value_2,NA
-111,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-111,TRUE,0,School,value_2,NA
-111,TRUE,0,Department,value_1,"Public Administration,Sociology"
-111,TRUE,0,Department,value_2,NA
+111,TRUE,0,School,value_1,ESSB
+111,TRUE,0,Department,value_1,Other
 111,TRUE,0,Position,value_1,Postdoc or researcher
-111,TRUE,0,Position,value_2,NA
-112,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-112,TRUE,0,School,value_2,NA
+112,TRUE,0,School,value_1,ESSB
 112,TRUE,0,Department,value_1,Other
-112,TRUE,0,Department,value_2,NA
 112,TRUE,0,Position,value_1,Assistant Professor
-112,TRUE,0,Position,value_2,NA
-113,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-113,TRUE,0,School,value_2,NA
+113,TRUE,0,School,value_1,ESSB
 113,TRUE,0,Department,value_1,Psychology
-113,TRUE,0,Department,value_2,NA
 113,TRUE,0,Position,value_1,PhD candidate
-113,TRUE,0,Position,value_2,NA
-114,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-114,TRUE,0,School,value_2,NA
+114,TRUE,0,School,value_1,ESSB
 114,TRUE,0,Department,value_1,Psychology
-114,TRUE,0,Department,value_2,NA
 114,TRUE,0,Position,value_1,Associate Professor
-114,TRUE,0,Position,value_2,NA
-115,TRUE,0,School,value_1,EUC
-115,TRUE,0,School,value_2,NA
+115,TRUE,0,School,value_1,Other
 115,TRUE,0,Department,value_1,NA
-115,TRUE,0,Department,value_2,NA
-115,TRUE,0,Position,value_1,Senior lecturer
-115,TRUE,0,Position,value_2,NA
-116,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-116,TRUE,0,School,value_2,NA
+115,TRUE,0,Position,value_1,Lecturer
+116,TRUE,0,School,value_1,ESSB
 116,TRUE,0,Department,value_1,Psychology
-116,TRUE,0,Department,value_2,NA
 116,TRUE,0,Position,value_1,PhD candidate
-116,TRUE,0,Position,value_2,NA
-117,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-117,TRUE,0,School,value_2,NA
+117,TRUE,0,School,value_1,ESSB
 117,TRUE,0,Department,value_1,Pedagogical Sciences
-117,TRUE,0,Department,value_2,NA
 117,TRUE,0,Position,value_1,Assistant Professor
-117,TRUE,0,Position,value_2,NA
-118,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-118,TRUE,0,School,value_2,NA
+118,TRUE,0,School,value_1,ESSB
 118,TRUE,0,Department,value_1,Psychology
-118,TRUE,0,Department,value_2,NA
 118,TRUE,0,Position,value_1,Full Professor
-118,TRUE,0,Position,value_2,NA
-119,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-119,TRUE,0,School,value_2,NA
+119,TRUE,0,School,value_1,ESSB
 119,TRUE,0,Department,value_1,Psychology
-119,TRUE,0,Department,value_2,NA
 119,TRUE,0,Position,value_1,PhD candidate
-119,TRUE,0,Position,value_2,NA
-120,TRUE,0,School,value_1,International Institute of Social Studies (ISS)
-120,TRUE,0,School,value_2,NA
+120,TRUE,0,School,value_1,ISS
 120,TRUE,0,Department,value_1,NA
-120,TRUE,0,Department,value_2,NA
 120,TRUE,0,Position,value_1,Full Professor
-120,TRUE,0,Position,value_2,NA
-121,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-121,TRUE,0,School,value_2,NA
-121,TRUE,0,Department,value_1,Strategy
-121,TRUE,0,Department,value_2,NA
+121,TRUE,0,School,value_1,ESSB
+121,TRUE,0,Department,value_1,Other
 121,TRUE,0,Position,value_1,Postdoc or researcher
-121,TRUE,0,Position,value_2,NA
-122,TRUE,0,School,value_1,International Institute of Social Studies (ISS)
-122,TRUE,0,School,value_2,NA
+122,TRUE,0,School,value_1,ISS
 122,TRUE,0,Department,value_1,NA
-122,TRUE,0,Department,value_2,NA
 122,TRUE,0,Position,value_1,PhD candidate
-122,TRUE,0,Position,value_2,NA
-123,TRUE,0,School,value_1,International Institute of Social Studies (ISS)
-123,TRUE,0,School,value_2,NA
+123,TRUE,0,School,value_1,ISS
 123,TRUE,0,Department,value_1,NA
-123,TRUE,0,Department,value_2,NA
 123,TRUE,0,Position,value_1,Associate Professor
-123,TRUE,0,Position,value_2,NA
 124,TRUE,0,School,value_1,Other
-124,TRUE,0,School,value_2,NA
 124,TRUE,0,Department,value_1,NA
-124,TRUE,0,Department,value_2,NA
 124,TRUE,0,Position,value_1,Other
-124,TRUE,0,Position,value_2,NA
-125,TRUE,0,School,value_1,International Institute of Social Studies (ISS)
-125,TRUE,0,School,value_2,NA
+125,TRUE,0,School,value_1,ISS
 125,TRUE,0,Department,value_1,NA
-125,TRUE,0,Department,value_2,NA
 125,TRUE,0,Position,value_1,Assistant Professor
-125,TRUE,0,Position,value_2,NA
-126,TRUE,0,School,value_1,International Institute of Social Studies (ISS)
-126,TRUE,0,School,value_2,NA
+126,TRUE,0,School,value_1,ISS
 126,TRUE,0,Department,value_1,NA
-126,TRUE,0,Department,value_2,NA
 126,TRUE,0,Position,value_1,Full Professor
-126,TRUE,0,Position,value_2,NA
-127,TRUE,0,School,value_1,International Institute of Social Studies (ISS)
-127,TRUE,0,School,value_2,NA
+127,TRUE,0,School,value_1,ISS
 127,TRUE,0,Department,value_1,NA
-127,TRUE,0,Department,value_2,NA
 127,TRUE,0,Position,value_1,PhD candidate
-127,TRUE,0,Position,value_2,NA
-128,TRUE,0,School,value_1,International Institute of Social Studies (ISS)
-128,TRUE,0,School,value_2,NA
+128,TRUE,0,School,value_1,ISS
 128,TRUE,0,Department,value_1,NA
-128,TRUE,0,Department,value_2,NA
-128,TRUE,0,Position,value_1,Employee
-128,TRUE,0,Position,value_2,NA
-129,TRUE,0,School,value_1,International Institute of Social Studies (ISS)
-129,TRUE,0,School,value_2,NA
+128,TRUE,0,Position,value_1,Other
+129,TRUE,0,School,value_1,ISS
 129,TRUE,0,Department,value_1,NA
-129,TRUE,0,Department,value_2,NA
 129,TRUE,0,Position,value_1,Assistant Professor
-129,TRUE,0,Position,value_2,NA
-130,TRUE,0,School,value_1,International Institute of Social Studies (ISS)
-130,TRUE,0,School,value_2,NA
+130,TRUE,0,School,value_1,ISS
 130,TRUE,0,Department,value_1,NA
-130,TRUE,0,Department,value_2,NA
 130,TRUE,0,Position,value_1,PhD candidate
-130,TRUE,0,Position,value_2,NA
-131,TRUE,0,School,value_1,International Institute of Social Studies (ISS)
-131,TRUE,0,School,value_2,NA
+131,TRUE,0,School,value_1,ISS
 131,TRUE,0,Department,value_1,NA
-131,TRUE,0,Department,value_2,NA
 131,TRUE,0,Position,value_1,PhD candidate
-131,TRUE,0,Position,value_2,NA
-132,TRUE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-132,TRUE,0,School,value_2,NA
-132,TRUE,0,Department,value_1,Support Staff
-132,TRUE,0,Department,value_2,NA
-132,TRUE,0,Position,value_1,Educational advisor
-132,TRUE,0,Position,value_2,NA
-133,FALSE,0,School,value_1,"Erasmus School of History, Culture and Communication (ESHCC)"
-133,FALSE,0,School,value_2,NA
+132,TRUE,0,School,value_1,ESSB
+132,TRUE,0,Department,value_1,Other
+132,TRUE,0,Position,value_1,Other
+133,FALSE,0,School,value_1,ESHCC
 133,FALSE,0,Department,value_1,NA
-133,FALSE,0,Department,value_2,NA
 133,FALSE,0,Position,value_1,PhD candidate
-133,FALSE,0,Position,value_2,NA
-134,FALSE,0,School,value_1,International Institute of Social Studies (ISS)
-134,FALSE,0,School,value_2,NA
+134,FALSE,0,School,value_1,ISS
 134,FALSE,0,Department,value_1,NA
-134,FALSE,0,Department,value_2,NA
 134,FALSE,0,Position,value_1,Other
-134,FALSE,0,Position,value_2,NA
 135,FALSE,0,School,value_1,NA
-135,FALSE,0,School,value_2,NA
 135,FALSE,0,Department,value_1,NA
-135,FALSE,0,Department,value_2,NA
 135,FALSE,0,Position,value_1,NA
-135,FALSE,0,Position,value_2,NA
-136,FALSE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-136,FALSE,0,School,value_2,NA
+136,FALSE,0,School,value_1,ESHPM
 136,FALSE,0,Department,value_1,NA
-136,FALSE,0,Department,value_2,NA
 136,FALSE,0,Position,value_1,PhD candidate
-136,FALSE,0,Position,value_2,NA
-137,FALSE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-137,FALSE,0,School,value_2,NA
+137,FALSE,0,School,value_1,ESHPM
 137,FALSE,0,Department,value_1,NA
-137,FALSE,0,Department,value_2,NA
 137,FALSE,0,Position,value_1,PhD candidate
-137,FALSE,0,Position,value_2,NA
 138,FALSE,0,School,value_1,NA
-138,FALSE,0,School,value_2,NA
 138,FALSE,0,Department,value_1,NA
-138,FALSE,0,Department,value_2,NA
 138,FALSE,0,Position,value_1,NA
-138,FALSE,0,Position,value_2,NA
 139,FALSE,0,School,value_1,NA
-139,FALSE,0,School,value_2,NA
 139,FALSE,0,Department,value_1,NA
-139,FALSE,0,Department,value_2,NA
 139,FALSE,0,Position,value_1,NA
-139,FALSE,0,Position,value_2,NA
-140,FALSE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-140,FALSE,0,School,value_2,NA
+140,FALSE,0,School,value_1,ESSB
 140,FALSE,0,Department,value_1,Public Administration
-140,FALSE,0,Department,value_2,NA
 140,FALSE,0,Position,value_1,Other
-140,FALSE,0,Position,value_2,NA
-141,FALSE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-141,FALSE,0,School,value_2,NA
+141,FALSE,0,School,value_1,ESSB
 141,FALSE,0,Department,value_1,NA
-141,FALSE,0,Department,value_2,NA
 141,FALSE,0,Position,value_1,NA
-141,FALSE,0,Position,value_2,NA
-142,FALSE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-142,FALSE,0,School,value_2,NA
+142,FALSE,0,School,value_1,ESSB
 142,FALSE,0,Department,value_1,Psychology
-142,FALSE,0,Department,value_2,NA
 142,FALSE,0,Position,value_1,PhD candidate
-142,FALSE,0,Position,value_2,NA
-143,FALSE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-143,FALSE,0,School,value_2,NA
+143,FALSE,0,School,value_1,ESSB
 143,FALSE,0,Department,value_1,NA
-143,FALSE,0,Department,value_2,NA
 143,FALSE,0,Position,value_1,NA
-143,FALSE,0,Position,value_2,NA
-144,FALSE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-144,FALSE,0,School,value_2,NA
+144,FALSE,0,School,value_1,ESSB
 144,FALSE,0,Department,value_1,NA
-144,FALSE,0,Department,value_2,NA
 144,FALSE,0,Position,value_1,NA
-144,FALSE,0,Position,value_2,NA
-145,FALSE,0,School,value_1,"Erasmus School of History, Culture and Communication (ESHCC)"
-145,FALSE,0,School,value_2,NA
+145,FALSE,0,School,value_1,ESHCC
 145,FALSE,0,Department,value_1,NA
-145,FALSE,0,Department,value_2,NA
 145,FALSE,0,Position,value_1,NA
-145,FALSE,0,Position,value_2,NA
-146,FALSE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-146,FALSE,0,School,value_2,NA
+146,FALSE,0,School,value_1,ESSB
 146,FALSE,0,Department,value_1,Pedagogical Sciences
-146,FALSE,0,Department,value_2,NA
 146,FALSE,0,Position,value_1,Full Professor
-146,FALSE,0,Position,value_2,NA
-147,FALSE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-147,FALSE,0,School,value_2,NA
+147,FALSE,0,School,value_1,ESSB
 147,FALSE,0,Department,value_1,Pedagogical Sciences
-147,FALSE,0,Department,value_2,NA
 147,FALSE,0,Position,value_1,Postdoc or researcher
-147,FALSE,0,Position,value_2,NA
-148,FALSE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-148,FALSE,0,School,value_2,NA
+148,FALSE,0,School,value_1,ESSB
 148,FALSE,0,Department,value_1,Psychology
-148,FALSE,0,Department,value_2,NA
 148,FALSE,0,Position,value_1,Full Professor
-148,FALSE,0,Position,value_2,NA
-149,FALSE,0,School,value_1,"Erasmus School of History, Culture and Communication (ESHCC)"
-149,FALSE,0,School,value_2,NA
+149,FALSE,0,School,value_1,ESHCC
 149,FALSE,0,Department,value_1,NA
-149,FALSE,0,Department,value_2,NA
 149,FALSE,0,Position,value_1,NA
-149,FALSE,0,Position,value_2,NA
-150,FALSE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-150,FALSE,0,School,value_2,NA
+150,FALSE,0,School,value_1,ESSB
 150,FALSE,0,Department,value_1,Sociology
-150,FALSE,0,Department,value_2,NA
 150,FALSE,0,Position,value_1,PhD candidate
-150,FALSE,0,Position,value_2,NA
-151,FALSE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-151,FALSE,0,School,value_2,NA
+151,FALSE,0,School,value_1,ESSB
 151,FALSE,0,Department,value_1,Psychology
-151,FALSE,0,Department,value_2,NA
 151,FALSE,0,Position,value_1,Full Professor
-151,FALSE,0,Position,value_2,NA
-152,FALSE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-152,FALSE,0,School,value_2,NA
+152,FALSE,0,School,value_1,ESSB
 152,FALSE,0,Department,value_1,Pedagogical Sciences
-152,FALSE,0,Department,value_2,NA
 152,FALSE,0,Position,value_1,PhD candidate
-152,FALSE,0,Position,value_2,NA
-153,FALSE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-153,FALSE,0,School,value_2,NA
+153,FALSE,0,School,value_1,ESHPM
 153,FALSE,0,Department,value_1,NA
-153,FALSE,0,Department,value_2,NA
 153,FALSE,0,Position,value_1,PhD candidate
-153,FALSE,0,Position,value_2,NA
-154,FALSE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-154,FALSE,0,School,value_2,NA
+154,FALSE,0,School,value_1,ESSB
 154,FALSE,0,Department,value_1,Pedagogical Sciences
-154,FALSE,0,Department,value_2,NA
 154,FALSE,0,Position,value_1,Other
-154,FALSE,0,Position,value_2,NA
-155,FALSE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-155,FALSE,0,School,value_2,NA
+155,FALSE,0,School,value_1,ESSB
 155,FALSE,0,Department,value_1,Psychology
-155,FALSE,0,Department,value_2,NA
-155,FALSE,0,Position,value_1,Not sure why this matters
-155,FALSE,0,Position,value_2,NA
-156,FALSE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-156,FALSE,0,School,value_2,NA
+155,FALSE,0,Position,value_1,Other
+156,FALSE,0,School,value_1,ESHPM
 156,FALSE,0,Department,value_1,NA
-156,FALSE,0,Department,value_2,NA
 156,FALSE,0,Position,value_1,PhD candidate
-156,FALSE,0,Position,value_2,NA
-157,FALSE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-157,FALSE,0,School,value_2,NA
+157,FALSE,0,School,value_1,ESHPM
 157,FALSE,0,Department,value_1,NA
-157,FALSE,0,Department,value_2,NA
 157,FALSE,0,Position,value_1,PhD candidate
-157,FALSE,0,Position,value_2,NA
-158,FALSE,0,School,value_1,"Erasmus School of History, Culture and Communication (ESHCC)"
-158,FALSE,0,School,value_2,NA
+158,FALSE,0,School,value_1,ESHCC
 158,FALSE,0,Department,value_1,Media & Communication
-158,FALSE,0,Department,value_2,NA
 158,FALSE,0,Position,value_1,Associate Professor
-158,FALSE,0,Position,value_2,NA
-159,FALSE,0,School,value_1,"Erasmus School of History, Culture and Communication (ESHCC)"
-159,FALSE,0,School,value_2,NA
+159,FALSE,0,School,value_1,ESHCC
 159,FALSE,0,Department,value_1,Arts & Culture
-159,FALSE,0,Department,value_2,NA
-159,FALSE,0,Position,value_1,lecturer
-159,FALSE,0,Position,value_2,NA
-160,FALSE,0,School,value_1,Erasmus School of Social and Behavioural Sciences (ESSB)
-160,FALSE,0,School,value_2,NA
+159,FALSE,0,Position,value_1,Lecturer
+160,FALSE,0,School,value_1,ESSB
 160,FALSE,0,Department,value_1,Psychology
-160,FALSE,0,Department,value_2,NA
-160,FALSE,0,Position,value_1,Research assistant
-160,FALSE,0,Position,value_2,NA
-161,FALSE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-161,FALSE,0,School,value_2,NA
+160,FALSE,0,Position,value_1,Other
+161,FALSE,0,School,value_1,ESHPM
 161,FALSE,0,Department,value_1,NA
-161,FALSE,0,Department,value_2,NA
 161,FALSE,0,Position,value_1,PhD candidate
-161,FALSE,0,Position,value_2,NA
-162,FALSE,0,School,value_1,International Institute of Social Studies (ISS)
-162,FALSE,0,School,value_2,NA
+162,FALSE,0,School,value_1,ISS
 162,FALSE,0,Department,value_1,NA
-162,FALSE,0,Department,value_2,NA
 162,FALSE,0,Position,value_1,PhD candidate
-162,FALSE,0,Position,value_2,NA
-163,FALSE,0,School,value_1,Erasmus School of Health Policy & Management (ESHPM)
-163,FALSE,0,School,value_2,NA
+163,FALSE,0,School,value_1,ESHPM
 163,FALSE,0,Department,value_1,NA
-163,FALSE,0,Department,value_2,NA
 163,FALSE,0,Position,value_1,PhD candidate
-163,FALSE,0,Position,value_2,NA
-164,TRUE,0,School,value_1,Erasmus School of Law (ESL)
-164,TRUE,0,School,value_2,NA
+164,TRUE,0,School,value_1,ESL
 164,TRUE,0,Department,value_1,NA
-164,TRUE,0,Department,value_2,NA
 164,TRUE,0,Position,value_1,Associate Professor
-164,TRUE,0,Position,value_2,NA
-165,TRUE,0,School,value_1,Erasmus School of Law (ESL)
-165,TRUE,0,School,value_2,NA
+165,TRUE,0,School,value_1,ESL
 165,TRUE,0,Department,value_1,NA
-165,TRUE,0,Department,value_2,NA
 165,TRUE,0,Position,value_1,Associate Professor
-165,TRUE,0,Position,value_2,NA
-166,TRUE,0,School,value_1,Erasmus School of Law (ESL)
-166,TRUE,0,School,value_2,NA
+166,TRUE,0,School,value_1,ESL
 166,TRUE,0,Department,value_1,NA
-166,TRUE,0,Department,value_2,NA
 166,TRUE,0,Position,value_1,Full Professor
-166,TRUE,0,Position,value_2,NA
-167,TRUE,0,School,value_1,Erasmus School of Law (ESL)
-167,TRUE,0,School,value_2,NA
+167,TRUE,0,School,value_1,ESL
 167,TRUE,0,Department,value_1,NA
-167,TRUE,0,Department,value_2,NA
 167,TRUE,0,Position,value_1,Full Professor
-167,TRUE,0,Position,value_2,NA
-168,TRUE,0,School,value_1,Erasmus School of Law (ESL)
-168,TRUE,0,School,value_2,NA
+168,TRUE,0,School,value_1,ESL
 168,TRUE,0,Department,value_1,NA
-168,TRUE,0,Department,value_2,NA
 168,TRUE,0,Position,value_1,Full Professor
-168,TRUE,0,Position,value_2,NA
-169,TRUE,0,School,value_1,Erasmus School of Law (ESL)
-169,TRUE,0,School,value_2,NA
+169,TRUE,0,School,value_1,ESL
 169,TRUE,0,Department,value_1,NA
-169,TRUE,0,Department,value_2,NA
 169,TRUE,0,Position,value_1,Full Professor
-169,TRUE,0,Position,value_2,NA
-170,TRUE,0,School,value_1,Erasmus School of Law (ESL)
-170,TRUE,0,School,value_2,NA
+170,TRUE,0,School,value_1,ESL
 170,TRUE,0,Department,value_1,NA
-170,TRUE,0,Department,value_2,NA
 170,TRUE,0,Position,value_1,Full Professor
-170,TRUE,0,Position,value_2,NA
-171,TRUE,0,School,value_1,Erasmus School of Law (ESL)
-171,TRUE,0,School,value_2,NA
+171,TRUE,0,School,value_1,ESL
 171,TRUE,0,Department,value_1,NA
-171,TRUE,0,Department,value_2,NA
 171,TRUE,0,Position,value_1,Full Professor
-171,TRUE,0,Position,value_2,NA
-172,TRUE,0,School,value_1,Erasmus School of Law (ESL)
-172,TRUE,0,School,value_2,NA
+172,TRUE,0,School,value_1,ESL
 172,TRUE,0,Department,value_1,NA
-172,TRUE,0,Department,value_2,NA
 172,TRUE,0,Position,value_1,Full Professor
-172,TRUE,0,Position,value_2,NA
-173,TRUE,0,School,value_1,Erasmus School of Law (ESL)
-173,TRUE,0,School,value_2,NA
+173,TRUE,0,School,value_1,ESL
 173,TRUE,0,Department,value_1,NA
-173,TRUE,0,Department,value_2,NA
 173,TRUE,0,Position,value_1,Full Professor
-173,TRUE,0,Position,value_2,NA
-174,TRUE,0,School,value_1,Erasmus School of Law (ESL)
-174,TRUE,0,School,value_2,NA
+174,TRUE,0,School,value_1,ESL
 174,TRUE,0,Department,value_1,NA
-174,TRUE,0,Department,value_2,NA
 174,TRUE,0,Position,value_1,Full Professor
-174,TRUE,0,Position,value_2,NA
-175,TRUE,0,School,value_1,Erasmus School of Law (ESL)
-175,TRUE,0,School,value_2,NA
+175,TRUE,0,School,value_1,ESL
 175,TRUE,0,Department,value_1,NA
-175,TRUE,0,Department,value_2,NA
 175,TRUE,0,Position,value_1,PhD candidate
-175,TRUE,0,Position,value_2,NA
-176,TRUE,0,School,value_1,Erasmus School of Law (ESL)
-176,TRUE,0,School,value_2,NA
+176,TRUE,0,School,value_1,ESL
 176,TRUE,0,Department,value_1,NA
-176,TRUE,0,Department,value_2,NA
 176,TRUE,0,Position,value_1,PhD candidate
-176,TRUE,0,Position,value_2,NA
-177,TRUE,0,School,value_1,Erasmus School of Law (ESL)
-177,TRUE,0,School,value_2,NA
+177,TRUE,0,School,value_1,ESL
 177,TRUE,0,Department,value_1,NA
-177,TRUE,0,Department,value_2,NA
 177,TRUE,0,Position,value_1,PhD candidate
-177,TRUE,0,Position,value_2,NA
-178,TRUE,0,School,value_1,Erasmus School of Law (ESL)
-178,TRUE,0,School,value_2,NA
+178,TRUE,0,School,value_1,ESL
 178,TRUE,0,Department,value_1,NA
-178,TRUE,0,Department,value_2,NA
 178,TRUE,0,Position,value_1,Full Professor
-178,TRUE,0,Position,value_2,NA
-179,TRUE,0,School,value_1,Erasmus School of Law (ESL)
-179,TRUE,0,School,value_2,NA
+179,TRUE,0,School,value_1,ESL
 179,TRUE,0,Department,value_1,NA
-179,TRUE,0,Department,value_2,NA
 179,TRUE,0,Position,value_1,Associate Professor
-179,TRUE,0,Position,value_2,NA
-180,TRUE,0,School,value_1,Erasmus School of Law (ESL)
-180,TRUE,0,School,value_2,NA
+180,TRUE,0,School,value_1,ESL
 180,TRUE,0,Department,value_1,NA
-180,TRUE,0,Department,value_2,NA
 180,TRUE,0,Position,value_1,Full Professor
-180,TRUE,0,Position,value_2,NA
-181,TRUE,0,School,value_1,Erasmus School of Law (ESL)
-181,TRUE,0,School,value_2,NA
+181,TRUE,0,School,value_1,ESL
 181,TRUE,0,Department,value_1,NA
-181,TRUE,0,Department,value_2,NA
 181,TRUE,0,Position,value_1,PhD candidate
-181,TRUE,0,Position,value_2,NA
-182,TRUE,0,School,value_1,Erasmus School of Law (ESL)
-182,TRUE,0,School,value_2,NA
+182,TRUE,0,School,value_1,ESL
 182,TRUE,0,Department,value_1,NA
-182,TRUE,0,Department,value_2,NA
 182,TRUE,0,Position,value_1,PhD candidate
-182,TRUE,0,Position,value_2,NA
-183,TRUE,0,School,value_1,Erasmus School of Law (ESL)
-183,TRUE,0,School,value_2,NA
+183,TRUE,0,School,value_1,ESL
 183,TRUE,0,Department,value_1,NA
-183,TRUE,0,Department,value_2,NA
 183,TRUE,0,Position,value_1,Assistant Professor
-183,TRUE,0,Position,value_2,NA
-184,TRUE,0,School,value_1,Erasmus School of Law (ESL)
-184,TRUE,0,School,value_2,NA
+184,TRUE,0,School,value_1,ESL
 184,TRUE,0,Department,value_1,NA
-184,TRUE,0,Department,value_2,NA
 184,TRUE,0,Position,value_1,Assistant Professor
-184,TRUE,0,Position,value_2,NA
-185,TRUE,0,School,value_1,Erasmus School of Law (ESL)
-185,TRUE,0,School,value_2,NA
+185,TRUE,0,School,value_1,ESL
 185,TRUE,0,Department,value_1,NA
-185,TRUE,0,Department,value_2,NA
 185,TRUE,0,Position,value_1,PhD candidate
-185,TRUE,0,Position,value_2,NA
-186,TRUE,0,School,value_1,Erasmus School of Law (ESL)
-186,TRUE,0,School,value_2,NA
+186,TRUE,0,School,value_1,ESL
 186,TRUE,0,Department,value_1,NA
-186,TRUE,0,Department,value_2,NA
 186,TRUE,0,Position,value_1,PhD candidate
-186,TRUE,0,Position,value_2,NA
-187,TRUE,0,School,value_1,Erasmus School of Law (ESL)
-187,TRUE,0,School,value_2,NA
+187,TRUE,0,School,value_1,ESL
 187,TRUE,0,Department,value_1,NA
-187,TRUE,0,Department,value_2,NA
 187,TRUE,0,Position,value_1,Assistant Professor
-187,TRUE,0,Position,value_2,NA
-188,TRUE,0,School,value_1,Erasmus School of Law (ESL)
-188,TRUE,0,School,value_2,NA
+188,TRUE,0,School,value_1,ESL
 188,TRUE,0,Department,value_1,NA
-188,TRUE,0,Department,value_2,NA
 188,TRUE,0,Position,value_1,PhD candidate
-188,TRUE,0,Position,value_2,NA
-189,TRUE,0,School,value_1,Erasmus School of Law (ESL)
-189,TRUE,0,School,value_2,NA
+189,TRUE,0,School,value_1,ESL
 189,TRUE,0,Department,value_1,NA
-189,TRUE,0,Department,value_2,NA
 189,TRUE,0,Position,value_1,Associate Professor
-189,TRUE,0,Position,value_2,NA
-190,TRUE,0,School,value_1,Erasmus School of Law (ESL)
-190,TRUE,0,School,value_2,NA
+190,TRUE,0,School,value_1,ESL
 190,TRUE,0,Department,value_1,NA
-190,TRUE,0,Department,value_2,NA
 190,TRUE,0,Position,value_1,Full Professor
-190,TRUE,0,Position,value_2,NA
-191,TRUE,0,School,value_1,Erasmus School of Law (ESL)
-191,TRUE,0,School,value_2,NA
+191,TRUE,0,School,value_1,ESL
 191,TRUE,0,Department,value_1,NA
-191,TRUE,0,Department,value_2,NA
 191,TRUE,0,Position,value_1,Associate Professor
-191,TRUE,0,Position,value_2,NA
 192,FALSE,0,School,value_1,NA
-192,FALSE,0,School,value_2,NA
 192,FALSE,0,Department,value_1,NA
-192,FALSE,0,Department,value_2,NA
 192,FALSE,0,Position,value_1,NA
-192,FALSE,0,Position,value_2,NA
-193,FALSE,0,School,value_1,Erasmus School of Law (ESL)
-193,FALSE,0,School,value_2,NA
+193,FALSE,0,School,value_1,ESL
 193,FALSE,0,Department,value_1,NA
-193,FALSE,0,Department,value_2,NA
 193,FALSE,0,Position,value_1,PhD candidate
-193,FALSE,0,Position,value_2,NA
-194,FALSE,0,School,value_1,Erasmus School of Law (ESL)
-194,FALSE,0,School,value_2,NA
+194,FALSE,0,School,value_1,ESL
 194,FALSE,0,Department,value_1,NA
-194,FALSE,0,Department,value_2,NA
 194,FALSE,0,Position,value_1,Other
-194,FALSE,0,Position,value_2,NA
-195,FALSE,0,School,value_1,Erasmus School of Law (ESL)
-195,FALSE,0,School,value_2,NA
+195,FALSE,0,School,value_1,ESL
 195,FALSE,0,Department,value_1,NA
-195,FALSE,0,Department,value_2,NA
 195,FALSE,0,Position,value_1,PhD candidate
-195,FALSE,0,Position,value_2,NA
-196,FALSE,0,School,value_1,Erasmus School of Law (ESL)
-196,FALSE,0,School,value_2,NA
+196,FALSE,0,School,value_1,ESL
 196,FALSE,0,Department,value_1,NA
-196,FALSE,0,Department,value_2,NA
 196,FALSE,0,Position,value_1,Associate Professor
-196,FALSE,0,Position,value_2,NA
-197,FALSE,0,School,value_1,Erasmus School of Law (ESL)
-197,FALSE,0,School,value_2,NA
+197,FALSE,0,School,value_1,ESL
 197,FALSE,0,Department,value_1,NA
-197,FALSE,0,Department,value_2,NA
 197,FALSE,0,Position,value_1,Full Professor
-197,FALSE,0,Position,value_2,NA
-198,FALSE,0,School,value_1,Erasmus School of Law (ESL)
-198,FALSE,0,School,value_2,NA
+198,FALSE,0,School,value_1,ESL
 198,FALSE,0,Department,value_1,NA
-198,FALSE,0,Department,value_2,NA
 198,FALSE,0,Position,value_1,PhD candidate
-198,FALSE,0,Position,value_2,NA
-199,FALSE,0,School,value_1,Erasmus School of Law (ESL)
-199,FALSE,0,School,value_2,NA
+199,FALSE,0,School,value_1,ESL
 199,FALSE,0,Department,value_1,NA
-199,FALSE,0,Department,value_2,NA
 199,FALSE,0,Position,value_1,Associate Professor
-199,FALSE,0,Position,value_2,NA
-200,FALSE,0,School,value_1,Erasmus School of Law (ESL)
-200,FALSE,0,School,value_2,NA
+200,FALSE,0,School,value_1,ESL
 200,FALSE,0,Department,value_1,NA
-200,FALSE,0,Department,value_2,NA
 200,FALSE,0,Position,value_1,Full Professor
-200,FALSE,0,Position,value_2,NA
-201,FALSE,0,School,value_1,Erasmus School of Law (ESL)
-201,FALSE,0,School,value_2,NA
+201,FALSE,0,School,value_1,ESL
 201,FALSE,0,Department,value_1,NA
-201,FALSE,0,Department,value_2,NA
 201,FALSE,0,Position,value_1,Associate Professor
-201,FALSE,0,Position,value_2,NA
-202,FALSE,0,School,value_1,Erasmus School of Law (ESL)
-202,FALSE,0,School,value_2,NA
+202,FALSE,0,School,value_1,ESL
 202,FALSE,0,Department,value_1,NA
-202,FALSE,0,Department,value_2,NA
 202,FALSE,0,Position,value_1,Associate Professor
-202,FALSE,0,Position,value_2,NA

@@ -74,43 +74,6 @@ EUR_OS_cluster6 <- readRDS(here("data", "preprocessed", "rds", "cluster_6.rds"))
 EUR_OS_cluster7 <- readRDS(here("data", "preprocessed", "rds", "cluster_7.rds")) # cluster 7
 EUR_OS_cluster8 <- readRDS(here("data", "preprocessed", "rds", "cluster_8.rds")) # cluster 8
 
-# cluster0
-EUR_OS_cluster0 <- 
-  EUR_OS_cluster0 %>%
-  # filter(value == "value_1" & !is.na(item)) %>%
-  filter(value == "value_1") %>% 
-  mutate(
-    # recode school
-    item = recode(
-      factor(item),
-      "Erasmus School of History, Culture and Communication (ESHCC)" = "ESHCC",
-      "Erasmus School of Health Policy & Management (ESHPM)" = "ESHPM",
-      "Erasmus School of Philosophy (ESPHIL)" = "ESPhil",
-      "Erasmus School of Social and Behavioural Sciences (ESSB)" = "ESSB",
-      "Erasmus School of Law (ESL)" = "ESL",
-      "International Institute of Social Studies (ISS)" = "ISS",
-      "EUC" = "Other", # too few responses
-      "ESSB and ESHPM" = "Other", # double affiliation coded as "Other"
-      "I would rather not say" =  "Other", # non-disclosure coded as "Other"
-      # recode position
-      "Senior lecturer" = "Lecturer",
-      "lecturer" = "Lecturer", 
-      "Research assistant" = "Other",
-      "Employee" = "Other",
-      "Support" = "Other",
-      "Support Staff" = "Other",
-      "Educational advisor" = "Other",
-      "Not sure why this matters" = "Other",
-      # recode department
-      "Erasmus SYNC Lab" = "Other",
-      "Strategy group: Communication and behavior change" = "Other",
-      "Strategy Group" = "Other",
-      "Strategy" = "Other",
-      "strategy" = "Other",
-      "Public Administration,Sociology" = "Other" # double affiliation coded as "Other"
-      )
-  )
-
 ```
 
 # Introduction
