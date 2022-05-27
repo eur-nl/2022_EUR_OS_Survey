@@ -249,7 +249,12 @@ OS_data_clean <-
     Finished = as.logical(Finished) # convert "Finished" as logical
   ) %>% 
   select(-value) %>% # delete column with redundant information
-  relocate(cluster, .before = "question") # move cluster before question
+  relocate(cluster, .before = "question") %>% # move cluster before question
+  mutate(cluster = recode_factor( # cluster as ordered factor, to help with loop below
+    cluster,
+    "0" = "0", "1" = "1", "2" = "2", "3" = "3", "4" = "4", "5" = "5", "6" = "6", "7" = "7", "8" = "8",
+    .ordered = TRUE)
+  )
 
 # save as .rds (to keep formatting in R)
 saveRDS(
@@ -266,11 +271,41 @@ write_csv(
 
 # Save cluster data in separate files ----------------------------------------------------------------
 
-for(i in levels(OS_data_clean$cluster)) {
+# save cluster0 separately
+cluster0 <- 
+  OS_data_clean %>%
+  filter(cluster == "0") %>% # keep questions of cluster0
+  droplevels() %>% # drop unused levels
+  select_if(~ sum(!is.na(.)) > 0) %>% # keep columns without NAs
+  pivot_longer( # convert to long format
+    "value_1":tail(names(.), 1),
+    names_to = "value",
+    values_to = "item"
+  ) %>%
+  mutate(item = gsub("Other_", "", item)) # delete "Other_" from free text responses
+
+# save as .rds (to keep formatting in R)
+saveRDS(
+  cluster0,
+  file = here("data", "preprocessed", "rds", "cluster_0.rds"),
+  compress = TRUE
+)
+
+# save as .csv (for use with other software)
+write_csv(
+  cluster0,
+  file = here("data", "preprocessed", "csv", "cluster_0.csv")
+)
+
+# loop to save all other clusters
+for(i in c(1:last(levels(OS_data_clean$cluster)))) {
   
   cluster <- 
-    OS_data_clean %>% 
-    filter(cluster == i) %>% # keep only questions of relevant cluster
+    OS_data_clean %>%
+    filter(
+      cluster %in% c(0, i) & # keep questions of relevant cluster + cluster0 (for school info)
+      !question %in% c("Department", "Position") # only keep school info
+      ) %>% 
     droplevels() %>% # drop unused levels
     select_if(~ sum(!is.na(.)) > 0) %>% # keep columns without NAs
     pivot_longer( # convert to long format
@@ -282,11 +317,11 @@ for(i in levels(OS_data_clean$cluster)) {
   
   # save as .rds (to keep formatting in R)
   saveRDS(
-    cluster, 
+    cluster,
     file = here("data", "preprocessed", "rds", paste0("cluster_", i, ".rds")),
     compress = TRUE
   )
-  
+
   # save as .csv (for use with other software)
   write_csv(
     cluster,
