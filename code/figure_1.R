@@ -1,7 +1,7 @@
 
 # RNG ---------------------------------------------------------------------
 
-seed_proj <- 52118 # A1Z26 cipher (https://www.boxentriq.com/code-breaking/letters-to-numbers)
+seed_proj <- 100
 set.seed(seed_proj)
 
 # Install packages --------------------------------------------------------
