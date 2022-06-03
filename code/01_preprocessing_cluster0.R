@@ -27,6 +27,7 @@ cluster0 <-
   filter(cluster == 0) %>% # keep questions of cluster0
   droplevels() %>% # drop unused levels
   select_if(~ sum(!is.na(.)) > 0) %>% # keep columns without NAs
+  select(-value_2) %>% # delete double affiliations
   pivot_longer( # convert to long format
     "value_1":tail(names(.), 1),
     names_to = "value",
