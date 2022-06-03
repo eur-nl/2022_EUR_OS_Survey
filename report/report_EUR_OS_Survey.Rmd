@@ -5,15 +5,15 @@ date: 2022-05-26
 output:
   bookdown::html_document2:
     # # appearance
-    # # table of content
-    # # code
-    # # figures
     theme: flatly
     highlight: tango
+    # # table of content
     toc: true
     toc_float: true  
     number_sections: false
+    # # code
     # code_folding: true
+    # # figures
     fig_width: 8
     fig_height: 8
     fig_caption: true
@@ -65,14 +65,14 @@ kable_custom <- function(data, caption) {
 # load all data
 EUR_OS <- readRDS(here("data", "preprocessed", "rds", "CLEAN_OS_Survey_responses.rds")) # all data
 EUR_OS_cluster0 <- readRDS(here("data", "preprocessed", "rds", "cluster_0.rds")) # cluster 0
-EUR_OS_cluster1 <- readRDS(here("data", "preprocessed", "rds", "cluster_1.rds")) # cluster 1
-EUR_OS_cluster2 <- readRDS(here("data", "preprocessed", "rds", "cluster_2.rds")) # cluster 2
-EUR_OS_cluster3 <- readRDS(here("data", "preprocessed", "rds", "cluster_3.rds")) # cluster 3
-EUR_OS_cluster4 <- readRDS(here("data", "preprocessed", "rds", "cluster_4.rds")) # cluster 4
-EUR_OS_cluster5 <- readRDS(here("data", "preprocessed", "rds", "cluster_5.rds")) # cluster 5
-EUR_OS_cluster6 <- readRDS(here("data", "preprocessed", "rds", "cluster_6.rds")) # cluster 6
-EUR_OS_cluster7 <- readRDS(here("data", "preprocessed", "rds", "cluster_7.rds")) # cluster 7
-EUR_OS_cluster8 <- readRDS(here("data", "preprocessed", "rds", "cluster_8.rds")) # cluster 8
+# EUR_OS_cluster1 <- readRDS(here("data", "preprocessed", "rds", "cluster_1.rds")) # cluster 1
+# EUR_OS_cluster2 <- readRDS(here("data", "preprocessed", "rds", "cluster_2.rds")) # cluster 2
+# EUR_OS_cluster3 <- readRDS(here("data", "preprocessed", "rds", "cluster_3.rds")) # cluster 3
+# EUR_OS_cluster4 <- readRDS(here("data", "preprocessed", "rds", "cluster_4.rds")) # cluster 4
+# EUR_OS_cluster5 <- readRDS(here("data", "preprocessed", "rds", "cluster_5.rds")) # cluster 5
+# EUR_OS_cluster6 <- readRDS(here("data", "preprocessed", "rds", "cluster_6.rds")) # cluster 6
+# EUR_OS_cluster7 <- readRDS(here("data", "preprocessed", "rds", "cluster_7.rds")) # cluster 7
+# EUR_OS_cluster8 <- readRDS(here("data", "preprocessed", "rds", "cluster_8.rds")) # cluster 8
 
 ```
 
@@ -101,9 +101,9 @@ EUR_OS_cluster8 <- readRDS(here("data", "preprocessed", "rds", "cluster_8.rds"))
 
 <!-- This is a living document that will be updated with new information and insights. For any comments or questions, please contact [Dr. Lizette Guzman-Ramirez](mailto:guzmanramirez@rsm.nl) (ERIM Research Data Steward) or [Dr. Antonio Schettino](mailto:schettino@eur.nl) (ERS Open Science Coordinator). -->
 
-# Respondents {.tabset .tabset-pills}
+# Respondents
 
-```{r complete-questionnaires}
+```{r data-complete-questionnaires}
 
 # percentage of (in)complete surveys
 EUR_OS_incomplete <-
@@ -114,50 +114,101 @@ EUR_OS_incomplete <-
   count(survey) %>% 
   mutate(
     survey = ifelse(survey == 1, "complete", "incomplete"),
-    perc = round(n / sum(n) * 100, 2), # calculate percentage
-    lab_perc = paste(round(n / sum(n) * 100, 2), "%", sep = "") # percentage as text (for plot labels)
-  )
-
-```
-
-A total of `r sum(EUR_OS_incomplete$n)` respondents started the survey, and `r pull(filter(EUR_OS_incomplete, survey == "complete"), n)` completed it. Separate response rates per school, position, and department can be found in the tabs below.
-
-## School
-
-(ref:table-school) Response rate per school.
-
-(ref:footnote-NA) NA indicates no response.
-
-```{r table-school}
-
-EUR_OS_incomplete_school <-
-  EUR_OS_cluster0 %>% 
-  filter(question == "School") %>% 
-  pivot_wider(
-    id_cols = c(participant, Finished),
-    names_from = question,
-    values_from = item
-  ) %>%
-  group_by(School) %>%
-  summarize(
-    n = n(),
-    perc = round(length(which(Finished == TRUE))/length(Finished) * 100, 2),
-    lab_perc = paste(perc, "%", sep = ""),
-    .groups = "keep"
+    lab_perc = paste(round(n / sum(n) * 100, 2), "%", sep = "") # percentage as text
   ) %>% 
   arrange(desc(n))
 
+```
+
+A total of `r sum(EUR_OS_incomplete$n)` respondents started the survey, and `r pull(filter(EUR_OS_incomplete, survey == "complete"), n)` completed it (`r pull(filter(EUR_OS_incomplete, survey == "complete"), lab_perc)`).
+
+Considering only the completed surveys, Figure \@ref(fig:figure-01) shows the percentage of respondents as a function of school and position. Table \@ref(tab:table-school-position-response-rate) shows the percentage of respondents relative to the total number of employees
+
+(ref:figure01-caption) Response rate per school and position.
+
+```{r figure-01, fig.cap = "(ref:figure01-caption)"}
+
+knitr::include_graphics(here("img", "figure01.png"))
+
+```
+
+(ref:table-school-position-response-rate) Response rate per school relative to total staff. Source: [EUR Annual Report 2020](https://jaarverslag2020.eur.nl/en), [Appendix 4](https://jaarverslag2020.eur.nl/en/appendix-4-staff-composition)
+
+(ref:footnote-table-school-position-response-rate) According to the EUR Annual Report 2020, ESL has 351 employees but the survey was sent to 244 of them.
+
+```{r table-school-position-response-rate}
+
+# total number of researchers in each school
+# source: https://jaarverslag2020.eur.nl/en/appendix-4-staff-composition
+# reference date 31 December 2020
+# accessed 3 June 2022
+total_researchers <- 
+  tibble(
+    School = c("ESHPM", "ESHCC", "ESL", "ESPhil", "ESSB", "ISS"),
+    N_staff = c(170, 166, 244, 64, 460, 64)
+  )
+
+EUR_OS_school <-
+  EUR_OS_cluster0 %>% 
+  filter(
+    Finished == TRUE & # only completed surveys
+    question == "School"
+    ) %>%
+  pivot_wider(
+    id_cols = participant,
+    names_from = question,
+    values_from = item
+  ) %>% 
+  count(School) %>% 
+  filter(School != "Other") %>% 
+  right_join(total_researchers, by = "School") %>% 
+  mutate(lab_perc = paste(round(n / sum(n) * 100, 2), "%", sep = "")) %>%  # percentage as text
+  arrange(desc(n))
+  
 # table
-EUR_OS_incomplete_school %>%
-  select(-perc) %>% 
-  rename("completed survey" = lab_perc) %>% 
-  kable_custom(caption = "(ref:table-school)") %>% 
+EUR_OS_school %>%
+  rename(
+    "Respondents" = n,
+    "Total Staff" = N_staff,
+    "Percentage of Respondents" = lab_perc
+    ) %>% 
+  kable_custom(caption = "(ref:table-school-position-response-rate)") %>% 
   footnote(
-    general = "(ref:footnote-NA)",
+    general = "(ref:footnote-table-school-position-response-rate)",
     footnote_as_chunk = TRUE
   )
 
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Position
 
@@ -199,16 +250,25 @@ EUR_OS_incomplete_position %>%
 
 (ref:table-department) Response rate per department, separately for each school.
 
+(ref:footnote-NA) NA indicates no response.
+
 ```{r table-department}
 
 EUR_OS_incomplete_department <-
   EUR_OS_cluster0 %>% 
   filter(question %in% c("School", "Department")) %>%
+  
+  
   pivot_wider(
     id_cols = c(participant, Finished),
     names_from = question,
     values_from = item
   ) %>%
+  
+#   Warning message:
+# Values from `item` are not uniquely identified; output will contain list-cols.
+  
+  
   group_by(School, Department) %>%
   summarize(
     n = n(),
@@ -229,7 +289,7 @@ EUR_OS_incomplete_department %>%
 
 ```
 
-# {-}
+
 
 # Open Access {.tabset .tabset-pills}
 
@@ -241,59 +301,61 @@ EUR_OS_incomplete_department %>%
 
 ```{r oa-data}
 
-EUR_OS_open_access <-
-  EUR_OS_cluster1 %>% 
-  filter(Finished == TRUE) %>% 
-  droplevels()
+# EUR_OS_open_access <-
+#   EUR_OS_cluster1 %>% 
+#   filter(Finished == TRUE) %>% 
+#   droplevels()
 
 ```
 
 ```{r oa-data-importance}
 
-EUR_OS_open_access_importance <-
-  EUR_OS_open_access %>% 
-  filter(question %in% c("School",
-                         "In your opinion, how important is Open Access for your work?")
-                         ) %>%
-  droplevels() %>% 
-  mutate( # order levels
-    item = fct_explicit_na(item, "NA"),
-    item = fct_relevel( # relevel or reorder?
-      item, 
-      "Extremely important", 
-      "Very important",
-      "Moderately important",
-      "Slightly important", 
-      "Not at all important",
-      "I don’t know/prefer not to answer",
-      "NA"
-      )
-    ) %>% 
-  filter(item != "NA") %>% 
-    pivot_wider(
-    id_cols = participant,
-    names_from = question,
-    values_from = item
-  ) %>%
-  group_by(School) %>%
-  summarize(
-    n = n(),
-    perc = round(length(which(Finished == TRUE))/length(Finished) * 100, 2),
-    lab_perc = paste(perc, "%", sep = ""),
-    .groups = "keep"
-  )
-  
-  
-  
-  
-  arrange(desc(perc))
+# EUR_OS_open_access_importance <-
+#   EUR_OS_open_access %>% 
+#   filter(question %in% c("School",
+#                          "In your opinion, how important is Open Access for your work?")
+#                          ) %>%
+#   droplevels() %>% 
+#   mutate( # order levels
+#     item = fct_explicit_na(item, "NA"),
+#     item = fct_relevel( # relevel or reorder?
+#       item, 
+#       "Extremely important", 
+#       "Very important",
+#       "Moderately important",
+#       "Slightly important", 
+#       "Not at all important",
+#       "I don’t know/prefer not to answer",
+#       "NA"
+#       )
+#     ) %>% 
+#   filter(item != "NA") %>% 
+#     pivot_wider(
+#     id_cols = participant,
+#     names_from = question,
+#     values_from = item
+#   ) %>%
+#   group_by(School) %>%
+#   summarize(
+#     n = n(),
+#     perc = round(length(which(Finished == TRUE))/length(Finished) * 100, 2),
+#     lab_perc = paste(perc, "%", sep = ""),
+#     .groups = "keep"
+#   )
+#   
+#   
+#   
+#   
+#   arrange(desc(perc))
+
+
+# From the question *`r ERIM_OS_data_importance$question[1]`*, `r paste0(format(sum(ERIM_OS_data_importance[1, "perc"], ERIM_OS_data_importance[2, "perc"], ERIM_OS_data_importance[3, "perc"]), digits = 0), "%")` of respondents think that using open materials and/or code is *`r ERIM_OS_data_importance$item[1]`*, *`r ERIM_OS_data_importance$item[2]`*, or *`r ERIM_OS_data_importance$item[3]`*, whereas `r paste0(pull(filter(ERIM_OS_data_importance, item == "Not at all important"), "perc"), "%")` think it is *`r pull(filter(ERIM_OS_data_importance, item == "Not at all important"), item)`* (see Figure \@ref(fig:figure7)).
+
+
 
 ```
 
-
-
-
-From the question *`r ERIM_OS_data_importance$question[1]`*, `r paste0(format(sum(ERIM_OS_data_importance[1, "perc"], ERIM_OS_data_importance[2, "perc"], ERIM_OS_data_importance[3, "perc"]), digits = 0), "%")` of respondents think that using open materials and/or code is *`r ERIM_OS_data_importance$item[1]`*, *`r ERIM_OS_data_importance$item[2]`*, or *`r ERIM_OS_data_importance$item[3]`*, whereas `r paste0(pull(filter(ERIM_OS_data_importance, item == "Not at all important"), "perc"), "%")` think it is *`r pull(filter(ERIM_OS_data_importance, item == "Not at all important"), item)`* (see Figure \@ref(fig:figure7)).
+# {-}
 
 
 
