@@ -16,9 +16,6 @@ library(here)
 library(tidyverse)
 library(splitstackshape) 
 
-# # load custom function to split variable into multiple columns
-# source(here("code", "functions", "split_into_multiple.R"))
-
 # load recoding scheme
 source(here("code", "functions", "recoding.R"))
 
