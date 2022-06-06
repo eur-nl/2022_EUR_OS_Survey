@@ -63,9 +63,9 @@ kable_custom <- function(data, caption) {
 ```{r all-data}
 
 # load all data
-EUR_OS <- readRDS(here("data", "preprocessed", "rds", "CLEAN_OS_Survey_responses.rds")) # all data
+# EUR_OS <- readRDS(here("data", "preprocessed", "rds", "CLEAN_OS_Survey_responses.rds")) # all data
 EUR_OS_cluster0 <- readRDS(here("data", "preprocessed", "rds", "cluster_0.rds")) # cluster 0
-EUR_OS_cluster1 <- readRDS(here("data", "preprocessed", "rds", "cluster_1.rds")) # cluster 1
+# EUR_OS_cluster1 <- readRDS(here("data", "preprocessed", "rds", "cluster_1.rds")) # cluster 1
 # EUR_OS_cluster2 <- readRDS(here("data", "preprocessed", "rds", "cluster_2.rds")) # cluster 2
 # EUR_OS_cluster3 <- readRDS(here("data", "preprocessed", "rds", "cluster_3.rds")) # cluster 3
 # EUR_OS_cluster4 <- readRDS(here("data", "preprocessed", "rds", "cluster_4.rds")) # cluster 4
@@ -108,14 +108,12 @@ EUR_OS_cluster1 <- readRDS(here("data", "preprocessed", "rds", "cluster_1.rds"))
 # percentage of (in)complete surveys
 EUR_OS_incomplete <-
   EUR_OS_cluster0 %>% 
-  group_by(participant) %>%
-  summarize(survey = length(which(Finished == TRUE))/length(Finished)) %>%
-  ungroup() %>%
-  count(survey) %>% 
+  count(Finished) %>% 
   mutate(
-    survey = ifelse(survey == 1, "complete", "incomplete"),
-    lab_perc = paste(round(n / sum(n) * 100, 2), "%", sep = "") # percentage as text
+    survey = ifelse(Finished == TRUE, "complete", "incomplete"),
+    lab_perc = paste(round(n / sum(n) * 100, 2), "%", sep = "") # percentage
   ) %>% 
+  select(survey, n, lab_perc) %>% 
   arrange(desc(n))
 
 ```
@@ -150,20 +148,12 @@ total_researchers <-
 
 EUR_OS_school <-
   EUR_OS_cluster0 %>% 
-  filter(
-    Finished == TRUE & # only completed surveys
-    question == "School"
-    ) %>%
-  pivot_wider(
-    id_cols = participant,
-    names_from = question,
-    values_from = item
-  ) %>% 
+  filter(Finished == TRUE) %>% # only completed surveys
   count(School) %>% 
   filter(School != "Other") %>% 
   right_join(total_researchers, by = "School") %>% 
-  mutate(lab_perc = paste(round(n / sum(n) * 100, 2), "%", sep = "")) %>%  # percentage as text
-  arrange(desc(n))
+  mutate(lab_perc = paste(round(n / N_staff * 100, 2), "%", sep = "")) %>%
+  arrange(desc(parse_number(lab_perc)))
   
 # table
 EUR_OS_school %>%
