@@ -14,29 +14,13 @@ set.seed(seed_proj)
 library(here)
 library(tidyverse)
 
-# load custom function with recoding scheme
-source(here("code", "functions", "recoding.R"))
-
 # Data --------------------------------------------------------
 
-OS_data_clean <- 
-  readRDS(here("data", "preprocessed", "rds", "CLEAN_OS_Survey_responses.rds"))
-
 cluster0 <- 
-  OS_data_clean %>%
-  filter(cluster == 0) %>% # keep questions of cluster0
-  droplevels() %>% # drop unused levels
-  select_if(~ sum(!is.na(.)) > 0) %>% # keep columns without NAs
-  select(-value_2) %>% # delete double affiliations
-  pivot_longer( # convert to long format
-    "value_1":tail(names(.), 1),
-    names_to = "value",
-    values_to = "item"
-  ) %>%
-  mutate(
-    item = gsub("Other_", "", item), # delete "Other_" from free text responses
-    item = fct_recode(item, !!!recode_all) # recode items for better readability
-  )
+  readRDS(here("data", "preprocessed", "rds", "CLEAN_OS_Survey_responses.rds")) %>% 
+  select(participant, Finished, School, Department, Position) %>% # select only relevant columns
+  distinct() %>% # keep only rows with unique combinations of values
+  filter(!is.na(participant)) # delete participant as NA
 
 # save as .rds (to keep formatting in R)
 saveRDS(
