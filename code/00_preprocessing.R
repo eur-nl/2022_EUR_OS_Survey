@@ -100,7 +100,7 @@ write_csv(
 
 # Clean data --------------------------------------------------------
 
-OS_data_clean <-
+EUR_OS_data_clean <-
   read_csv( # load manually modified data
     here("data", "preprocessed", "manual_merged_OS_Survey_responses.csv"),
     col_names = TRUE,
@@ -258,14 +258,14 @@ OS_data_clean <-
 
 # save as .rds (to keep formatting in R)
 saveRDS(
-  OS_data_clean, 
+  EUR_OS_data_clean, 
   file = here("data", "preprocessed", "rds", "CLEAN_OS_Survey_responses.rds"),
   compress = TRUE
   )
 
 # save as .csv (for use with other software)
 write_csv(
-  OS_data_clean,
+  EUR_OS_data_clean,
   here("data", "preprocessed", "csv", "CLEAN_OS_Survey_responses.csv")
 )
 
