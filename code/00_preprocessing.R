@@ -8,61 +8,19 @@ set.seed(seed_proj)
 
 # install.packages("here")
 # install.packages("tidyverse")
+# install.packages("splitstackshape")
 
 # Load packages --------------------------------------------------------
 
 library(here)
 library(tidyverse)
+library(splitstackshape) 
 
-# load custom function to split variable into multiple columns
-source(here("code", "functions", "split_into_multiple.R"))
+# # load custom function to split variable into multiple columns
+# source(here("code", "functions", "split_into_multiple.R"))
 
-# Setup --------------------------------------------------------
-
-# separate questions into clusters:
-# 0 = demographics
-# 1 = open access
-# 2 = open data, materials, and/or code
-# 3 = preregistration
-# 4 = open educational resources
-# 5 = public engagement
-# 6 = EUR support
-# 7 = recognition and reward
-# 8 = other
-
-# assign a cluster number to each question
-levels_question <-
-  c(
-    "0" = "School",
-    "0" = "Department",
-    "0" = "Position",
-    "1" = "In your opinion, how important is Open Access for your work?",
-    "1" = "What is your experience with Open Access?",
-    "1" = "The following are possible concerns that researchers could have about Open Access publishing. Which of these concerns would you agree with?",
-    "1" = "Is there anything you want to share with us regarding your experiences with Open Access?", # ESL-only question
-    "2" = "In your opinion, how important are open data, materials, and/or code for your work?",
-    "2" = "What is your experience with using open data, materials, and/or code developed by others?",
-    "2" = "What is your experience with openly sharing data, materials, and/or code that you developed?",
-    "2" = "Are you familiar with the FAIR principles for data and code?",
-    "2" = "The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?",
-    "3" = "In your opinion, how important is preregistration for your work?",
-    "3" = "What is your experience with study preregistration?",
-    "3" = "The following are possible concerns that researchers could have about preregistering their studies. Which of these concerns would you agree with?",
-    "4" = "In your opinion, how important are open educational resources for your work?",
-    "4" = "What is your experience with using open educational resources developed by others?",
-    "4" = "What is your experience with openly sharing educational resources that you developed?",
-    "4" = "The following are possible concerns that researchers could have about making educational resources developed by them openly available. Which of these concerns would you agree with?",
-    "5" = "In your opinion, how important is to have an open dialogue with society in your work?",
-    "5" = "What is your experience engaging with society?",
-    "5" = "The following are possible concerns that researchers could have about engaging with society. Which of these concerns would apply to you?",
-    "6" = "Do you expect EUR to support you in learning open science practices?",
-    "6" = "Which of the following open science practices would you like EUR to provide information or support for?",
-    "6" = "What support services provided at EUR have you used to make your data FAIR?",
-    "7" = "Do you feel recognized and rewarded by EUR (e.g. in the R&O cycle or appraisal conversation) for the Open Science activities you undertake?",
-    "7" = "In what way were you recognized and rewarded?",
-    "7" = "In what way do you expect to be recognized and rewarded?",
-    "8" = "Is there anything else you would like to mention about Open Science practices?"
-  )
+# load recoding scheme
+source(here("code", "functions", "recoding.R"))
 
 # Load & merge data ----------------------------------------------------------------
 
@@ -225,36 +183,34 @@ EUR_OS_data_clean <-
   ) %>%
   slice(-c(1:2)) %>% # delete rows with redundant or unnecessary data
   rowid_to_column(var = "participant") %>% # assign number to each participant
-  select(-c(
-    "Start Date", "End Date", "Response Type", "Progress", "Duration (in seconds)", # discard unnecessary columns
+  select(-c( # discard unnecessary columns
+    "Start Date", "End Date", "Response Type", "Progress", "Duration (in seconds)",
     "Recorded Date", "Response ID", "Distribution Channel", "User Language"
-  )) %>%
-  # convert to long format
-  pivot_longer(
-    "School":"Is there anything else you would like to mention about Open Science practices?", # keep participant as separate column
-    names_to = "question",
-    values_to = "value"
-  ) %>%
+  )) %>% 
   # multiple options can be selected for some questions;
   # we need to separate answers into different columns
-  bind_cols(
-    split_into_multiple(
-      .$value,
-      pattern = ";",
-      into_prefix = "value"
-    )
-  ) %>%
-  mutate(
-    cluster = fct_recode(question, !!!levels_question), # add column with cluster
-    Finished = as.logical(Finished) # convert "Finished" as logical
+  cSplit(
+    splitCols = names(.),
+    sep = ";",
+    direction = "long"
   ) %>% 
-  select(-value) %>% # delete column with redundant information
-  relocate(cluster, .before = "question") %>% # move cluster before question
-  mutate(cluster = recode_factor( # cluster as ordered factor, to help with loop below
-    cluster,
-    "0" = "0", "1" = "1", "2" = "2", "3" = "3", "4" = "4", "5" = "5", "6" = "6", "7" = "7", "8" = "8",
-    .ordered = TRUE)
-  )
+  as_tibble() %>% # convert to tibble
+  mutate(
+    Finished = as.logical(Finished), # convert "Finished" as logical
+    School = fct_recode(School, !!!school_levels), # recode school
+    Department = fct_recode(Department, !!!department_levels), # recode department
+    Position = fct_recode(Position, !!!position_levels) # recode position
+    # # recode questions with Likert scales
+    # `In your opinion, how important is Open Access for your work?` = fct_recode( # importance open access
+    #   `In your opinion, how important is Open Access for your work?`, 
+    #   !!!Likert_importance_convert),
+  ) %>% 
+  pivot_longer( # convert to long format
+    `In your opinion, how important is Open Access for your work?`:`Is there anything else you would like to mention about Open Science practices?`,
+    names_to = "question",
+    values_to = "response"
+  ) %>% 
+  mutate(cluster = fct_recode(question, !!!question_levels), .after = Position) # add column with cluster
 
 # save as .rds (to keep formatting in R)
 saveRDS(
