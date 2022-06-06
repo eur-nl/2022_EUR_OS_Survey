@@ -24,28 +24,13 @@ source(here("code", "functions", "theme_custom.R")) # custom ggplot2 theme
 
 cluster <-
   readRDS(here("data", "preprocessed", "rds", "cluster_0.rds")) %>% 
-  filter(question != "Department") %>% 
-  droplevels()
-  
-# extract questions
-questions <- unique(cluster$question)
+  filter(Finished == TRUE) %>% # only completed surveys
+  select(-c(Finished, Department)) 
 
 # School, lollipop graph ----------------------------------------------------------------
 
-num_question <- 1
-
 data_cluster0_question1 <-
   cluster %>%
-  filter(
-    Finished == TRUE & # only completed surveys
-    question == questions[num_question]
-    ) %>%
-  droplevels() %>% 
-  pivot_wider(
-    id_cols = participant,
-    names_from = question,
-    values_from = item
-  ) %>%
   count(School) %>% 
   mutate(
     perc = round(n / sum(n) * 100, 2),
@@ -73,20 +58,8 @@ lollipop_cluster0_question1
 
 # Position, lollipop graph ----------------------------------------------------------------
 
-num_question <- 2
-
 data_cluster0_question2 <-
   cluster %>%
-  filter(
-    Finished == TRUE & # only completed surveys
-      question == questions[num_question]
-  ) %>%
-  droplevels() %>% 
-  pivot_wider(
-    id_cols = participant,
-    names_from = question,
-    values_from = item
-  ) %>%
   count(Position) %>% 
   mutate(
     perc = round(n / sum(n) * 100, 2),
