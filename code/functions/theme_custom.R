@@ -1,5 +1,5 @@
 theme_custom <-
-  ggplot2::theme_classic(base_size = 16) +
+  ggplot2::theme_classic(base_size = 14) +
   ggplot2::theme(
     plot.title = element_text(size = 22, hjust = .5),
     plot.subtitle = element_text(size = 20, hjust = .5),
