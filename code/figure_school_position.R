@@ -30,7 +30,7 @@ cluster <-
 # extract questions
 questions <- unique(cluster$question)
 
-# Question 1, lollipop graph ----------------------------------------------------------------
+# School, lollipop graph ----------------------------------------------------------------
 
 num_question <- 1
 
@@ -71,7 +71,7 @@ lollipop_cluster0_question1 <-
 
 lollipop_cluster0_question1
 
-# Question 2, lollipop graph ----------------------------------------------------------------
+# Position, lollipop graph ----------------------------------------------------------------
 
 num_question <- 2
 
@@ -114,16 +114,16 @@ lollipop_cluster0_question2
 
 # Merge in one figure ----------------------------------------------------------------
 
-lollipop_figure01 <-
+lollipop_figure_school_position <-
   lollipop_cluster0_question1 / lollipop_cluster0_question2 +
   theme(plot.title = element_text(size = 26, hjust = .5))
 
-lollipop_figure01
+lollipop_figure_school_position
 
 # save to file
 ggsave(
-  filename = "figure01.png",
-  plot = lollipop_figure01,
+  filename = "figure_school_position.png",
+  plot = lollipop_figure_school_position,
   device = "png",
   path = here("img"),
   scale = 3,
