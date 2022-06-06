@@ -128,7 +128,7 @@ Considering only the completed surveys, Figure \@ref(fig:figure-01) shows the pe
 
 ```{r figure-01, fig.cap = "(ref:figure01-caption)"}
 
-knitr::include_graphics(here("img", "figure01.png"))
+knitr::include_graphics(here("img", "figure_school_position.png"))
 
 ```
 
