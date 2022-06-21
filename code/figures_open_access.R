@@ -51,10 +51,6 @@ Likert_concerns_convert <- c(
   "11" = "I don’t know/prefer not to answer"
 )
 
-
-# TO DO: REORDER FACTOR LEVELS FOR QUESTION 2  ----------------------------------------------------------------
-
-
 # Data ----------------------------------------------------------------
 
 EUR_OS_open_access <-
@@ -66,11 +62,10 @@ EUR_OS_open_access_Q1 <-
   filter(question == "In your opinion, how important is Open Access for your work?") %>% 
   count(question, response) %>%
   mutate(
-    response = fct_relevel(response, Likert_importance_convert),
+    response = fct_relevel(response, !!!Likert_importance_convert),
     perc = round(n / sum(n) * 100, 2),
     lab_perc = paste(perc, "%", sep = "")
-  ) %>% 
-  mutate(response = str_wrap(response, width = 40))
+  ) 
 
 # "What is your experience with Open Access?"
 EUR_OS_open_access_Q2 <- 
@@ -81,8 +76,7 @@ EUR_OS_open_access_Q2 <-
     response = fct_relevel(response, Likert_experience_convert),
     perc = round(n / sum(n) * 100, 2),
     lab_perc = paste(perc, "%", sep = "")
-  ) %>% 
-  mutate(response = str_wrap(response, width = 40))
+  )
 
 # "The following are possible concerns that researchers could have about Open Access publishing. Which of these concerns would you agree with?"
 EUR_OS_open_access_Q3 <- 
@@ -90,11 +84,10 @@ EUR_OS_open_access_Q3 <-
   filter(question == "The following are possible concerns that researchers could have about Open Access publishing. Which of these concerns would you agree with?") %>% 
   count(question, response) %>%
   mutate(
-    response = fct_relevel(response, Likert_concerns_convert),
+    response = fct_relevel(response, !!!Likert_concerns_convert),
     perc = round(n / sum(n) * 100, 2),
     lab_perc = paste(perc, "%", sep = "")
-  ) %>% 
-  mutate(response = str_wrap(response, width = 40))
+  ) 
 
 # "Is there anything you want to share with us regarding your experiences with Open Access?"
 # FREE TEXT
@@ -105,8 +98,7 @@ EUR_OS_open_access_Q3 <-
   mutate(
     perc = round(n / sum(n) * 100, 2),
     lab_perc = paste(perc, "%", sep = "")
-  ) %>% 
-  mutate(response = str_wrap(response, width = 40))
+  )
 
 # Question 1, lollipop graph ----------------------------------------------------------------
 
@@ -121,6 +113,7 @@ lollipop_cluster1_question1 <-
     breaks = seq(0, 40, 10),
     limits = c(0, 40)
   ) +
+  scale_x_discrete(labels = function(x) str_wrap(x, width = 40)) +
   labs(
     title = "Importance of Open Access - EUR",
     x = ""
@@ -135,7 +128,7 @@ ggsave(
   filename = "figure_importance_open_access_EUR.png",
   plot = lollipop_cluster1_question1,
   device = "png",
-  path = here("img"),
+  path = here("img", "importance_open_access"),
   scale = 3,
   width = 8,
   height = 8,
@@ -155,7 +148,7 @@ for(i in levels(EUR_OS_open_access$School)) {
       ) %>% 
     count(question, response) %>%
     mutate(
-      response = fct_relevel(response, Likert_importance_convert),
+      response = fct_relevel(response, !!!Likert_importance_convert),
       perc = round(n / sum(n) * 100, 2),
       lab_perc = paste(perc, "%", sep = "")
     ) %>% 
@@ -164,9 +157,10 @@ for(i in levels(EUR_OS_open_access$School)) {
     geom_segment(aes(x = response, xend = response, y = 0, yend = perc), color = "#012328") +
     geom_label_repel(aes(response, perc, label = lab_perc), size = 4, nudge_y = 4, segment.alpha = 0, fill = "white", color = "#171C54") +
     scale_y_continuous(
-      breaks = seq(0, 60, 10),
-      limits = c(0, 60)
+      breaks = seq(0, 80, 10),
+      limits = c(0, 80)
     ) +
+    scale_x_discrete(labels = function(x) str_wrap(x, width = 40)) +
     labs(
       title = paste0("Importance of Open Access - ", i),
       x = ""
@@ -179,7 +173,7 @@ for(i in levels(EUR_OS_open_access$School)) {
     filename = paste0("figure_importance_open_access_", i, ".png"),
     plot = temp_figure_school,
     device = "png",
-    path = here("img"),
+    path = here("img", "importance_open_access"),
     scale = 3,
     width = 8,
     height = 8,
@@ -202,6 +196,7 @@ lollipop_cluster1_question2 <-
     breaks = seq(0, 50, 10),
     limits = c(0, 50)
   ) +
+  scale_x_discrete(labels = function(x) str_wrap(x, width = 40)) +
   labs(
     title = "Experience with Open Access - EUR",
     x = ""
@@ -216,7 +211,7 @@ ggsave(
   filename = "figure_experience_open_access_EUR.png",
   plot = lollipop_cluster1_question2,
   device = "png",
-  path = here("img"),
+  path = here("img", "experience_open_access"),
   scale = 3,
   width = 8,
   height = 8,
@@ -236,11 +231,10 @@ for(i in levels(EUR_OS_open_access$School)) {
     ) %>% 
     count(question, response) %>%
     mutate(
-      response = fct_relevel(response, Likert_experience_convert),
+      response = fct_relevel(response, !!!Likert_experience_convert),
       perc = round(n / sum(n) * 100, 2),
       lab_perc = paste(perc, "%", sep = "")
     ) %>%  
-    mutate(response = str_wrap(response, width = 40)) %>% 
     ggplot(aes(x = fct_rev(response), y = perc)) +
     geom_point(size = 6, color = "#0C8066") +
     geom_segment(aes(x = response, xend = response, y = 0, yend = perc), color = "#012328") +
@@ -249,6 +243,7 @@ for(i in levels(EUR_OS_open_access$School)) {
       breaks = seq(0, 80, 10),
       limits = c(0, 80)
     ) +
+    scale_x_discrete(labels = function(x) str_wrap(x, width = 40)) +
     labs(
       title = paste0("Experience with Open Access - ", i),
       x = ""
@@ -261,7 +256,7 @@ for(i in levels(EUR_OS_open_access$School)) {
     filename = paste0("figure_experience_open_access_", i, ".png"),
     plot = temp_figure_school,
     device = "png",
-    path = here("img"),
+    path = here("img", "experience_open_access"),
     scale = 3,
     width = 8,
     height = 8,

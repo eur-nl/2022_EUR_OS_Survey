@@ -71,20 +71,3 @@ position_levels <- c(
   "Other" = "Other_Not sure why this matters",
   "Other" = "Other_I would rather not say"
 )
-
-# Likert_importance_convert <- c(
-#   "1" = "Extremely important",
-#   "2" = "Very important",
-#   "3" = "Moderately important",
-#   "4" = "Slightly important",
-#   "5" = "Not at all important",
-#   "6" = "I don’t know/prefer not to answer"
-# )
-# 
-# Likert_experience_convert_Open_Access <- c(
-#   "1" = "I have extensive experience with Open Access publishing",
-#   "2" = "I have some experience with Open Access publishing",
-#   "3" = "I am aware of Open Access publishing but have not done it",
-#   "4" = "Until now, I was unaware of Open Access publishing",
-#   "5" = "I don’t know/prefer not to answer"
-# )

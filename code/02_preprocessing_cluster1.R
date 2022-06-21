@@ -17,7 +17,7 @@ library(tidyverse)
 # Data --------------------------------------------------------
 
 cluster1 <-
-  readRDS(here("data", "preprocessed", "rds", "CLEAN_OS_Survey_responses.rds")) %>% 
+  readRDS(here("data", "preprocessed", "rds", "CLEAN_OS_Survey_responses.rds")) %>%
   filter(
     Finished == TRUE & # only completed surveys
     cluster == 1 # keep questions of relevant cluster
