@@ -197,10 +197,6 @@ EUR_OS_data_clean <-
     School = fct_recode(School, !!!school_levels), # recode school
     Department = fct_recode(Department, !!!department_levels), # recode department
     Position = fct_recode(Position, !!!position_levels) # recode position
-    # # recode questions with Likert scales
-    # `In your opinion, how important is Open Access for your work?` = fct_recode( # importance open access
-    #   `In your opinion, how important is Open Access for your work?`, 
-    #   !!!Likert_importance_convert),
   ) %>% 
   pivot_longer( # convert to long format
     `In your opinion, how important is Open Access for your work?`:`Is there anything else you would like to mention about Open Science practices?`,

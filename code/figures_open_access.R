@@ -38,17 +38,18 @@ Likert_experience_convert <- c(
 )
 
 Likert_concerns_convert <- c(
-  "1" = "Green OA (self-archiving): Some journals might not publish findings that are uploaded to a pre-publication archive",
-  "2" = "Green OA (self-archiving): Other people might copy my research and publish it before I do",
-  "3" = "Green OA (self-archiving): Non-peer-reviewed findings might add noise to the literature",
-  "4" = "Green OA (self-archiving): Making my work available pre-publication might reduce the number of citations to the ultimately published work",
-  "5" = "Green OA (self-archiving): Availability of the pre-publication manuscript might highlight differences (e.g., errors in analysis, revisions to hypotheses) between the original conception of the research and the ultimately published work",
-  "6" = "Gold OA: Open Access journals might have lower quality articles",
-  "7" = "Gold OA: Open Access journals might not provide rigorous peer-review",
-  "8" = "Gold OA: I might not have enough funding to pay Article Processing Charges for Open Access journals",
-  "9" = "Gold OA: The impact of an Open Access publication might be low (e.g., few downloads and citations, low public engagement)",
-  "10" = "I do not share any of these concerns",
-  "11" = "I don’t know/prefer not to answer"
+  "Some journals might not publish findings that are uploaded to a pre-publication archive" = "Green OA (self-archiving): Some journals might not publish findings that are uploaded to a pre-publication archive",
+  "Other people might copy my research and publish it before I do" = "Green OA (self-archiving): Other people might copy my research and publish it before I do",
+  "Non-peer-reviewed findings might add noise to the literature" = "Green OA (self-archiving): Non-peer-reviewed findings might add noise to the literature",
+  "Making my work available pre-publication might reduce the number of citations to the ultimately published work" = "Green OA (self-archiving): Making my work available pre-publication might reduce the number of citations to the ultimately published work",
+  "Availability of the pre-publication manuscript might highlight differences (e.g., errors in analysis, revisions to hypotheses) between the original conception of the research and the ultimately published work" = "Green OA (self-archiving): Availability of the pre-publication manuscript might highlight differences (e.g., errors in analysis, revisions to hypotheses) between the original conception of the research and the ultimately published work",
+  "Open Access journals might have lower quality articles" = "Gold OA: Open Access journals might have lower quality articles",
+  "Open Access journals might not provide rigorous peer-review" = "Gold OA: Open Access journals might not provide rigorous peer-review",
+  "I might not have enough funding to pay Article Processing Charges for Open Access journals" = "Gold OA: I might not have enough funding to pay Article Processing Charges for Open Access journals",
+  "The impact of an Open Access publication might be low (e.g., few downloads and citations, low public engagement)" = "Gold OA: The impact of an Open Access publication might be low (e.g., few downloads and citations, low public engagement)",
+  "I do not share any of these concerns" = "I do not share any of these concerns",
+  "I don’t know/prefer not to answer" = "I don’t know/prefer not to answer",
+  "Other" = "Other_For me the most important issue is where to find publications. And if this place/website is clear that publications can be \"googeld\" easily."
 )
 
 # Data ----------------------------------------------------------------
@@ -73,7 +74,7 @@ EUR_OS_open_access_Q2 <-
   filter(question == "What is your experience with Open Access?") %>% 
   count(question, response) %>%
   mutate(
-    response = fct_relevel(response, Likert_experience_convert),
+    response = fct_relevel(response, !!!Likert_experience_convert),
     perc = round(n / sum(n) * 100, 2),
     lab_perc = paste(perc, "%", sep = "")
   )
@@ -84,14 +85,14 @@ EUR_OS_open_access_Q3 <-
   filter(question == "The following are possible concerns that researchers could have about Open Access publishing. Which of these concerns would you agree with?") %>% 
   count(question, response) %>%
   mutate(
-    response = fct_relevel(response, !!!Likert_concerns_convert),
+    response = fct_recode(response, !!!Likert_concerns_convert),
     perc = round(n / sum(n) * 100, 2),
     lab_perc = paste(perc, "%", sep = "")
   ) 
 
 # "Is there anything you want to share with us regarding your experiences with Open Access?"
 # FREE TEXT
-EUR_OS_open_access_Q3 <-
+EUR_OS_open_access_Q4 <-
   EUR_OS_open_access %>% 
   filter(question == "Is there anything you want to share with us regarding your experiences with Open Access?") %>% 
   count(question, response) %>%
@@ -268,12 +269,85 @@ for(i in levels(EUR_OS_open_access$School)) {
 
 # Question 3, lollipop graph ----------------------------------------------------------------
 
+# EUR
+lollipop_cluster1_question3 <-
+  EUR_OS_open_access_Q3 %>%
+  ggplot(aes(x = reorder(response, perc), y = perc)) +
+  geom_point(size = 6, color = "#0C8066") +
+  geom_segment(aes(x = response, xend = response, y = 0, yend = perc), color = "#012328") +
+  geom_label_repel(aes(response, perc, label = lab_perc), size = 4, nudge_y = 4, segment.alpha = 0, fill = "white", color = "#171C54") +
+  scale_y_continuous(
+    breaks = seq(0, 40, 10),
+    limits = c(0, 40)
+  ) +
+  scale_x_discrete(labels = function(x) str_wrap(x, width = 40)) +
+  labs(
+    title = "Concerns around Open Access - EUR",
+    x = ""
+  ) +
+  coord_flip() +
+  theme_custom
 
+lollipop_cluster1_question3
 
+# save to file
+ggsave(
+  filename = "figure_concerns_open_access_EUR.png",
+  plot = lollipop_cluster1_question3,
+  device = "png",
+  path = here("img", "concerns_open_access"),
+  scale = 3,
+  width = 8,
+  height = 8,
+  units = "cm",
+  dpi = 600
+)
 
-
-
-
-
+# separate graph for each school
+# NOTE: "Other" will not be reported
+for(i in levels(EUR_OS_open_access$School)) {
+  
+  temp_figure_school <- 
+    EUR_OS_open_access %>% 
+    filter(
+      question == "The following are possible concerns that researchers could have about Open Access publishing. Which of these concerns would you agree with?" &
+        School == i
+    ) %>% 
+    count(question, response) %>%
+    mutate(
+      response = fct_relevel(response, !!!Likert_concerns_convert),
+      perc = round(n / sum(n) * 100, 2),
+      lab_perc = paste(perc, "%", sep = "")
+    ) %>%  
+    ggplot(aes(x = reorder(response, perc), y = perc)) +
+    geom_point(size = 6, color = "#0C8066") +
+    geom_segment(aes(x = response, xend = response, y = 0, yend = perc), color = "#012328") +
+    geom_label_repel(aes(response, perc, label = lab_perc), size = 4, nudge_y = 4, segment.alpha = 0, fill = "white", color = "#171C54") +
+    scale_y_continuous(
+      breaks = seq(0, 80, 10),
+      limits = c(0, 80)
+    ) +
+    scale_x_discrete(labels = function(x) str_wrap(x, width = 40)) +
+    labs(
+      title = paste0("Experience with Open Access - ", i),
+      x = ""
+    ) +
+    coord_flip() +
+    theme_custom
+  
+  # save to file
+  ggsave(
+    filename = paste0("figure_concerns_open_access_", i, ".png"),
+    plot = temp_figure_school,
+    device = "png",
+    path = here("img", "concerns_open_access"),
+    scale = 3,
+    width = 8,
+    height = 8,
+    units = "cm",
+    dpi = 600
+  )
+  
+}
 
 # END ----------------------------------------------------------------
