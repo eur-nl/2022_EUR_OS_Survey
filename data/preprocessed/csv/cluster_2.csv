@@ -1,0 +1,399 @@
+School,Position,question,response,n
+ESHPM,Assistant Professor,Are you familiar with the FAIR principles for data and code?,"I am aware of the FAIR principles, but have not followed them",4
+ESHPM,Assistant Professor,Are you familiar with the FAIR principles for data and code?,"I have some experience with the FAIR principles, but do not follow them regularly",8
+ESHPM,Assistant Professor,Are you familiar with the FAIR principles for data and code?,I regularly follow the FAIR principles,3
+ESHPM,Assistant Professor,Are you familiar with the FAIR principles for data and code?,"Until now, I hadn't heard of the FAIR principles",2
+ESHPM,Assistant Professor,"In your opinion, how important are open data, materials, and/or code for your work?",Extremely important,2
+ESHPM,Assistant Professor,"In your opinion, how important are open data, materials, and/or code for your work?",Moderately important,5
+ESHPM,Assistant Professor,"In your opinion, how important are open data, materials, and/or code for your work?",Not at all important,5
+ESHPM,Assistant Professor,"In your opinion, how important are open data, materials, and/or code for your work?",Slightly important,4
+ESHPM,Assistant Professor,"In your opinion, how important are open data, materials, and/or code for your work?",Very important,1
+ESHPM,Assistant Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?",I do not share any of these concerns,1
+ESHPM,Assistant Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","I might lose control over how my data, materials, and/or code are being used",1
+ESHPM,Assistant Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","It might take too much time, effort, and resources",1
+ESHPM,Assistant Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","Others might criticise my data, materials, and/or code",2
+ESHPM,Assistant Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","Others might find it difficult to understand my data, materials, and/or code",9
+ESHPM,Assistant Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","Reuse of my data, materials, and/or code could violate the epistemological framework of my research",2
+ESHPM,Assistant Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","Sharing data, materials, and/or code could result in others asking me to provide assistance for their research",1
+ESHPM,Assistant Professor,"What is your experience with openly sharing data, materials, and/or code that you developed?","I am aware of open data, materials, and/or code, but have not shared my own",8
+ESHPM,Assistant Professor,"What is your experience with openly sharing data, materials, and/or code that you developed?","I have some experience with open data, materials, and/or code, but do not share mine regularly",8
+ESHPM,Assistant Professor,"What is your experience with openly sharing data, materials, and/or code that you developed?","I regularly share open data, materials, and/or code",1
+ESHPM,Assistant Professor,"What is your experience with using open data, materials, and/or code developed by others?","I am aware of open data, materials, and/or code developed by others, but have not used them",11
+ESHPM,Assistant Professor,"What is your experience with using open data, materials, and/or code developed by others?","I have some experience with open data, materials, and/or code developed by others, but do not use them regularly",6
+ESHPM,Associate Professor,Are you familiar with the FAIR principles for data and code?,"I have some experience with the FAIR principles, but do not follow them regularly",2
+ESHPM,Associate Professor,Are you familiar with the FAIR principles for data and code?,"Until now, I hadn't heard of the FAIR principles",3
+ESHPM,Associate Professor,"In your opinion, how important are open data, materials, and/or code for your work?",Moderately important,3
+ESHPM,Associate Professor,"In your opinion, how important are open data, materials, and/or code for your work?",Slightly important,2
+ESHPM,Associate Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?",Other_The data I use comes from a third party which doesn't allow me to share the data.,1
+ESHPM,Associate Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","Others might find it difficult to understand my data, materials, and/or code",3
+ESHPM,Associate Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","Sharing data, materials, and/or code could result in others asking me to provide assistance for their research",1
+ESHPM,Associate Professor,"What is your experience with openly sharing data, materials, and/or code that you developed?","I am aware of open data, materials, and/or code, but have not shared my own",1
+ESHPM,Associate Professor,"What is your experience with openly sharing data, materials, and/or code that you developed?","I have some experience with open data, materials, and/or code, but do not share mine regularly",3
+ESHPM,Associate Professor,"What is your experience with openly sharing data, materials, and/or code that you developed?","I regularly share open data, materials, and/or code",1
+ESHPM,Associate Professor,"What is your experience with using open data, materials, and/or code developed by others?","I am aware of open data, materials, and/or code developed by others, but have not used them",4
+ESHPM,Associate Professor,"What is your experience with using open data, materials, and/or code developed by others?","I have some experience with open data, materials, and/or code developed by others, but do not use them regularly",1
+ESHPM,Full Professor,Are you familiar with the FAIR principles for data and code?,"I have some experience with the FAIR principles, but do not follow them regularly",1
+ESHPM,Full Professor,Are you familiar with the FAIR principles for data and code?,I regularly follow the FAIR principles,1
+ESHPM,Full Professor,Are you familiar with the FAIR principles for data and code?,"Until now, I hadn't heard of the FAIR principles",2
+ESHPM,Full Professor,"In your opinion, how important are open data, materials, and/or code for your work?",Extremely important,1
+ESHPM,Full Professor,"In your opinion, how important are open data, materials, and/or code for your work?",Moderately important,1
+ESHPM,Full Professor,"In your opinion, how important are open data, materials, and/or code for your work?",Not at all important,1
+ESHPM,Full Professor,"In your opinion, how important are open data, materials, and/or code for your work?",Slightly important,1
+ESHPM,Full Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?",I do not share any of these concerns,1
+ESHPM,Full Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","I might lose control over how my data, materials, and/or code are being used",2
+ESHPM,Full Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","Others might find it difficult to understand my data, materials, and/or code",1
+ESHPM,Full Professor,"What is your experience with openly sharing data, materials, and/or code that you developed?","I am aware of open data, materials, and/or code, but have not shared my own",3
+ESHPM,Full Professor,"What is your experience with openly sharing data, materials, and/or code that you developed?","I regularly share open data, materials, and/or code",1
+ESHPM,Full Professor,"What is your experience with using open data, materials, and/or code developed by others?","I am aware of open data, materials, and/or code developed by others, but have not used them",3
+ESHPM,Full Professor,"What is your experience with using open data, materials, and/or code developed by others?","I have some experience with open data, materials, and/or code developed by others, but do not use them regularly",1
+ESHPM,PhD candidate,Are you familiar with the FAIR principles for data and code?,"I am aware of the FAIR principles, but have not followed them",4
+ESHPM,PhD candidate,Are you familiar with the FAIR principles for data and code?,"I have some experience with the FAIR principles, but do not follow them regularly",1
+ESHPM,PhD candidate,Are you familiar with the FAIR principles for data and code?,I regularly follow the FAIR principles,2
+ESHPM,PhD candidate,Are you familiar with the FAIR principles for data and code?,"Until now, I hadn't heard of the FAIR principles",5
+ESHPM,PhD candidate,"In your opinion, how important are open data, materials, and/or code for your work?",Moderately important,6
+ESHPM,PhD candidate,"In your opinion, how important are open data, materials, and/or code for your work?",Not at all important,1
+ESHPM,PhD candidate,"In your opinion, how important are open data, materials, and/or code for your work?",Very important,5
+ESHPM,PhD candidate,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?",I do not share any of these concerns,1
+ESHPM,PhD candidate,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?",I don’t know/prefer not to answer,1
+ESHPM,PhD candidate,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","I might lose control over how my data, materials, and/or code are being used",2
+ESHPM,PhD candidate,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","Others might criticise my data, materials, and/or code",6
+ESHPM,PhD candidate,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","Others might find it difficult to understand my data, materials, and/or code",1
+ESHPM,PhD candidate,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","Reuse of my data, materials, and/or code could violate the epistemological framework of my research",1
+ESHPM,PhD candidate,"What is your experience with openly sharing data, materials, and/or code that you developed?","I am aware of open data, materials, and/or code, but have not shared my own",8
+ESHPM,PhD candidate,"What is your experience with openly sharing data, materials, and/or code that you developed?",I don’t know/prefer not to answer,1
+ESHPM,PhD candidate,"What is your experience with openly sharing data, materials, and/or code that you developed?","I have some experience with open data, materials, and/or code, but do not share mine regularly",2
+ESHPM,PhD candidate,"What is your experience with openly sharing data, materials, and/or code that you developed?","I regularly share open data, materials, and/or code",1
+ESHPM,PhD candidate,"What is your experience with using open data, materials, and/or code developed by others?","I am aware of open data, materials, and/or code developed by others, but have not used them",7
+ESHPM,PhD candidate,"What is your experience with using open data, materials, and/or code developed by others?",I don’t know/prefer not to answer,1
+ESHPM,PhD candidate,"What is your experience with using open data, materials, and/or code developed by others?","I have some experience with open data, materials, and/or code developed by others, but do not use them regularly",3
+ESHPM,PhD candidate,"What is your experience with using open data, materials, and/or code developed by others?","I regularly use open data, materials, and/or code developed by others",1
+ESHPM,Postdoc or researcher,Are you familiar with the FAIR principles for data and code?,I regularly follow the FAIR principles,2
+ESHPM,Postdoc or researcher,Are you familiar with the FAIR principles for data and code?,"Until now, I hadn't heard of the FAIR principles",2
+ESHPM,Postdoc or researcher,"In your opinion, how important are open data, materials, and/or code for your work?",Extremely important,1
+ESHPM,Postdoc or researcher,"In your opinion, how important are open data, materials, and/or code for your work?",I don’t know/prefer not to answer,1
+ESHPM,Postdoc or researcher,"In your opinion, how important are open data, materials, and/or code for your work?",Moderately important,2
+ESHPM,Postdoc or researcher,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?",I do not share any of these concerns,1
+ESHPM,Postdoc or researcher,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?",I don’t know/prefer not to answer,1
+ESHPM,Postdoc or researcher,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","It might take too much time, effort, and resources",1
+ESHPM,Postdoc or researcher,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","Others might criticise my data, materials, and/or code",1
+ESHPM,Postdoc or researcher,"What is your experience with openly sharing data, materials, and/or code that you developed?","I am aware of open data, materials, and/or code, but have not shared my own",2
+ESHPM,Postdoc or researcher,"What is your experience with openly sharing data, materials, and/or code that you developed?","I have some experience with open data, materials, and/or code, but do not share mine regularly",1
+ESHPM,Postdoc or researcher,"What is your experience with openly sharing data, materials, and/or code that you developed?","I regularly share open data, materials, and/or code",1
+ESHPM,Postdoc or researcher,"What is your experience with using open data, materials, and/or code developed by others?","I am aware of open data, materials, and/or code developed by others, but have not used them",2
+ESHPM,Postdoc or researcher,"What is your experience with using open data, materials, and/or code developed by others?","I have some experience with open data, materials, and/or code developed by others, but do not use them regularly",2
+ESHCC,Assistant Professor,Are you familiar with the FAIR principles for data and code?,"Until now, I hadn't heard of the FAIR principles",3
+ESHCC,Assistant Professor,"In your opinion, how important are open data, materials, and/or code for your work?",I don’t know/prefer not to answer,1
+ESHCC,Assistant Professor,"In your opinion, how important are open data, materials, and/or code for your work?",Slightly important,1
+ESHCC,Assistant Professor,"In your opinion, how important are open data, materials, and/or code for your work?",Very important,1
+ESHCC,Assistant Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","I might not receive appropriate credit for data, materials, and/or code if I make them openly available",1
+ESHCC,Assistant Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","Others might find it difficult to understand my data, materials, and/or code",2
+ESHCC,Assistant Professor,"What is your experience with openly sharing data, materials, and/or code that you developed?",I don’t know/prefer not to answer,1
+ESHCC,Assistant Professor,"What is your experience with openly sharing data, materials, and/or code that you developed?","I have some experience with open data, materials, and/or code, but do not share mine regularly",1
+ESHCC,Assistant Professor,"What is your experience with openly sharing data, materials, and/or code that you developed?","I regularly share open data, materials, and/or code",1
+ESHCC,Assistant Professor,"What is your experience with using open data, materials, and/or code developed by others?","I am aware of open data, materials, and/or code developed by others, but have not used them",2
+ESHCC,Assistant Professor,"What is your experience with using open data, materials, and/or code developed by others?","I regularly use open data, materials, and/or code developed by others",1
+ESHCC,Other,Are you familiar with the FAIR principles for data and code?,"Until now, I hadn't heard of the FAIR principles",1
+ESHCC,Other,"In your opinion, how important are open data, materials, and/or code for your work?",Very important,1
+ESHCC,Other,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","Others might find it difficult to understand my data, materials, and/or code",1
+ESHCC,Other,"What is your experience with openly sharing data, materials, and/or code that you developed?","I have some experience with open data, materials, and/or code, but do not share mine regularly",1
+ESHCC,Other,"What is your experience with using open data, materials, and/or code developed by others?","I regularly use open data, materials, and/or code developed by others",1
+ESHCC,Lecturer,Are you familiar with the FAIR principles for data and code?,"I have some experience with the FAIR principles, but do not follow them regularly",2
+ESHCC,Lecturer,"In your opinion, how important are open data, materials, and/or code for your work?",Extremely important,1
+ESHCC,Lecturer,"In your opinion, how important are open data, materials, and/or code for your work?",Very important,1
+ESHCC,Lecturer,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","I might lose control over how my data, materials, and/or code are being used",1
+ESHCC,Lecturer,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?",Others might find errors in my published work,1
+ESHCC,Lecturer,"What is your experience with openly sharing data, materials, and/or code that you developed?","I am aware of open data, materials, and/or code, but have not shared my own",1
+ESHCC,Lecturer,"What is your experience with openly sharing data, materials, and/or code that you developed?","I have some experience with open data, materials, and/or code, but do not share mine regularly",1
+ESHCC,Lecturer,"What is your experience with using open data, materials, and/or code developed by others?","I am aware of open data, materials, and/or code developed by others, but have not used them",1
+ESHCC,Lecturer,"What is your experience with using open data, materials, and/or code developed by others?","I have some experience with open data, materials, and/or code developed by others, but do not use them regularly",1
+ESHCC,PhD candidate,Are you familiar with the FAIR principles for data and code?,"I have some experience with the FAIR principles, but do not follow them regularly",1
+ESHCC,PhD candidate,Are you familiar with the FAIR principles for data and code?,"Until now, I hadn't heard of the FAIR principles",1
+ESHCC,PhD candidate,"In your opinion, how important are open data, materials, and/or code for your work?",Moderately important,2
+ESHCC,PhD candidate,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","Other_Sharing data is not always a good idea when for example one works with vulnerable groups and informants might be at risk of stigma, prosecution, etc.",1
+ESHCC,PhD candidate,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","Others might find it difficult to understand my data, materials, and/or code",1
+ESHCC,PhD candidate,"What is your experience with openly sharing data, materials, and/or code that you developed?","I am aware of open data, materials, and/or code, but have not shared my own",2
+ESHCC,PhD candidate,"What is your experience with using open data, materials, and/or code developed by others?","I have some experience with open data, materials, and/or code developed by others, but do not use them regularly",2
+ESL,Assistant Professor,Are you familiar with the FAIR principles for data and code?,"Until now, I hadn't heard of the FAIR principles",3
+ESL,Assistant Professor,"In your opinion, how important are open data, materials, and/or code for your work?",Extremely important,1
+ESL,Assistant Professor,"In your opinion, how important are open data, materials, and/or code for your work?",Very important,2
+ESL,Assistant Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?",I do not share any of these concerns,2
+ESL,Assistant Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?",There could be issues related to intellectual property,1
+ESL,Assistant Professor,"What is your experience with openly sharing data, materials, and/or code that you developed?","I regularly share open data, materials, and/or code",3
+ESL,Assistant Professor,"What is your experience with using open data, materials, and/or code developed by others?","I have some experience with open data, materials, and/or code developed by others, but do not use them regularly",1
+ESL,Assistant Professor,"What is your experience with using open data, materials, and/or code developed by others?","I regularly use open data, materials, and/or code developed by others",2
+ESL,Associate Professor,Are you familiar with the FAIR principles for data and code?,"I am aware of the FAIR principles, but have not followed them",1
+ESL,Associate Professor,Are you familiar with the FAIR principles for data and code?,"I have some experience with the FAIR principles, but do not follow them regularly",1
+ESL,Associate Professor,Are you familiar with the FAIR principles for data and code?,"Until now, I hadn't heard of the FAIR principles",3
+ESL,Associate Professor,"In your opinion, how important are open data, materials, and/or code for your work?",Extremely important,1
+ESL,Associate Professor,"In your opinion, how important are open data, materials, and/or code for your work?",Moderately important,3
+ESL,Associate Professor,"In your opinion, how important are open data, materials, and/or code for your work?",Very important,1
+ESL,Associate Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?",I do not share any of these concerns,1
+ESL,Associate Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?",I don’t know/prefer not to answer,1
+ESL,Associate Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","I might lose control over how my data, materials, and/or code are being used",1
+ESL,Associate Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?",Others might find errors in my published work,1
+ESL,Associate Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","Others might find it difficult to understand my data, materials, and/or code",1
+ESL,Associate Professor,"What is your experience with openly sharing data, materials, and/or code that you developed?","I am aware of open data, materials, and/or code, but have not shared my own",1
+ESL,Associate Professor,"What is your experience with openly sharing data, materials, and/or code that you developed?",I don’t know/prefer not to answer,2
+ESL,Associate Professor,"What is your experience with openly sharing data, materials, and/or code that you developed?","I have some experience with open data, materials, and/or code, but do not share mine regularly",2
+ESL,Associate Professor,"What is your experience with using open data, materials, and/or code developed by others?","I am aware of open data, materials, and/or code developed by others, but have not used them",2
+ESL,Associate Professor,"What is your experience with using open data, materials, and/or code developed by others?",I don’t know/prefer not to answer,1
+ESL,Associate Professor,"What is your experience with using open data, materials, and/or code developed by others?","I have some experience with open data, materials, and/or code developed by others, but do not use them regularly",1
+ESL,Associate Professor,"What is your experience with using open data, materials, and/or code developed by others?","I regularly use open data, materials, and/or code developed by others",1
+ESL,Full Professor,Are you familiar with the FAIR principles for data and code?,"I am aware of the FAIR principles, but have not followed them",1
+ESL,Full Professor,Are you familiar with the FAIR principles for data and code?,I don’t know/prefer not to answer,2
+ESL,Full Professor,Are you familiar with the FAIR principles for data and code?,"I have some experience with the FAIR principles, but do not follow them regularly",2
+ESL,Full Professor,Are you familiar with the FAIR principles for data and code?,"Until now, I hadn't heard of the FAIR principles",7
+ESL,Full Professor,"In your opinion, how important are open data, materials, and/or code for your work?",Extremely important,2
+ESL,Full Professor,"In your opinion, how important are open data, materials, and/or code for your work?",Moderately important,1
+ESL,Full Professor,"In your opinion, how important are open data, materials, and/or code for your work?",Not at all important,3
+ESL,Full Professor,"In your opinion, how important are open data, materials, and/or code for your work?",Slightly important,3
+ESL,Full Professor,"In your opinion, how important are open data, materials, and/or code for your work?",Very important,3
+ESL,Full Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?",I do not share any of these concerns,1
+ESL,Full Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?",I don’t know/prefer not to answer,2
+ESL,Full Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","I might lose control over how my data, materials, and/or code are being used",2
+ESL,Full Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","I might not receive appropriate credit for data, materials, and/or code if I make them openly available",2
+ESL,Full Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","It might take too much time, effort, and resources",1
+ESL,Full Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?",Other_I do not research in which this is relevant.,1
+ESL,Full Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","Reuse of my data, materials, and/or code could violate the epistemological framework of my research",2
+ESL,Full Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","Sharing data, materials, and/or code could result in others asking me to provide assistance for their research",1
+ESL,Full Professor,"What is your experience with openly sharing data, materials, and/or code that you developed?","I am aware of open data, materials, and/or code, but have not shared my own",6
+ESL,Full Professor,"What is your experience with openly sharing data, materials, and/or code that you developed?",I don’t know/prefer not to answer,3
+ESL,Full Professor,"What is your experience with openly sharing data, materials, and/or code that you developed?","I have some experience with open data, materials, and/or code, but do not share mine regularly",2
+ESL,Full Professor,"What is your experience with openly sharing data, materials, and/or code that you developed?","I regularly share open data, materials, and/or code",1
+ESL,Full Professor,"What is your experience with using open data, materials, and/or code developed by others?","I am aware of open data, materials, and/or code developed by others, but have not used them",7
+ESL,Full Professor,"What is your experience with using open data, materials, and/or code developed by others?","I have some experience with open data, materials, and/or code developed by others, but do not use them regularly",4
+ESL,Full Professor,"What is your experience with using open data, materials, and/or code developed by others?","I regularly use open data, materials, and/or code developed by others",1
+ESL,PhD candidate,Are you familiar with the FAIR principles for data and code?,"I am aware of the FAIR principles, but have not followed them",1
+ESL,PhD candidate,Are you familiar with the FAIR principles for data and code?,I don’t know/prefer not to answer,1
+ESL,PhD candidate,Are you familiar with the FAIR principles for data and code?,"I have some experience with the FAIR principles, but do not follow them regularly",1
+ESL,PhD candidate,Are you familiar with the FAIR principles for data and code?,"Until now, I hadn't heard of the FAIR principles",5
+ESL,PhD candidate,"In your opinion, how important are open data, materials, and/or code for your work?",Moderately important,2
+ESL,PhD candidate,"In your opinion, how important are open data, materials, and/or code for your work?",Not at all important,1
+ESL,PhD candidate,"In your opinion, how important are open data, materials, and/or code for your work?",Slightly important,2
+ESL,PhD candidate,"In your opinion, how important are open data, materials, and/or code for your work?",Very important,3
+ESL,PhD candidate,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?",I don’t know/prefer not to answer,1
+ESL,PhD candidate,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","I might lose control over how my data, materials, and/or code are being used",1
+ESL,PhD candidate,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","I might not receive appropriate credit for data, materials, and/or code if I make them openly available",1
+ESL,PhD candidate,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","Others might criticise my data, materials, and/or code",2
+ESL,PhD candidate,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","Others might find it difficult to understand my data, materials, and/or code",1
+ESL,PhD candidate,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","Reuse of my data, materials, and/or code could violate the epistemological framework of my research",2
+ESL,PhD candidate,"What is your experience with openly sharing data, materials, and/or code that you developed?","I am aware of open data, materials, and/or code, but have not shared my own",5
+ESL,PhD candidate,"What is your experience with openly sharing data, materials, and/or code that you developed?",I don’t know/prefer not to answer,1
+ESL,PhD candidate,"What is your experience with openly sharing data, materials, and/or code that you developed?","Until now, I hadn't heard of open data, materials, and/or code",2
+ESL,PhD candidate,"What is your experience with using open data, materials, and/or code developed by others?","I am aware of open data, materials, and/or code developed by others, but have not used them",5
+ESL,PhD candidate,"What is your experience with using open data, materials, and/or code developed by others?",I don’t know/prefer not to answer,1
+ESL,PhD candidate,"What is your experience with using open data, materials, and/or code developed by others?","Until now, I hadn't heard of open data, materials, and/or code",2
+ESPhil,Associate Professor,Are you familiar with the FAIR principles for data and code?,I don’t know/prefer not to answer,1
+ESPhil,Associate Professor,Are you familiar with the FAIR principles for data and code?,"Until now, I hadn't heard of the FAIR principles",1
+ESPhil,Associate Professor,"In your opinion, how important are open data, materials, and/or code for your work?",Extremely important,1
+ESPhil,Associate Professor,"In your opinion, how important are open data, materials, and/or code for your work?",I don’t know/prefer not to answer,1
+ESPhil,Associate Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","It might take too much time, effort, and resources",1
+ESPhil,Associate Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","Others might criticise my data, materials, and/or code",1
+ESPhil,Associate Professor,"What is your experience with openly sharing data, materials, and/or code that you developed?","I am aware of open data, materials, and/or code, but have not shared my own",1
+ESPhil,Associate Professor,"What is your experience with openly sharing data, materials, and/or code that you developed?","I regularly share open data, materials, and/or code",1
+ESPhil,Associate Professor,"What is your experience with using open data, materials, and/or code developed by others?","I am aware of open data, materials, and/or code developed by others, but have not used them",1
+ESPhil,Associate Professor,"What is your experience with using open data, materials, and/or code developed by others?","I regularly use open data, materials, and/or code developed by others",1
+ESPhil,Full Professor,Are you familiar with the FAIR principles for data and code?,"I am aware of the FAIR principles, but have not followed them",1
+ESPhil,Full Professor,Are you familiar with the FAIR principles for data and code?,"Until now, I hadn't heard of the FAIR principles",2
+ESPhil,Full Professor,"In your opinion, how important are open data, materials, and/or code for your work?",Moderately important,1
+ESPhil,Full Professor,"In your opinion, how important are open data, materials, and/or code for your work?",Not at all important,1
+ESPhil,Full Professor,"In your opinion, how important are open data, materials, and/or code for your work?",Slightly important,1
+ESPhil,Full Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?",I do not share any of these concerns,1
+ESPhil,Full Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?",I don’t know/prefer not to answer,1
+ESPhil,Full Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","Others might find it difficult to understand my data, materials, and/or code",1
+ESPhil,Full Professor,"What is your experience with openly sharing data, materials, and/or code that you developed?","I am aware of open data, materials, and/or code, but have not shared my own",2
+ESPhil,Full Professor,"What is your experience with openly sharing data, materials, and/or code that you developed?","Until now, I hadn't heard of open data, materials, and/or code",1
+ESPhil,Full Professor,"What is your experience with using open data, materials, and/or code developed by others?","I am aware of open data, materials, and/or code developed by others, but have not used them",1
+ESPhil,Full Professor,"What is your experience with using open data, materials, and/or code developed by others?","I have some experience with open data, materials, and/or code developed by others, but do not use them regularly",1
+ESPhil,Full Professor,"What is your experience with using open data, materials, and/or code developed by others?","Until now, I hadn't heard of open data, materials, and/or code",1
+ESPhil,PhD candidate,Are you familiar with the FAIR principles for data and code?,I don’t know/prefer not to answer,1
+ESPhil,PhD candidate,Are you familiar with the FAIR principles for data and code?,"I have some experience with the FAIR principles, but do not follow them regularly",1
+ESPhil,PhD candidate,Are you familiar with the FAIR principles for data and code?,"Until now, I hadn't heard of the FAIR principles",3
+ESPhil,PhD candidate,"In your opinion, how important are open data, materials, and/or code for your work?",Extremely important,1
+ESPhil,PhD candidate,"In your opinion, how important are open data, materials, and/or code for your work?",I don’t know/prefer not to answer,1
+ESPhil,PhD candidate,"In your opinion, how important are open data, materials, and/or code for your work?",Not at all important,1
+ESPhil,PhD candidate,"In your opinion, how important are open data, materials, and/or code for your work?",Slightly important,1
+ESPhil,PhD candidate,"In your opinion, how important are open data, materials, and/or code for your work?",Very important,1
+ESPhil,PhD candidate,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?",I do not share any of these concerns,2
+ESPhil,PhD candidate,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","I might lose control over how my data, materials, and/or code are being used",1
+ESPhil,PhD candidate,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","Others might find it difficult to understand my data, materials, and/or code",2
+ESPhil,PhD candidate,"What is your experience with openly sharing data, materials, and/or code that you developed?","I am aware of open data, materials, and/or code, but have not shared my own",3
+ESPhil,PhD candidate,"What is your experience with openly sharing data, materials, and/or code that you developed?","I have some experience with open data, materials, and/or code, but do not share mine regularly",1
+ESPhil,PhD candidate,"What is your experience with openly sharing data, materials, and/or code that you developed?","Until now, I hadn't heard of open data, materials, and/or code",1
+ESPhil,PhD candidate,"What is your experience with using open data, materials, and/or code developed by others?","I am aware of open data, materials, and/or code developed by others, but have not used them",3
+ESPhil,PhD candidate,"What is your experience with using open data, materials, and/or code developed by others?","I regularly use open data, materials, and/or code developed by others",1
+ESPhil,PhD candidate,"What is your experience with using open data, materials, and/or code developed by others?","Until now, I hadn't heard of open data, materials, and/or code",1
+ESSB,Assistant Professor,Are you familiar with the FAIR principles for data and code?,"I am aware of the FAIR principles, but have not followed them",3
+ESSB,Assistant Professor,Are you familiar with the FAIR principles for data and code?,"I have some experience with the FAIR principles, but do not follow them regularly",3
+ESSB,Assistant Professor,Are you familiar with the FAIR principles for data and code?,I regularly follow the FAIR principles,1
+ESSB,Assistant Professor,Are you familiar with the FAIR principles for data and code?,"Until now, I hadn't heard of the FAIR principles",6
+ESSB,Assistant Professor,"In your opinion, how important are open data, materials, and/or code for your work?",Extremely important,1
+ESSB,Assistant Professor,"In your opinion, how important are open data, materials, and/or code for your work?",Moderately important,2
+ESSB,Assistant Professor,"In your opinion, how important are open data, materials, and/or code for your work?",Not at all important,1
+ESSB,Assistant Professor,"In your opinion, how important are open data, materials, and/or code for your work?",Slightly important,2
+ESSB,Assistant Professor,"In your opinion, how important are open data, materials, and/or code for your work?",Very important,7
+ESSB,Assistant Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","I might lose control over how my data, materials, and/or code are being used",3
+ESSB,Assistant Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","I might not receive appropriate credit for data, materials, and/or code if I make them openly available",1
+ESSB,Assistant Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","It might take too much time, effort, and resources",3
+ESSB,Assistant Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","Others might criticise my data, materials, and/or code",4
+ESSB,Assistant Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","Reuse of my data, materials, and/or code could violate the epistemological framework of my research",1
+ESSB,Assistant Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?",There could be issues related to intellectual property,1
+ESSB,Assistant Professor,"What is your experience with openly sharing data, materials, and/or code that you developed?","I am aware of open data, materials, and/or code, but have not shared my own",4
+ESSB,Assistant Professor,"What is your experience with openly sharing data, materials, and/or code that you developed?",I don’t know/prefer not to answer,1
+ESSB,Assistant Professor,"What is your experience with openly sharing data, materials, and/or code that you developed?","I have some experience with open data, materials, and/or code, but do not share mine regularly",4
+ESSB,Assistant Professor,"What is your experience with openly sharing data, materials, and/or code that you developed?","I regularly share open data, materials, and/or code",3
+ESSB,Assistant Professor,"What is your experience with openly sharing data, materials, and/or code that you developed?",NA,1
+ESSB,Assistant Professor,"What is your experience with using open data, materials, and/or code developed by others?","I am aware of open data, materials, and/or code developed by others, but have not used them",8
+ESSB,Assistant Professor,"What is your experience with using open data, materials, and/or code developed by others?","I have some experience with open data, materials, and/or code developed by others, but do not use them regularly",3
+ESSB,Assistant Professor,"What is your experience with using open data, materials, and/or code developed by others?","I regularly use open data, materials, and/or code developed by others",2
+ESSB,Associate Professor,Are you familiar with the FAIR principles for data and code?,"I have some experience with the FAIR principles, but do not follow them regularly",2
+ESSB,Associate Professor,Are you familiar with the FAIR principles for data and code?,I regularly follow the FAIR principles,1
+ESSB,Associate Professor,"In your opinion, how important are open data, materials, and/or code for your work?",Extremely important,2
+ESSB,Associate Professor,"In your opinion, how important are open data, materials, and/or code for your work?",Very important,1
+ESSB,Associate Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","I might lose control over how my data, materials, and/or code are being used",1
+ESSB,Associate Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","I might not receive appropriate credit for data, materials, and/or code if I make them openly available",1
+ESSB,Associate Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","Others might criticise my data, materials, and/or code",1
+ESSB,Associate Professor,"What is your experience with openly sharing data, materials, and/or code that you developed?","I am aware of open data, materials, and/or code, but have not shared my own",1
+ESSB,Associate Professor,"What is your experience with openly sharing data, materials, and/or code that you developed?","I have some experience with open data, materials, and/or code, but do not share mine regularly",1
+ESSB,Associate Professor,"What is your experience with openly sharing data, materials, and/or code that you developed?","I regularly share open data, materials, and/or code",1
+ESSB,Associate Professor,"What is your experience with using open data, materials, and/or code developed by others?","I am aware of open data, materials, and/or code developed by others, but have not used them",1
+ESSB,Associate Professor,"What is your experience with using open data, materials, and/or code developed by others?","I have some experience with open data, materials, and/or code developed by others, but do not use them regularly",2
+ESSB,Full Professor,Are you familiar with the FAIR principles for data and code?,"I have some experience with the FAIR principles, but do not follow them regularly",2
+ESSB,Full Professor,Are you familiar with the FAIR principles for data and code?,I regularly follow the FAIR principles,6
+ESSB,Full Professor,Are you familiar with the FAIR principles for data and code?,"Until now, I hadn't heard of the FAIR principles",2
+ESSB,Full Professor,"In your opinion, how important are open data, materials, and/or code for your work?",Extremely important,3
+ESSB,Full Professor,"In your opinion, how important are open data, materials, and/or code for your work?",Moderately important,3
+ESSB,Full Professor,"In your opinion, how important are open data, materials, and/or code for your work?",Very important,4
+ESSB,Full Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?",I do not share any of these concerns,4
+ESSB,Full Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","It might take too much time, effort, and resources",3
+ESSB,Full Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?",Others might find errors in my published work,1
+ESSB,Full Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","Reuse of my data, materials, and/or code could violate the epistemological framework of my research",1
+ESSB,Full Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","Sharing data, materials, and/or code could result in others asking me to provide assistance for their research",1
+ESSB,Full Professor,"What is your experience with openly sharing data, materials, and/or code that you developed?","I am aware of open data, materials, and/or code, but have not shared my own",2
+ESSB,Full Professor,"What is your experience with openly sharing data, materials, and/or code that you developed?","I have some experience with open data, materials, and/or code, but do not share mine regularly",3
+ESSB,Full Professor,"What is your experience with openly sharing data, materials, and/or code that you developed?","I regularly share open data, materials, and/or code",5
+ESSB,Full Professor,"What is your experience with using open data, materials, and/or code developed by others?","I am aware of open data, materials, and/or code developed by others, but have not used them",5
+ESSB,Full Professor,"What is your experience with using open data, materials, and/or code developed by others?","I have some experience with open data, materials, and/or code developed by others, but do not use them regularly",2
+ESSB,Full Professor,"What is your experience with using open data, materials, and/or code developed by others?","I regularly use open data, materials, and/or code developed by others",3
+ESSB,Other,Are you familiar with the FAIR principles for data and code?,"I have some experience with the FAIR principles, but do not follow them regularly",1
+ESSB,Other,Are you familiar with the FAIR principles for data and code?,"Until now, I hadn't heard of the FAIR principles",2
+ESSB,Other,"In your opinion, how important are open data, materials, and/or code for your work?",Extremely important,1
+ESSB,Other,"In your opinion, how important are open data, materials, and/or code for your work?",Slightly important,1
+ESSB,Other,"In your opinion, how important are open data, materials, and/or code for your work?",Very important,1
+ESSB,Other,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?",I do not share any of these concerns,1
+ESSB,Other,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","I might not receive appropriate credit for data, materials, and/or code if I make them openly available",1
+ESSB,Other,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?",Others might find errors in my published work,1
+ESSB,Other,"What is your experience with openly sharing data, materials, and/or code that you developed?","I am aware of open data, materials, and/or code, but have not shared my own",1
+ESSB,Other,"What is your experience with openly sharing data, materials, and/or code that you developed?","I regularly share open data, materials, and/or code",2
+ESSB,Other,"What is your experience with using open data, materials, and/or code developed by others?","I have some experience with open data, materials, and/or code developed by others, but do not use them regularly",1
+ESSB,Other,"What is your experience with using open data, materials, and/or code developed by others?","I regularly use open data, materials, and/or code developed by others",2
+ESSB,PhD candidate,Are you familiar with the FAIR principles for data and code?,"I am aware of the FAIR principles, but have not followed them",4
+ESSB,PhD candidate,Are you familiar with the FAIR principles for data and code?,I don’t know/prefer not to answer,1
+ESSB,PhD candidate,Are you familiar with the FAIR principles for data and code?,"I have some experience with the FAIR principles, but do not follow them regularly",2
+ESSB,PhD candidate,Are you familiar with the FAIR principles for data and code?,I regularly follow the FAIR principles,3
+ESSB,PhD candidate,Are you familiar with the FAIR principles for data and code?,"Until now, I hadn't heard of the FAIR principles",4
+ESSB,PhD candidate,"In your opinion, how important are open data, materials, and/or code for your work?",Extremely important,1
+ESSB,PhD candidate,"In your opinion, how important are open data, materials, and/or code for your work?",Moderately important,7
+ESSB,PhD candidate,"In your opinion, how important are open data, materials, and/or code for your work?",Slightly important,1
+ESSB,PhD candidate,"In your opinion, how important are open data, materials, and/or code for your work?",Very important,5
+ESSB,PhD candidate,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?",I do not share any of these concerns,1
+ESSB,PhD candidate,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","I might lose control over how my data, materials, and/or code are being used",1
+ESSB,PhD candidate,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","Others might criticise my data, materials, and/or code",7
+ESSB,PhD candidate,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?",Others might find errors in my published work,3
+ESSB,PhD candidate,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","Others might find it difficult to understand my data, materials, and/or code",2
+ESSB,PhD candidate,"What is your experience with openly sharing data, materials, and/or code that you developed?","I am aware of open data, materials, and/or code, but have not shared my own",3
+ESSB,PhD candidate,"What is your experience with openly sharing data, materials, and/or code that you developed?","I have some experience with open data, materials, and/or code, but do not share mine regularly",7
+ESSB,PhD candidate,"What is your experience with openly sharing data, materials, and/or code that you developed?","I regularly share open data, materials, and/or code",3
+ESSB,PhD candidate,"What is your experience with openly sharing data, materials, and/or code that you developed?","Until now, I hadn't heard of open data, materials, and/or code",1
+ESSB,PhD candidate,"What is your experience with using open data, materials, and/or code developed by others?","I am aware of open data, materials, and/or code developed by others, but have not used them",5
+ESSB,PhD candidate,"What is your experience with using open data, materials, and/or code developed by others?","I have some experience with open data, materials, and/or code developed by others, but do not use them regularly",4
+ESSB,PhD candidate,"What is your experience with using open data, materials, and/or code developed by others?","I regularly use open data, materials, and/or code developed by others",5
+ESSB,Postdoc or researcher,Are you familiar with the FAIR principles for data and code?,"I have some experience with the FAIR principles, but do not follow them regularly",5
+ESSB,Postdoc or researcher,Are you familiar with the FAIR principles for data and code?,I regularly follow the FAIR principles,2
+ESSB,Postdoc or researcher,"In your opinion, how important are open data, materials, and/or code for your work?",Extremely important,1
+ESSB,Postdoc or researcher,"In your opinion, how important are open data, materials, and/or code for your work?",Very important,6
+ESSB,Postdoc or researcher,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?",Other_I do not 'own' the data and I'm not allowed to share the data,1
+ESSB,Postdoc or researcher,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","Others might criticise my data, materials, and/or code",3
+ESSB,Postdoc or researcher,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?",Others might find errors in my published work,2
+ESSB,Postdoc or researcher,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","Others might find it difficult to understand my data, materials, and/or code",1
+ESSB,Postdoc or researcher,"What is your experience with openly sharing data, materials, and/or code that you developed?","I am aware of open data, materials, and/or code, but have not shared my own",2
+ESSB,Postdoc or researcher,"What is your experience with openly sharing data, materials, and/or code that you developed?","I have some experience with open data, materials, and/or code, but do not share mine regularly",2
+ESSB,Postdoc or researcher,"What is your experience with openly sharing data, materials, and/or code that you developed?","I regularly share open data, materials, and/or code",3
+ESSB,Postdoc or researcher,"What is your experience with using open data, materials, and/or code developed by others?","I am aware of open data, materials, and/or code developed by others, but have not used them",3
+ESSB,Postdoc or researcher,"What is your experience with using open data, materials, and/or code developed by others?","I have some experience with open data, materials, and/or code developed by others, but do not use them regularly",4
+ISS,Assistant Professor,Are you familiar with the FAIR principles for data and code?,I regularly follow the FAIR principles,1
+ISS,Assistant Professor,Are you familiar with the FAIR principles for data and code?,"Until now, I hadn't heard of the FAIR principles",2
+ISS,Assistant Professor,"In your opinion, how important are open data, materials, and/or code for your work?",Extremely important,1
+ISS,Assistant Professor,"In your opinion, how important are open data, materials, and/or code for your work?",Moderately important,2
+ISS,Assistant Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","Others might criticise my data, materials, and/or code",1
+ISS,Assistant Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","Others might find it difficult to understand my data, materials, and/or code",2
+ISS,Assistant Professor,"What is your experience with openly sharing data, materials, and/or code that you developed?",I don’t know/prefer not to answer,1
+ISS,Assistant Professor,"What is your experience with openly sharing data, materials, and/or code that you developed?","I have some experience with open data, materials, and/or code, but do not share mine regularly",1
+ISS,Assistant Professor,"What is your experience with openly sharing data, materials, and/or code that you developed?","Until now, I hadn't heard of open data, materials, and/or code",1
+ISS,Assistant Professor,"What is your experience with using open data, materials, and/or code developed by others?","I have some experience with open data, materials, and/or code developed by others, but do not use them regularly",1
+ISS,Assistant Professor,"What is your experience with using open data, materials, and/or code developed by others?","I regularly use open data, materials, and/or code developed by others",1
+ISS,Assistant Professor,"What is your experience with using open data, materials, and/or code developed by others?","Until now, I hadn't heard of open data, materials, and/or code",1
+ISS,Associate Professor,Are you familiar with the FAIR principles for data and code?,"I have some experience with the FAIR principles, but do not follow them regularly",1
+ISS,Associate Professor,Are you familiar with the FAIR principles for data and code?,"Until now, I hadn't heard of the FAIR principles",1
+ISS,Associate Professor,"In your opinion, how important are open data, materials, and/or code for your work?",Moderately important,2
+ISS,Associate Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","Others might find it difficult to understand my data, materials, and/or code",1
+ISS,Associate Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","Reuse of my data, materials, and/or code could violate the epistemological framework of my research",1
+ISS,Associate Professor,"What is your experience with openly sharing data, materials, and/or code that you developed?","I have some experience with open data, materials, and/or code, but do not share mine regularly",2
+ISS,Associate Professor,"What is your experience with using open data, materials, and/or code developed by others?","I am aware of open data, materials, and/or code developed by others, but have not used them",1
+ISS,Associate Professor,"What is your experience with using open data, materials, and/or code developed by others?","I have some experience with open data, materials, and/or code developed by others, but do not use them regularly",1
+ISS,Full Professor,Are you familiar with the FAIR principles for data and code?,"I am aware of the FAIR principles, but have not followed them",1
+ISS,Full Professor,Are you familiar with the FAIR principles for data and code?,I don’t know/prefer not to answer,1
+ISS,Full Professor,Are you familiar with the FAIR principles for data and code?,"I have some experience with the FAIR principles, but do not follow them regularly",1
+ISS,Full Professor,Are you familiar with the FAIR principles for data and code?,"Until now, I hadn't heard of the FAIR principles",3
+ISS,Full Professor,"In your opinion, how important are open data, materials, and/or code for your work?",Extremely important,1
+ISS,Full Professor,"In your opinion, how important are open data, materials, and/or code for your work?",I don’t know/prefer not to answer,1
+ISS,Full Professor,"In your opinion, how important are open data, materials, and/or code for your work?",Moderately important,2
+ISS,Full Professor,"In your opinion, how important are open data, materials, and/or code for your work?",Not at all important,1
+ISS,Full Professor,"In your opinion, how important are open data, materials, and/or code for your work?",Very important,1
+ISS,Full Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","I might lose control over how my data, materials, and/or code are being used",3
+ISS,Full Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","I might not receive appropriate credit for data, materials, and/or code if I make them openly available",1
+ISS,Full Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","Others might criticise my data, materials, and/or code",1
+ISS,Full Professor,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","Reuse of my data, materials, and/or code could violate the epistemological framework of my research",1
+ISS,Full Professor,"What is your experience with openly sharing data, materials, and/or code that you developed?","I have some experience with open data, materials, and/or code, but do not share mine regularly",4
+ISS,Full Professor,"What is your experience with openly sharing data, materials, and/or code that you developed?","I regularly share open data, materials, and/or code",1
+ISS,Full Professor,"What is your experience with openly sharing data, materials, and/or code that you developed?","Until now, I hadn't heard of open data, materials, and/or code",1
+ISS,Full Professor,"What is your experience with using open data, materials, and/or code developed by others?","I am aware of open data, materials, and/or code developed by others, but have not used them",1
+ISS,Full Professor,"What is your experience with using open data, materials, and/or code developed by others?",I don’t know/prefer not to answer,1
+ISS,Full Professor,"What is your experience with using open data, materials, and/or code developed by others?","I have some experience with open data, materials, and/or code developed by others, but do not use them regularly",4
+ISS,Other,Are you familiar with the FAIR principles for data and code?,I don’t know/prefer not to answer,1
+ISS,Other,"In your opinion, how important are open data, materials, and/or code for your work?",Very important,1
+ISS,Other,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?",I don’t know/prefer not to answer,1
+ISS,Other,"What is your experience with openly sharing data, materials, and/or code that you developed?",I don’t know/prefer not to answer,1
+ISS,Other,"What is your experience with using open data, materials, and/or code developed by others?",I don’t know/prefer not to answer,1
+ISS,PhD candidate,Are you familiar with the FAIR principles for data and code?,"I am aware of the FAIR principles, but have not followed them",1
+ISS,PhD candidate,Are you familiar with the FAIR principles for data and code?,I don’t know/prefer not to answer,1
+ISS,PhD candidate,Are you familiar with the FAIR principles for data and code?,I regularly follow the FAIR principles,1
+ISS,PhD candidate,Are you familiar with the FAIR principles for data and code?,"Until now, I hadn't heard of the FAIR principles",2
+ISS,PhD candidate,"In your opinion, how important are open data, materials, and/or code for your work?",Extremely important,1
+ISS,PhD candidate,"In your opinion, how important are open data, materials, and/or code for your work?",Moderately important,4
+ISS,PhD candidate,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?",Others might find errors in my published work,2
+ISS,PhD candidate,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","Others might find it difficult to understand my data, materials, and/or code",2
+ISS,PhD candidate,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","Reuse of my data, materials, and/or code could violate the epistemological framework of my research",1
+ISS,PhD candidate,"What is your experience with openly sharing data, materials, and/or code that you developed?","I am aware of open data, materials, and/or code, but have not shared my own",4
+ISS,PhD candidate,"What is your experience with openly sharing data, materials, and/or code that you developed?","I have some experience with open data, materials, and/or code, but do not share mine regularly",1
+ISS,PhD candidate,"What is your experience with using open data, materials, and/or code developed by others?","I am aware of open data, materials, and/or code developed by others, but have not used them",2
+ISS,PhD candidate,"What is your experience with using open data, materials, and/or code developed by others?","I have some experience with open data, materials, and/or code developed by others, but do not use them regularly",2
+ISS,PhD candidate,"What is your experience with using open data, materials, and/or code developed by others?","I regularly use open data, materials, and/or code developed by others",1
+Other,Other,Are you familiar with the FAIR principles for data and code?,"I have some experience with the FAIR principles, but do not follow them regularly",2
+Other,Other,"In your opinion, how important are open data, materials, and/or code for your work?",Moderately important,2
+Other,Other,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","I might lose control over how my data, materials, and/or code are being used",1
+Other,Other,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","Others might criticise my data, materials, and/or code",1
+Other,Other,"What is your experience with openly sharing data, materials, and/or code that you developed?","I have some experience with open data, materials, and/or code, but do not share mine regularly",1
+Other,Other,"What is your experience with openly sharing data, materials, and/or code that you developed?","I regularly share open data, materials, and/or code",1
+Other,Other,"What is your experience with using open data, materials, and/or code developed by others?","I am aware of open data, materials, and/or code developed by others, but have not used them",1
+Other,Other,"What is your experience with using open data, materials, and/or code developed by others?","I have some experience with open data, materials, and/or code developed by others, but do not use them regularly",1
+Other,Lecturer,Are you familiar with the FAIR principles for data and code?,"Until now, I hadn't heard of the FAIR principles",1
+Other,Lecturer,"In your opinion, how important are open data, materials, and/or code for your work?",Extremely important,1
+Other,Lecturer,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?",I do not share any of these concerns,1
+Other,Lecturer,"What is your experience with openly sharing data, materials, and/or code that you developed?","I am aware of open data, materials, and/or code, but have not shared my own",1
+Other,Lecturer,"What is your experience with using open data, materials, and/or code developed by others?","I am aware of open data, materials, and/or code developed by others, but have not used them",1
+Other,PhD candidate,Are you familiar with the FAIR principles for data and code?,"I am aware of the FAIR principles, but have not followed them",1
+Other,PhD candidate,"In your opinion, how important are open data, materials, and/or code for your work?",Slightly important,1
+Other,PhD candidate,"The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?","Others might find it difficult to understand my data, materials, and/or code",1
+Other,PhD candidate,"What is your experience with openly sharing data, materials, and/or code that you developed?","I am aware of open data, materials, and/or code, but have not shared my own",1
+Other,PhD candidate,"What is your experience with using open data, materials, and/or code developed by others?","I am aware of open data, materials, and/or code developed by others, but have not used them",1
