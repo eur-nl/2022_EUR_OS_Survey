@@ -90,17 +90,6 @@ EUR_OS_open_access_Q3 <-
     lab_perc = paste(perc, "%", sep = "")
   ) 
 
-# "Is there anything you want to share with us regarding your experiences with Open Access?"
-# FREE TEXT
-EUR_OS_open_access_Q4 <-
-  EUR_OS_open_access %>% 
-  filter(question == "Is there anything you want to share with us regarding your experiences with Open Access?") %>% 
-  count(question, response) %>%
-  mutate(
-    perc = round(n / sum(n) * 100, 2),
-    lab_perc = paste(perc, "%", sep = "")
-  )
-
 # Question 1, lollipop graph ----------------------------------------------------------------
 
 # EUR
@@ -349,5 +338,24 @@ for(i in levels(EUR_OS_open_access$School)) {
   )
   
 }
+
+# Question 4, free text ----------------------------------------------------------------
+
+# this question does not have figures
+# the extraction of the responses will be included 
+# in the report, and representative responses quoted
+
+# "Is there anything you want to share with us regarding your experiences with Open Access?"
+# FREE TEXT
+EUR_OS_open_access_Q4 <-
+  EUR_OS_open_access %>% 
+  filter(question == "Is there anything you want to share with us regarding your experiences with Open Access?") %>% 
+  count(question, response) %>%
+  mutate(
+    perc = round(n / sum(n) * 100, 2),
+    lab_perc = paste(perc, "%", sep = "")
+  )
+
+
 
 # END ----------------------------------------------------------------
