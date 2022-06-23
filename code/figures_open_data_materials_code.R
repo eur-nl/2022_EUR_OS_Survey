@@ -140,7 +140,8 @@ lollipop_cluster2_question1 <-
     x = ""
   ) +
   coord_flip() +
-  theme_custom
+  theme_custom +
+  theme(plot.title = element_text(size = 20, hjust = .5))
 
 lollipop_cluster2_question1
 
@@ -187,7 +188,8 @@ for(i in levels(EUR_OS_open_data_materials_code$School)) {
       x = ""
     ) +
     coord_flip() +
-    theme_custom
+    theme_custom +
+    theme(plot.title = element_text(size = 20, hjust = .5))
   
   # save to file
   ggsave(
@@ -207,32 +209,33 @@ for(i in levels(EUR_OS_open_data_materials_code$School)) {
 # Question 2, lollipop graph ----------------------------------------------------------------
 
 # EUR
-lollipop_cluster1_question2 <-
-  EUR_OS_open_access_Q2 %>%
+lollipop_cluster2_question2 <-
+  EUR_OS_open_data_materials_code_Q2 %>%
   ggplot(aes(x = fct_rev(response), y = perc)) +
   geom_point(size = 6, color = "#0C8066") +
   geom_segment(aes(x = response, xend = response, y = 0, yend = perc), color = "#012328") +
   geom_label_repel(aes(response, perc, label = lab_perc), size = 4, nudge_y = 4, segment.alpha = 0, fill = "white", color = "#171C54") +
   scale_y_continuous(
-    breaks = seq(0, 50, 10),
-    limits = c(0, 50)
+    breaks = seq(0, 40, 10),
+    limits = c(0, 40)
   ) +
   scale_x_discrete(labels = function(x) str_wrap(x, width = 40)) +
   labs(
-    title = "Experience with Open Access - EUR",
+    title = "Experience with Open Data/Materials/Code - EUR",
     x = ""
   ) +
   coord_flip() +
-  theme_custom
+  theme_custom +
+  theme(plot.title = element_text(size = 18, hjust = .5))
 
-lollipop_cluster1_question2
+lollipop_cluster2_question2
 
 # save to file
 ggsave(
-  filename = "figure_experience_open_access_EUR.png",
-  plot = lollipop_cluster1_question2,
+  filename = "figure_experience_open_data_materials_code_EUR.png",
+  plot = lollipop_cluster2_question2,
   device = "png",
-  path = here("img", "open_access", "experience"),
+  path = here("img", "open_data_materials_code", "experience"),
   scale = 3,
   width = 8,
   height = 8,
@@ -242,20 +245,20 @@ ggsave(
 
 # separate graph for each school
 # NOTE: "Other" will not be reported
-for(i in levels(EUR_OS_open_access$School)) {
+for(i in levels(EUR_OS_open_data_materials_code$School)) {
   
   temp_figure_school <- 
-    EUR_OS_open_access %>% 
+    EUR_OS_open_data_materials_code %>% 
     filter(
-      question == "What is your experience with Open Access?" &
+      question == "What is your experience with using open data, materials, and/or code developed by others?" &
         School == i
     ) %>% 
     count(question, response) %>%
     mutate(
-      response = fct_relevel(response, !!!Likert_experience_convert),
+      response = fct_relevel(response, !!!Likert_experience_others_convert),
       perc = round(n / sum(n) * 100, 2),
       lab_perc = paste(perc, "%", sep = "")
-    ) %>%  
+    ) %>% 
     ggplot(aes(x = fct_rev(response), y = perc)) +
     geom_point(size = 6, color = "#0C8066") +
     geom_segment(aes(x = response, xend = response, y = 0, yend = perc), color = "#012328") +
@@ -266,18 +269,19 @@ for(i in levels(EUR_OS_open_access$School)) {
     ) +
     scale_x_discrete(labels = function(x) str_wrap(x, width = 40)) +
     labs(
-      title = paste0("Experience with Open Access - ", i),
+      title = paste0("Experience with Open Data/Materials/Code - ", i),
       x = ""
     ) +
     coord_flip() +
-    theme_custom
+    theme_custom +
+    theme(plot.title = element_text(size = 18, hjust = .5))
   
   # save to file
   ggsave(
-    filename = paste0("figure_experience_open_access_", i, ".png"),
+    filename = paste0("figure_experience_open_data_materials_code_", i, ".png"),
     plot = temp_figure_school,
     device = "png",
-    path = here("img", "open_access", "experience"),
+    path = here("img", "open_data_materials_code", "experience"),
     scale = 3,
     width = 8,
     height = 8,
@@ -286,6 +290,25 @@ for(i in levels(EUR_OS_open_access$School)) {
   )
   
 }
+
+
+# FROM HERE ----------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Question 3, lollipop graph ----------------------------------------------------------------
 
