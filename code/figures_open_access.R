@@ -147,8 +147,8 @@ for(i in levels(EUR_OS_open_access$School)) {
     geom_segment(aes(x = response, xend = response, y = 0, yend = perc), color = "#012328") +
     geom_label_repel(aes(response, perc, label = lab_perc), size = 4, nudge_y = 4, segment.alpha = 0, fill = "white", color = "#171C54") +
     scale_y_continuous(
-      breaks = seq(0, 80, 10),
-      limits = c(0, 80)
+      breaks = seq(0, 50, 10),
+      limits = c(0, 50)
     ) +
     scale_x_discrete(labels = function(x) str_wrap(x, width = 40)) +
     labs(
@@ -230,8 +230,8 @@ for(i in levels(EUR_OS_open_access$School)) {
     geom_segment(aes(x = response, xend = response, y = 0, yend = perc), color = "#012328") +
     geom_label_repel(aes(response, perc, label = lab_perc), size = 4, nudge_y = 4, segment.alpha = 0, fill = "white", color = "#171C54") +
     scale_y_continuous(
-      breaks = seq(0, 80, 10),
-      limits = c(0, 80)
+      breaks = seq(0, 70, 10),
+      limits = c(0, 70)
     ) +
     scale_x_discrete(labels = function(x) str_wrap(x, width = 40)) +
     labs(
@@ -313,12 +313,12 @@ for(i in levels(EUR_OS_open_access$School)) {
     geom_segment(aes(x = response, xend = response, y = 0, yend = perc), color = "#012328") +
     geom_label_repel(aes(response, perc, label = lab_perc), size = 4, nudge_y = 4, segment.alpha = 0, fill = "white", color = "#171C54") +
     scale_y_continuous(
-      breaks = seq(0, 80, 10),
-      limits = c(0, 80)
+      breaks = seq(0, 50, 10),
+      limits = c(0, 50)
     ) +
     scale_x_discrete(labels = function(x) str_wrap(x, width = 40)) +
     labs(
-      title = paste0("Experience with Open Access - ", i),
+      title = paste0("Concerns around Open Access - ", i),
       x = ""
     ) +
     coord_flip() +
@@ -355,7 +355,5 @@ EUR_OS_open_access_Q4 <-
     perc = round(n / sum(n) * 100, 2),
     lab_perc = paste(perc, "%", sep = "")
   )
-
-
 
 # END ----------------------------------------------------------------
