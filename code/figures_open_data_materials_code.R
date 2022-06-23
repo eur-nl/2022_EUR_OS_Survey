@@ -377,18 +377,99 @@ for(i in levels(EUR_OS_open_data_materials_code$School)) {
   
 }
 
+# Question 4, lollipop graph ----------------------------------------------------------------
+
+# EUR
+lollipop_cluster2_question4 <-
+  EUR_OS_open_data_materials_code_Q4 %>%
+  ggplot(aes(x = fct_rev(response), y = perc)) +
+  geom_point(size = 6, color = "#0C8066") +
+  geom_segment(aes(x = response, xend = response, y = 0, yend = perc), color = "#012328") +
+  geom_label_repel(aes(response, perc, label = lab_perc), size = 4, nudge_y = 4, segment.alpha = 0, fill = "white", color = "#171C54") +
+  scale_y_continuous(
+    breaks = seq(0, 40, 10),
+    limits = c(0, 40)
+  ) +
+  scale_x_discrete(labels = function(x) str_wrap(x, width = 40)) +
+  labs(
+    title = "FAIR principles - EUR",
+    x = ""
+  ) +
+  coord_flip() +
+  theme_custom
+# +
+#   theme(plot.title = element_text(size = 16, hjust = .5))
+
+lollipop_cluster2_question4
+
+# save to file
+ggsave(
+  filename = "figure_FAIR_EUR.png",
+  plot = lollipop_cluster2_question4,
+  device = "png",
+  path = here("img", "open_data_materials_code", "FAIR"),
+  scale = 3,
+  width = 8,
+  height = 8,
+  units = "cm",
+  dpi = 600
+)
+
+# separate graph for each school
+# NOTE: "Other" will not be reported
+for(i in levels(EUR_OS_open_data_materials_code$School)) {
+  
+  temp_figure_school <- 
+    EUR_OS_open_data_materials_code %>% 
+    filter(
+      question == "Are you familiar with the FAIR principles for data and code?" &
+        School == i
+    ) %>% 
+    count(question, response) %>%
+    mutate(
+      response = fct_relevel(response, !!!Likert_FAIR_convert),
+      perc = round(n / sum(n) * 100, 2),
+      lab_perc = paste(perc, "%", sep = "")
+    ) %>% 
+    drop_na() %>% 
+    ggplot(aes(x = fct_rev(response), y = perc)) +
+    geom_point(size = 6, color = "#0C8066") +
+    geom_segment(aes(x = response, xend = response, y = 0, yend = perc), color = "#012328") +
+    geom_label_repel(aes(response, perc, label = lab_perc), size = 4, nudge_y = 4, segment.alpha = 0, fill = "white", color = "#171C54") +
+    scale_y_continuous(
+      breaks = seq(0, 80, 10),
+      limits = c(0, 80)
+    ) +
+    scale_x_discrete(labels = function(x) str_wrap(x, width = 40)) +
+    labs(
+      title = paste0("FAIR principles - ", i),
+      x = ""
+    ) +
+    coord_flip() +
+    theme_custom
+  # +
+  #   theme(plot.title = element_text(size = 16, hjust = .5))
+  
+  # save to file
+  ggsave(
+    filename = paste0("figure_FAIR_", i, ".png"),
+    plot = temp_figure_school,
+    device = "png",
+    path = here("img", "open_data_materials_code", "FAIR"),
+    scale = 3,
+    width = 8,
+    height = 8,
+    units = "cm",
+    dpi = 600
+  )
+  
+}
+
+
+
 
 
 # FROM HERE ----------------------------------------------------------------
-
-
-
-
-
-
-
-
-
 
 
 
