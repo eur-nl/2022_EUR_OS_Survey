@@ -221,21 +221,21 @@ lollipop_cluster2_question2 <-
   ) +
   scale_x_discrete(labels = function(x) str_wrap(x, width = 40)) +
   labs(
-    title = "Experience with Open Data/Materials/Code - EUR",
+    title = "Experience with others' Open Data/Materials/Code - EUR",
     x = ""
   ) +
   coord_flip() +
   theme_custom +
-  theme(plot.title = element_text(size = 18, hjust = .5))
+  theme(plot.title = element_text(size = 16, hjust = .5))
 
 lollipop_cluster2_question2
 
 # save to file
 ggsave(
-  filename = "figure_experience_open_data_materials_code_EUR.png",
+  filename = "figure_experience_others_open_data_materials_code_EUR.png",
   plot = lollipop_cluster2_question2,
   device = "png",
-  path = here("img", "open_data_materials_code", "experience"),
+  path = here("img", "open_data_materials_code", "experience_others"),
   scale = 3,
   width = 8,
   height = 8,
@@ -269,19 +269,19 @@ for(i in levels(EUR_OS_open_data_materials_code$School)) {
     ) +
     scale_x_discrete(labels = function(x) str_wrap(x, width = 40)) +
     labs(
-      title = paste0("Experience with Open Data/Materials/Code - ", i),
+      title = paste0("Experience with others' Open Data/Materials/Code - ", i),
       x = ""
     ) +
     coord_flip() +
     theme_custom +
-    theme(plot.title = element_text(size = 18, hjust = .5))
+    theme(plot.title = element_text(size = 16, hjust = .5))
   
   # save to file
   ggsave(
-    filename = paste0("figure_experience_open_data_materials_code_", i, ".png"),
+    filename = paste0("figure_experience_others_open_data_materials_code_", i, ".png"),
     plot = temp_figure_school,
     device = "png",
-    path = here("img", "open_data_materials_code", "experience"),
+    path = here("img", "open_data_materials_code", "experience_others"),
     scale = 3,
     width = 8,
     height = 8,
@@ -290,6 +290,93 @@ for(i in levels(EUR_OS_open_data_materials_code$School)) {
   )
   
 }
+
+# Question 3, lollipop graph ----------------------------------------------------------------
+
+# EUR
+lollipop_cluster2_question3 <-
+  EUR_OS_open_data_materials_code_Q3 %>%
+  ggplot(aes(x = fct_rev(response), y = perc)) +
+  geom_point(size = 6, color = "#0C8066") +
+  geom_segment(aes(x = response, xend = response, y = 0, yend = perc), color = "#012328") +
+  geom_label_repel(aes(response, perc, label = lab_perc), size = 4, nudge_y = 4, segment.alpha = 0, fill = "white", color = "#171C54") +
+  scale_y_continuous(
+    breaks = seq(0, 40, 10),
+    limits = c(0, 40)
+  ) +
+  scale_x_discrete(labels = function(x) str_wrap(x, width = 40)) +
+  labs(
+    title = "Experience with own Open Data/Materials/Code - EUR",
+    x = ""
+  ) +
+  coord_flip() +
+  theme_custom +
+  theme(plot.title = element_text(size = 16, hjust = .5))
+
+lollipop_cluster2_question3
+
+# save to file
+ggsave(
+  filename = "figure_experience_own_open_data_materials_code_EUR.png",
+  plot = lollipop_cluster2_question3,
+  device = "png",
+  path = here("img", "open_data_materials_code", "experience_own"),
+  scale = 3,
+  width = 8,
+  height = 8,
+  units = "cm",
+  dpi = 600
+)
+
+# separate graph for each school
+# NOTE: "Other" will not be reported
+for(i in levels(EUR_OS_open_data_materials_code$School)) {
+  
+  temp_figure_school <- 
+    EUR_OS_open_data_materials_code %>% 
+    filter(
+      question == "What is your experience with openly sharing data, materials, and/or code that you developed?" &
+        School == i
+    ) %>% 
+    count(question, response) %>%
+    mutate(
+      response = fct_relevel(response, !!!Likert_experience_own_convert),
+      perc = round(n / sum(n) * 100, 2),
+      lab_perc = paste(perc, "%", sep = "")
+    ) %>% 
+    drop_na() %>% 
+    ggplot(aes(x = fct_rev(response), y = perc)) +
+    geom_point(size = 6, color = "#0C8066") +
+    geom_segment(aes(x = response, xend = response, y = 0, yend = perc), color = "#012328") +
+    geom_label_repel(aes(response, perc, label = lab_perc), size = 4, nudge_y = 4, segment.alpha = 0, fill = "white", color = "#171C54") +
+    scale_y_continuous(
+      breaks = seq(0, 80, 10),
+      limits = c(0, 80)
+    ) +
+    scale_x_discrete(labels = function(x) str_wrap(x, width = 40)) +
+    labs(
+      title = paste0("Experience with own Open Data/Materials/Code - ", i),
+      x = ""
+    ) +
+    coord_flip() +
+    theme_custom +
+    theme(plot.title = element_text(size = 16, hjust = .5))
+  
+  # save to file
+  ggsave(
+    filename = paste0("figure_experience_own_open_data_materials_code_", i, ".png"),
+    plot = temp_figure_school,
+    device = "png",
+    path = here("img", "open_data_materials_code", "experience_own"),
+    scale = 3,
+    width = 8,
+    height = 8,
+    units = "cm",
+    dpi = 600
+  )
+  
+}
+
 
 
 # FROM HERE ----------------------------------------------------------------
@@ -310,90 +397,14 @@ for(i in levels(EUR_OS_open_data_materials_code$School)) {
 
 
 
-# Question 3, lollipop graph ----------------------------------------------------------------
 
-# EUR
-lollipop_cluster1_question3 <-
-  EUR_OS_open_access_Q3 %>%
-  ggplot(aes(x = reorder(response, perc), y = perc)) +
-  geom_point(size = 6, color = "#0C8066") +
-  geom_segment(aes(x = response, xend = response, y = 0, yend = perc), color = "#012328") +
-  geom_label_repel(aes(response, perc, label = lab_perc), size = 4, nudge_y = 4, segment.alpha = 0, fill = "white", color = "#171C54") +
-  scale_y_continuous(
-    breaks = seq(0, 40, 10),
-    limits = c(0, 40)
-  ) +
-  scale_x_discrete(labels = function(x) str_wrap(x, width = 40)) +
-  labs(
-    title = "Concerns around Open Access - EUR",
-    x = ""
-  ) +
-  coord_flip() +
-  theme_custom
 
-lollipop_cluster1_question3
 
-# save to file
-ggsave(
-  filename = "figure_concerns_open_access_EUR.png",
-  plot = lollipop_cluster1_question3,
-  device = "png",
-  path = here("img", "open_access", "concerns"),
-  scale = 3,
-  width = 8,
-  height = 8,
-  units = "cm",
-  dpi = 600
-)
 
-# separate graph for each school
-# NOTE: "Other" will not be reported
-for(i in levels(EUR_OS_open_access$School)) {
-  
-  temp_figure_school <- 
-    EUR_OS_open_access %>% 
-    filter(
-      question == "The following are possible concerns that researchers could have about Open Access publishing. Which of these concerns would you agree with?" &
-        School == i
-    ) %>% 
-    count(question, response) %>%
-    mutate(
-      response = fct_relevel(response, !!!Likert_concerns_convert),
-      perc = round(n / sum(n) * 100, 2),
-      lab_perc = paste(perc, "%", sep = "")
-    ) %>%  
-    ggplot(aes(x = reorder(response, perc), y = perc)) +
-    geom_point(size = 6, color = "#0C8066") +
-    geom_segment(aes(x = response, xend = response, y = 0, yend = perc), color = "#012328") +
-    geom_label_repel(aes(response, perc, label = lab_perc), size = 4, nudge_y = 4, segment.alpha = 0, fill = "white", color = "#171C54") +
-    scale_y_continuous(
-      breaks = seq(0, 80, 10),
-      limits = c(0, 80)
-    ) +
-    scale_x_discrete(labels = function(x) str_wrap(x, width = 40)) +
-    labs(
-      title = paste0("Experience with Open Access - ", i),
-      x = ""
-    ) +
-    coord_flip() +
-    theme_custom
-  
-  # save to file
-  ggsave(
-    filename = paste0("figure_concerns_open_access_", i, ".png"),
-    plot = temp_figure_school,
-    device = "png",
-    path = here("img", "open_access", "concerns"),
-    scale = 3,
-    width = 8,
-    height = 8,
-    units = "cm",
-    dpi = 600
-  )
-  
-}
 
-# Question 4, free text ----------------------------------------------------------------
+
+
+# Question 5, free text ----------------------------------------------------------------
 
 # this question does not have figures
 # the extraction of the responses will be included 
