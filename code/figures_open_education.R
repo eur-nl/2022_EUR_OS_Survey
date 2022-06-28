@@ -319,8 +319,7 @@ for(i in levels(EUR_OS_open_education$School)) {
       response = fct_relevel(response, !!!Likert_experience_own_convert),
       perc = round(n / sum(n) * 100, 2),
       lab_perc = paste(perc, "%", sep = "")
-    ) %>% 
-    drop_na() %>% 
+    ) %>%
     ggplot(aes(x = fct_rev(response), y = perc)) +
     geom_point(size = 6, color = "#0C8066") +
     geom_segment(aes(x = response, xend = response, y = 0, yend = perc), color = "#012328") +

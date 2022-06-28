@@ -91,13 +91,13 @@ EUR_OS_open_data_materials_code_Q2 <-
 EUR_OS_open_data_materials_code_Q3 <- 
   EUR_OS_open_data_materials_code %>% 
   filter(question == "What is your experience with openly sharing data, materials, and/or code that you developed?") %>% 
+  mutate(response = replace_na(response, "I don’t know/prefer not to answer")) %>% 
   count(question, response) %>%
   mutate(
     response = fct_relevel(response, !!!Likert_experience_own_convert),
     perc = round(n / sum(n) * 100, 2),
     lab_perc = paste(perc, "%", sep = "")
-  ) %>% 
-  drop_na()
+  )
 
 # "Are you familiar with the FAIR principles for data and code?"
 EUR_OS_open_data_materials_code_Q4 <- 
@@ -338,6 +338,7 @@ for(i in levels(EUR_OS_open_data_materials_code$School)) {
       question == "What is your experience with openly sharing data, materials, and/or code that you developed?" &
         School == i
     ) %>% 
+    mutate(response = replace_na(response, "I don’t know/prefer not to answer")) %>% 
     count(question, response) %>%
     mutate(
       response = fct_relevel(response, !!!Likert_experience_own_convert),
