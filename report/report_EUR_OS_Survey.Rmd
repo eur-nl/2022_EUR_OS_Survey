@@ -596,9 +596,6 @@ knitr::include_graphics(here("img", "open_data_materials_code", "FAIR", "figure_
 
 ## {-}
 
-
-
-
 ## Concerns around Open Data/Materials/Code {.tabset .tabset-pills}
 
 ### EUR
@@ -659,7 +656,187 @@ knitr::include_graphics(here("img", "open_data_materials_code", "concerns", "fig
 
 ## {-}
 
+# Preregistration
 
+## Importance of Preregistration {.tabset .tabset-pills}
+
+### EUR
+
+```{r figure-preregistration-Q1-EUR}
+
+knitr::include_graphics(here("img", "preregistration", "importance", "figure_importance_preregistration_EUR.png"))
+
+```
+
+### ISS
+
+```{r figure-preregistration-Q1-ISS}
+
+knitr::include_graphics(here("img", "preregistration", "importance", "figure_importance_preregistration_ISS.png"))
+
+```
+
+### ESHPM
+
+```{r figure-preregistration-Q1-ESHPM}
+
+knitr::include_graphics(here("img", "preregistration", "importance", "figure_importance_preregistration_ESHPM.png"))
+
+```
+
+### ESPhil
+
+```{r figure-preregistration-Q1-ESPhil}
+
+knitr::include_graphics(here("img", "preregistration", "importance", "figure_importance_preregistration_ESPhil.png"))
+
+```
+
+### ESL
+
+```{r figure-preregistration-Q1-ESL}
+
+knitr::include_graphics(here("img", "preregistration", "importance", "figure_importance_preregistration_ESL.png"))
+
+```
+
+### ESSB
+
+```{r figure-preregistration-Q1-ESSB}
+
+knitr::include_graphics(here("img", "preregistration", "importance", "figure_importance_preregistration_ESSB.png"))
+
+```
+
+### ESHCC
+
+```{r figure-preregistration-Q1-ESHCC}
+
+knitr::include_graphics(here("img", "preregistration", "importance", "figure_importance_preregistration_ESHCC.png"))
+
+```
+
+## {-}
+
+## Experience with Preregistration {.tabset .tabset-pills}
+
+### EUR
+
+```{r figure-preregistration-Q2-EUR}
+
+knitr::include_graphics(here("img", "preregistration", "experience", "figure_experience_preregistration_EUR.png"))
+
+```
+
+### ISS
+
+```{r figure-preregistration-Q2-ISS}
+
+knitr::include_graphics(here("img", "preregistration", "experience", "figure_experience_preregistration_ISS.png"))
+
+```
+
+### ESHPM
+
+```{r figure-preregistration-Q2-ESHPM}
+
+knitr::include_graphics(here("img", "preregistration", "experience", "figure_experience_preregistration_ESHPM.png"))
+
+```
+
+### ESPhil
+
+```{r figure-preregistration-Q2-ESPhil}
+
+knitr::include_graphics(here("img", "preregistration", "experience", "figure_experience_preregistration_ESPhil.png"))
+
+```
+
+### ESL
+
+```{r figure-preregistration-Q2-ESL}
+
+knitr::include_graphics(here("img", "preregistration", "experience", "figure_experience_preregistration_ESL.png"))
+
+```
+
+### ESSB
+
+```{r figure-preregistration-Q2-ESSB}
+
+knitr::include_graphics(here("img", "preregistration", "experience", "figure_experience_preregistration_ESSB.png"))
+
+```
+
+### ESHCC
+
+```{r figure-preregistration-Q2-ESHCC}
+
+knitr::include_graphics(here("img", "preregistration", "experience", "figure_experience_preregistration_ESHCC.png"))
+
+```
+
+## {-}
+
+## Concerns around Preregistration {.tabset .tabset-pills}
+
+### EUR
+
+```{r figure-preregistration-Q3-EUR}
+
+knitr::include_graphics(here("img", "preregistration", "concerns", "figure_concerns_preregistration_EUR.png"))
+
+```
+
+### ISS
+
+```{r figure-preregistration-Q3-ISS}
+
+knitr::include_graphics(here("img", "preregistration", "concerns", "figure_concerns_preregistration_ISS.png"))
+
+```
+
+### ESHPM
+
+```{r figure-preregistration-Q3-ESHPM}
+
+knitr::include_graphics(here("img", "preregistration", "concerns", "figure_concerns_preregistration_ESHPM.png"))
+
+```
+
+### ESPhil
+
+```{r figure-preregistration-Q3-ESPhil}
+
+knitr::include_graphics(here("img", "preregistration", "concerns", "figure_concerns_preregistration_ESPhil.png"))
+
+```
+
+### ESL
+
+```{r figure-preregistration-Q3-ESL}
+
+knitr::include_graphics(here("img", "preregistration", "concerns", "figure_concerns_preregistration_ESL.png"))
+
+```
+
+### ESSB
+
+```{r figure-preregistration-Q3-ESSB}
+
+knitr::include_graphics(here("img", "preregistration", "concerns", "figure_concerns_preregistration_ESSB.png"))
+
+```
+
+### ESHCC
+
+```{r figure-preregistration-Q3-ESHCC}
+
+knitr::include_graphics(here("img", "preregistration", "concerns", "figure_concerns_preregistration_ESHCC.png"))
+
+```
+
+## {-}
 
 
 
