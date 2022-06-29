@@ -1444,7 +1444,187 @@ knitr::include_graphics(here("img", "support", "FAIR", "figure_FAIR_support_ESHC
 
 ## {-}
 
+# Recognition & Rewards
 
+## Feeling recognized for Open Science {.tabset .tabset-pills}
+
+### EUR
+
+```{r figure-recognition-rewards-Q1-EUR}
+
+knitr::include_graphics(here("img", "recognition_rewards", "feeling_recognized", "figure_feeling_recognized_EUR.png"))
+
+```
+
+### ISS
+
+```{r figure-recognition-rewards-Q1-ISS}
+
+knitr::include_graphics(here("img", "recognition_rewards", "feeling_recognized", "figure_feeling_recognized_ISS.png"))
+
+```
+
+### ESHPM
+
+```{r figure-recognition-rewards-Q1-ESHPM}
+
+knitr::include_graphics(here("img", "recognition_rewards", "feeling_recognized", "figure_feeling_recognized_ESHPM.png"))
+
+```
+
+### ESPhil
+
+```{r figure-recognition-rewards-Q1-ESPhil}
+
+knitr::include_graphics(here("img", "recognition_rewards", "feeling_recognized", "figure_feeling_recognized_ESPhil.png"))
+
+```
+
+### ESL
+
+```{r figure-recognition-rewards-Q1-ESL}
+
+knitr::include_graphics(here("img", "recognition_rewards", "feeling_recognized", "figure_feeling_recognized_ESL.png"))
+
+```
+
+### ESSB
+
+```{r figure-recognition-rewards-Q1-ESSB}
+
+knitr::include_graphics(here("img", "recognition_rewards", "feeling_recognized", "figure_feeling_recognized_ESSB.png"))
+
+```
+
+### ESHCC
+
+```{r figure-recognition-rewards-Q1-ESHCC}
+
+knitr::include_graphics(here("img", "recognition_rewards", "feeling_recognized", "figure_feeling_recognized_ESHCC.png"))
+
+```
+
+## {-}
+
+## Current recognition for Open Science {.tabset .tabset-pills}
+
+### EUR
+
+```{r figure-recognition-rewards-Q2-EUR}
+
+knitr::include_graphics(here("img", "recognition_rewards", "current_recognition", "figure_current_recognition_rewards_EUR.png"))
+
+```
+
+### ISS
+
+```{r figure-recognition-rewards-Q2-ISS}
+
+knitr::include_graphics(here("img", "recognition_rewards", "current_recognition", "figure_current_recognition_rewards_ISS.png"))
+
+```
+
+### ESHPM
+
+```{r figure-recognition-rewards-Q2-ESHPM}
+
+knitr::include_graphics(here("img", "recognition_rewards", "current_recognition", "figure_current_recognition_rewards_ESHPM.png"))
+
+```
+
+### ESPhil
+
+```{r figure-recognition-rewards-Q2-ESPhil}
+
+knitr::include_graphics(here("img", "recognition_rewards", "current_recognition", "figure_current_recognition_rewards_ESPhil.png"))
+
+```
+
+### ESL
+
+```{r figure-recognition-rewards-Q2-ESL}
+
+knitr::include_graphics(here("img", "recognition_rewards", "current_recognition", "figure_current_recognition_rewards_ESL.png"))
+
+```
+
+### ESSB
+
+```{r figure-recognition-rewards-Q2-ESSB}
+
+knitr::include_graphics(here("img", "recognition_rewards", "current_recognition", "figure_current_recognition_rewards_ESSB.png"))
+
+```
+
+### ESHCC
+
+```{r figure-recognition-rewards-Q2-ESHCC}
+
+knitr::include_graphics(here("img", "recognition_rewards", "current_recognition", "figure_current_recognition_rewards_ESHCC.png"))
+
+```
+
+## {-}
+
+## Expected recognition for Open Science {.tabset .tabset-pills}
+
+### EUR
+
+```{r figure-recognition-rewards-Q3-EUR}
+
+knitr::include_graphics(here("img", "recognition_rewards", "expected_recognition", "figure_expected_recognition_rewards_EUR.png"))
+
+```
+
+### ISS
+
+```{r figure-recognition-rewards-Q3-ISS}
+
+knitr::include_graphics(here("img", "recognition_rewards", "expected_recognition", "figure_expected_recognition_rewards_ISS.png"))
+
+```
+
+### ESHPM
+
+```{r figure-recognition-rewards-Q3-ESHPM}
+
+knitr::include_graphics(here("img", "recognition_rewards", "expected_recognition", "figure_expected_recognition_rewards_ESHPM.png"))
+
+```
+
+### ESPhil
+
+```{r figure-recognition-rewards-Q3-ESPhil}
+
+knitr::include_graphics(here("img", "recognition_rewards", "expected_recognition", "figure_expected_recognition_rewards_ESPhil.png"))
+
+```
+
+### ESL
+
+```{r figure-recognition-rewards-Q3-ESL}
+
+knitr::include_graphics(here("img", "recognition_rewards", "expected_recognition", "figure_expected_recognition_rewards_ESL.png"))
+
+```
+
+### ESSB
+
+```{r figure-recognition-rewards-Q3-ESSB}
+
+knitr::include_graphics(here("img", "recognition_rewards", "expected_recognition", "figure_expected_recognition_rewards_ESSB.png"))
+
+```
+
+### ESHCC
+
+```{r figure-recognition-rewards-Q3-ESHCC}
+
+knitr::include_graphics(here("img", "recognition_rewards", "expected_recognition", "figure_expected_recognition_rewards_ESHCC.png"))
+
+```
+
+## {-}
 
 
 
