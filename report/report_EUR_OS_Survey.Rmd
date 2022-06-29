@@ -843,6 +843,247 @@ knitr::include_graphics(here("img", "preregistration", "concerns", "figure_conce
 
 
 
+# Open Education
+
+## Importance of Open Education {.tabset .tabset-pills}
+
+### EUR
+
+```{r figure-open-education-Q1-EUR}
+
+knitr::include_graphics(here("img", "open_education", "importance", "figure_importance_open_education_EUR.png"))
+
+```
+
+### ISS
+
+```{r figure-open-education-Q1-ISS}
+
+knitr::include_graphics(here("img", "open_education", "importance", "figure_importance_open_education_ISS.png"))
+
+```
+
+### ESHPM
+
+```{r figure-open-education-Q1-ESHPM}
+
+knitr::include_graphics(here("img", "open_education", "importance", "figure_importance_open_education_ESHPM.png"))
+
+```
+
+### ESPhil
+
+```{r figure-open-education-Q1-ESPhil}
+
+knitr::include_graphics(here("img", "open_education", "importance", "figure_importance_open_education_ESPhil.png"))
+
+```
+
+### ESL
+
+```{r figure-open-education-Q1-ESL}
+
+knitr::include_graphics(here("img", "open_education", "importance", "figure_importance_open_education_ESL.png"))
+
+```
+
+### ESSB
+
+```{r figure-open-education-Q1-ESSB}
+
+knitr::include_graphics(here("img", "open_education", "importance", "figure_importance_open_education_ESSB.png"))
+
+```
+
+### ESHCC
+
+```{r figure-open-education-Q1-ESHCC}
+
+knitr::include_graphics(here("img", "open_education", "importance", "figure_importance_open_education_ESHCC.png"))
+
+```
+
+## {-}
+
+## Experience with others' Open Education {.tabset .tabset-pills}
+
+### EUR
+
+```{r figure-open-education-Q2-EUR}
+
+knitr::include_graphics(here("img", "open_education", "experience_others", "figure_experience_others_open_education_EUR.png"))
+
+```
+
+### ISS
+
+```{r figure-open-education-Q2-ISS}
+
+knitr::include_graphics(here("img", "open_education", "experience_others", "figure_experience_others_open_education_ISS.png"))
+
+```
+
+### ESHPM
+
+```{r figure-open-education-Q2-ESHPM}
+
+knitr::include_graphics(here("img", "open_education", "experience_others", "figure_experience_others_open_education_ESHPM.png"))
+
+```
+
+### ESPhil
+
+```{r figure-open-education-Q2-ESPhil}
+
+knitr::include_graphics(here("img", "open_education", "experience_others", "figure_experience_others_open_education_ESPhil.png"))
+
+```
+
+### ESL
+
+```{r figure-open-education-Q2-ESL}
+
+knitr::include_graphics(here("img", "open_education", "experience_others", "figure_experience_others_open_education_ESL.png"))
+
+```
+
+### ESSB
+
+```{r figure-open-education-Q2-ESSB}
+
+knitr::include_graphics(here("img", "open_education", "experience_others", "figure_experience_others_open_education_ESSB.png"))
+
+```
+
+### ESHCC
+
+```{r figure-open-education-Q2-ESHCC}
+
+knitr::include_graphics(here("img", "open_education", "experience_others", "figure_experience_others_open_education_ESHCC.png"))
+
+```
+
+## {-}
+
+## Experience with own Open Education {.tabset .tabset-pills}
+
+### EUR
+
+```{r figure-open-education-Q3-EUR}
+
+knitr::include_graphics(here("img", "open_education", "experience_own", "figure_experience_own_open_education_EUR.png"))
+
+```
+
+### ISS
+
+```{r figure-open-education-Q3-ISS}
+
+knitr::include_graphics(here("img", "open_education", "experience_own", "figure_experience_own_open_education_ISS.png"))
+
+```
+
+### ESHPM
+
+```{r figure-open-education-Q3-ESHPM}
+
+knitr::include_graphics(here("img", "open_education", "experience_own", "figure_experience_own_open_education_ESHPM.png"))
+
+```
+
+### ESPhil
+
+```{r figure-open-education-Q3-ESPhil}
+
+knitr::include_graphics(here("img", "open_education", "experience_own", "figure_experience_own_open_education_ESPhil.png"))
+
+```
+
+### ESL
+
+```{r figure-open-education-Q3-ESL}
+
+knitr::include_graphics(here("img", "open_education", "experience_own", "figure_experience_own_open_education_ESL.png"))
+
+```
+
+### ESSB
+
+```{r figure-open-education-Q3-ESSB}
+
+knitr::include_graphics(here("img", "open_education", "experience_own", "figure_experience_own_open_education_ESSB.png"))
+
+```
+
+### ESHCC
+
+```{r figure-open-education-Q3-ESHCC}
+
+knitr::include_graphics(here("img", "open_education", "experience_own", "figure_experience_own_open_education_ESHCC.png"))
+
+```
+
+## {-}
+
+## Concerns around Open Education {.tabset .tabset-pills}
+
+### EUR
+
+```{r figure-open-education-Q4-EUR}
+
+knitr::include_graphics(here("img", "open_education", "concerns", "figure_concerns_open_education_EUR.png"))
+
+```
+
+### ISS
+
+```{r figure-open-education-Q4-ISS}
+
+knitr::include_graphics(here("img", "open_education", "concerns", "figure_concerns_open_education_ISS.png"))
+
+```
+
+### ESHPM
+
+```{r figure-open-education-Q4-ESHPM}
+
+knitr::include_graphics(here("img", "open_education", "concerns", "figure_concerns_open_education_ESHPM.png"))
+
+```
+
+### ESPhil
+
+```{r figure-open-education-Q4-ESPhil}
+
+knitr::include_graphics(here("img", "open_education", "concerns", "figure_concerns_open_education_ESPhil.png"))
+
+```
+
+### ESL
+
+```{r figure-open-education-Q4-ESL}
+
+knitr::include_graphics(here("img", "open_education", "concerns", "figure_concerns_open_education_ESL.png"))
+
+```
+
+### ESSB
+
+```{r figure-open-education-Q4-ESSB}
+
+knitr::include_graphics(here("img", "open_education", "concerns", "figure_concerns_open_education_ESSB.png"))
+
+```
+
+### ESHCC
+
+```{r figure-open-education-Q4-ESHCC}
+
+knitr::include_graphics(here("img", "open_education", "concerns", "figure_concerns_open_education_ESHCC.png"))
+
+```
+
+## {-}
 
 
 
