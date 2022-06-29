@@ -169,7 +169,7 @@ lollipop_cluster7_question2
 
 # save to file
 ggsave(
-  filename = "figure_current_recognition_EUR.png",
+  filename = "figure_current_recognition_rewards_EUR.png",
   plot = lollipop_cluster7_question2,
   device = "png",
   path = here("img", "recognition_rewards", "current_recognition"),
@@ -253,7 +253,7 @@ lollipop_cluster7_question3
 
 # save to file
 ggsave(
-  filename = "figure_expected_recognition_EUR.png",
+  filename = "figure_expected_recognition_rewards_EUR.png",
   plot = lollipop_cluster7_question3,
   device = "png",
   path = here("img", "recognition_rewards", "expected_recognition"),
@@ -300,7 +300,7 @@ for(i in levels(EUR_OS_recognition_rewards$School)) {
   
   # save to file
   ggsave(
-    filename = paste0("figure_expected_recognition_", i, ".png"),
+    filename = paste0("figure_expected_recognition_rewards_", i, ".png"),
     plot = temp_figure_school,
     device = "png",
     path = here("img", "recognition_rewards", "expected_recognition"),
