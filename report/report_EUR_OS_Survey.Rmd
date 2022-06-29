@@ -1,7 +1,7 @@
 ---
 title: "Report of the 2022 EUR Open Science Survey"
 author: '[Dr. Lizette Guzman-Ramirez](https://www.linkedin.com/in/drlizguzman/), [Dr. Antonio Schettino](https://antonio-schettino.com/)'
-date: 2022-05-26
+date: 2022-07-01
 output:
   bookdown::html_document2:
     # # appearance
@@ -51,8 +51,10 @@ opts_chunk$set(
 
 # custom function for tables
 kable_custom <- function(data, caption) {
+  
   knitr::kable(data, digits = getOption("digits"), caption = caption) %>%
     kableExtra::kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+  
 }
 
 ```
@@ -65,14 +67,14 @@ kable_custom <- function(data, caption) {
 # load all data
 # EUR_OS <- readRDS(here("data", "preprocessed", "rds", "CLEAN_OS_Survey_responses.rds")) # all data
 EUR_OS_cluster0 <- readRDS(here("data", "preprocessed", "rds", "cluster_0.rds")) # cluster 0
-# EUR_OS_cluster1 <- readRDS(here("data", "preprocessed", "rds", "cluster_1.rds")) # cluster 1
-# EUR_OS_cluster2 <- readRDS(here("data", "preprocessed", "rds", "cluster_2.rds")) # cluster 2
-# EUR_OS_cluster3 <- readRDS(here("data", "preprocessed", "rds", "cluster_3.rds")) # cluster 3
-# EUR_OS_cluster4 <- readRDS(here("data", "preprocessed", "rds", "cluster_4.rds")) # cluster 4
-# EUR_OS_cluster5 <- readRDS(here("data", "preprocessed", "rds", "cluster_5.rds")) # cluster 5
-# EUR_OS_cluster6 <- readRDS(here("data", "preprocessed", "rds", "cluster_6.rds")) # cluster 6
-# EUR_OS_cluster7 <- readRDS(here("data", "preprocessed", "rds", "cluster_7.rds")) # cluster 7
-# EUR_OS_cluster8 <- readRDS(here("data", "preprocessed", "rds", "cluster_8.rds")) # cluster 8
+EUR_OS_cluster1 <- readRDS(here("data", "preprocessed", "rds", "cluster_1.rds")) # cluster 1
+EUR_OS_cluster2 <- readRDS(here("data", "preprocessed", "rds", "cluster_2.rds")) # cluster 2
+EUR_OS_cluster3 <- readRDS(here("data", "preprocessed", "rds", "cluster_3.rds")) # cluster 3
+EUR_OS_cluster4 <- readRDS(here("data", "preprocessed", "rds", "cluster_4.rds")) # cluster 4
+EUR_OS_cluster5 <- readRDS(here("data", "preprocessed", "rds", "cluster_5.rds")) # cluster 5
+EUR_OS_cluster6 <- readRDS(here("data", "preprocessed", "rds", "cluster_6.rds")) # cluster 6
+EUR_OS_cluster7 <- readRDS(here("data", "preprocessed", "rds", "cluster_7.rds")) # cluster 7
+EUR_OS_cluster8 <- readRDS(here("data", "preprocessed", "rds", "cluster_8.rds")) # cluster 8
 
 ```
 
@@ -120,17 +122,17 @@ EUR_OS_incomplete <-
 
 A total of `r sum(EUR_OS_incomplete$n)` respondents started the survey, and `r pull(filter(EUR_OS_incomplete, survey == "complete"), n)` completed it (`r pull(filter(EUR_OS_incomplete, survey == "complete"), lab_perc)`).
 
-Considering only the completed surveys, Figure \@ref(fig:figure-01) shows the percentage of respondents as a function of school and position. Table \@ref(tab:table-school-position-response-rate) shows the percentage of respondents relative to the total number of employees
+Considering only the completed surveys, Figure \@ref(fig:figure-school-position) shows the percentage of respondents separately for each school and position. Table \@ref(tab:table-school-position-response-rate) shows the percentage of respondents relative to the total number of employees.
 
-(ref:figure01-caption) Response rate per school and position.
+(ref:figure-school-position-caption) Response rate per school and position.
 
-```{r figure-01, fig.cap = "(ref:figure01-caption)"}
+```{r figure-school-position, fig.cap = "(ref:figure-school-position-caption)"}
 
 knitr::include_graphics(here("img", "figure_school_position.png"))
 
 ```
 
-(ref:table-school-position-response-rate) Response rate per school relative to total staff. Source: [EUR Annual Report 2020](https://jaarverslag2020.eur.nl/en), [Appendix 4](https://jaarverslag2020.eur.nl/en/appendix-4-staff-composition)
+(ref:table-school-position-response-rate) Response rate per school relative to total staff. Source: [EUR Annual Report 2020](https://jaarverslag2020.eur.nl/en), [Appendix 4](https://jaarverslag2020.eur.nl/en/appendix-4-staff-composition), accessed on June 3rd 2022.
 
 (ref:footnote-table-school-position-response-rate) According to the EUR Annual Report 2020, ESL has 351 employees but the survey was sent to 244 of them.
 
@@ -170,312 +172,195 @@ EUR_OS_school %>%
 
 ```
 
-# Open Access {.tabset .tabset-pills}
+# Open Access
 
-## EUR
+## Importance of Open Access {.tabset .tabset-pills}
 
-###################################
-# CONTINUE FROM HERE
-# COUNT NUMBER OF RESPONSES TO THE QUESTION
-# "In your opinion, how important is Open Access for your work?"
-# "Extremely important",
-# "Very important",
-# "Moderately important",
-# "Slightly important",
-# "Not at all important",
-# "I don’t know/prefer not to answer"
-# SEPARATELY PER SCHOOL & CONDITION
-###################################
+### EUR
 
-```{r oa-data-importance}
-# 
-# EUR_OS_open_access <-
-#   EUR_OS_cluster1 %>% 
-#   filter(question %in% c("School", "Position")
+```{r figure-open-access-Q1-EUR}
+
+knitr::include_graphics(here("img", "open_access", "importance", "figure_importance_open_access_EUR.png"))
 
 ```
 
-```{r oa-data-importance}
+### ISS
 
-EUR_OS_open_access_importance <-
-  EUR_OS_cluster1 %>% 
-  filter(question == c("School", "Position",
-                         "In your opinion, how important is Open Access for your work?")
-                         ) %>%
-  droplevels() %>%
-  pivot_wider(
-    id_cols = participant,
-    names_from = question,
-    values_from = item
-  ) %>% 
-  group_by(School, Position) %>%
-  summarize(
-    n = n(),
-    lab_perc = paste(round(n / sum(n) * 100, 2), "%", sep = ""),
-    .groups = "keep"
-  )
-  
-  
-  
-  count("School", "Position", "In your opinion, how important is Open Access for your work?")
-  
-  
-  #   group_by(School) %>%
-#   summarize(
-#     n = n(),
-#     perc = round(length(which(Finished == TRUE))/length(Finished) * 100, 2),
-#     lab_perc = paste(perc, "%", sep = ""),
-#     .groups = "keep"
-#   )
-  
-  
-  mutate( # order levels
-    item = fct_explicit_na(item, "NA"),
-    item = fct_relevel( # relevel or reorder?
-      item,
-      "Extremely important",
-      "Very important",
-      "Moderately important",
-      "Slightly important",
-      "Not at all important",
-      "I don’t know/prefer not to answer",
-      "NA"
-      )
-    ) %>%
-  filter(item != "NA") %>%
-    pivot_wider(
-    id_cols = participant,
-    names_from = question,
-    values_from = item
-  ) %>%
-  
-  
+```{r figure-open-access-Q1-ISS}
 
-
-
-# EUR_OS_open_access_importance <-
-#   EUR_OS_open_access %>% 
-#   filter(question %in% c("School",
-#                          "In your opinion, how important is Open Access for your work?")
-#                          ) %>%
-#   droplevels() %>% 
-#   mutate( # order levels
-#     item = fct_explicit_na(item, "NA"),
-#     item = fct_relevel( # relevel or reorder?
-#       item, 
-#       "Extremely important", 
-#       "Very important",
-#       "Moderately important",
-#       "Slightly important", 
-#       "Not at all important",
-#       "I don’t know/prefer not to answer",
-#       "NA"
-#       )
-#     ) %>% 
-#   filter(item != "NA") %>% 
-#     pivot_wider(
-#     id_cols = participant,
-#     names_from = question,
-#     values_from = item
-#   ) %>%
-#   group_by(School) %>%
-#   summarize(
-#     n = n(),
-#     perc = round(length(which(Finished == TRUE))/length(Finished) * 100, 2),
-#     lab_perc = paste(perc, "%", sep = ""),
-#     .groups = "keep"
-#   )
-#   
-#   
-#   
-#   
-#   arrange(desc(perc))
-
-
-
-
+knitr::include_graphics(here("img", "open_access", "importance", "figure_importance_open_access_ISS.png"))
 
 ```
 
-From the question *`r ERIM_OS_data_importance$question[1]`*, `r paste0(format(sum(ERIM_OS_data_importance[1, "perc"], ERIM_OS_data_importance[2, "perc"], ERIM_OS_data_importance[3, "perc"]), digits = 0), "%")` of respondents think that using open materials and/or code is *`r ERIM_OS_data_importance$item[1]`*, *`r ERIM_OS_data_importance$item[2]`*, or *`r ERIM_OS_data_importance$item[3]`*, whereas `r paste0(pull(filter(ERIM_OS_data_importance, item == "Not at all important"), "perc"), "%")` think it is *`r pull(filter(ERIM_OS_data_importance, item == "Not at all important"), item)`* (see Figure \@ref(fig:figure7)).
+### ESHPM
 
+```{r figure-open-access-Q1-ESHPM}
 
-
-
-# {-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Position
-
-(ref:table-position) Response rate per position.
-
-```{r table-position}
-
-EUR_OS_incomplete_position <-
-  EUR_OS_cluster0 %>% 
-  filter(question == "Position") %>%
-  pivot_wider(
-    id_cols = c(participant, Finished),
-    names_from = question,
-    values_from = item
-  ) %>%
-  group_by(Position) %>%
-  summarize(
-    n = n(),
-    perc = round(length(which(Finished == TRUE))/length(Finished) * 100, 2),
-    lab_perc = paste(perc, "%", sep = ""),
-    .groups = "keep"
-  ) %>% 
-  ungroup() %>% 
-  arrange(desc(n))
-
-# table
-EUR_OS_incomplete_position %>%
-  select(-perc) %>% 
-  rename("completed survey" = lab_perc) %>% 
-  kable_custom(caption = "(ref:table-position)") %>% 
-  footnote(
-    general = "(ref:footnote-NA)",
-    footnote_as_chunk = TRUE
-  )
+knitr::include_graphics(here("img", "open_access", "importance", "figure_importance_open_access_ESHPM.png"))
 
 ```
 
-## Department
+### ESPhil
 
-(ref:table-department) Response rate per department, separately for each school.
+```{r figure-open-access-Q1-ESPhil}
 
-(ref:footnote-NA) NA indicates no response.
-
-```{r table-department}
-
-EUR_OS_incomplete_department <-
-  EUR_OS_cluster0 %>% 
-  filter(question %in% c("School", "Department")) %>%
-  
-  
-  pivot_wider(
-    id_cols = c(participant, Finished),
-    names_from = question,
-    values_from = item
-  ) %>%
-  
-#   Warning message:
-# Values from `item` are not uniquely identified; output will contain list-cols.
-  
-  
-  group_by(School, Department) %>%
-  summarize(
-    n = n(),
-    perc = round(length(which(Finished == TRUE))/length(Finished) * 100, 2),
-    lab_perc = paste(perc, "%", sep = ""),
-    .groups = "keep"
-  )
-
-# table
-EUR_OS_incomplete_department %>%
-  select(-perc) %>% 
-  rename("completed survey" = lab_perc) %>% 
-  kable_custom(caption = "(ref:table-department)") %>% 
-  footnote(
-    general = "(ref:footnote-NA)",
-    footnote_as_chunk = TRUE
-  )
+knitr::include_graphics(here("img", "open_access", "importance", "figure_importance_open_access_ESPhil.png"))
 
 ```
 
-# Open Access {.tabset .tabset-pills}
+### ESL
 
-## EUR
+```{r figure-open-access-Q1-ESL}
 
-###################################
-# CONTINUE FROM HERE
-###################################
-
-```{r oa-data}
-
-# EUR_OS_open_access <-
-#   EUR_OS_cluster1 %>% 
-#   filter(Finished == TRUE) %>% 
-#   droplevels()
+knitr::include_graphics(here("img", "open_access", "importance", "figure_importance_open_access_ESL.png"))
 
 ```
 
-```{r oa-data-importance}
+### ESSB
 
-# EUR_OS_open_access_importance <-
-#   EUR_OS_open_access %>% 
-#   filter(question %in% c("School",
-#                          "In your opinion, how important is Open Access for your work?")
-#                          ) %>%
-#   droplevels() %>% 
-#   mutate( # order levels
-#     item = fct_explicit_na(item, "NA"),
-#     item = fct_relevel( # relevel or reorder?
-#       item, 
-#       "Extremely important", 
-#       "Very important",
-#       "Moderately important",
-#       "Slightly important", 
-#       "Not at all important",
-#       "I don’t know/prefer not to answer",
-#       "NA"
-#       )
-#     ) %>% 
-#   filter(item != "NA") %>% 
-#     pivot_wider(
-#     id_cols = participant,
-#     names_from = question,
-#     values_from = item
-#   ) %>%
-#   group_by(School) %>%
-#   summarize(
-#     n = n(),
-#     perc = round(length(which(Finished == TRUE))/length(Finished) * 100, 2),
-#     lab_perc = paste(perc, "%", sep = ""),
-#     .groups = "keep"
-#   )
-#   
-#   
-#   
-#   
-#   arrange(desc(perc))
+```{r figure-open-access-Q1-ESSB}
 
-
-# From the question *`r ERIM_OS_data_importance$question[1]`*, `r paste0(format(sum(ERIM_OS_data_importance[1, "perc"], ERIM_OS_data_importance[2, "perc"], ERIM_OS_data_importance[3, "perc"]), digits = 0), "%")` of respondents think that using open materials and/or code is *`r ERIM_OS_data_importance$item[1]`*, *`r ERIM_OS_data_importance$item[2]`*, or *`r ERIM_OS_data_importance$item[3]`*, whereas `r paste0(pull(filter(ERIM_OS_data_importance, item == "Not at all important"), "perc"), "%")` think it is *`r pull(filter(ERIM_OS_data_importance, item == "Not at all important"), item)`* (see Figure \@ref(fig:figure7)).
-
-
+knitr::include_graphics(here("img", "open_access", "importance", "figure_importance_open_access_ESSB.png"))
 
 ```
 
-# {-}
+### ESHCC
+
+```{r figure-open-access-Q1-ESHCC}
+
+knitr::include_graphics(here("img", "open_access", "importance", "figure_importance_open_access_ESHCC.png"))
+
+```
+
+## {-}
+
+## Experience with Open Access {.tabset .tabset-pills}
+
+### EUR
+
+```{r figure-open-access-Q2-EUR}
+
+knitr::include_graphics(here("img", "open_access", "experience", "figure_experience_open_access_EUR.png"))
+
+```
+
+### ISS
+
+```{r figure-open-access-Q2-ISS}
+
+knitr::include_graphics(here("img", "open_access", "experience", "figure_experience_open_access_ISS.png"))
+
+```
+
+### ESHPM
+
+```{r figure-open-access-Q2-ESHPM}
+
+knitr::include_graphics(here("img", "open_access", "experience", "figure_experience_open_access_ESHPM.png"))
+
+```
+
+### ESPhil
+
+```{r figure-open-access-Q2-ESPhil}
+
+knitr::include_graphics(here("img", "open_access", "experience", "figure_experience_open_access_ESPhil.png"))
+
+```
+
+### ESL
+
+```{r figure-open-access-Q2-ESL}
+
+knitr::include_graphics(here("img", "open_access", "experience", "figure_experience_open_access_ESL.png"))
+
+```
+
+### ESSB
+
+```{r figure-open-access-Q2-ESSB}
+
+knitr::include_graphics(here("img", "open_access", "experience", "figure_experience_open_access_ESSB.png"))
+
+```
+
+### ESHCC
+
+```{r figure-open-access-Q2-ESHCC}
+
+knitr::include_graphics(here("img", "open_access", "experience", "figure_experience_open_access_ESHCC.png"))
+
+```
+
+## {-}
+
+
+
+
+
+
+
+## Concerns around Open Access {.tabset .tabset-pills}
+
+### EUR
+
+```{r figure-open-access-Q3-EUR}
+
+knitr::include_graphics(here("img", "open_access", "concerns", "figure_concerns_open_access_EUR.png"))
+
+```
+
+### ISS
+
+```{r figure-open-access-Q3-ISS}
+
+knitr::include_graphics(here("img", "open_access", "concerns", "figure_concerns_open_access_ISS.png"))
+
+```
+
+### ESHPM
+
+```{r figure-open-access-Q3-ESHPM}
+
+knitr::include_graphics(here("img", "open_access", "concerns", "figure_concerns_open_access_ESHPM.png"))
+
+```
+
+### ESPhil
+
+```{r figure-open-access-Q3-ESPhil}
+
+knitr::include_graphics(here("img", "open_access", "concerns", "figure_concerns_open_access_ESPhil.png"))
+
+```
+
+### ESL
+
+```{r figure-open-access-Q3-ESL}
+
+knitr::include_graphics(here("img", "open_access", "concerns", "figure_concerns_open_access_ESL.png"))
+
+```
+
+### ESSB
+
+```{r figure-open-access-Q3-ESSB}
+
+knitr::include_graphics(here("img", "open_access", "concerns", "figure_concerns_open_access_ESSB.png"))
+
+```
+
+### ESHCC
+
+```{r figure-open-access-Q3-ESHCC}
+
+knitr::include_graphics(here("img", "open_access", "concerns", "figure_concerns_open_access_ESHCC.png"))
+
+```
+
+## {-}
+
+
 
 
 
