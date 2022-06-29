@@ -1262,9 +1262,187 @@ knitr::include_graphics(here("img", "societal_engagement", "concerns", "figure_c
 
 ## {-}
 
+# Support at EUR
 
+## Expected Support {.tabset .tabset-pills}
 
+### EUR
 
+```{r figure-EUR-support-Q1-EUR}
+
+knitr::include_graphics(here("img", "support", "EUR", "figure_EUR_support_EUR.png"))
+
+```
+
+### ISS
+
+```{r figure-EUR-support-Q1-ISS}
+
+knitr::include_graphics(here("img", "support", "EUR", "figure_EUR_support_ISS.png"))
+
+```
+
+### ESHPM
+
+```{r figure-EUR-support-Q1-ESHPM}
+
+knitr::include_graphics(here("img", "support", "EUR", "figure_EUR_support_ESHPM.png"))
+
+```
+
+### ESPhil
+
+```{r figure-EUR-support-Q1-ESPhil}
+
+knitr::include_graphics(here("img", "support", "EUR", "figure_EUR_support_ESPhil.png"))
+
+```
+
+### ESL
+
+```{r figure-EUR-support-Q1-ESL}
+
+knitr::include_graphics(here("img", "support", "EUR", "figure_EUR_support_ESL.png"))
+
+```
+
+### ESSB
+
+```{r figure-EUR-support-Q1-ESSB}
+
+knitr::include_graphics(here("img", "support", "EUR", "figure_EUR_support_ESSB.png"))
+
+```
+
+### ESHCC
+
+```{r figure-EUR-support-Q1-ESHCC}
+
+knitr::include_graphics(here("img", "support", "EUR", "figure_EUR_support_ESHCC.png"))
+
+```
+
+## {-}
+
+## Desired Open Science support {.tabset .tabset-pills}
+
+### EUR
+
+```{r figure-EUR-support-Q2-EUR}
+
+knitr::include_graphics(here("img", "support", "desired", "figure_desired_support_EUR.png"))
+
+```
+
+### ISS
+
+```{r figure-EUR-support-Q2-ISS}
+
+knitr::include_graphics(here("img", "support", "desired", "figure_desired_support_ISS.png"))
+
+```
+
+### ESHPM
+
+```{r figure-EUR-support-Q2-ESHPM}
+
+knitr::include_graphics(here("img", "support", "desired", "figure_desired_support_ESHPM.png"))
+
+```
+
+### ESPhil
+
+```{r figure-EUR-support-Q2-ESPhil}
+
+knitr::include_graphics(here("img", "support", "desired", "figure_desired_support_ESPhil.png"))
+
+```
+
+### ESL
+
+```{r figure-EUR-support-Q2-ESL}
+
+knitr::include_graphics(here("img", "support", "desired", "figure_desired_support_ESL.png"))
+
+```
+
+### ESSB
+
+```{r figure-EUR-support-Q2-ESSB}
+
+knitr::include_graphics(here("img", "support", "desired", "figure_desired_support_ESSB.png"))
+
+```
+
+### ESHCC
+
+```{r figure-EUR-support-Q2-ESHCC}
+
+knitr::include_graphics(here("img", "support", "desired", "figure_desired_support_ESHCC.png"))
+
+```
+
+## {-}
+
+## FAIR support {.tabset .tabset-pills}
+
+### EUR
+
+```{r figure-EUR-support-Q3-EUR}
+
+knitr::include_graphics(here("img", "support", "FAIR", "figure_FAIR_support_EUR.png"))
+
+```
+
+### ISS
+
+```{r figure-EUR-support-Q3-ISS}
+
+knitr::include_graphics(here("img", "support", "FAIR", "figure_FAIR_support_ISS.png"))
+
+```
+
+### ESHPM
+
+```{r figure-EUR-support-Q3-ESHPM}
+
+knitr::include_graphics(here("img", "support", "FAIR", "figure_FAIR_support_ESHPM.png"))
+
+```
+
+### ESPhil
+
+```{r figure-EUR-support-Q3-ESPhil}
+
+knitr::include_graphics(here("img", "support", "FAIR", "figure_FAIR_support_ESPhil.png"))
+
+```
+
+### ESL
+
+```{r figure-EUR-support-Q3-ESL}
+
+knitr::include_graphics(here("img", "support", "FAIR", "figure_FAIR_support_ESL.png"))
+
+```
+
+### ESSB
+
+```{r figure-EUR-support-Q3-ESSB}
+
+knitr::include_graphics(here("img", "support", "FAIR", "figure_FAIR_support_ESSB.png"))
+
+```
+
+### ESHCC
+
+```{r figure-EUR-support-Q3-ESHCC}
+
+knitr::include_graphics(here("img", "support", "FAIR", "figure_FAIR_support_ESHCC.png"))
+
+```
+
+## {-}
 
 
 
