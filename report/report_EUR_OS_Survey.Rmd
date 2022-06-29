@@ -294,12 +294,6 @@ knitr::include_graphics(here("img", "open_access", "experience", "figure_experie
 
 ## {-}
 
-
-
-
-
-
-
 ## Concerns around Open Access {.tabset .tabset-pills}
 
 ### EUR
@@ -359,6 +353,316 @@ knitr::include_graphics(here("img", "open_access", "concerns", "figure_concerns_
 ```
 
 ## {-}
+
+# Open Data, Materials, and/or Code
+
+## Importance of Open Data/Materials/Code {.tabset .tabset-pills}
+
+### EUR
+
+```{r figure-open-data-materials-code-Q1-EUR}
+
+knitr::include_graphics(here("img", "open_data_materials_code", "importance", "figure_importance_open_data_materials_code_EUR.png"))
+
+```
+
+### ISS
+
+```{r figure-open-data-materials-code-Q1-ISS}
+
+knitr::include_graphics(here("img", "open_data_materials_code", "importance", "figure_importance_open_data_materials_code_ISS.png"))
+
+```
+
+### ESHPM
+
+```{r figure-open-data-materials-code-Q1-ESHPM}
+
+knitr::include_graphics(here("img", "open_data_materials_code", "importance", "figure_importance_open_data_materials_code_ESHPM.png"))
+
+```
+
+### ESPhil
+
+```{r figure-open-data-materials-code-Q1-ESPhil}
+
+knitr::include_graphics(here("img", "open_data_materials_code", "importance", "figure_importance_open_data_materials_code_ESPhil.png"))
+
+```
+
+### ESL
+
+```{r figure-open-data-materials-code-Q1-ESL}
+
+knitr::include_graphics(here("img", "open_data_materials_code", "importance", "figure_importance_open_data_materials_code_ESL.png"))
+
+```
+
+### ESSB
+
+```{r figure-open-data-materials-code-Q1-ESSB}
+
+knitr::include_graphics(here("img", "open_data_materials_code", "importance", "figure_importance_open_data_materials_code_ESSB.png"))
+
+```
+
+### ESHCC
+
+```{r figure-open-data-materials-code-Q1-ESHCC}
+
+knitr::include_graphics(here("img", "open_data_materials_code", "importance", "figure_importance_open_data_materials_code_ESHCC.png"))
+
+```
+
+## {-}
+
+## Experience with others' Open Data/Materials/Code {.tabset .tabset-pills}
+
+### EUR
+
+```{r figure-open-data-materials-code-Q2-EUR}
+
+knitr::include_graphics(here("img", "open_data_materials_code", "experience_others", "figure_experience_others_open_data_materials_code_EUR.png"))
+
+```
+
+### ISS
+
+```{r figure-open-data-materials-code-Q2-ISS}
+
+knitr::include_graphics(here("img", "open_data_materials_code", "experience_others", "figure_experience_others_open_data_materials_code_ISS.png"))
+
+```
+
+### ESHPM
+
+```{r figure-open-data-materials-code-Q2-ESHPM}
+
+knitr::include_graphics(here("img", "open_data_materials_code", "experience_others", "figure_experience_others_open_data_materials_code_ESHPM.png"))
+
+```
+
+### ESPhil
+
+```{r figure-open-data-materials-code-Q2-ESPhil}
+
+knitr::include_graphics(here("img", "open_data_materials_code", "experience_others", "figure_experience_others_open_data_materials_code_ESPhil.png"))
+
+```
+
+### ESL
+
+```{r figure-open-data-materials-code-Q2-ESL}
+
+knitr::include_graphics(here("img", "open_data_materials_code", "experience_others", "figure_experience_others_open_data_materials_code_ESL.png"))
+
+```
+
+### ESSB
+
+```{r figure-open-data-materials-code-Q2-ESSB}
+
+knitr::include_graphics(here("img", "open_data_materials_code", "experience_others", "figure_experience_others_open_data_materials_code_ESSB.png"))
+
+```
+
+### ESHCC
+
+```{r figure-open-data-materials-code-Q2-ESHCC}
+
+knitr::include_graphics(here("img", "open_data_materials_code", "experience_others", "figure_experience_others_open_data_materials_code_ESHCC.png"))
+
+```
+
+## {-}
+
+## Experience with own Open Data/Materials/Code {.tabset .tabset-pills}
+
+### EUR
+
+```{r figure-open-data-materials-code-Q3-EUR}
+
+knitr::include_graphics(here("img", "open_data_materials_code", "experience_own", "figure_experience_own_open_data_materials_code_EUR.png"))
+
+```
+
+### ISS
+
+```{r figure-open-data-materials-code-Q3-ISS}
+
+knitr::include_graphics(here("img", "open_data_materials_code", "experience_own", "figure_experience_own_open_data_materials_code_ISS.png"))
+
+```
+
+### ESHPM
+
+```{r figure-open-data-materials-code-Q3-ESHPM}
+
+knitr::include_graphics(here("img", "open_data_materials_code", "experience_own", "figure_experience_own_open_data_materials_code_ESHPM.png"))
+
+```
+
+### ESPhil
+
+```{r figure-open-data-materials-code-Q3-ESPhil}
+
+knitr::include_graphics(here("img", "open_data_materials_code", "experience_own", "figure_experience_own_open_data_materials_code_ESPhil.png"))
+
+```
+
+### ESL
+
+```{r figure-open-data-materials-code-Q3-ESL}
+
+knitr::include_graphics(here("img", "open_data_materials_code", "experience_own", "figure_experience_own_open_data_materials_code_ESL.png"))
+
+```
+
+### ESSB
+
+```{r figure-open-data-materials-code-Q3-ESSB}
+
+knitr::include_graphics(here("img", "open_data_materials_code", "experience_own", "figure_experience_own_open_data_materials_code_ESSB.png"))
+
+```
+
+### ESHCC
+
+```{r figure-open-data-materials-code-Q3-ESHCC}
+
+knitr::include_graphics(here("img", "open_data_materials_code", "experience_own", "figure_experience_own_open_data_materials_code_ESHCC.png"))
+
+```
+
+## {-}
+
+## FAIR principles {.tabset .tabset-pills}
+
+### EUR
+
+```{r figure-open-data-materials-code-Q4-EUR}
+
+knitr::include_graphics(here("img", "open_data_materials_code", "FAIR", "figure_FAIR_EUR.png"))
+
+```
+
+### ISS
+
+```{r figure-open-data-materials-code-Q4-ISS}
+
+knitr::include_graphics(here("img", "open_data_materials_code", "FAIR", "figure_FAIR_ISS.png"))
+
+```
+
+### ESHPM
+
+```{r figure-open-data-materials-code-Q4-ESHPM}
+
+knitr::include_graphics(here("img", "open_data_materials_code", "FAIR", "figure_FAIR_ESHPM.png"))
+
+```
+
+### ESPhil
+
+```{r figure-open-data-materials-code-Q4-ESPhil}
+
+knitr::include_graphics(here("img", "open_data_materials_code", "FAIR", "figure_FAIR_ESPhil.png"))
+
+```
+
+### ESL
+
+```{r figure-open-data-materials-code-Q4-ESL}
+
+knitr::include_graphics(here("img", "open_data_materials_code", "FAIR", "figure_FAIR_ESL.png"))
+
+```
+
+### ESSB
+
+```{r figure-open-data-materials-code-Q4-ESSB}
+
+knitr::include_graphics(here("img", "open_data_materials_code", "FAIR", "figure_FAIR_ESSB.png"))
+
+```
+
+### ESHCC
+
+```{r figure-open-data-materials-code-Q4-ESHCC}
+
+knitr::include_graphics(here("img", "open_data_materials_code", "FAIR", "figure_FAIR_ESHCC.png"))
+
+```
+
+## {-}
+
+
+
+
+## Concerns around Open Data/Materials/Code {.tabset .tabset-pills}
+
+### EUR
+
+```{r figure-open-data-materials-code-Q5-EUR}
+
+knitr::include_graphics(here("img", "open_data_materials_code", "concerns", "figure_concerns_open_data_materials_code_EUR.png"))
+
+```
+
+### ISS
+
+```{r figure-open-data-materials-code-Q5-ISS}
+
+knitr::include_graphics(here("img", "open_data_materials_code", "concerns", "figure_concerns_open_data_materials_code_ISS.png"))
+
+```
+
+### ESHPM
+
+```{r figure-open-data-materials-code-Q5-ESHPM}
+
+knitr::include_graphics(here("img", "open_data_materials_code", "concerns", "figure_concerns_open_data_materials_code_ESHPM.png"))
+
+```
+
+### ESPhil
+
+```{r figure-open-data-materials-code-Q5-ESPhil}
+
+knitr::include_graphics(here("img", "open_data_materials_code", "concerns", "figure_concerns_open_data_materials_code_ESPhil.png"))
+
+```
+
+### ESL
+
+```{r figure-open-data-materials-code-Q5-ESL}
+
+knitr::include_graphics(here("img", "open_data_materials_code", "concerns", "figure_concerns_open_data_materials_code_ESL.png"))
+
+```
+
+### ESSB
+
+```{r figure-open-data-materials-code-Q5-ESSB}
+
+knitr::include_graphics(here("img", "open_data_materials_code", "concerns", "figure_concerns_open_data_materials_code_ESSB.png"))
+
+```
+
+### ESHCC
+
+```{r figure-open-data-materials-code-Q5-ESHCC}
+
+knitr::include_graphics(here("img", "open_data_materials_code", "concerns", "figure_concerns_open_data_materials_code_ESHCC.png"))
+
+```
+
+## {-}
+
+
+
+
+
 
 
 
