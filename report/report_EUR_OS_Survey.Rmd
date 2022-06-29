@@ -838,11 +838,6 @@ knitr::include_graphics(here("img", "preregistration", "concerns", "figure_conce
 
 ## {-}
 
-
-
-
-
-
 # Open Education
 
 ## Importance of Open Education {.tabset .tabset-pills}
@@ -1084,6 +1079,191 @@ knitr::include_graphics(here("img", "open_education", "concerns", "figure_concer
 ```
 
 ## {-}
+
+# Societal Engagement
+
+## Importance of Societal Engagement {.tabset .tabset-pills}
+
+### EUR
+
+```{r figure-societal-engagement-Q1-EUR}
+
+knitr::include_graphics(here("img", "societal_engagement", "importance", "figure_importance_societal_engagement_EUR.png"))
+
+```
+
+### ISS
+
+```{r figure-societal-engagement-Q1-ISS}
+
+knitr::include_graphics(here("img", "societal_engagement", "importance", "figure_importance_societal_engagement_ISS.png"))
+
+```
+
+### ESHPM
+
+```{r figure-societal-engagement-Q1-ESHPM}
+
+knitr::include_graphics(here("img", "societal_engagement", "importance", "figure_importance_societal_engagement_ESHPM.png"))
+
+```
+
+### ESPhil
+
+```{r figure-societal-engagement-Q1-ESPhil}
+
+knitr::include_graphics(here("img", "societal_engagement", "importance", "figure_importance_societal_engagement_ESPhil.png"))
+
+```
+
+### ESL
+
+```{r figure-societal-engagement-Q1-ESL}
+
+knitr::include_graphics(here("img", "societal_engagement", "importance", "figure_importance_societal_engagement_ESL.png"))
+
+```
+
+### ESSB
+
+```{r figure-societal-engagement-Q1-ESSB}
+
+knitr::include_graphics(here("img", "societal_engagement", "importance", "figure_importance_societal_engagement_ESSB.png"))
+
+```
+
+### ESHCC
+
+```{r figure-societal-engagement-Q1-ESHCC}
+
+knitr::include_graphics(here("img", "societal_engagement", "importance", "figure_importance_societal_engagement_ESHCC.png"))
+
+```
+
+## {-}
+
+## Experience with Societal Engagement {.tabset .tabset-pills}
+
+### EUR
+
+```{r figure-societal-engagement-Q2-EUR}
+
+knitr::include_graphics(here("img", "societal_engagement", "experience", "figure_experience_societal_engagement_EUR.png"))
+
+```
+
+### ISS
+
+```{r figure-societal-engagement-Q2-ISS}
+
+knitr::include_graphics(here("img", "societal_engagement", "experience", "figure_experience_societal_engagement_ISS.png"))
+
+```
+
+### ESHPM
+
+```{r figure-societal-engagement-Q2-ESHPM}
+
+knitr::include_graphics(here("img", "societal_engagement", "experience", "figure_experience_societal_engagement_ESHPM.png"))
+
+```
+
+### ESPhil
+
+```{r figure-societal-engagement-Q2-ESPhil}
+
+knitr::include_graphics(here("img", "societal_engagement", "experience", "figure_experience_societal_engagement_ESPhil.png"))
+
+```
+
+### ESL
+
+```{r figure-societal-engagement-Q2-ESL}
+
+knitr::include_graphics(here("img", "societal_engagement", "experience", "figure_experience_societal_engagement_ESL.png"))
+
+```
+
+### ESSB
+
+```{r figure-societal-engagement-Q2-ESSB}
+
+knitr::include_graphics(here("img", "societal_engagement", "experience", "figure_experience_societal_engagement_ESSB.png"))
+
+```
+
+### ESHCC
+
+```{r figure-societal-engagement-Q2-ESHCC}
+
+knitr::include_graphics(here("img", "societal_engagement", "experience", "figure_experience_societal_engagement_ESHCC.png"))
+
+```
+
+## {-}
+
+## Concerns around Societal Engagement {.tabset .tabset-pills}
+
+### EUR
+
+```{r figure-societal-engagement-Q3-EUR}
+
+knitr::include_graphics(here("img", "societal_engagement", "concerns", "figure_concerns_societal_engagement_EUR.png"))
+
+```
+
+### ISS
+
+```{r figure-societal-engagement-Q3-ISS}
+
+knitr::include_graphics(here("img", "societal_engagement", "concerns", "figure_concerns_societal_engagement_ISS.png"))
+
+```
+
+### ESHPM
+
+```{r figure-societal-engagement-Q3-ESHPM}
+
+knitr::include_graphics(here("img", "societal_engagement", "concerns", "figure_concerns_societal_engagement_ESHPM.png"))
+
+```
+
+### ESPhil
+
+```{r figure-societal-engagement-Q3-ESPhil}
+
+knitr::include_graphics(here("img", "societal_engagement", "concerns", "figure_concerns_societal_engagement_ESPhil.png"))
+
+```
+
+### ESL
+
+```{r figure-societal-engagement-Q3-ESL}
+
+knitr::include_graphics(here("img", "societal_engagement", "concerns", "figure_concerns_societal_engagement_ESL.png"))
+
+```
+
+### ESSB
+
+```{r figure-societal-engagement-Q3-ESSB}
+
+knitr::include_graphics(here("img", "societal_engagement", "concerns", "figure_concerns_societal_engagement_ESSB.png"))
+
+```
+
+### ESHCC
+
+```{r figure-societal-engagement-Q3-ESHCC}
+
+knitr::include_graphics(here("img", "societal_engagement", "concerns", "figure_concerns_societal_engagement_ESHCC.png"))
+
+```
+
+## {-}
+
+
+
 
 
 
