@@ -1,13 +1,6 @@
 
-# recode questions
-# 1 = open access
-# 2 = open data, materials, and/or code
-# 3 = preregistration
-# 4 = open educational resources
-# 5 = public engagement
-# 6 = EUR support
-# 7 = recognition and reward
-# 8 = other
+# cluster 0: questions/school/department/position ----------------------------------------------------------------
+
 question_levels <-
   c(
     "1" = "In your opinion, how important is Open Access for your work?",
@@ -71,3 +64,204 @@ position_levels <- c(
   "Other" = "Other_Not sure why this matters",
   "Other" = "Other_I would rather not say"
 )
+
+# cluster 1: open access ----------------------------------------------------------------
+
+open_access_Likert_importance_convert <- c(
+  "1" = "Extremely important",
+  "2" = "Very important",
+  "3" = "Moderately important",
+  "4" = "Slightly important",
+  "5" = "Not at all important",
+  "6" = "I don’t know/prefer not to answer"
+)
+
+open_access_Likert_experience_convert <- c(
+  "1" = "I have extensive experience with Open Access publishing",
+  "2" = "I have some experience with Open Access publishing",
+  "3" = "I am aware of Open Access publishing but have not done it",
+  "4" = "Until now, I was unaware of Open Access publishing",
+  "5" = "I don’t know/prefer not to answer"
+)
+
+open_access_Likert_concerns_convert <- c(
+  "Some journals might not publish findings that are uploaded to a pre-publication archive" = "Green OA (self-archiving): Some journals might not publish findings that are uploaded to a pre-publication archive",
+  "Other people might copy my research and publish it before I do" = "Green OA (self-archiving): Other people might copy my research and publish it before I do",
+  "Non-peer-reviewed findings might add noise to the literature" = "Green OA (self-archiving): Non-peer-reviewed findings might add noise to the literature",
+  "Making my work available pre-publication might reduce the number of citations to the ultimately published work" = "Green OA (self-archiving): Making my work available pre-publication might reduce the number of citations to the ultimately published work",
+  "Availability of the pre-publication manuscript might highlight differences (e.g., errors in analysis, revisions to hypotheses) between the original conception of the research and the ultimately published work" = "Green OA (self-archiving): Availability of the pre-publication manuscript might highlight differences (e.g., errors in analysis, revisions to hypotheses) between the original conception of the research and the ultimately published work",
+  "Open Access journals might have lower quality articles" = "Gold OA: Open Access journals might have lower quality articles",
+  "Open Access journals might not provide rigorous peer-review" = "Gold OA: Open Access journals might not provide rigorous peer-review",
+  "I might not have enough funding to pay Article Processing Charges for Open Access journals" = "Gold OA: I might not have enough funding to pay Article Processing Charges for Open Access journals",
+  "The impact of an Open Access publication might be low (e.g., few downloads and citations, low public engagement)" = "Gold OA: The impact of an Open Access publication might be low (e.g., few downloads and citations, low public engagement)",
+  "I do not share any of these concerns" = "I do not share any of these concerns",
+  "I don’t know/prefer not to answer" = "I don’t know/prefer not to answer",
+  "Other" = "Other_For me the most important issue is where to find publications. And if this place/website is clear that publications can be \"googeld\" easily."
+)
+
+# cluster 2: open data, materials, and/or code ----------------------------------------------------------------
+
+open_data_materials_code_Likert_importance_convert <- c(
+  "1" = "Extremely important",
+  "2" = "Very important",
+  "3" = "Moderately important",
+  "4" = "Slightly important",
+  "5" = "Not at all important",
+  "6" = "I don’t know/prefer not to answer"
+)
+
+open_data_materials_code_Likert_experience_others_convert <- c(
+  "1" = "I regularly use open data, materials, and/or code developed by others",
+  "2" = "I have some experience with open data, materials, and/or code developed by others, but do not use them regularly",
+  "3" = "I am aware of open data, materials, and/or code developed by others, but have not used them",
+  "4" = "Until now, I hadn't heard of open data, materials, and/or code",
+  "5" = "I don’t know/prefer not to answer"
+)
+
+open_data_materials_code_Likert_experience_own_convert <- c(
+  "1" = "I regularly share open data, materials, and/or code",
+  "2" = "I have some experience with open data, materials, and/or code, but do not share mine regularly",
+  "3" = "I am aware of open data, materials, and/or code, but have not shared my own",
+  "4" = "Until now, I hadn't heard of open data, materials, and/or code",
+  "5" = "I don’t know/prefer not to answer"
+)
+
+open_data_materials_code_Likert_FAIR_convert <- c(
+  "1" = "I regularly follow the FAIR principles",
+  "2" = "I have some experience with the FAIR principles, but do not follow them regularly",
+  "3" = "I am aware of the FAIR principles, but have not followed them",
+  "4" = "Until now, I hadn't heard of the FAIR principles",
+  "5" = "I don’t know/prefer not to answer"
+)
+
+open_data_materials_code_Likert_concerns_convert <- c(
+  "Other" = "Other_I do not 'own' the data and I'm not allowed to share the data",
+  "Other" = "Other_I do not research in which this is relevant.",
+  "Other" = "Other_Sharing data is not always a good idea when for example one works with vulnerable groups and informants might be at risk of stigma, prosecution, etc.",
+  "Other" = "Other_The data I use comes from a third party which doesn't allow me to share the data."
+)
+
+# cluster 3: preregistration ----------------------------------------------------------------
+
+preregistration_Likert_importance_convert <- c(
+  "1" = "Extremely important",
+  "2" = "Very important",
+  "3" = "Moderately important",
+  "4" = "Slightly important",
+  "5" = "Not at all important",
+  "6" = "I don’t know/prefer not to answer"
+)
+
+preregistration_Likert_experience_convert <- c(
+  "1" = "I regularly preregister my studies",
+  "2" = "I have some experience with study preregistration, but do not use it regularly",
+  "3" = "I am aware of study preregistration, but have not used it",
+  "4" = "Until now, I was unaware of study preregistration",
+  "5" = "I don’t know/prefer not to answer"
+)
+
+preregistration_Likert_concerns_convert <- c(
+  "Other" = "Other_Preregistration might work and may be the right thing to do for some type of studies but not for others.",
+  "Other" = "Other_I do not do research in which this is relevant.",
+  "Other" = "Other_It presents a positivistic view of science that is v useful for quantitative, but less for qualitative research",
+  "Other" = "Other_Not applicable to my qualitative work!"
+)
+
+# cluster 4: open educational resources ----------------------------------------------------------------
+
+open_education_Likert_importance_convert <- c(
+  "1" = "Extremely important",
+  "2" = "Very important",
+  "3" = "Moderately important",
+  "4" = "Slightly important",
+  "5" = "Not at all important",
+  "6" = "I don’t know/prefer not to answer"
+)
+
+open_education_Likert_experience_others_convert <- c(
+  "1" = "I regularly use open educational resources developed by others",
+  "2" = "I have some experience with open educational resources developed by others, but do not use them regularly",
+  "3" = "I am aware of open educational resources developed by others, but have not used them",
+  "4" = "Until now, I hadn't heard of open educational resources",
+  "5" = "I don’t know/prefer not to answer"
+)
+
+open_education_Likert_experience_own_convert <- c(
+  "1" = "I regularly share open educational resources",
+  "2" = "I have some experience with open educational resources, but do not share mine regularly",
+  "3" = "I am aware of open educational resources, but have not shared my own",
+  "4" = "Until now, I hadn't heard of open educational resources",
+  "5" = "I don’t know/prefer not to answer"
+)
+
+open_education_Likert_concerns_convert <- c(
+  "Other" = "Other_I don't know where to share educational resources I have created",
+  "Other" = "Other_my data is often highly sensitive and hard to anonymise. sharing would violate ethical principles"
+)
+
+# cluster 5: societal engagement ----------------------------------------------------------------
+
+societal_engagement_Likert_importance_convert <- c(
+  "1" = "Extremely important",
+  "2" = "Very important",
+  "3" = "Moderately important",
+  "4" = "Slightly important",
+  "5" = "Not at all important",
+  "6" = "I don’t know/prefer not to answer"
+)
+
+societal_engagement_Likert_experience_convert <- c(
+  "1" = "I regularly engage with society",
+  "2" = "I have some experience with engaging with society, but do not do it regularly",
+  "3" = "I am aware of engaging with society, but have not done it",
+  "4" = "Until now, I was unaware of open engagement with societal actors",
+  "5" = "I don’t know/prefer not to answer"
+)
+
+societal_engagement_Likert_concerns_convert <- c(
+  "Other" = "Other_I find it difficult to address certain issues in the media afraid of a backless from certain groups of people.",
+  "Other" = "Other_It is not relevant to my research",
+  "Other" = "Other_Most of the societies I engage with is past us."
+)
+
+# cluster 6: EUR support ----------------------------------------------------------------
+
+Likert_EUR_support_convert <- c(
+  "1" = "Yes",
+  "2" = "No",
+  "3" = "I don’t know/prefer not to answer"
+)
+
+# cluster 7: recognition and rewards ----------------------------------------------------------------
+
+Likert_feeling_recognized_convert <- c(
+  "1" = "Yes",
+  "2" = "No",
+  "3" = "I do not undertake any Open Science activities",
+  "4" = "I don’t know/prefer not to answer"
+)
+
+Likert_current_recognition_convert <-c(
+  "Other" =  "Other_OA publications are recognized as relevant output",
+  "Other" = "Other_Republication of my community outreach articles"
+)
+
+Likert_expected_recognition_convert <-c(
+  "Other" = "Other_I do not really expect specific recognition or reward for 'open work', and indeed that recognition and reward is not present",
+  "Other" = "Other_I don't expect the eur to award",
+  "Other" = "Other_If this is important, it should be recognized and rewarded. I don't really care how, but now there is no attention for these practices whatsoever.",
+  "Other" = "Other_None, it should become common practice",
+  "Other" = "Other_should be 'counted' just like articles. Especially given that data gets its own DOI",
+  "Other" = "Other_To be honest, sharing data & methods is just a part of the publication cycle, no need for it to be rewarded separately",
+  "Other" = "Other_Value not just 'hard' academic output but also societal engagement"
+)
+
+# cluster 8: other ----------------------------------------------------------------
+
+# no recoding, only free text
+
+
+
+
+
+

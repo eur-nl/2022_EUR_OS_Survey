@@ -18,39 +18,8 @@ library(tidyverse)
 library(ggrepel)
 library(patchwork)
 
+source(here("code", "functions", "recoding.R")) # recoding scheme
 source(here("code", "functions", "theme_custom.R")) # custom ggplot2 theme
-
-Likert_importance_convert <- c(
-  "1" = "Extremely important",
-  "2" = "Very important",
-  "3" = "Moderately important",
-  "4" = "Slightly important",
-  "5" = "Not at all important",
-  "6" = "I don’t know/prefer not to answer"
-)
-
-Likert_experience_convert <- c(
-  "1" = "I have extensive experience with Open Access publishing",
-  "2" = "I have some experience with Open Access publishing",
-  "3" = "I am aware of Open Access publishing but have not done it",
-  "4" = "Until now, I was unaware of Open Access publishing",
-  "5" = "I don’t know/prefer not to answer"
-)
-
-Likert_concerns_convert <- c(
-  "Some journals might not publish findings that are uploaded to a pre-publication archive" = "Green OA (self-archiving): Some journals might not publish findings that are uploaded to a pre-publication archive",
-  "Other people might copy my research and publish it before I do" = "Green OA (self-archiving): Other people might copy my research and publish it before I do",
-  "Non-peer-reviewed findings might add noise to the literature" = "Green OA (self-archiving): Non-peer-reviewed findings might add noise to the literature",
-  "Making my work available pre-publication might reduce the number of citations to the ultimately published work" = "Green OA (self-archiving): Making my work available pre-publication might reduce the number of citations to the ultimately published work",
-  "Availability of the pre-publication manuscript might highlight differences (e.g., errors in analysis, revisions to hypotheses) between the original conception of the research and the ultimately published work" = "Green OA (self-archiving): Availability of the pre-publication manuscript might highlight differences (e.g., errors in analysis, revisions to hypotheses) between the original conception of the research and the ultimately published work",
-  "Open Access journals might have lower quality articles" = "Gold OA: Open Access journals might have lower quality articles",
-  "Open Access journals might not provide rigorous peer-review" = "Gold OA: Open Access journals might not provide rigorous peer-review",
-  "I might not have enough funding to pay Article Processing Charges for Open Access journals" = "Gold OA: I might not have enough funding to pay Article Processing Charges for Open Access journals",
-  "The impact of an Open Access publication might be low (e.g., few downloads and citations, low public engagement)" = "Gold OA: The impact of an Open Access publication might be low (e.g., few downloads and citations, low public engagement)",
-  "I do not share any of these concerns" = "I do not share any of these concerns",
-  "I don’t know/prefer not to answer" = "I don’t know/prefer not to answer",
-  "Other" = "Other_For me the most important issue is where to find publications. And if this place/website is clear that publications can be \"googeld\" easily."
-)
 
 # Data ----------------------------------------------------------------
 
@@ -63,7 +32,7 @@ EUR_OS_open_access_Q1 <-
   filter(question == "In your opinion, how important is Open Access for your work?") %>% 
   count(question, response) %>%
   mutate(
-    response = fct_relevel(response, !!!Likert_importance_convert),
+    response = fct_relevel(response, !!!open_access_Likert_importance_convert),
     perc = round(n / sum(n) * 100, 2),
     lab_perc = paste(perc, "%", sep = "")
   ) 
@@ -74,7 +43,7 @@ EUR_OS_open_access_Q2 <-
   filter(question == "What is your experience with Open Access?") %>% 
   count(question, response) %>%
   mutate(
-    response = fct_relevel(response, !!!Likert_experience_convert),
+    response = fct_relevel(response, !!!open_access_Likert_experience_convert),
     perc = round(n / sum(n) * 100, 2),
     lab_perc = paste(perc, "%", sep = "")
   )
@@ -85,7 +54,7 @@ EUR_OS_open_access_Q3 <-
   filter(question == "The following are possible concerns that researchers could have about Open Access publishing. Which of these concerns would you agree with?") %>% 
   count(question, response) %>%
   mutate(
-    response = fct_recode(response, !!!Likert_concerns_convert),
+    response = fct_recode(response, !!!open_access_Likert_concerns_convert),
     perc = round(n / sum(n) * 100, 2),
     lab_perc = paste(perc, "%", sep = "")
   ) 
@@ -138,7 +107,7 @@ for(i in levels(EUR_OS_open_access$School)) {
       ) %>% 
     count(question, response) %>%
     mutate(
-      response = fct_relevel(response, !!!Likert_importance_convert),
+      response = fct_relevel(response, !!!open_access_Likert_importance_convert),
       perc = round(n / sum(n) * 100, 2),
       lab_perc = paste(perc, "%", sep = "")
     ) %>% 
@@ -221,7 +190,7 @@ for(i in levels(EUR_OS_open_access$School)) {
     ) %>% 
     count(question, response) %>%
     mutate(
-      response = fct_relevel(response, !!!Likert_experience_convert),
+      response = fct_relevel(response, !!!open_access_Likert_experience_convert),
       perc = round(n / sum(n) * 100, 2),
       lab_perc = paste(perc, "%", sep = "")
     ) %>%  
@@ -230,8 +199,8 @@ for(i in levels(EUR_OS_open_access$School)) {
     geom_segment(aes(x = response, xend = response, y = 0, yend = perc), color = "#012328") +
     geom_label_repel(aes(response, perc, label = lab_perc), size = 4, nudge_y = 4, segment.alpha = 0, fill = "white", color = "#171C54") +
     scale_y_continuous(
-      breaks = seq(0, 70, 10),
-      limits = c(0, 70)
+      breaks = seq(0, 80, 10),
+      limits = c(0, 80)
     ) +
     scale_x_discrete(labels = function(x) str_wrap(x, width = 40)) +
     labs(
@@ -304,7 +273,7 @@ for(i in levels(EUR_OS_open_access$School)) {
     ) %>% 
     count(question, response) %>%
     mutate(
-      response = fct_relevel(response, !!!Likert_concerns_convert),
+      response = fct_relevel(response, !!!open_access_Likert_concerns_convert),
       perc = round(n / sum(n) * 100, 2),
       lab_perc = paste(perc, "%", sep = "")
     ) %>%  

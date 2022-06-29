@@ -18,37 +18,8 @@ library(tidyverse)
 library(ggrepel)
 library(patchwork)
 
+source(here("code", "functions", "recoding.R")) # recoding scheme
 source(here("code", "functions", "theme_custom.R")) # custom ggplot2 theme
-
-Likert_importance_convert <- c(
-  "1" = "Extremely important",
-  "2" = "Very important",
-  "3" = "Moderately important",
-  "4" = "Slightly important",
-  "5" = "Not at all important",
-  "6" = "I don’t know/prefer not to answer"
-)
-
-Likert_experience_others_convert <- c(
-  "1" = "I regularly use open educational resources developed by others",
-  "2" = "I have some experience with open educational resources developed by others, but do not use them regularly",
-  "3" = "I am aware of open educational resources developed by others, but have not used them",
-  "4" = "Until now, I hadn't heard of open educational resources",
-  "5" = "I don’t know/prefer not to answer"
-)
-
-Likert_experience_own_convert <- c(
-  "1" = "I regularly share open educational resources",
-  "2" = "I have some experience with open educational resources, but do not share mine regularly",
-  "3" = "I am aware of open educational resources, but have not shared my own",
-  "4" = "Until now, I hadn't heard of open educational resources",
-  "5" = "I don’t know/prefer not to answer"
-)
-
-Likert_concerns_convert <- c(
-  "Other" = "Other_I don't know where to share educational resources I have created",
-  "Other" = "Other_my data is often highly sensitive and hard to anonymise. sharing would violate ethical principles"
-)
 
 # Data ----------------------------------------------------------------
 
@@ -61,7 +32,7 @@ EUR_OS_open_education_Q1 <-
   filter(question == "In your opinion, how important are open educational resources for your work?") %>% 
   count(question, response) %>%
   mutate(
-    response = fct_relevel(response, !!!Likert_importance_convert),
+    response = fct_relevel(response, !!!open_education_Likert_importance_convert),
     perc = round(n / sum(n) * 100, 2),
     lab_perc = paste(perc, "%", sep = "")
   ) 
@@ -72,7 +43,7 @@ EUR_OS_open_education_Q2 <-
   filter(question == "What is your experience with using open educational resources developed by others?") %>% 
   count(question, response) %>%
   mutate(
-    response = fct_relevel(response, !!!Likert_experience_others_convert),
+    response = fct_relevel(response, !!!open_education_Likert_experience_others_convert),
     perc = round(n / sum(n) * 100, 2),
     lab_perc = paste(perc, "%", sep = "")
   )
@@ -83,7 +54,7 @@ EUR_OS_open_education_Q3 <-
   filter(question == "What is your experience with openly sharing educational resources that you developed?") %>% 
   count(question, response) %>%
   mutate(
-    response = fct_relevel(response, !!!Likert_experience_own_convert),
+    response = fct_relevel(response, !!!open_education_Likert_experience_own_convert),
     perc = round(n / sum(n) * 100, 2),
     lab_perc = paste(perc, "%", sep = "")
   )
@@ -92,7 +63,7 @@ EUR_OS_open_education_Q3 <-
 EUR_OS_open_education_Q4 <- 
   EUR_OS_open_education %>% 
   filter(question == "The following are possible concerns that researchers could have about making educational resources developed by them openly available. Which of these concerns would you agree with?") %>% 
-  mutate(response = fct_recode(response, !!!Likert_concerns_convert)) %>% 
+  mutate(response = fct_recode(response, !!!open_education_Likert_concerns_convert)) %>% 
   count(question, response) %>%
   mutate(
     perc = round(n / sum(n) * 100, 2),
@@ -147,7 +118,7 @@ for(i in levels(EUR_OS_open_education$School)) {
       ) %>% 
     count(question, response) %>%
     mutate(
-      response = fct_relevel(response, !!!Likert_importance_convert),
+      response = fct_relevel(response, !!!open_education_Likert_importance_convert),
       perc = round(n / sum(n) * 100, 2),
       lab_perc = paste(perc, "%", sep = "")
     ) %>% 
@@ -231,7 +202,7 @@ for(i in levels(EUR_OS_open_education$School)) {
     ) %>% 
     count(question, response) %>%
     mutate(
-      response = fct_relevel(response, !!!Likert_experience_others_convert),
+      response = fct_relevel(response, !!!open_education_Likert_experience_others_convert),
       perc = round(n / sum(n) * 100, 2),
       lab_perc = paste(perc, "%", sep = "")
     ) %>% 
@@ -316,7 +287,7 @@ for(i in levels(EUR_OS_open_education$School)) {
     ) %>% 
     count(question, response) %>%
     mutate(
-      response = fct_relevel(response, !!!Likert_experience_own_convert),
+      response = fct_relevel(response, !!!open_education_Likert_experience_own_convert),
       perc = round(n / sum(n) * 100, 2),
       lab_perc = paste(perc, "%", sep = "")
     ) %>%
@@ -399,7 +370,7 @@ for(i in levels(EUR_OS_open_education$School)) {
       question == "The following are possible concerns that researchers could have about making educational resources developed by them openly available. Which of these concerns would you agree with?" &
         School == i
     ) %>% 
-    mutate(response = fct_recode(response, !!!Likert_concerns_convert)) %>% 
+    mutate(response = fct_recode(response, !!!open_education_Likert_concerns_convert)) %>% 
     count(question, response) %>%
     mutate(
       perc = round(n / sum(n) * 100, 2),

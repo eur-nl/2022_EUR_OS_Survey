@@ -18,29 +18,8 @@ library(tidyverse)
 library(ggrepel)
 library(patchwork)
 
+source(here("code", "functions", "recoding.R")) # recoding scheme
 source(here("code", "functions", "theme_custom.R")) # custom ggplot2 theme
-
-Likert_feeling_recognized_convert <- c(
-    "1" = "Yes",
-    "2" = "No",
-    "3" = "I do not undertake any Open Science activities",
-    "4" = "I don’t know/prefer not to answer"
-)
-
-Likert_current_recognition_convert <-c(
-  "Other" =  "Other_OA publications are recognized as relevant output",
-  "Other" = "Other_Republication of my community outreach articles"
-)
-
-Likert_expected_recognition_convert <-c(
-  "Other" = "Other_I do not really expect specific recognition or reward for 'open work', and indeed that recognition and reward is not present",
-  "Other" = "Other_I don't expect the eur to award",
-  "Other" = "Other_If this is important, it should be recognized and rewarded. I don't really care how, but now there is no attention for these practices whatsoever.",
-  "Other" = "Other_None, it should become common practice",
-  "Other" = "Other_should be 'counted' just like articles. Especially given that data gets its own DOI",
-  "Other" = "Other_To be honest, sharing data & methods is just a part of the publication cycle, no need for it to be rewarded separately",
-  "Other" = "Other_Value not just 'hard' academic output but also societal engagement"
-)
 
 # Data ----------------------------------------------------------------
 

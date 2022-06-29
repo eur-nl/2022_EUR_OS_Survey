@@ -18,13 +18,8 @@ library(tidyverse)
 library(ggrepel)
 library(patchwork)
 
+source(here("code", "functions", "recoding.R")) # recoding scheme
 source(here("code", "functions", "theme_custom.R")) # custom ggplot2 theme
-
-Likert_EUR_support_convert <- c(
-  "1" = "Yes",
-  "2" = "No",
-  "3" = "I don’t know/prefer not to answer"
-)
 
 # Data ----------------------------------------------------------------
 

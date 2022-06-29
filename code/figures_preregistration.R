@@ -18,31 +18,8 @@ library(tidyverse)
 library(ggrepel)
 library(patchwork)
 
+source(here("code", "functions", "recoding.R")) # recoding scheme
 source(here("code", "functions", "theme_custom.R")) # custom ggplot2 theme
-
-Likert_importance_convert <- c(
-  "1" = "Extremely important",
-  "2" = "Very important",
-  "3" = "Moderately important",
-  "4" = "Slightly important",
-  "5" = "Not at all important",
-  "6" = "I don’t know/prefer not to answer"
-)
-
-Likert_experience_convert <- c(
-  "1" = "I regularly preregister my studies",
-  "2" = "I have some experience with study preregistration, but do not use it regularly",
-  "3" = "I am aware of study preregistration, but have not used it",
-  "4" = "Until now, I was unaware of study preregistration",
-  "5" = "I don’t know/prefer not to answer"
-)
-
-Likert_concerns_convert <- c(
-  "Other" = "Other_Preregistration might work and may be the right thing to do for some type of studies but not for others.",
-  "Other" = "Other_I do not do research in which this is relevant.",
-  "Other" = "Other_It presents a positivistic view of science that is v useful for quantitative, but less for qualitative research",
-  "Other" = "Other_Not applicable to my qualitative work!"
-)
 
 # Data ----------------------------------------------------------------
 
@@ -55,7 +32,7 @@ EUR_OS_preregistration_Q1 <-
   filter(question == "In your opinion, how important is preregistration for your work?") %>% 
   count(question, response) %>%
   mutate(
-    response = fct_relevel(response, !!!Likert_importance_convert),
+    response = fct_relevel(response, !!!preregistration_Likert_importance_convert),
     perc = round(n / sum(n) * 100, 2),
     lab_perc = paste(perc, "%", sep = "")
   ) 
@@ -66,7 +43,7 @@ EUR_OS_preregistration_Q2 <-
   filter(question == "What is your experience with study preregistration?") %>% 
   count(question, response) %>%
   mutate(
-    response = fct_relevel(response, !!!Likert_experience_convert),
+    response = fct_relevel(response, !!!preregistration_Likert_experience_convert),
     perc = round(n / sum(n) * 100, 2),
     lab_perc = paste(perc, "%", sep = "")
   )
@@ -75,7 +52,7 @@ EUR_OS_preregistration_Q2 <-
 EUR_OS_preregistration_Q3 <- 
   EUR_OS_preregistration %>% 
   filter(question == "The following are possible concerns that researchers could have about preregistering their studies. Which of these concerns would you agree with?") %>% 
-  mutate(response = fct_recode(response, !!!Likert_concerns_convert)) %>% 
+  mutate(response = fct_recode(response, !!!preregistration_Likert_concerns_convert)) %>% 
   count(question, response) %>%
   mutate(
     perc = round(n / sum(n) * 100, 2),
@@ -130,7 +107,7 @@ for(i in levels(EUR_OS_preregistration$School)) {
       ) %>% 
     count(question, response) %>%
     mutate(
-      response = fct_relevel(response, !!!Likert_importance_convert),
+      response = fct_relevel(response, !!!preregistration_Likert_importance_convert),
       perc = round(n / sum(n) * 100, 2),
       lab_perc = paste(perc, "%", sep = "")
     ) %>% 
@@ -213,7 +190,7 @@ for(i in levels(EUR_OS_preregistration$School)) {
     ) %>% 
     count(question, response) %>%
     mutate(
-      response = fct_relevel(response, !!!Likert_experience_convert),
+      response = fct_relevel(response, !!!preregistration_Likert_experience_convert),
       perc = round(n / sum(n) * 100, 2),
       lab_perc = paste(perc, "%", sep = "")
     ) %>% 
@@ -294,7 +271,7 @@ for(i in levels(EUR_OS_preregistration$School)) {
       question == "The following are possible concerns that researchers could have about preregistering their studies. Which of these concerns would you agree with?" &
         School == i
     ) %>% 
-    mutate(response = fct_recode(response, !!!Likert_concerns_convert)) %>% 
+    mutate(response = fct_recode(response, !!!preregistration_Likert_concerns_convert)) %>% 
     count(question, response) %>%
     mutate(
       perc = round(n / sum(n) * 100, 2),

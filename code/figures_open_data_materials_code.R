@@ -18,47 +18,8 @@ library(tidyverse)
 library(ggrepel)
 library(patchwork)
 
+source(here("code", "functions", "recoding.R")) # recoding scheme
 source(here("code", "functions", "theme_custom.R")) # custom ggplot2 theme
-
-Likert_importance_convert <- c(
-  "1" = "Extremely important",
-  "2" = "Very important",
-  "3" = "Moderately important",
-  "4" = "Slightly important",
-  "5" = "Not at all important",
-  "6" = "I don’t know/prefer not to answer"
-)
- 
-Likert_experience_others_convert <- c(
-  "1" = "I regularly use open data, materials, and/or code developed by others",
-  "2" = "I have some experience with open data, materials, and/or code developed by others, but do not use them regularly",
-  "3" = "I am aware of open data, materials, and/or code developed by others, but have not used them",
-  "4" = "Until now, I hadn't heard of open data, materials, and/or code",
-  "5" = "I don’t know/prefer not to answer"
-)
-
-Likert_experience_own_convert <- c(
-  "1" = "I regularly share open data, materials, and/or code",
-  "2" = "I have some experience with open data, materials, and/or code, but do not share mine regularly",
-  "3" = "I am aware of open data, materials, and/or code, but have not shared my own",
-  "4" = "Until now, I hadn't heard of open data, materials, and/or code",
-  "5" = "I don’t know/prefer not to answer"
-)
-
-Likert_FAIR_convert <- c(
-  "1" = "I regularly follow the FAIR principles",
-  "2" = "I have some experience with the FAIR principles, but do not follow them regularly",
-  "3" = "I am aware of the FAIR principles, but have not followed them",
-  "4" = "Until now, I hadn't heard of the FAIR principles",
-  "5" = "I don’t know/prefer not to answer"
-)
-
-Likert_concerns_convert <- c(
-  "Other" = "Other_I do not 'own' the data and I'm not allowed to share the data",
-  "Other" = "Other_I do not research in which this is relevant.",
-  "Other" = "Other_Sharing data is not always a good idea when for example one works with vulnerable groups and informants might be at risk of stigma, prosecution, etc.",
-  "Other" = "Other_The data I use comes from a third party which doesn't allow me to share the data."
-)
 
 # Data ----------------------------------------------------------------
 
@@ -71,7 +32,7 @@ EUR_OS_open_data_materials_code_Q1 <-
   filter(question == "In your opinion, how important are open data, materials, and/or code for your work?") %>% 
   count(question, response) %>%
   mutate(
-    response = fct_relevel(response, !!!Likert_importance_convert),
+    response = fct_relevel(response, !!!open_data_materials_code_Likert_importance_convert),
     perc = round(n / sum(n) * 100, 2),
     lab_perc = paste(perc, "%", sep = "")
   ) 
@@ -82,7 +43,7 @@ EUR_OS_open_data_materials_code_Q2 <-
   filter(question == "What is your experience with using open data, materials, and/or code developed by others?") %>% 
   count(question, response) %>%
   mutate(
-    response = fct_relevel(response, !!!Likert_experience_others_convert),
+    response = fct_relevel(response, !!!open_data_materials_code_Likert_experience_others_convert),
     perc = round(n / sum(n) * 100, 2),
     lab_perc = paste(perc, "%", sep = "")
   )
@@ -94,7 +55,7 @@ EUR_OS_open_data_materials_code_Q3 <-
   mutate(response = replace_na(response, "I don’t know/prefer not to answer")) %>% 
   count(question, response) %>%
   mutate(
-    response = fct_relevel(response, !!!Likert_experience_own_convert),
+    response = fct_relevel(response, !!!open_data_materials_code_Likert_experience_own_convert),
     perc = round(n / sum(n) * 100, 2),
     lab_perc = paste(perc, "%", sep = "")
   )
@@ -105,7 +66,7 @@ EUR_OS_open_data_materials_code_Q4 <-
   filter(question == "Are you familiar with the FAIR principles for data and code?") %>% 
   count(question, response) %>%
   mutate(
-    response = fct_relevel(response, !!!Likert_FAIR_convert),
+    response = fct_relevel(response, !!!open_data_materials_code_Likert_FAIR_convert),
     perc = round(n / sum(n) * 100, 2),
     lab_perc = paste(perc, "%", sep = "")
   )
@@ -114,7 +75,7 @@ EUR_OS_open_data_materials_code_Q4 <-
 EUR_OS_open_data_materials_code_Q5 <- 
   EUR_OS_open_data_materials_code %>% 
   filter(question == "The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?") %>% 
-  mutate(response = fct_recode(response, !!!Likert_concerns_convert)) %>% 
+  mutate(response = fct_recode(response, !!!open_data_materials_code_Likert_concerns_convert)) %>% 
   count(question, response) %>%
   mutate(
     perc = round(n / sum(n) * 100, 2),
@@ -170,7 +131,7 @@ for(i in levels(EUR_OS_open_data_materials_code$School)) {
       ) %>% 
     count(question, response) %>%
     mutate(
-      response = fct_relevel(response, !!!Likert_importance_convert),
+      response = fct_relevel(response, !!!open_data_materials_code_Likert_importance_convert),
       perc = round(n / sum(n) * 100, 2),
       lab_perc = paste(perc, "%", sep = "")
     ) %>% 
@@ -255,7 +216,7 @@ for(i in levels(EUR_OS_open_data_materials_code$School)) {
     ) %>% 
     count(question, response) %>%
     mutate(
-      response = fct_relevel(response, !!!Likert_experience_others_convert),
+      response = fct_relevel(response, !!!open_data_materials_code_Likert_experience_others_convert),
       perc = round(n / sum(n) * 100, 2),
       lab_perc = paste(perc, "%", sep = "")
     ) %>% 
@@ -341,7 +302,7 @@ for(i in levels(EUR_OS_open_data_materials_code$School)) {
     mutate(response = replace_na(response, "I don’t know/prefer not to answer")) %>% 
     count(question, response) %>%
     mutate(
-      response = fct_relevel(response, !!!Likert_experience_own_convert),
+      response = fct_relevel(response, !!!open_data_materials_code_Likert_experience_own_convert),
       perc = round(n / sum(n) * 100, 2),
       lab_perc = paste(perc, "%", sep = "")
     ) %>% 
@@ -426,7 +387,7 @@ for(i in levels(EUR_OS_open_data_materials_code$School)) {
     ) %>% 
     count(question, response) %>%
     mutate(
-      response = fct_relevel(response, !!!Likert_FAIR_convert),
+      response = fct_relevel(response, !!!open_data_materials_code_Likert_FAIR_convert),
       perc = round(n / sum(n) * 100, 2),
       lab_perc = paste(perc, "%", sep = "")
     ) %>% 
@@ -509,7 +470,7 @@ for(i in levels(EUR_OS_open_data_materials_code$School)) {
       question == "The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?" &
         School == i
     ) %>% 
-    mutate(response = fct_recode(response, !!!Likert_concerns_convert)) %>% 
+    mutate(response = fct_recode(response, !!!open_data_materials_code_Likert_concerns_convert)) %>% 
     count(question, response) %>%
     mutate(
       perc = round(n / sum(n) * 100, 2),

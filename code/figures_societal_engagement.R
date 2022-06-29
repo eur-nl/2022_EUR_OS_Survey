@@ -18,30 +18,8 @@ library(tidyverse)
 library(ggrepel)
 library(patchwork)
 
+source(here("code", "functions", "recoding.R")) # recoding scheme
 source(here("code", "functions", "theme_custom.R")) # custom ggplot2 theme
-
-Likert_importance_convert <- c(
-  "1" = "Extremely important",
-  "2" = "Very important",
-  "3" = "Moderately important",
-  "4" = "Slightly important",
-  "5" = "Not at all important",
-  "6" = "I don’t know/prefer not to answer"
-)
-
-Likert_experience_convert <- c(
-  "1" = "I regularly engage with society",
-  "2" = "I have some experience with engaging with society, but do not do it regularly",
-  "3" = "I am aware of engaging with society, but have not done it",
-  "4" = "Until now, I was unaware of open engagement with societal actors",
-  "5" = "I don’t know/prefer not to answer"
-)
-
-Likert_concerns_convert <- c(
-  "Other" = "Other_I find it difficult to address certain issues in the media afraid of a backless from certain groups of people.",
-  "Other" = "Other_It is not relevant to my research",
-  "Other" = "Other_Most of the societies I engage with is past us."
-)
 
 # Data ----------------------------------------------------------------
 
@@ -54,7 +32,7 @@ EUR_OS_societal_engagement_Q1 <-
   filter(question == "In your opinion, how important is to have an open dialogue with society in your work?") %>% 
   count(question, response) %>%
   mutate(
-    response = fct_relevel(response, !!!Likert_importance_convert),
+    response = fct_relevel(response, !!!societal_engagement_Likert_importance_convert),
     perc = round(n / sum(n) * 100, 2),
     lab_perc = paste(perc, "%", sep = "")
   ) 
@@ -65,7 +43,7 @@ EUR_OS_societal_engagement_Q2 <-
   filter(question == "What is your experience engaging with society?") %>% 
   count(question, response) %>%
   mutate(
-    response = fct_relevel(response, !!!Likert_experience_convert),
+    response = fct_relevel(response, !!!societal_engagement_Likert_experience_convert),
     perc = round(n / sum(n) * 100, 2),
     lab_perc = paste(perc, "%", sep = "")
   )
@@ -74,7 +52,7 @@ EUR_OS_societal_engagement_Q2 <-
 EUR_OS_societal_engagement_Q3 <- 
   EUR_OS_societal_engagement %>% 
   filter(question == "The following are possible concerns that researchers could have about engaging with society. Which of these concerns would apply to you?") %>% 
-  mutate(response = fct_recode(response, !!!Likert_concerns_convert)) %>% 
+  mutate(response = fct_recode(response, !!!societal_engagement_Likert_concerns_convert)) %>% 
   count(question, response) %>%
   mutate(
     perc = round(n / sum(n) * 100, 2),
@@ -130,7 +108,7 @@ for(i in levels(EUR_OS_societal_engagement$School)) {
       ) %>% 
     count(question, response) %>%
     mutate(
-      response = fct_relevel(response, !!!Likert_importance_convert),
+      response = fct_relevel(response, !!!societal_engagement_Likert_importance_convert),
       perc = round(n / sum(n) * 100, 2),
       lab_perc = paste(perc, "%", sep = "")
     ) %>% 
@@ -215,7 +193,7 @@ for(i in levels(EUR_OS_societal_engagement$School)) {
     ) %>% 
     count(question, response) %>%
     mutate(
-      response = fct_relevel(response, !!!Likert_experience_convert),
+      response = fct_relevel(response, !!!societal_engagement_Likert_experience_convert),
       perc = round(n / sum(n) * 100, 2),
       lab_perc = paste(perc, "%", sep = "")
     ) %>%  
@@ -298,7 +276,7 @@ for(i in levels(EUR_OS_societal_engagement$School)) {
       question == "The following are possible concerns that researchers could have about engaging with society. Which of these concerns would apply to you?" &
         School == i
     ) %>% 
-    mutate(response = fct_recode(response, !!!Likert_concerns_convert)) %>% 
+    mutate(response = fct_recode(response, !!!societal_engagement_Likert_concerns_convert)) %>% 
     count(question, response) %>%
     mutate(
       perc = round(n / sum(n) * 100, 2),
