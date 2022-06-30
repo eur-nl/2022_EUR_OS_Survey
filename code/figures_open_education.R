@@ -27,50 +27,6 @@ EUR_OS_open_education <-
 
 questions <- unique(EUR_OS_open_education$question)
 
-# # "In your opinion, how important are open educational resources for your work?"
-# EUR_OS_open_education_Q1 <- 
-#   EUR_OS_open_education %>% 
-#   filter(question == "In your opinion, how important are open educational resources for your work?") %>% 
-#   count(question, response) %>%
-#   mutate(
-#     response = fct_relevel(response, !!!open_education_Likert_importance_convert),
-#     perc = round(n / sum(n) * 100, 2),
-#     lab_perc = paste(perc, "%", sep = "")
-#   ) 
-# 
-# # "What is your experience with using open educational resources developed by others?"
-# EUR_OS_open_education_Q2 <- 
-#   EUR_OS_open_education %>% 
-#   filter(question == "What is your experience with using open educational resources developed by others?") %>% 
-#   count(question, response) %>%
-#   mutate(
-#     response = fct_relevel(response, !!!open_education_Likert_experience_others_convert),
-#     perc = round(n / sum(n) * 100, 2),
-#     lab_perc = paste(perc, "%", sep = "")
-#   )
-# 
-# # "What is your experience with openly sharing educational resources that you developed?"
-# EUR_OS_open_education_Q3 <- 
-#   EUR_OS_open_education %>% 
-#   filter(question == "What is your experience with openly sharing educational resources that you developed?") %>% 
-#   count(question, response) %>%
-#   mutate(
-#     response = fct_relevel(response, !!!open_education_Likert_experience_own_convert),
-#     perc = round(n / sum(n) * 100, 2),
-#     lab_perc = paste(perc, "%", sep = "")
-#   )
-# 
-# # "The following are possible concerns that researchers could have about making educational resources developed by them openly available. Which of these concerns would you agree with?"
-# EUR_OS_open_education_Q4 <- 
-#   EUR_OS_open_education %>% 
-#   filter(question == "The following are possible concerns that researchers could have about making educational resources developed by them openly available. Which of these concerns would you agree with?") %>% 
-#   mutate(response = fct_recode(response, !!!open_education_Likert_concerns_convert)) %>% 
-#   count(question, response) %>%
-#   mutate(
-#     perc = round(n / sum(n) * 100, 2),
-#     lab_perc = paste(perc, "%", sep = "")
-#   ) 
-
 # Question 1, lollipop graph ----------------------------------------------------------------
 
 question1 <- questions[1]
