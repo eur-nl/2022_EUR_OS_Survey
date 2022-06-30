@@ -9,14 +9,12 @@ set.seed(seed_proj)
 # install.packages("here")
 # install.packages("tidyverse")
 # install.packages("ggrepel")
-# install.packages("patchwork")
 
 # Load packages --------------------------------------------------------
 
 library(here)
 library(tidyverse)
 library(ggrepel)
-library(patchwork)
 
 source(here("code", "functions", "recoding.R")) # recoding scheme
 source(here("code", "functions", "lolliplot.R")) # custom ggplot2 plot
