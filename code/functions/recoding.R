@@ -86,17 +86,17 @@ open_access_Likert_experience_convert <- c(
 
 open_access_Likert_concerns_convert <- c(
   "Some journals might not publish findings that are uploaded to a pre-publication archive" = "Green OA (self-archiving): Some journals might not publish findings that are uploaded to a pre-publication archive",
-  "Other people might copy my research and publish it before I do" = "Green OA (self-archiving): Other people might copy my research and publish it before I do",
-  "Non-peer-reviewed findings might add noise to the literature" = "Green OA (self-archiving): Non-peer-reviewed findings might add noise to the literature",
-  "Making my work available pre-publication might reduce the number of citations to the ultimately published work" = "Green OA (self-archiving): Making my work available pre-publication might reduce the number of citations to the ultimately published work",
   "Availability of the pre-publication manuscript might highlight differences (e.g., errors in analysis, revisions to hypotheses) between the original conception of the research and the ultimately published work" = "Green OA (self-archiving): Availability of the pre-publication manuscript might highlight differences (e.g., errors in analysis, revisions to hypotheses) between the original conception of the research and the ultimately published work",
+  "Other people might copy my research and publish it before I do" = "Green OA (self-archiving): Other people might copy my research and publish it before I do",
+  "Making my work available pre-publication might reduce the number of citations to the ultimately published work" = "Green OA (self-archiving): Making my work available pre-publication might reduce the number of citations to the ultimately published work",
+  "Non-peer-reviewed findings might add noise to the literature" = "Green OA (self-archiving): Non-peer-reviewed findings might add noise to the literature",
   "Open Access journals might have lower quality articles" = "Gold OA: Open Access journals might have lower quality articles",
   "Open Access journals might not provide rigorous peer-review" = "Gold OA: Open Access journals might not provide rigorous peer-review",
   "I might not have enough funding to pay Article Processing Charges for Open Access journals" = "Gold OA: I might not have enough funding to pay Article Processing Charges for Open Access journals",
   "The impact of an Open Access publication might be low (e.g., few downloads and citations, low public engagement)" = "Gold OA: The impact of an Open Access publication might be low (e.g., few downloads and citations, low public engagement)",
+  "Other" = "Other_For me the most important issue is where to find publications. And if this place/website is clear that publications can be \"googeld\" easily.",
   "I do not share any of these concerns" = "I do not share any of these concerns",
-  "I don’t know/prefer not to answer" = "I don’t know/prefer not to answer",
-  "Other" = "Other_For me the most important issue is where to find publications. And if this place/website is clear that publications can be \"googeld\" easily."
+  "I don’t know/prefer not to answer" = "I don’t know/prefer not to answer"
 )
 
 # cluster 2: open data, materials, and/or code ----------------------------------------------------------------
