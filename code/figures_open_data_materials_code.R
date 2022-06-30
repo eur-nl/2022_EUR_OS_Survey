@@ -26,62 +26,6 @@ EUR_OS_open_data_materials_code <-
 
 questions <- unique(EUR_OS_open_data_materials_code$question)
 
-# # "In your opinion, how important are open data, materials, and/or code for your work?"
-# EUR_OS_open_data_materials_code_Q1 <- 
-#   EUR_OS_open_data_materials_code %>% 
-#   filter(question == "In your opinion, how important are open data, materials, and/or code for your work?") %>% 
-#   count(question, response) %>%
-#   mutate(
-#     response = fct_relevel(response, !!!open_data_materials_code_Likert_importance_convert),
-#     perc = round(n / sum(n) * 100, 2),
-#     lab_perc = paste(perc, "%", sep = "")
-#   ) 
-# 
-# # "What is your experience with using open data, materials, and/or code developed by others?"
-# EUR_OS_open_data_materials_code_Q2 <- 
-#   EUR_OS_open_data_materials_code %>% 
-#   filter(question == "What is your experience with using open data, materials, and/or code developed by others?") %>% 
-#   count(question, response) %>%
-#   mutate(
-#     response = fct_relevel(response, !!!open_data_materials_code_Likert_experience_others_convert),
-#     perc = round(n / sum(n) * 100, 2),
-#     lab_perc = paste(perc, "%", sep = "")
-#   )
-# 
-# # "What is your experience with openly sharing data, materials, and/or code that you developed?"
-# EUR_OS_open_data_materials_code_Q3 <- 
-#   EUR_OS_open_data_materials_code %>% 
-#   filter(question == "What is your experience with openly sharing data, materials, and/or code that you developed?") %>% 
-#   mutate(response = replace_na(response, "I don’t know/prefer not to answer")) %>% 
-#   count(question, response) %>%
-#   mutate(
-#     response = fct_relevel(response, !!!open_data_materials_code_Likert_experience_own_convert),
-#     perc = round(n / sum(n) * 100, 2),
-#     lab_perc = paste(perc, "%", sep = "")
-#   )
-# 
-# # "Are you familiar with the FAIR principles for data and code?"
-# EUR_OS_open_data_materials_code_Q4 <- 
-#   EUR_OS_open_data_materials_code %>% 
-#   filter(question == "Are you familiar with the FAIR principles for data and code?") %>% 
-#   count(question, response) %>%
-#   mutate(
-#     response = fct_relevel(response, !!!open_data_materials_code_Likert_FAIR_convert),
-#     perc = round(n / sum(n) * 100, 2),
-#     lab_perc = paste(perc, "%", sep = "")
-#   )
-# 
-# # "The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?"
-# EUR_OS_open_data_materials_code_Q5 <- 
-#   EUR_OS_open_data_materials_code %>% 
-#   filter(question == "The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?") %>% 
-#   mutate(response = fct_recode(response, !!!open_data_materials_code_Likert_concerns_convert)) %>% 
-#   count(question, response) %>%
-#   mutate(
-#     perc = round(n / sum(n) * 100, 2),
-#     lab_perc = paste(perc, "%", sep = "")
-#   ) 
-
 # Question 1, lollipop graph ----------------------------------------------------------------
 
 question1 <- questions[2]
