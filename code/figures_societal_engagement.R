@@ -220,7 +220,7 @@ ggsave(
   path = here("img", "societal_engagement", "concerns"),
   scale = 3,
   width = 8,
-  height = 4,
+  height = 8,
   units = "cm",
   dpi = 600
 )
@@ -259,7 +259,7 @@ for(i in levels(EUR_OS_societal_engagement$School)) {
     path = here("img", "societal_engagement", "concerns"),
     scale = 3,
     width = 8,
-    height = 4,
+    height = 8,
     units = "cm",
     dpi = 600
   )

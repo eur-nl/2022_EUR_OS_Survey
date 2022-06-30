@@ -369,7 +369,7 @@ lollipop_cluster2_question5 <-
     labels = lab_perc, 
     y_max_limit = 20,
     title = "Concerns around Open Data/Materials/Code - EUR",
-    title_size = 22
+    title_size = 18
   )
 
 lollipop_cluster2_question5
@@ -380,9 +380,9 @@ ggsave(
   plot = lollipop_cluster2_question5,
   device = "png",
   path = here("img", "open_data_materials_code", "concerns"),
-  scale = 6,
+  scale = 3,
   width = 8,
-  height = 4,
+  height = 8,
   units = "cm",
   dpi = 600
 )
@@ -410,7 +410,7 @@ for(i in levels(EUR_OS_open_data_materials_code$School)) {
       labels = lab_perc, 
       y_max_limit = 50,
       title = paste0("Concerns around Open Data/Materials/Code - ", i),
-      title_size = 22
+      title_size = 18
     )
 
   # save to file
@@ -419,9 +419,9 @@ for(i in levels(EUR_OS_open_data_materials_code$School)) {
     plot = temp_figure_school,
     device = "png",
     path = here("img", "open_data_materials_code", "concerns"),
-    scale = 6,
+    scale = 3,
     width = 8,
-    height = 4,
+    height = 8,
     units = "cm",
     dpi = 600
   )

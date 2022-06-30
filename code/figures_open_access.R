@@ -218,9 +218,9 @@ ggsave(
   plot = lollipop_cluster1_question3,
   device = "png",
   path = here("img", "open_access", "concerns"),
-  scale = 6,
+  scale = 3,
   width = 8,
-  height = 4,
+  height = 8,
   units = "cm",
   dpi = 600
 )
@@ -257,9 +257,9 @@ for(i in levels(EUR_OS_open_access$School)) {
     plot = temp_figure_school,
     device = "png",
     path = here("img", "open_access", "concerns"),
-    scale = 6,
+    scale = 3,
     width = 8,
-    height = 4,
+    height = 8,
     units = "cm",
     dpi = 600
   )
