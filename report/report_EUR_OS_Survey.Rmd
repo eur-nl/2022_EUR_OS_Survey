@@ -139,9 +139,6 @@ knitr::include_graphics(here("img", "figure_school_position.png"))
 ```{r table-school-position-response-rate}
 
 # total number of researchers in each school
-# source: https://jaarverslag2020.eur.nl/en/appendix-4-staff-composition
-# reference date 31 December 2020
-# accessed 3 June 2022
 total_researchers <- 
   tibble(
     School = c("ESHPM", "ESHCC", "ESL", "ESPhil", "ESSB", "ISS"),
@@ -175,6 +172,18 @@ EUR_OS_school %>%
 # Open Access
 
 ## Importance of Open Access {.tabset .tabset-pills}
+
+```{r data-open-access-Q1}
+
+EUR_OS_cluster1_Q1 <-
+  EUR_OS_cluster1 %>% 
+  filter(question == "In your opinion, how important is Open Access for your work?")
+
+```
+
+The question was:
+
+> *`r unique(EUR_OS_cluster1_Q1$question)`*
 
 ### EUR
 
@@ -236,6 +245,18 @@ knitr::include_graphics(here("img", "open_access", "importance", "figure_importa
 
 ## Experience with Open Access {.tabset .tabset-pills}
 
+```{r data-open-access-Q2}
+
+EUR_OS_cluster1_Q2 <-
+  EUR_OS_cluster1 %>% 
+  filter(question == "What is your experience with Open Access?")
+
+```
+
+The question was:
+
+> *`r unique(EUR_OS_cluster1_Q2$question)`*
+
 ### EUR
 
 ```{r figure-open-access-Q2-EUR}
@@ -295,6 +316,18 @@ knitr::include_graphics(here("img", "open_access", "experience", "figure_experie
 ## {-}
 
 ## Concerns around Open Access {.tabset .tabset-pills}
+
+```{r data-open-access-Q3}
+
+EUR_OS_cluster1_Q3 <-
+  EUR_OS_cluster1 %>% 
+  filter(question == "The following are possible concerns that researchers could have about Open Access publishing. Which of these concerns would you agree with?")
+
+```
+
+The question was:
+
+> *`r unique(EUR_OS_cluster1_Q3$question)`*
 
 ### EUR
 
@@ -358,6 +391,18 @@ knitr::include_graphics(here("img", "open_access", "concerns", "figure_concerns_
 
 ## Importance of Open Data/Materials/Code {.tabset .tabset-pills}
 
+```{r data-open-data-materials-code-Q1}
+
+EUR_OS_cluster2_Q1 <-
+  EUR_OS_cluster2 %>% 
+  filter(question == "In your opinion, how important are open data, materials, and/or code for your work?")
+
+```
+
+The question was:
+
+> *`r unique(EUR_OS_cluster2_Q1$question)`*
+
 ### EUR
 
 ```{r figure-open-data-materials-code-Q1-EUR}
@@ -417,6 +462,18 @@ knitr::include_graphics(here("img", "open_data_materials_code", "importance", "f
 ## {-}
 
 ## Experience with others' Open Data/Materials/Code {.tabset .tabset-pills}
+
+```{r data-open-data-materials-code-Q2}
+
+EUR_OS_cluster2_Q2 <-
+  EUR_OS_cluster2 %>% 
+  filter(question == "What is your experience with using open data, materials, and/or code developed by others?")
+
+```
+
+The question was:
+
+> *`r unique(EUR_OS_cluster2_Q2$question)`*
 
 ### EUR
 
@@ -478,6 +535,18 @@ knitr::include_graphics(here("img", "open_data_materials_code", "experience_othe
 
 ## Experience with own Open Data/Materials/Code {.tabset .tabset-pills}
 
+```{r data-open-data-materials-code-Q3}
+
+EUR_OS_cluster2_Q3 <-
+  EUR_OS_cluster2 %>% 
+  filter(question == "What is your experience with openly sharing data, materials, and/or code that you developed?")
+
+```
+
+The question was:
+
+> *`r unique(EUR_OS_cluster2_Q3$question)`*
+
 ### EUR
 
 ```{r figure-open-data-materials-code-Q3-EUR}
@@ -538,6 +607,18 @@ knitr::include_graphics(here("img", "open_data_materials_code", "experience_own"
 
 ## FAIR principles {.tabset .tabset-pills}
 
+```{r data-open-data-materials-code-Q4}
+
+EUR_OS_cluster2_Q4 <-
+  EUR_OS_cluster2 %>% 
+  filter(question == "Are you familiar with the FAIR principles for data and code?")
+
+```
+
+The question was:
+
+> *`r unique(EUR_OS_cluster2_Q4$question)`*
+
 ### EUR
 
 ```{r figure-open-data-materials-code-Q4-EUR}
@@ -597,6 +678,18 @@ knitr::include_graphics(here("img", "open_data_materials_code", "FAIR", "figure_
 ## {-}
 
 ## Concerns around Open Data/Materials/Code {.tabset .tabset-pills}
+
+```{r data-open-data-materials-code-Q5}
+
+EUR_OS_cluster2_Q5 <-
+  EUR_OS_cluster2 %>% 
+  filter(question == "The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?")
+
+```
+
+The question was:
+
+> *`r unique(EUR_OS_cluster2_Q5$question)`*
 
 ### EUR
 
@@ -660,6 +753,18 @@ knitr::include_graphics(here("img", "open_data_materials_code", "concerns", "fig
 
 ## Importance of Preregistration {.tabset .tabset-pills}
 
+```{r data-preregistration-Q1}
+
+EUR_OS_cluster3_Q1 <-
+  EUR_OS_cluster3 %>% 
+  filter(question == "In your opinion, how important is preregistration for your work?")
+
+```
+
+The question was:
+
+> *`r unique(EUR_OS_cluster3_Q1$question)`*
+
 ### EUR
 
 ```{r figure-preregistration-Q1-EUR}
@@ -720,6 +825,18 @@ knitr::include_graphics(here("img", "preregistration", "importance", "figure_imp
 
 ## Experience with Preregistration {.tabset .tabset-pills}
 
+```{r data-preregistration-Q2}
+
+EUR_OS_cluster3_Q2 <-
+  EUR_OS_cluster3 %>% 
+  filter(question == "What is your experience with study preregistration?")
+
+```
+
+The question was:
+
+> *`r unique(EUR_OS_cluster3_Q2$question)`*
+
 ### EUR
 
 ```{r figure-preregistration-Q2-EUR}
@@ -779,6 +896,18 @@ knitr::include_graphics(here("img", "preregistration", "experience", "figure_exp
 ## {-}
 
 ## Concerns around Preregistration {.tabset .tabset-pills}
+
+```{r data-preregistration-Q3}
+
+EUR_OS_cluster3_Q3 <-
+  EUR_OS_cluster3 %>% 
+  filter(question == "The following are possible concerns that researchers could have about preregistering their studies. Which of these concerns would you agree with?")
+
+```
+
+The question was:
+
+> *`r unique(EUR_OS_cluster3_Q3$question)`*
 
 ### EUR
 
@@ -842,6 +971,18 @@ knitr::include_graphics(here("img", "preregistration", "concerns", "figure_conce
 
 ## Importance of Open Education {.tabset .tabset-pills}
 
+```{r data-open-education-Q1}
+
+EUR_OS_cluster4_Q1 <-
+  EUR_OS_cluster4 %>% 
+  filter(question == "In your opinion, how important are open educational resources for your work?")
+
+```
+
+The question was:
+
+> *`r unique(EUR_OS_cluster4_Q1$question)`*
+
 ### EUR
 
 ```{r figure-open-education-Q1-EUR}
@@ -901,6 +1042,18 @@ knitr::include_graphics(here("img", "open_education", "importance", "figure_impo
 ## {-}
 
 ## Experience with others' Open Education {.tabset .tabset-pills}
+
+```{r data-open-education-Q2}
+
+EUR_OS_cluster4_Q2 <-
+  EUR_OS_cluster4 %>% 
+  filter(question == "What is your experience with using open educational resources developed by others?")
+
+```
+
+The question was:
+
+> *`r unique(EUR_OS_cluster4_Q2$question)`*
 
 ### EUR
 
@@ -962,6 +1115,18 @@ knitr::include_graphics(here("img", "open_education", "experience_others", "figu
 
 ## Experience with own Open Education {.tabset .tabset-pills}
 
+```{r data-open-education-Q3}
+
+EUR_OS_cluster4_Q3 <-
+  EUR_OS_cluster4 %>% 
+  filter(question == "What is your experience with openly sharing educational resources that you developed?")
+
+```
+
+The question was:
+
+> *`r unique(EUR_OS_cluster4_Q3$question)`*
+
 ### EUR
 
 ```{r figure-open-education-Q3-EUR}
@@ -1021,6 +1186,18 @@ knitr::include_graphics(here("img", "open_education", "experience_own", "figure_
 ## {-}
 
 ## Concerns around Open Education {.tabset .tabset-pills}
+
+```{r data-open-education-Q4}
+
+EUR_OS_cluster4_Q4 <-
+  EUR_OS_cluster4 %>% 
+  filter(question == "The following are possible concerns that researchers could have about making educational resources developed by them openly available. Which of these concerns would you agree with?")
+
+```
+
+The question was:
+
+> *`r unique(EUR_OS_cluster4_Q4$question)`*
 
 ### EUR
 
@@ -1084,6 +1261,18 @@ knitr::include_graphics(here("img", "open_education", "concerns", "figure_concer
 
 ## Importance of Societal Engagement {.tabset .tabset-pills}
 
+```{r data-societal-engagement-Q1}
+
+EUR_OS_cluster5_Q1 <-
+  EUR_OS_cluster5 %>% 
+  filter(question == "In your opinion, how important is to have an open dialogue with society in your work?")
+
+```
+
+The question was:
+
+> *`r unique(EUR_OS_cluster5_Q1$question)`*
+
 ### EUR
 
 ```{r figure-societal-engagement-Q1-EUR}
@@ -1144,6 +1333,18 @@ knitr::include_graphics(here("img", "societal_engagement", "importance", "figure
 
 ## Experience with Societal Engagement {.tabset .tabset-pills}
 
+```{r data-societal-engagement-Q2}
+
+EUR_OS_cluster5_Q2 <-
+  EUR_OS_cluster5 %>% 
+  filter(question == "What is your experience engaging with society?")
+
+```
+
+The question was:
+
+> *`r unique(EUR_OS_cluster5_Q2$question)`*
+
 ### EUR
 
 ```{r figure-societal-engagement-Q2-EUR}
@@ -1203,6 +1404,18 @@ knitr::include_graphics(here("img", "societal_engagement", "experience", "figure
 ## {-}
 
 ## Concerns around Societal Engagement {.tabset .tabset-pills}
+
+```{r data-societal-engagement-Q3}
+
+EUR_OS_cluster5_Q3 <-
+  EUR_OS_cluster5 %>% 
+  filter(question == "The following are possible concerns that researchers could have about engaging with society. Which of these concerns would apply to you?")
+
+```
+
+The question was:
+
+> *`r unique(EUR_OS_cluster5_Q3$question)`*
 
 ### EUR
 
@@ -1266,6 +1479,18 @@ knitr::include_graphics(here("img", "societal_engagement", "concerns", "figure_c
 
 ## Expected Support {.tabset .tabset-pills}
 
+```{r data-EUR-support-Q1}
+
+EUR_OS_cluster6_Q1 <-
+  EUR_OS_cluster6 %>% 
+  filter(question == "Do you expect EUR to support you in learning open science practices?")
+
+```
+
+The question was:
+
+> *`r unique(EUR_OS_cluster6_Q1$question)`*
+
 ### EUR
 
 ```{r figure-EUR-support-Q1-EUR}
@@ -1326,6 +1551,18 @@ knitr::include_graphics(here("img", "support", "EUR", "figure_EUR_support_ESHCC.
 
 ## Desired Open Science support {.tabset .tabset-pills}
 
+```{r data-EUR-support-Q2}
+
+EUR_OS_cluster6_Q2 <-
+  EUR_OS_cluster6 %>% 
+  filter(question == "Which of the following open science practices would you like EUR to provide information or support for?")
+
+```
+
+The question was:
+
+> *`r unique(EUR_OS_cluster6_Q2$question)`*
+
 ### EUR
 
 ```{r figure-EUR-support-Q2-EUR}
@@ -1385,6 +1622,18 @@ knitr::include_graphics(here("img", "support", "desired", "figure_desired_suppor
 ## {-}
 
 ## FAIR support {.tabset .tabset-pills}
+
+```{r data-EUR-support-Q3}
+
+EUR_OS_cluster6_Q3 <-
+  EUR_OS_cluster6 %>% 
+  filter(question == "What support services provided at EUR have you used to make your data FAIR?")
+
+```
+
+The question was:
+
+> *`r unique(EUR_OS_cluster6_Q3$question)`*
 
 ### EUR
 
@@ -1448,6 +1697,18 @@ knitr::include_graphics(here("img", "support", "FAIR", "figure_FAIR_support_ESHC
 
 ## Feeling recognized for Open Science {.tabset .tabset-pills}
 
+```{r data-recognition-rewards-Q1}
+
+EUR_OS_cluster7_Q1 <-
+  EUR_OS_cluster7 %>% 
+  filter(question == "Do you feel recognized and rewarded by EUR (e.g. in the R&O cycle or appraisal conversation) for the Open Science activities you undertake?")
+
+```
+
+The question was:
+
+> *`r unique(EUR_OS_cluster7_Q1$question)`*
+
 ### EUR
 
 ```{r figure-recognition-rewards-Q1-EUR}
@@ -1507,6 +1768,18 @@ knitr::include_graphics(here("img", "recognition_rewards", "feeling_recognized",
 ## {-}
 
 ## Current recognition for Open Science {.tabset .tabset-pills}
+
+```{r data-recognition-rewards-Q2}
+
+EUR_OS_cluster7_Q2 <-
+  EUR_OS_cluster7 %>% 
+  filter(question == "In what way were you recognized and rewarded?")
+
+```
+
+The question was:
+
+> *`r unique(EUR_OS_cluster7_Q2$question)`*
 
 ### EUR
 
@@ -1568,6 +1841,18 @@ knitr::include_graphics(here("img", "recognition_rewards", "current_recognition"
 
 ## Expected recognition for Open Science {.tabset .tabset-pills}
 
+```{r data-recognition-rewards-Q3}
+
+EUR_OS_cluster7_Q3 <-
+  EUR_OS_cluster7 %>% 
+  filter(question == "In what way do you expect to be recognized and rewarded?")
+
+```
+
+The question was:
+
+> *`r unique(EUR_OS_cluster7_Q3$question)`*
+
 ### EUR
 
 ```{r figure-recognition-rewards-Q3-EUR}
@@ -1626,5 +1911,5 @@ knitr::include_graphics(here("img", "recognition_rewards", "expected_recognition
 
 ## {-}
 
-
+# Conclusions
 
