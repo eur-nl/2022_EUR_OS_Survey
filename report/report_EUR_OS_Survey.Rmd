@@ -387,6 +387,23 @@ knitr::include_graphics(here("img", "open_access", "concerns", "figure_concerns_
 
 ## {-}
 
+```{r figure-open-access-Q4-ESL}
+
+# this free-text question does not have figures
+# quote a few representative responses
+
+EUR_OS_cluster1_Q4 <-
+  EUR_OS_cluster1 %>% 
+  filter(question == "Is there anything you want to share with us regarding your experiences with Open Access?")
+
+```
+
+
+INSERT QUOTES HERE
+
+
+
+
 # Open Data, Materials, and/or Code
 
 ## Importance of Open Data/Materials/Code {.tabset .tabset-pills}
