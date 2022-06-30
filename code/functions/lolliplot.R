@@ -1,7 +1,7 @@
 # custom lollipop plot
 lolliplot <-
   function(data, x, y, labels, y_max_limit, title, title_size) {
-    ggplot(data, aes(fct_rev({{ x }}), {{ y }})) +
+    ggplot(data, aes({{ x }}, {{ y }})) +
       geom_point(size = 6, color = "#0C8066") +
       geom_segment(aes(x = {{ x }}, xend = {{ x }}, y = 0, yend = {{ y }}), color = "#012328") +
       geom_label_repel(aes({{ x }}, {{ y }}, label = {{ labels }}), size = 4, nudge_y = 4, segment.alpha = 0, fill = "white", color = "#171C54") +
