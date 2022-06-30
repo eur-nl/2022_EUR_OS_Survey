@@ -24,12 +24,16 @@ source(here("code", "functions", "lolliplot.R")) # custom ggplot2 plot
 EUR_OS_open_access <-
   readRDS(here("data", "preprocessed", "rds", "cluster_1.rds")) 
 
+questions <- unique(EUR_OS_open_access$question)
+
 # Question 1, lollipop graph ----------------------------------------------------------------
+
+question1 <- questions[1]
 
 # EUR
 lollipop_cluster1_question1 <-
   EUR_OS_open_access %>% 
-  filter(question == "In your opinion, how important is Open Access for your work?") %>% 
+  filter(question == question1) %>% 
   count(question, response) %>%
   mutate(
     response = fct_relevel(response, !!!open_access_Likert_importance_convert),
@@ -68,7 +72,7 @@ for(i in levels(EUR_OS_open_access$School)) {
   temp_figure_school <- 
     EUR_OS_open_access %>% 
     filter(
-      question == "In your opinion, how important is Open Access for your work?" &
+      question == question1 &
       School == i
       ) %>% 
     count(question, response) %>%
@@ -104,10 +108,12 @@ for(i in levels(EUR_OS_open_access$School)) {
 
 # Question 2, lollipop graph ----------------------------------------------------------------
 
+question2 <- questions[4]
+
 # EUR
 lollipop_cluster1_question2 <-
   EUR_OS_open_access %>% 
-  filter(question == "What is your experience with Open Access?") %>% 
+  filter(question == question2) %>% 
   count(question, response) %>%
   mutate(
     response = fct_relevel(response, !!!open_access_Likert_experience_convert),
@@ -146,7 +152,7 @@ for(i in levels(EUR_OS_open_access$School)) {
   temp_figure_school <- 
     EUR_OS_open_access %>% 
     filter(
-      question == "What is your experience with Open Access?" &
+      question == question2 &
         School == i
     ) %>% 
     count(question, response) %>%
@@ -182,10 +188,12 @@ for(i in levels(EUR_OS_open_access$School)) {
 
 # Question 3, lollipop graph ----------------------------------------------------------------
 
+question3 <- questions[3]
+
 # EUR
 lollipop_cluster1_question3 <-
   EUR_OS_open_access %>% 
-  filter(question == "The following are possible concerns that researchers could have about Open Access publishing. Which of these concerns would you agree with?") %>% 
+  filter(question == question3) %>% 
   count(question, response) %>%
   mutate(
     response = fct_recode(response, !!!open_access_Likert_concerns_convert),
@@ -224,7 +232,7 @@ for(i in levels(EUR_OS_open_access$School)) {
   temp_figure_school <- 
     EUR_OS_open_access %>% 
     filter(
-      question == "The following are possible concerns that researchers could have about Open Access publishing. Which of these concerns would you agree with?" &
+      question == question3 &
         School == i
     ) %>% 
     count(question, response) %>%
