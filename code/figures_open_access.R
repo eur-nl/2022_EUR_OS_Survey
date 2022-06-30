@@ -19,15 +19,17 @@ library(ggrepel)
 library(patchwork)
 
 source(here("code", "functions", "recoding.R")) # recoding scheme
-source(here("code", "functions", "theme_custom.R")) # custom ggplot2 theme
+source(here("code", "functions", "lolliplot.R")) # custom ggplot2 plot
 
 # Data ----------------------------------------------------------------
 
 EUR_OS_open_access <-
   readRDS(here("data", "preprocessed", "rds", "cluster_1.rds")) 
 
-# "In your opinion, how important is Open Access for your work?"
-EUR_OS_open_access_Q1 <- 
+# Question 1, lollipop graph ----------------------------------------------------------------
+
+# EUR
+lollipop_cluster1_question1 <-
   EUR_OS_open_access %>% 
   filter(question == "In your opinion, how important is Open Access for your work?") %>% 
   count(question, response) %>%
@@ -35,50 +37,16 @@ EUR_OS_open_access_Q1 <-
     response = fct_relevel(response, !!!open_access_Likert_importance_convert),
     perc = round(n / sum(n) * 100, 2),
     lab_perc = paste(perc, "%", sep = "")
-  ) 
-
-# "What is your experience with Open Access?"
-EUR_OS_open_access_Q2 <- 
-  EUR_OS_open_access %>% 
-  filter(question == "What is your experience with Open Access?") %>% 
-  count(question, response) %>%
-  mutate(
-    response = fct_relevel(response, !!!open_access_Likert_experience_convert),
-    perc = round(n / sum(n) * 100, 2),
-    lab_perc = paste(perc, "%", sep = "")
-  )
-
-# "The following are possible concerns that researchers could have about Open Access publishing. Which of these concerns would you agree with?"
-EUR_OS_open_access_Q3 <- 
-  EUR_OS_open_access %>% 
-  filter(question == "The following are possible concerns that researchers could have about Open Access publishing. Which of these concerns would you agree with?") %>% 
-  count(question, response) %>%
-  mutate(
-    response = fct_recode(response, !!!open_access_Likert_concerns_convert),
-    perc = round(n / sum(n) * 100, 2),
-    lab_perc = paste(perc, "%", sep = "")
-  ) 
-
-# Question 1, lollipop graph ----------------------------------------------------------------
-
-# EUR
-lollipop_cluster1_question1 <-
-  EUR_OS_open_access_Q1 %>%
-  ggplot(aes(x = fct_rev(response), y = perc)) +
-  geom_point(size = 6, color = "#0C8066") +
-  geom_segment(aes(x = response, xend = response, y = 0, yend = perc), color = "#012328") +
-  geom_label_repel(aes(response, perc, label = lab_perc), size = 4, nudge_y = 4, segment.alpha = 0, fill = "white", color = "#171C54") +
-  scale_y_continuous(
-    breaks = seq(0, 40, 10),
-    limits = c(0, 40)
-  ) +
-  scale_x_discrete(labels = function(x) str_wrap(x, width = 40)) +
-  labs(
+  ) %>% 
+  lolliplot(
+    data = ., 
+    x = fct_rev(response), 
+    y = perc, 
+    labels = lab_perc, 
+    y_max_limit = 40,
     title = "Importance of Open Access - EUR",
-    x = ""
-  ) +
-  coord_flip() +
-  theme_custom
+    title_size = 22
+  )
 
 lollipop_cluster1_question1
 
@@ -90,7 +58,7 @@ ggsave(
   path = here("img", "open_access", "importance"),
   scale = 3,
   width = 8,
-  height = 8,
+  height = 4,
   units = "cm",
   dpi = 600
 )
@@ -111,22 +79,16 @@ for(i in levels(EUR_OS_open_access$School)) {
       perc = round(n / sum(n) * 100, 2),
       lab_perc = paste(perc, "%", sep = "")
     ) %>% 
-    ggplot(aes(x = fct_rev(response), y = perc)) +
-    geom_point(size = 6, color = "#0C8066") +
-    geom_segment(aes(x = response, xend = response, y = 0, yend = perc), color = "#012328") +
-    geom_label_repel(aes(response, perc, label = lab_perc), size = 4, nudge_y = 4, segment.alpha = 0, fill = "white", color = "#171C54") +
-    scale_y_continuous(
-      breaks = seq(0, 50, 10),
-      limits = c(0, 50)
-    ) +
-    scale_x_discrete(labels = function(x) str_wrap(x, width = 40)) +
-    labs(
+    lolliplot(
+      data = ., 
+      x = fct_rev(response),  
+      y = perc, 
+      labels = lab_perc, 
+      y_max_limit = 50,
       title = paste0("Importance of Open Access - ", i),
-      x = ""
-    ) +
-    coord_flip() +
-    theme_custom
-  
+      title_size = 22
+    )
+    
   # save to file
   ggsave(
     filename = paste0("figure_importance_open_access_", i, ".png"),
@@ -135,7 +97,7 @@ for(i in levels(EUR_OS_open_access$School)) {
     path = here("img", "open_access", "importance"),
     scale = 3,
     width = 8,
-    height = 8,
+    height = 4,
     units = "cm",
     dpi = 600
   )
@@ -146,22 +108,23 @@ for(i in levels(EUR_OS_open_access$School)) {
 
 # EUR
 lollipop_cluster1_question2 <-
-  EUR_OS_open_access_Q2 %>%
-  ggplot(aes(x = fct_rev(response), y = perc)) +
-  geom_point(size = 6, color = "#0C8066") +
-  geom_segment(aes(x = response, xend = response, y = 0, yend = perc), color = "#012328") +
-  geom_label_repel(aes(response, perc, label = lab_perc), size = 4, nudge_y = 4, segment.alpha = 0, fill = "white", color = "#171C54") +
-  scale_y_continuous(
-    breaks = seq(0, 50, 10),
-    limits = c(0, 50)
-  ) +
-  scale_x_discrete(labels = function(x) str_wrap(x, width = 40)) +
-  labs(
+  EUR_OS_open_access %>% 
+  filter(question == "What is your experience with Open Access?") %>% 
+  count(question, response) %>%
+  mutate(
+    response = fct_relevel(response, !!!open_access_Likert_experience_convert),
+    perc = round(n / sum(n) * 100, 2),
+    lab_perc = paste(perc, "%", sep = "")
+  ) %>% 
+  lolliplot(
+    data = ., 
+    x = fct_rev(response), 
+    y = perc, 
+    labels = lab_perc, 
+    y_max_limit = 50,
     title = "Experience with Open Access - EUR",
-    x = ""
-  ) +
-  coord_flip() +
-  theme_custom
+    title_size = 22
+  )
 
 lollipop_cluster1_question2
 
@@ -173,7 +136,7 @@ ggsave(
   path = here("img", "open_access", "experience"),
   scale = 3,
   width = 8,
-  height = 8,
+  height = 4,
   units = "cm",
   dpi = 600
 )
@@ -194,21 +157,15 @@ for(i in levels(EUR_OS_open_access$School)) {
       perc = round(n / sum(n) * 100, 2),
       lab_perc = paste(perc, "%", sep = "")
     ) %>%  
-    ggplot(aes(x = fct_rev(response), y = perc)) +
-    geom_point(size = 6, color = "#0C8066") +
-    geom_segment(aes(x = response, xend = response, y = 0, yend = perc), color = "#012328") +
-    geom_label_repel(aes(response, perc, label = lab_perc), size = 4, nudge_y = 4, segment.alpha = 0, fill = "white", color = "#171C54") +
-    scale_y_continuous(
-      breaks = seq(0, 80, 10),
-      limits = c(0, 80)
-    ) +
-    scale_x_discrete(labels = function(x) str_wrap(x, width = 40)) +
-    labs(
+    lolliplot(
+      data = ., 
+      x = fct_rev(response), 
+      y = perc, 
+      labels = lab_perc, 
+      y_max_limit = 80,
       title = paste0("Experience with Open Access - ", i),
-      x = ""
-    ) +
-    coord_flip() +
-    theme_custom
+      title_size = 22
+    )
   
   # save to file
   ggsave(
@@ -218,7 +175,7 @@ for(i in levels(EUR_OS_open_access$School)) {
     path = here("img", "open_access", "experience"),
     scale = 3,
     width = 8,
-    height = 8,
+    height = 4,
     units = "cm",
     dpi = 600
   )
@@ -229,22 +186,23 @@ for(i in levels(EUR_OS_open_access$School)) {
 
 # EUR
 lollipop_cluster1_question3 <-
-  EUR_OS_open_access_Q3 %>%
-  ggplot(aes(x = reorder(response, perc), y = perc)) +
-  geom_point(size = 6, color = "#0C8066") +
-  geom_segment(aes(x = response, xend = response, y = 0, yend = perc), color = "#012328") +
-  geom_label_repel(aes(response, perc, label = lab_perc), size = 4, nudge_y = 4, segment.alpha = 0, fill = "white", color = "#171C54") +
-  scale_y_continuous(
-    breaks = seq(0, 40, 10),
-    limits = c(0, 40)
-  ) +
-  scale_x_discrete(labels = function(x) str_wrap(x, width = 40)) +
-  labs(
+  EUR_OS_open_access %>% 
+  filter(question == "The following are possible concerns that researchers could have about Open Access publishing. Which of these concerns would you agree with?") %>% 
+  count(question, response) %>%
+  mutate(
+    response = fct_recode(response, !!!open_access_Likert_concerns_convert),
+    perc = round(n / sum(n) * 100, 2),
+    lab_perc = paste(perc, "%", sep = "")
+  ) %>% 
+  lolliplot(
+    data = ., 
+    x = reorder(response, perc), 
+    y = perc, 
+    labels = lab_perc, 
+    y_max_limit = 40,
     title = "Concerns around Open Access - EUR",
-    x = ""
-  ) +
-  coord_flip() +
-  theme_custom
+    title_size = 22
+  )
 
 lollipop_cluster1_question3
 
@@ -254,9 +212,9 @@ ggsave(
   plot = lollipop_cluster1_question3,
   device = "png",
   path = here("img", "open_access", "concerns"),
-  scale = 3,
+  scale = 6,
   width = 8,
-  height = 8,
+  height = 4,
   units = "cm",
   dpi = 600
 )
@@ -273,56 +231,33 @@ for(i in levels(EUR_OS_open_access$School)) {
     ) %>% 
     count(question, response) %>%
     mutate(
-      response = fct_relevel(response, !!!open_access_Likert_concerns_convert),
+      response = fct_recode(response, !!!open_access_Likert_concerns_convert),
       perc = round(n / sum(n) * 100, 2),
       lab_perc = paste(perc, "%", sep = "")
     ) %>%  
-    ggplot(aes(x = reorder(response, perc), y = perc)) +
-    geom_point(size = 6, color = "#0C8066") +
-    geom_segment(aes(x = response, xend = response, y = 0, yend = perc), color = "#012328") +
-    geom_label_repel(aes(response, perc, label = lab_perc), size = 4, nudge_y = 4, segment.alpha = 0, fill = "white", color = "#171C54") +
-    scale_y_continuous(
-      breaks = seq(0, 50, 10),
-      limits = c(0, 50)
-    ) +
-    scale_x_discrete(labels = function(x) str_wrap(x, width = 40)) +
-    labs(
+    lolliplot(
+      data = ., 
+      x = reorder(response, perc), 
+      y = perc, 
+      labels = lab_perc, 
+      y_max_limit = 50,
       title = paste0("Concerns around Open Access - ", i),
-      x = ""
-    ) +
-    coord_flip() +
-    theme_custom
-  
+      title_size = 22
+    )
+
   # save to file
   ggsave(
     filename = paste0("figure_concerns_open_access_", i, ".png"),
     plot = temp_figure_school,
     device = "png",
     path = here("img", "open_access", "concerns"),
-    scale = 3,
+    scale = 6,
     width = 8,
-    height = 8,
+    height = 4,
     units = "cm",
     dpi = 600
   )
   
 }
-
-# Question 4, free text ----------------------------------------------------------------
-
-# this question does not have figures
-# the extraction of the responses will be included 
-# in the report, and representative responses quoted
-
-# "Is there anything you want to share with us regarding your experiences with Open Access?"
-# FREE TEXT
-EUR_OS_open_access_Q4 <-
-  EUR_OS_open_access %>% 
-  filter(question == "Is there anything you want to share with us regarding your experiences with Open Access?") %>% 
-  count(question, response) %>%
-  mutate(
-    perc = round(n / sum(n) * 100, 2),
-    lab_perc = paste(perc, "%", sep = "")
-  )
 
 # END ----------------------------------------------------------------
