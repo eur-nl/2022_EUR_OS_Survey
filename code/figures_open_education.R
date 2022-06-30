@@ -9,7 +9,6 @@ set.seed(seed_proj)
 # install.packages("here")
 # install.packages("tidyverse")
 # install.packages("ggrepel")
-# install.packages("patchwork")
 
 # Load packages --------------------------------------------------------
 
@@ -19,77 +18,82 @@ library(ggrepel)
 library(patchwork)
 
 source(here("code", "functions", "recoding.R")) # recoding scheme
-source(here("code", "functions", "theme_custom.R")) # custom ggplot2 theme
+source(here("code", "functions", "lolliplot.R")) # custom ggplot2 plot
 
 # Data ----------------------------------------------------------------
 
 EUR_OS_open_education <-
   readRDS(here("data", "preprocessed", "rds", "cluster_4.rds")) 
 
-# "In your opinion, how important are open educational resources for your work?"
-EUR_OS_open_education_Q1 <- 
-  EUR_OS_open_education %>% 
-  filter(question == "In your opinion, how important are open educational resources for your work?") %>% 
+questions <- unique(EUR_OS_open_education$question)
+
+# # "In your opinion, how important are open educational resources for your work?"
+# EUR_OS_open_education_Q1 <- 
+#   EUR_OS_open_education %>% 
+#   filter(question == "In your opinion, how important are open educational resources for your work?") %>% 
+#   count(question, response) %>%
+#   mutate(
+#     response = fct_relevel(response, !!!open_education_Likert_importance_convert),
+#     perc = round(n / sum(n) * 100, 2),
+#     lab_perc = paste(perc, "%", sep = "")
+#   ) 
+# 
+# # "What is your experience with using open educational resources developed by others?"
+# EUR_OS_open_education_Q2 <- 
+#   EUR_OS_open_education %>% 
+#   filter(question == "What is your experience with using open educational resources developed by others?") %>% 
+#   count(question, response) %>%
+#   mutate(
+#     response = fct_relevel(response, !!!open_education_Likert_experience_others_convert),
+#     perc = round(n / sum(n) * 100, 2),
+#     lab_perc = paste(perc, "%", sep = "")
+#   )
+# 
+# # "What is your experience with openly sharing educational resources that you developed?"
+# EUR_OS_open_education_Q3 <- 
+#   EUR_OS_open_education %>% 
+#   filter(question == "What is your experience with openly sharing educational resources that you developed?") %>% 
+#   count(question, response) %>%
+#   mutate(
+#     response = fct_relevel(response, !!!open_education_Likert_experience_own_convert),
+#     perc = round(n / sum(n) * 100, 2),
+#     lab_perc = paste(perc, "%", sep = "")
+#   )
+# 
+# # "The following are possible concerns that researchers could have about making educational resources developed by them openly available. Which of these concerns would you agree with?"
+# EUR_OS_open_education_Q4 <- 
+#   EUR_OS_open_education %>% 
+#   filter(question == "The following are possible concerns that researchers could have about making educational resources developed by them openly available. Which of these concerns would you agree with?") %>% 
+#   mutate(response = fct_recode(response, !!!open_education_Likert_concerns_convert)) %>% 
+#   count(question, response) %>%
+#   mutate(
+#     perc = round(n / sum(n) * 100, 2),
+#     lab_perc = paste(perc, "%", sep = "")
+#   ) 
+
+# Question 1, lollipop graph ----------------------------------------------------------------
+
+question1 <- questions[1]
+
+# EUR
+lollipop_cluster4_question1 <-
+  EUR_OS_open_education %>%
+  filter(question == question1) %>% 
   count(question, response) %>%
   mutate(
     response = fct_relevel(response, !!!open_education_Likert_importance_convert),
     perc = round(n / sum(n) * 100, 2),
     lab_perc = paste(perc, "%", sep = "")
-  ) 
-
-# "What is your experience with using open educational resources developed by others?"
-EUR_OS_open_education_Q2 <- 
-  EUR_OS_open_education %>% 
-  filter(question == "What is your experience with using open educational resources developed by others?") %>% 
-  count(question, response) %>%
-  mutate(
-    response = fct_relevel(response, !!!open_education_Likert_experience_others_convert),
-    perc = round(n / sum(n) * 100, 2),
-    lab_perc = paste(perc, "%", sep = "")
-  )
-
-# "What is your experience with openly sharing educational resources that you developed?"
-EUR_OS_open_education_Q3 <- 
-  EUR_OS_open_education %>% 
-  filter(question == "What is your experience with openly sharing educational resources that you developed?") %>% 
-  count(question, response) %>%
-  mutate(
-    response = fct_relevel(response, !!!open_education_Likert_experience_own_convert),
-    perc = round(n / sum(n) * 100, 2),
-    lab_perc = paste(perc, "%", sep = "")
-  )
-
-# "The following are possible concerns that researchers could have about making educational resources developed by them openly available. Which of these concerns would you agree with?"
-EUR_OS_open_education_Q4 <- 
-  EUR_OS_open_education %>% 
-  filter(question == "The following are possible concerns that researchers could have about making educational resources developed by them openly available. Which of these concerns would you agree with?") %>% 
-  mutate(response = fct_recode(response, !!!open_education_Likert_concerns_convert)) %>% 
-  count(question, response) %>%
-  mutate(
-    perc = round(n / sum(n) * 100, 2),
-    lab_perc = paste(perc, "%", sep = "")
-  ) 
-
-# Question 1, lollipop graph ----------------------------------------------------------------
-
-# EUR
-lollipop_cluster4_question1 <-
-  EUR_OS_open_education_Q1 %>%
-  ggplot(aes(x = fct_rev(response), y = perc)) +
-  geom_point(size = 6, color = "#0C8066") +
-  geom_segment(aes(x = response, xend = response, y = 0, yend = perc), color = "#012328") +
-  geom_label_repel(aes(response, perc, label = lab_perc), size = 4, nudge_y = 4, segment.alpha = 0, fill = "white", color = "#171C54") +
-  scale_y_continuous(
-    breaks = seq(0, 30, 10),
-    limits = c(0, 30)
-  ) +
-  scale_x_discrete(labels = function(x) str_wrap(x, width = 40)) +
-  labs(
+  ) %>% 
+  lolliplot(
+    data = ., 
+    x = fct_rev(response), 
+    y = perc, 
+    labels = lab_perc, 
+    y_max_limit = 30,
     title = "Importance of Open Education - EUR",
-    x = ""
-  ) +
-  coord_flip() +
-  theme_custom
+    title_size = 22
+  )
 
 lollipop_cluster4_question1
 
@@ -101,7 +105,7 @@ ggsave(
   path = here("img", "open_education", "importance"),
   scale = 3,
   width = 8,
-  height = 8,
+  height = 4,
   units = "cm",
   dpi = 600
 )
@@ -113,7 +117,7 @@ for(i in levels(EUR_OS_open_education$School)) {
   temp_figure_school <- 
     EUR_OS_open_education %>% 
     filter(
-      question == "In your opinion, how important are open educational resources for your work?" &
+      question == question1 &
       School == i
       ) %>% 
     count(question, response) %>%
@@ -122,22 +126,16 @@ for(i in levels(EUR_OS_open_education$School)) {
       perc = round(n / sum(n) * 100, 2),
       lab_perc = paste(perc, "%", sep = "")
     ) %>% 
-    ggplot(aes(x = fct_rev(response), y = perc)) +
-    geom_point(size = 6, color = "#0C8066") +
-    geom_segment(aes(x = response, xend = response, y = 0, yend = perc), color = "#012328") +
-    geom_label_repel(aes(response, perc, label = lab_perc), size = 4, nudge_y = 4, segment.alpha = 0, fill = "white", color = "#171C54") +
-    scale_y_continuous(
-      breaks = seq(0, 50, 10),
-      limits = c(0, 50)
-    ) +
-    scale_x_discrete(labels = function(x) str_wrap(x, width = 40)) +
-    labs(
+    lolliplot(
+      data = ., 
+      x = fct_rev(response), 
+      y = perc, 
+      labels = lab_perc, 
+      y_max_limit = 50,
       title = paste0("Importance of Open Education - ", i),
-      x = ""
-    ) +
-    coord_flip() +
-    theme_custom
- 
+      title_size = 22
+    )
+  
   # save to file
   ggsave(
     filename = paste0("figure_importance_open_education_", i, ".png"),
@@ -146,7 +144,7 @@ for(i in levels(EUR_OS_open_education$School)) {
     path = here("img", "open_education", "importance"),
     scale = 3,
     width = 8,
-    height = 8,
+    height = 4,
     units = "cm",
     dpi = 600
   )
@@ -155,26 +153,28 @@ for(i in levels(EUR_OS_open_education$School)) {
 
 # Question 2, lollipop graph ----------------------------------------------------------------
 
+question2 <- questions[4]
+
 # EUR
 lollipop_cluster4_question2 <-
-  EUR_OS_open_education_Q2 %>%
-  ggplot(aes(x = fct_rev(response), y = perc)) +
-  geom_point(size = 6, color = "#0C8066") +
-  geom_segment(aes(x = response, xend = response, y = 0, yend = perc), color = "#012328") +
-  geom_label_repel(aes(response, perc, label = lab_perc), size = 4, nudge_y = 4, segment.alpha = 0, fill = "white", color = "#171C54") +
-  scale_y_continuous(
-    breaks = seq(0, 40, 10),
-    limits = c(0, 40)
-  ) +
-  scale_x_discrete(labels = function(x) str_wrap(x, width = 40)) +
-  labs(
+  EUR_OS_open_education %>%
+  filter(question == question2) %>% 
+  count(question, response) %>%
+  mutate(
+    response = fct_relevel(response, !!!open_education_Likert_experience_others_convert),
+    perc = round(n / sum(n) * 100, 2),
+    lab_perc = paste(perc, "%", sep = "")
+  ) %>% 
+  lolliplot(
+    data = ., 
+    x = fct_rev(response), 
+    y = perc, 
+    labels = lab_perc, 
+    y_max_limit = 40,
     title = "Experience with others' Open Education - EUR",
-    x = ""
-  ) +
-  coord_flip() +
-  theme_custom+
-  theme(plot.title = element_text(size = 18, hjust = .5))
-
+    title_size = 18
+  )
+  
 lollipop_cluster4_question2
 
 # save to file
@@ -185,7 +185,7 @@ ggsave(
   path = here("img", "open_education", "experience_others"),
   scale = 3,
   width = 8,
-  height = 8,
+  height = 4,
   units = "cm",
   dpi = 600
 )
@@ -197,7 +197,7 @@ for(i in levels(EUR_OS_open_education$School)) {
   temp_figure_school <- 
     EUR_OS_open_education %>% 
     filter(
-      question == "What is your experience with using open educational resources developed by others?" &
+      question == question2 &
         School == i
     ) %>% 
     count(question, response) %>%
@@ -206,22 +206,15 @@ for(i in levels(EUR_OS_open_education$School)) {
       perc = round(n / sum(n) * 100, 2),
       lab_perc = paste(perc, "%", sep = "")
     ) %>% 
-    ggplot(aes(x = fct_rev(response), y = perc)) +
-    geom_point(size = 6, color = "#0C8066") +
-    geom_segment(aes(x = response, xend = response, y = 0, yend = perc), color = "#012328") +
-    geom_label_repel(aes(response, perc, label = lab_perc), size = 4, nudge_y = 4, segment.alpha = 0, fill = "white", color = "#171C54") +
-    scale_y_continuous(
-      breaks = seq(0, 50, 10),
-      limits = c(0, 50)
-    ) +
-    scale_x_discrete(labels = function(x) str_wrap(x, width = 40)) +
-    labs(
+    lolliplot(
+      data = ., 
+      x = fct_rev(response), 
+      y = perc, 
+      labels = lab_perc, 
+      y_max_limit = 50,
       title = paste0("Experience with others' Open Education - ", i),
-      x = ""
-    ) +
-    coord_flip() +
-    theme_custom +
-    theme(plot.title = element_text(size = 18, hjust = .5))
+      title_size = 18
+    )
   
   # save to file
   ggsave(
@@ -231,7 +224,7 @@ for(i in levels(EUR_OS_open_education$School)) {
     path = here("img", "open_education", "experience_others"),
     scale = 3,
     width = 8,
-    height = 8,
+    height = 4,
     units = "cm",
     dpi = 600
   )
@@ -240,25 +233,27 @@ for(i in levels(EUR_OS_open_education$School)) {
 
 # Question 3, lollipop graph ----------------------------------------------------------------
 
+question3 <- questions[3]
+
 # EUR
 lollipop_cluster4_question3 <-
-  EUR_OS_open_education_Q3 %>%
-  ggplot(aes(x = fct_rev(response), y = perc)) +
-  geom_point(size = 6, color = "#0C8066") +
-  geom_segment(aes(x = response, xend = response, y = 0, yend = perc), color = "#012328") +
-  geom_label_repel(aes(response, perc, label = lab_perc), size = 4, nudge_y = 4, segment.alpha = 0, fill = "white", color = "#171C54") +
-  scale_y_continuous(
-    breaks = seq(0, 40, 10),
-    limits = c(0, 40)
-  ) +
-  scale_x_discrete(labels = function(x) str_wrap(x, width = 40)) +
-  labs(
+  EUR_OS_open_education %>%
+  filter(question == question3) %>% 
+  count(question, response) %>%
+  mutate(
+    response = fct_relevel(response, !!!open_education_Likert_experience_own_convert),
+    perc = round(n / sum(n) * 100, 2),
+    lab_perc = paste(perc, "%", sep = "")
+  ) %>%
+  lolliplot(
+    data = ., 
+    x = fct_rev(response), 
+    y = perc, 
+    labels = lab_perc, 
+    y_max_limit = 40,
     title = "Experience with own Open Education - EUR",
-    x = ""
-  ) +
-  coord_flip() +
-  theme_custom +
-  theme(plot.title = element_text(size = 18, hjust = .5))
+    title_size = 18
+  )
 
 lollipop_cluster4_question3
 
@@ -270,7 +265,7 @@ ggsave(
   path = here("img", "open_education", "experience_own"),
   scale = 3,
   width = 8,
-  height = 8,
+  height = 4,
   units = "cm",
   dpi = 600
 )
@@ -282,7 +277,7 @@ for(i in levels(EUR_OS_open_education$School)) {
   temp_figure_school <- 
     EUR_OS_open_education %>% 
     filter(
-      question == "What is your experience with openly sharing educational resources that you developed?" &
+      question == question3 &
         School == i
     ) %>% 
     count(question, response) %>%
@@ -291,22 +286,15 @@ for(i in levels(EUR_OS_open_education$School)) {
       perc = round(n / sum(n) * 100, 2),
       lab_perc = paste(perc, "%", sep = "")
     ) %>%
-    ggplot(aes(x = fct_rev(response), y = perc)) +
-    geom_point(size = 6, color = "#0C8066") +
-    geom_segment(aes(x = response, xend = response, y = 0, yend = perc), color = "#012328") +
-    geom_label_repel(aes(response, perc, label = lab_perc), size = 4, nudge_y = 4, segment.alpha = 0, fill = "white", color = "#171C54") +
-    scale_y_continuous(
-      breaks = seq(0, 50, 10),
-      limits = c(0, 50)
-    ) +
-    scale_x_discrete(labels = function(x) str_wrap(x, width = 40)) +
-    labs(
+    lolliplot(
+      data = ., 
+      x = fct_rev(response), 
+      y = perc, 
+      labels = lab_perc, 
+      y_max_limit = 50,
       title = paste0("Experience with own Open Education - ", i),
-      x = ""
-    ) +
-    coord_flip() +
-    theme_custom +
-    theme(plot.title = element_text(size = 18, hjust = .5))
+      title_size = 18
+    )
   
   # save to file
   ggsave(
@@ -316,7 +304,7 @@ for(i in levels(EUR_OS_open_education$School)) {
     path = here("img", "open_education", "experience_own"),
     scale = 3,
     width = 8,
-    height = 8,
+    height = 4,
     units = "cm",
     dpi = 600
   )
@@ -325,25 +313,27 @@ for(i in levels(EUR_OS_open_education$School)) {
 
 # Question 4, lollipop graph ----------------------------------------------------------------
 
+question4 <- questions[2]
+
 # EUR
 lollipop_cluster4_question4 <-
-  EUR_OS_open_education_Q4 %>%
-  ggplot(aes(x = reorder(response, perc), y = perc)) +
-  geom_point(size = 6, color = "#0C8066") +
-  geom_segment(aes(x = response, xend = response, y = 0, yend = perc), color = "#012328") +
-  geom_label_repel(aes(response, perc, label = lab_perc), size = 4, nudge_y = 4, segment.alpha = 0, fill = "white", color = "#171C54") +
-  scale_y_continuous(
-    breaks = seq(0, 25, 10),
-    limits = c(0, 25)
-  ) +
-  scale_x_discrete(labels = function(x) str_wrap(x, width = 40)) +
-  labs(
-    title = "Concerns around Open Education - EUR",
-    x = ""
-  ) +
-  coord_flip() +
-  theme_custom +
-  theme(plot.title = element_text(size = 18, hjust = .5))
+  EUR_OS_open_education %>%
+  filter(question == question4) %>% 
+  mutate(response = fct_recode(response, !!!open_education_Likert_concerns_convert)) %>% 
+  count(question, response) %>%
+  mutate(
+    perc = round(n / sum(n) * 100, 2),
+    lab_perc = paste(perc, "%", sep = "")
+  ) %>% 
+  lolliplot(
+    data = ., 
+    x = reorder(response, perc), 
+    y = perc, 
+    labels = lab_perc, 
+    y_max_limit = 20,
+    title = "Concerns around Preregistration - EUR",
+    title_size = 22
+  )
 
 lollipop_cluster4_question4
 
@@ -353,9 +343,9 @@ ggsave(
   plot = lollipop_cluster4_question4,
   device = "png",
   path = here("img", "open_education", "concerns"),
-  scale = 3,
+  scale = 4,
   width = 8,
-  height = 8,
+  height = 4,
   units = "cm",
   dpi = 600
 )
@@ -367,7 +357,7 @@ for(i in levels(EUR_OS_open_education$School)) {
   temp_figure_school <- 
     EUR_OS_open_education %>% 
     filter(
-      question == "The following are possible concerns that researchers could have about making educational resources developed by them openly available. Which of these concerns would you agree with?" &
+      question == question4 &
         School == i
     ) %>% 
     mutate(response = fct_recode(response, !!!open_education_Likert_concerns_convert)) %>% 
@@ -376,32 +366,25 @@ for(i in levels(EUR_OS_open_education$School)) {
       perc = round(n / sum(n) * 100, 2),
       lab_perc = paste(perc, "%", sep = "")
     ) %>%  
-    ggplot(aes(x = reorder(response, perc), y = perc)) +
-    geom_point(size = 6, color = "#0C8066") +
-    geom_segment(aes(x = response, xend = response, y = 0, yend = perc), color = "#012328") +
-    geom_label_repel(aes(response, perc, label = lab_perc), size = 4, nudge_y = 4, segment.alpha = 0, fill = "white", color = "#171C54") +
-    scale_y_continuous(
-      breaks = seq(0, 35, 10),
-      limits = c(0, 35)
-    ) +
-    scale_x_discrete(labels = function(x) str_wrap(x, width = 40)) +
-    labs(
+    lolliplot(
+      data = ., 
+      x = reorder(response, perc), 
+      y = perc, 
+      labels = lab_perc, 
+      y_max_limit = 35,
       title = paste0("Concerns around Open Education - ", i),
-      x = ""
-    ) +
-    coord_flip() +
-    theme_custom +
-    theme(plot.title = element_text(size = 18, hjust = .5))
-  
+      title_size = 22
+    )
+
   # save to file
   ggsave(
     filename = paste0("figure_concerns_open_education_", i, ".png"),
     plot = temp_figure_school,
     device = "png",
     path = here("img", "open_education", "concerns"),
-    scale = 3,
+    scale = 4,
     width = 8,
-    height = 8,
+    height = 4,
     units = "cm",
     dpi = 600
   )
