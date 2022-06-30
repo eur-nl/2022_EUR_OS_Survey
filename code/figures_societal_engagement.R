@@ -9,78 +9,47 @@ set.seed(seed_proj)
 # install.packages("here")
 # install.packages("tidyverse")
 # install.packages("ggrepel")
-# install.packages("patchwork")
 
 # Load packages --------------------------------------------------------
 
 library(here)
 library(tidyverse)
 library(ggrepel)
-library(patchwork)
 
 source(here("code", "functions", "recoding.R")) # recoding scheme
-source(here("code", "functions", "theme_custom.R")) # custom ggplot2 theme
+source(here("code", "functions", "lolliplot.R")) # custom ggplot2 plot
 
 # Data ----------------------------------------------------------------
 
 EUR_OS_societal_engagement <-
   readRDS(here("data", "preprocessed", "rds", "cluster_5.rds")) 
 
-# "In your opinion, how important is to have an open dialogue with society in your work?"
-EUR_OS_societal_engagement_Q1 <- 
+questions <- unique(EUR_OS_societal_engagement$question)
+
+# Question 1, lollipop graph ----------------------------------------------------------------
+
+question1 <- questions[1]
+
+# EUR
+lollipop_cluster5_question1 <-
   EUR_OS_societal_engagement %>% 
-  filter(question == "In your opinion, how important is to have an open dialogue with society in your work?") %>% 
+  filter(question == question1) %>% 
   count(question, response) %>%
   mutate(
     response = fct_relevel(response, !!!societal_engagement_Likert_importance_convert),
     perc = round(n / sum(n) * 100, 2),
     lab_perc = paste(perc, "%", sep = "")
-  ) 
-
-# "What is your experience engaging with society?"
-EUR_OS_societal_engagement_Q2 <- 
-  EUR_OS_societal_engagement %>% 
-  filter(question == "What is your experience engaging with society?") %>% 
-  count(question, response) %>%
-  mutate(
-    response = fct_relevel(response, !!!societal_engagement_Likert_experience_convert),
-    perc = round(n / sum(n) * 100, 2),
-    lab_perc = paste(perc, "%", sep = "")
-  )
-
-# "The following are possible concerns that researchers could have about engaging with society. Which of these concerns would apply to you?"
-EUR_OS_societal_engagement_Q3 <- 
-  EUR_OS_societal_engagement %>% 
-  filter(question == "The following are possible concerns that researchers could have about engaging with society. Which of these concerns would apply to you?") %>% 
-  mutate(response = fct_recode(response, !!!societal_engagement_Likert_concerns_convert)) %>% 
-  count(question, response) %>%
-  mutate(
-    perc = round(n / sum(n) * 100, 2),
-    lab_perc = paste(perc, "%", sep = "")
-  ) 
-
-# Question 1, lollipop graph ----------------------------------------------------------------
-
-# EUR
-lollipop_cluster5_question1 <-
-  EUR_OS_societal_engagement_Q1 %>%
-  ggplot(aes(x = fct_rev(response), y = perc)) +
-  geom_point(size = 6, color = "#0C8066") +
-  geom_segment(aes(x = response, xend = response, y = 0, yend = perc), color = "#012328") +
-  geom_label_repel(aes(response, perc, label = lab_perc), size = 4, nudge_y = 4, segment.alpha = 0, fill = "white", color = "#171C54") +
-  scale_y_continuous(
-    breaks = seq(0, 40, 10),
-    limits = c(0, 40)
-  ) +
-  scale_x_discrete(labels = function(x) str_wrap(x, width = 40)) +
-  labs(
+  ) %>% 
+  lolliplot(
+    data = ., 
+    x = fct_rev(response), 
+    y = perc, 
+    labels = lab_perc, 
+    y_max_limit = 40,
     title = "Importance of Societal Engagement - EUR",
-    x = ""
-  ) +
-  coord_flip() +
-  theme_custom +
-  theme(plot.title = element_text(size = 18, hjust = .5))
-
+    title_size = 18
+  )
+  
 lollipop_cluster5_question1
 
 # save to file
@@ -91,7 +60,7 @@ ggsave(
   path = here("img", "societal_engagement", "importance"),
   scale = 3,
   width = 8,
-  height = 8,
+  height = 4,
   units = "cm",
   dpi = 600
 )
@@ -103,7 +72,7 @@ for(i in levels(EUR_OS_societal_engagement$School)) {
   temp_figure_school <- 
     EUR_OS_societal_engagement %>% 
     filter(
-      question == "In your opinion, how important is to have an open dialogue with society in your work?" &
+      question == question1 &
         School == i
       ) %>% 
     count(question, response) %>%
@@ -112,23 +81,16 @@ for(i in levels(EUR_OS_societal_engagement$School)) {
       perc = round(n / sum(n) * 100, 2),
       lab_perc = paste(perc, "%", sep = "")
     ) %>% 
-    ggplot(aes(x = fct_rev(response), y = perc)) +
-    geom_point(size = 6, color = "#0C8066") +
-    geom_segment(aes(x = response, xend = response, y = 0, yend = perc), color = "#012328") +
-    geom_label_repel(aes(response, perc, label = lab_perc), size = 4, nudge_y = 4, segment.alpha = 0, fill = "white", color = "#171C54") +
-    scale_y_continuous(
-      breaks = seq(0, 50, 10),
-      limits = c(0, 50)
-    ) +
-    scale_x_discrete(labels = function(x) str_wrap(x, width = 40)) +
-    labs(
+    lolliplot(
+      data = ., 
+      x = fct_rev(response), 
+      y = perc, 
+      labels = lab_perc, 
+      y_max_limit = 50,
       title = paste0("Importance of Societal Engagement - ", i),
-      x = ""
-    ) +
-    coord_flip() +
-    theme_custom +
-    theme(plot.title = element_text(size = 18, hjust = .5))
-  
+      title_size = 18
+    )
+    
   # save to file
   ggsave(
     filename = paste0("figure_importance_societal_engagement_", i, ".png"),
@@ -137,7 +99,7 @@ for(i in levels(EUR_OS_societal_engagement$School)) {
     path = here("img", "societal_engagement", "importance"),
     scale = 3,
     width = 8,
-    height = 8,
+    height = 4,
     units = "cm",
     dpi = 600
   )
@@ -146,25 +108,27 @@ for(i in levels(EUR_OS_societal_engagement$School)) {
 
 # Question 2, lollipop graph ----------------------------------------------------------------
 
+question2 <- questions[3]
+
 # EUR
 lollipop_cluster5_question2 <-
-  EUR_OS_societal_engagement_Q2 %>%
-  ggplot(aes(x = fct_rev(response), y = perc)) +
-  geom_point(size = 6, color = "#0C8066") +
-  geom_segment(aes(x = response, xend = response, y = 0, yend = perc), color = "#012328") +
-  geom_label_repel(aes(response, perc, label = lab_perc), size = 4, nudge_y = 4, segment.alpha = 0, fill = "white", color = "#171C54") +
-  scale_y_continuous(
-    breaks = seq(0, 40, 10),
-    limits = c(0, 40)
-  ) +
-  scale_x_discrete(labels = function(x) str_wrap(x, width = 40)) +
-  labs(
+  EUR_OS_societal_engagement %>% 
+  filter(question == question2) %>% 
+  count(question, response) %>%
+  mutate(
+    response = fct_relevel(response, !!!societal_engagement_Likert_experience_convert),
+    perc = round(n / sum(n) * 100, 2),
+    lab_perc = paste(perc, "%", sep = "")
+  ) %>% 
+  lolliplot(
+    data = ., 
+    x = fct_rev(response), 
+    y = perc, 
+    labels = lab_perc, 
+    y_max_limit = 40,
     title = "Experience with Societal Engagement - EUR",
-    x = ""
-  ) +
-  coord_flip() +
-  theme_custom +
-  theme(plot.title = element_text(size = 18, hjust = .5))
+    title_size = 18
+  )
 
 lollipop_cluster5_question2
 
@@ -176,7 +140,7 @@ ggsave(
   path = here("img", "societal_engagement", "experience"),
   scale = 3,
   width = 8,
-  height = 8,
+  height = 4,
   units = "cm",
   dpi = 600
 )
@@ -188,7 +152,7 @@ for(i in levels(EUR_OS_societal_engagement$School)) {
   temp_figure_school <- 
     EUR_OS_societal_engagement %>% 
     filter(
-      question == "What is your experience engaging with society?" &
+      question == question2 &
         School == i
     ) %>% 
     count(question, response) %>%
@@ -197,23 +161,16 @@ for(i in levels(EUR_OS_societal_engagement$School)) {
       perc = round(n / sum(n) * 100, 2),
       lab_perc = paste(perc, "%", sep = "")
     ) %>%  
-    ggplot(aes(x = fct_rev(response), y = perc)) +
-    geom_point(size = 6, color = "#0C8066") +
-    geom_segment(aes(x = response, xend = response, y = 0, yend = perc), color = "#012328") +
-    geom_label_repel(aes(response, perc, label = lab_perc), size = 4, nudge_y = 4, segment.alpha = 0, fill = "white", color = "#171C54") +
-    scale_y_continuous(
-      breaks = seq(0, 60, 10),
-      limits = c(0, 60)
-    ) +
-    scale_x_discrete(labels = function(x) str_wrap(x, width = 40)) +
-    labs(
+    lolliplot(
+      data = ., 
+      x = fct_rev(response), 
+      y = perc, 
+      labels = lab_perc, 
+      y_max_limit = 60,
       title = paste0("Experience with Societal Engagement - ", i),
-      x = ""
-    ) +
-    coord_flip() +
-    theme_custom +
-    theme(plot.title = element_text(size = 18, hjust = .5))
-  
+      title_size = 18
+    )
+    
   # save to file
   ggsave(
     filename = paste0("figure_experience_societal_engagement_", i, ".png"),
@@ -222,7 +179,7 @@ for(i in levels(EUR_OS_societal_engagement$School)) {
     path = here("img", "societal_engagement", "experience"),
     scale = 3,
     width = 8,
-    height = 8,
+    height = 4,
     units = "cm",
     dpi = 600
   )
@@ -231,26 +188,28 @@ for(i in levels(EUR_OS_societal_engagement$School)) {
 
 # Question 3, lollipop graph ----------------------------------------------------------------
 
+question3 <- questions[2]
+
 # EUR
 lollipop_cluster5_question3 <-
-  EUR_OS_societal_engagement_Q3 %>%
-  ggplot(aes(x = reorder(response, perc), y = perc)) +
-  geom_point(size = 6, color = "#0C8066") +
-  geom_segment(aes(x = response, xend = response, y = 0, yend = perc), color = "#012328") +
-  geom_label_repel(aes(response, perc, label = lab_perc), size = 4, nudge_y = 4, segment.alpha = 0, fill = "white", color = "#171C54") +
-  scale_y_continuous(
-    breaks = seq(0, 40, 10),
-    limits = c(0, 40)
-  ) +
-  scale_x_discrete(labels = function(x) str_wrap(x, width = 40)) +
-  labs(
+  EUR_OS_societal_engagement %>% 
+  filter(question == question3) %>% 
+  mutate(response = fct_recode(response, !!!societal_engagement_Likert_concerns_convert)) %>% 
+  count(question, response) %>%
+  mutate(
+    perc = round(n / sum(n) * 100, 2),
+    lab_perc = paste(perc, "%", sep = "")
+  ) %>%  
+  lolliplot(
+    data = ., 
+    x = reorder(response, perc),
+    y = perc, 
+    labels = lab_perc, 
+    y_max_limit = 40,
     title = "Concerns around Societal Engagement - EUR",
-    x = ""
-  ) +
-  coord_flip() +
-  theme_custom +
-  theme(plot.title = element_text(size = 18, hjust = .5))
-
+    title_size = 22
+  )
+  
 lollipop_cluster5_question3
 
 # save to file
@@ -261,7 +220,7 @@ ggsave(
   path = here("img", "societal_engagement", "concerns"),
   scale = 3,
   width = 8,
-  height = 8,
+  height = 4,
   units = "cm",
   dpi = 600
 )
@@ -273,7 +232,7 @@ for(i in levels(EUR_OS_societal_engagement$School)) {
   temp_figure_school <- 
     EUR_OS_societal_engagement %>% 
     filter(
-      question == "The following are possible concerns that researchers could have about engaging with society. Which of these concerns would apply to you?" &
+      question == question3 &
         School == i
     ) %>% 
     mutate(response = fct_recode(response, !!!societal_engagement_Likert_concerns_convert)) %>% 
@@ -282,23 +241,16 @@ for(i in levels(EUR_OS_societal_engagement$School)) {
       perc = round(n / sum(n) * 100, 2),
       lab_perc = paste(perc, "%", sep = "")
     ) %>%  
-    ggplot(aes(x = reorder(response, perc), y = perc)) +
-    geom_point(size = 6, color = "#0C8066") +
-    geom_segment(aes(x = response, xend = response, y = 0, yend = perc), color = "#012328") +
-    geom_label_repel(aes(response, perc, label = lab_perc), size = 4, nudge_y = 4, segment.alpha = 0, fill = "white", color = "#171C54") +
-    scale_y_continuous(
-      breaks = seq(0, 60, 10),
-      limits = c(0, 60)
-    ) +
-    scale_x_discrete(labels = function(x) str_wrap(x, width = 40)) +
-    labs(
+    lolliplot(
+      data = ., 
+      x = reorder(response, perc), 
+      y = perc, 
+      labels = lab_perc, 
+      y_max_limit = 60,
       title = paste0("Concerns around Societal Engagement - ", i),
-      x = ""
-    ) +
-    coord_flip() +
-    theme_custom +
-    theme(plot.title = element_text(size = 18, hjust = .5))
-  
+      title_size = 20
+    )
+    
   # save to file
   ggsave(
     filename = paste0("figure_concerns_societal_engagement_", i, ".png"),
@@ -307,7 +259,7 @@ for(i in levels(EUR_OS_societal_engagement$School)) {
     path = here("img", "societal_engagement", "concerns"),
     scale = 3,
     width = 8,
-    height = 8,
+    height = 4,
     units = "cm",
     dpi = 600
   )
