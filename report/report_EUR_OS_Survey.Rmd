@@ -1140,7 +1140,7 @@ The question was:
 > *`r unique(EUR_OS_cluster4_Q1$question)`*
 
 ### EUR
-
+Regarding the importance of open education, almost 43% of researchers at EUR think open education is very important (combining extremely and very), while only a bit more than 11% think is not important at all. 
 
 ```{r figure-open-education-Q1-EUR}
 
@@ -1149,6 +1149,7 @@ knitr::include_graphics(here("img", "open_education", "importance", "figure_impo
 ```
 
 ### ISS
+Regarding the importance of open education, the majority (60%) of the researchers at ISS think open education is very important (combining extremely and very), while none of them think is not important at all. 
 
 ```{r figure-open-education-Q1-ISS}
 
@@ -1157,6 +1158,7 @@ knitr::include_graphics(here("img", "open_education", "importance", "figure_impo
 ```
 
 ### ESHPM
+Regarding the importance of open education, almost 32% of the researchers at ESHPM think open education is very important (combining extremely and very), while a bit more than 21% think that open education is not important at all. 
 
 ```{r figure-open-education-Q1-ESHPM}
 
@@ -1165,6 +1167,7 @@ knitr::include_graphics(here("img", "open_education", "importance", "figure_impo
 ```
 
 ### ESPhil
+Regarding the importance of open education, almost 45% of the researchers at ESPhil think open education is very important (combining extremely and very), while a bit more than 11% think that open education is not important at all.
 
 ```{r figure-open-education-Q1-ESPhil}
 
@@ -1173,6 +1176,7 @@ knitr::include_graphics(here("img", "open_education", "importance", "figure_impo
 ```
 
 ### ESL
+Regarding the importance of open education, a bit more than 41% of the researchers at ESL think open education is very important (combining extremely and very), while almost 12% of the respondents think that open education is not important at all.
 
 ```{r figure-open-education-Q1-ESL}
 
@@ -1181,6 +1185,7 @@ knitr::include_graphics(here("img", "open_education", "importance", "figure_impo
 ```
 
 ### ESSB
+Regarding the importance of open education, 38% of the researchers at ESSB think open education is very important (combining extremely and very), while a bit more than 14% think that open education is not important at all.
 
 ```{r figure-open-education-Q1-ESSB}
 
@@ -1189,6 +1194,7 @@ knitr::include_graphics(here("img", "open_education", "importance", "figure_impo
 ```
 
 ### ESHCC
+Regarding the importance of open education, the majority (a bit more than 57%) of the researchers at ESHCC think open education is very important (combining extremely and very), while none of them think that open education is not important at all.
 
 ```{r figure-open-education-Q1-ESHCC}
 
@@ -1213,6 +1219,7 @@ The question was:
 > *`r unique(EUR_OS_cluster4_Q2$question)`*
 
 ### EUR
+Regarding the use of openly available educational materials, almost 54% of the researchers at EUR either have never used or not regularly use them, while a bit more than 21% of the respondents regularly use educational resources developed by others. 
 
 ```{r figure-open-education-Q2-EUR}
 
@@ -1221,6 +1228,7 @@ knitr::include_graphics(here("img", "open_education", "experience_others", "figu
 ```
 
 ### ISS
+Regarding the use of openly available educational materials, 60% of the researchers at ISS either have never used or were not aware of them, while 20% of the respondents regularly use educational resources developed by others. 
 
 ```{r figure-open-education-Q2-ISS}
 
@@ -1229,6 +1237,7 @@ knitr::include_graphics(here("img", "open_education", "experience_others", "figu
 ```
 
 ### ESHPM
+Regarding the use of openly available educational materials, almost 60% of the researchers at ESHPM either have never used or not regularly use them, while a bit more than 17% of the respondents regularly use educational resources developed by others. 
 
 ```{r figure-open-education-Q2-ESHPM}
 
@@ -1237,6 +1246,7 @@ knitr::include_graphics(here("img", "open_education", "experience_others", "figu
 ```
 
 ### ESPhil
+Regarding the use of openly available educational materials, a bit more than 37% of the researchers at ESPhil regularly use educational resources developed by others, while 25% of the respondents have some experience but do not use educational materials developed by others regularly. 
 
 ```{r figure-open-education-Q2-ESPhil}
 
@@ -1245,6 +1255,7 @@ knitr::include_graphics(here("img", "open_education", "experience_others", "figu
 ```
 
 ### ESL
+Regarding the use of openly available educational materials, almost 67% of the researchers at ESHPM either have never, not regularly, or were unaware of open educational resources, while 20% of the respondents regularly use educational resources developed by others.
 
 ```{r figure-open-education-Q2-ESL}
 
@@ -1253,6 +1264,7 @@ knitr::include_graphics(here("img", "open_education", "experience_others", "figu
 ```
 
 ### ESSB
+Regarding the use of openly available educational materials, 50% of the researchers at ESSB either have never used or were unaware of them, while almost 19% of the respondents regularly use educational resources developed by others.
 
 ```{r figure-open-education-Q2-ESSB}
 
@@ -1261,6 +1273,7 @@ knitr::include_graphics(here("img", "open_education", "experience_others", "figu
 ```
 
 ### ESHCC
+Regarding the use of openly available educational materials, a bit more than 71% of the researchers at ESHCC either have never used or not regularly use them, while almost 29% of the respondents regularly use educational resources developed by others.
 
 ```{r figure-open-education-Q2-ESHCC}
 
