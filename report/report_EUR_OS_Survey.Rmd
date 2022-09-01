@@ -5,15 +5,15 @@ date: 2022-07-01
 output:
   bookdown::html_document2:
     # # appearance
+    # # table of content
+    # # code
+    # # figures
     theme: flatly
     highlight: tango
-    # # table of content
     toc: true
     toc_float: true  
     number_sections: false
-    # # code
     # code_folding: true
-    # # figures
     fig_width: 8
     fig_height: 8
     fig_caption: true
@@ -80,28 +80,25 @@ EUR_OS_cluster8 <- readRDS(here("data", "preprocessed", "rds", "cluster_8.rds"))
 
 # Introduction
 
-<!-- The Erasmus Research Institute of Management (ERIM) is committed to making Open Science practices the norm among its researchers. -->
+Open Science aims to make knowledge openly available, accessible, and reusable for everyone, to increase collaborations and for the benefit of society. 
+It also aims to open the processes of knowledge creation, evaluation, and communication to societal actors beyond the traditional scientific community. 
 
-<!-- Open Science increases transparency throughout the research cycle -- from hypothesis, methodology, observation, data collection, to analysis and publication --, resulting in increased research efficiency and enhanced research quality, visibility, and engagement. Open Science also enables the creation of new research questions and promotes collaborations and community building. -->
+It comprises all disciplines and aspects of scholarly practices, including basic and applied sciences, natural and social sciences, and the humanities.
 
-<!-- For these reasons, ERIM wanted to have a baseline on what and how much open science practices its researchers are already engaging with and which ones they want to learn more about. These questions created the need to conduct a survey. -->
+At the Erasmus University Rotterdam we wanted to know the importance and experience of these practices, therefore this survey. 
+The Open Science Survey was conducted during the months of January until March 2022. Questions were adapted from the [Swinburne Open Science Survey](https://osf.io/vpwf7/).
 
-<!-- The ESE and RSM Open Science Spring Survey was open to all researchers from the 6th of April to the 6th of May 2021. Questions were adapted from the [Swinburne Open Science Survey](https://osf.io/vpwf7/). -->
+The survey explored how researchers perceive and use open science practices. Six main topics were covered: 
+1. Open access
+2. Open data, materials, and code
+3. Preregistration
+4. Open educational resources
+5. Open engagement of societal actors
+6. Support at EUR
+7. Recognition and Rewards
 
-<!-- The survey explored how researchers perceive and use open science practices. Eight main topics were covered: -->
+This is a living document that will be updated with new information and insights. For any comments or questions, please contact [Dr. Lizette Guzman-Ramirez](mailto:guzmanramirez@rsm.nl) (ERIM Research Data Steward) or [Dr. Antonio Schettino](mailto:schettino@eur.nl) (ERS Open Science Coordinator).
 
-<!-- 1. Preregistration -->
-<!-- 2. Open materials/code -->
-<!-- 3. Open data -->
-<!-- 4. Pre-publication archiving -->
-<!-- 5. Open access -->
-<!-- 6. General experience with open science practices -->
-<!-- 7. Awareness of available tools -->
-<!-- 8. Role of ERIM -->
-
-<!-- This report displays the combined results (ESE and RSM) as well as separately for each school[^1]. -->
-
-<!-- This is a living document that will be updated with new information and insights. For any comments or questions, please contact [Dr. Lizette Guzman-Ramirez](mailto:guzmanramirez@rsm.nl) (ERIM Research Data Steward) or [Dr. Antonio Schettino](mailto:schettino@eur.nl) (ERS Open Science Coordinator). -->
 
 # Respondents
 
@@ -121,7 +118,7 @@ EUR_OS_incomplete <-
 ```
 
 A total of `r sum(EUR_OS_incomplete$n)` respondents started the survey, and `r pull(filter(EUR_OS_incomplete, survey == "complete"), n)` completed it (`r pull(filter(EUR_OS_incomplete, survey == "complete"), lab_perc)`).
-
+ 
 Considering only the completed surveys, Figure \@ref(fig:figure-school-position) shows the percentage of respondents separately for each school and position. Table \@ref(tab:table-school-position-response-rate) shows the percentage of respondents relative to the total number of employees.
 
 (ref:figure-school-position-caption) Response rate per school and position.
@@ -185,7 +182,9 @@ The question was:
 
 > *`r unique(EUR_OS_cluster1_Q1$question)`*
 
-### EUR
+
+In general researchers at EUR consider Open Access relevant, more than 60% of the respondents agree that Open Access is very important (combining extremely and very important), and only a bit more than 8% think is not at all important. 
+When looking at the responses from the schools, ESSB and ESHCC are the ones were the majority of the respondents think Open Access is very important (80% and 75% respectively).
 
 ```{r figure-open-access-Q1-EUR}
 
@@ -194,6 +193,8 @@ knitr::include_graphics(here("img", "open_access", "importance", "figure_importa
 ```
 
 ### ISS
+Researchers at ISS consider Open Access relevant, more than 66% of the respondents agree that Open Access is very important (combining extremely and very important), and none of them think is not at all important. 
+
 
 ```{r figure-open-access-Q1-ISS}
 
@@ -203,6 +204,8 @@ knitr::include_graphics(here("img", "open_access", "importance", "figure_importa
 
 ### ESHPM
 
+Researchers at ESHPM consider Open Access relevant, more than half of the respondents agree that Open Access is very important (combining extremely and very important), but a large percentage of respondents (more than 17%) think is not at all important. 
+
 ```{r figure-open-access-Q1-ESHPM}
 
 knitr::include_graphics(here("img", "open_access", "importance", "figure_importance_open_access_ESHPM.png"))
@@ -210,6 +213,8 @@ knitr::include_graphics(here("img", "open_access", "importance", "figure_importa
 ```
 
 ### ESPhil
+
+Researchers at ESPhil consider Open Access somewhat less relevant, only a bit more than 37% of the respondents agree that Open Access is very important (combining extremely and very important), while 12.5% think is not at all important. 
 
 ```{r figure-open-access-Q1-ESPhil}
 
@@ -219,6 +224,8 @@ knitr::include_graphics(here("img", "open_access", "importance", "figure_importa
 
 ### ESL
 
+Researchers at ESL consider Open Access relevant, a little less than 60% of the respondents agree that Open Access is very important (combining extremely and very important), and only a bit more than 14% of respondents think is not at all important. 
+
 ```{r figure-open-access-Q1-ESL}
 
 knitr::include_graphics(here("img", "open_access", "importance", "figure_importance_open_access_ESL.png"))
@@ -227,6 +234,8 @@ knitr::include_graphics(here("img", "open_access", "importance", "figure_importa
 
 ### ESSB
 
+Researchers at ESSB consider Open Access very relevant, 80% of the respondents agree that Open Access is very important (combining extremely and very important), and none of them think is not at all important. 
+
 ```{r figure-open-access-Q1-ESSB}
 
 knitr::include_graphics(here("img", "open_access", "importance", "figure_importance_open_access_ESSB.png"))
@@ -234,6 +243,8 @@ knitr::include_graphics(here("img", "open_access", "importance", "figure_importa
 ```
 
 ### ESHCC
+
+Researchers at ESHCC consider Open Access very relevant, 75% of the respondents agree that Open Access is very important (combining extremely and very important), and none of them think is not at all important.
 
 ```{r figure-open-access-Q1-ESHCC}
 
@@ -259,6 +270,10 @@ The question was:
 
 ### EUR
 
+Regarding the experience of all researchers from EUR making their publications Open Access almost 70% of the respondents have either extensive or some experience. However, almost 30% of the respondents have never publish Open Access or were unaware of Open Access (caveat, some of the respondents were PhD candidates that are yet to publish their article). 
+When looking at the responses from the schools, ESHCC is the one that stands out, with more than 83% of respondents have extensive or some experience, while only a bit more than 16% have not published Open Access. 
+
+
 ```{r figure-open-access-Q2-EUR}
 
 knitr::include_graphics(here("img", "open_access", "experience", "figure_experience_open_access_EUR.png"))
@@ -266,6 +281,8 @@ knitr::include_graphics(here("img", "open_access", "experience", "figure_experie
 ```
 
 ### ISS
+
+Regarding the experience of researchers at ISS making their publications Open Access, 75% of the respondents have either extensive or some experience. While 25% of the respondents have never publish Open Access or preferred not to answer (caveat, some of the respondents were PhD candidates that are yet to publish their article). 
 
 ```{r figure-open-access-Q2-ISS}
 
@@ -275,6 +292,8 @@ knitr::include_graphics(here("img", "open_access", "experience", "figure_experie
 
 ### ESHPM
 
+Regarding the experience of researchers at ESHPM making their publications Open Access, 75% of the respondents have either extensive or some experience. While 25% of the respondents have never publish Open Access or were unaware of Open Access (caveat, some of the respondents were PhD candidates that are yet to publish their article). 
+
 ```{r figure-open-access-Q2-ESHPM}
 
 knitr::include_graphics(here("img", "open_access", "experience", "figure_experience_open_access_ESHPM.png"))
@@ -282,6 +301,8 @@ knitr::include_graphics(here("img", "open_access", "experience", "figure_experie
 ```
 
 ### ESPhil
+
+Regarding the experience of researchers at ESPhil making their publications Open Access, slightly more than 57% of the respondents have either extensive or some experience. While almost 43% of the respondents have never publish Open Access or were unaware of Open Access (caveat, some of the respondents were PhD candidates that are yet to publish their article). 
 
 ```{r figure-open-access-Q2-ESPhil}
 
@@ -291,6 +312,8 @@ knitr::include_graphics(here("img", "open_access", "experience", "figure_experie
 
 ### ESL
 
+Regarding the experience of researchers at ESHPM making their publications Open Access, 60% of the respondents have either extensive or some experience. While 40% of the respondents have never publish Open Access or were unaware of Open Access (caveat, some of the respondents were PhD candidates that are yet to publish their article). 
+
 ```{r figure-open-access-Q2-ESL}
 
 knitr::include_graphics(here("img", "open_access", "experience", "figure_experience_open_access_ESL.png"))
@@ -299,6 +322,8 @@ knitr::include_graphics(here("img", "open_access", "experience", "figure_experie
 
 ### ESSB
 
+Regarding the experience of researchers at ESSB making their publications Open Access, a bit more than 73% of the respondents have either extensive or some experience. While almost 27% of the respondents have never publish Open Access or were unaware of Open Access (caveat, some of the respondents were PhD candidates that are yet to publish their article). 
+
 ```{r figure-open-access-Q2-ESSB}
 
 knitr::include_graphics(here("img", "open_access", "experience", "figure_experience_open_access_ESSB.png"))
@@ -306,6 +331,8 @@ knitr::include_graphics(here("img", "open_access", "experience", "figure_experie
 ```
 
 ### ESHCC
+
+Regarding the experience of researchers at ESHCC making their publications Open Access, more than 83% of the respondents have either extensive or some experience. While only a bit more than 16% of the respondents have never publish Open Access (caveat, some of the respondents were PhD candidates that are yet to publish their article). 
 
 ```{r figure-open-access-Q2-ESHCC}
 
