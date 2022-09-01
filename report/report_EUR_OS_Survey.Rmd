@@ -80,6 +80,7 @@ EUR_OS_cluster8 <- readRDS(here("data", "preprocessed", "rds", "cluster_8.rds"))
 
 # Introduction
 
+<<<<<<< HEAD
 Open Science aims to make knowledge openly available, accessible, and reusable for everyone, to increase collaborations and for the benefit of society. 
 It also aims to open the processes of knowledge creation, evaluation, and communication to societal actors beyond the traditional scientific community. 
 
@@ -99,6 +100,29 @@ The survey explored how researchers perceive and use open science practices. Six
 
 This is a living document that will be updated with new information and insights. For any comments or questions, please contact [Dr. Lizette Guzman-Ramirez](mailto:guzmanramirez@rsm.nl) (ERIM Research Data Steward) or [Dr. Antonio Schettino](mailto:schettino@eur.nl) (ERS Open Science Coordinator).
 
+=======
+Open Science increases transparency throughout the research cycle -- hypothesis, methodology, observation, data collection, analysis, and publication --, resulting in increased research efficiency and enhanced research quality, visibility, and engagement. Open Science also enables the creation of new research questions and promotes collaboration and community building.
+
+Erasmus University Rotterdam (EUR) is committed to making Open Science practices the norm among its researchers.
+
+In order to have a baseline assessment on current awareness and practices, the [Open and Responsible Science program](https://my.eur.nl/en/eur-employee/research/research-services/open-responsible-science?check_logged_in=1) conducted a survey and advertised it to all researchers at EUR and Erasmus MC.
+
+The EUR Open Science Survey (adapted from the [Swinburne Open Science Survey](https://osf.io/vpwf7/) and the [2021 ERIM Open Science Spring Survey](https://eur-nl.github.io/2021_ERIM_OS_Survey/)) was available online from **XX/XX/XXXX** to **XX/XX/XXXX**.
+
+The survey explored how researchers consider open science practices in the context of their discipline, their direct experience, as well as their concerns. Seven topics were covered:
+
+1. Open Access
+2. Open Data, Materials, and/or Code
+3. Preregistration
+4. Open Education
+5. Societal Engagement
+6. Support at EUR
+7. Recognition and Rewards
+
+The current report shows the combined results as well as separately for each school.
+
+This is a living document that may be updated with new information and insights. For any comments or questions, please contact [Dr. Lizette Guzman-Ramirez](mailto:guzmanramirez@rsm.nl) (Research Data Steward at ERIM) or [Dr. Antonio Schettino](mailto:schettino@eur.nl) (Senior Advisor Open Science at ERS).
+>>>>>>> 1b29fec207a0b9532eb5f86bcbca33e4569f912c
 
 # Respondents
 
