@@ -1298,6 +1298,10 @@ The question was:
 > *`r unique(EUR_OS_cluster4_Q3$question)`*
 
 ### EUR
+When it comes to sharing their own educational resources, researchers at EUR mostly do not share them regularly, not at all, or they were not aware of open educational materials at all (70%), however, 16% of the respondents do regularly share their own educational resources. 
+
+
+
 
 ```{r figure-open-education-Q3-EUR}
 
@@ -1306,6 +1310,7 @@ knitr::include_graphics(here("img", "open_education", "experience_own", "figure_
 ```
 
 ### ISS
+A bit more than 33% of researchers at ISS have some experience with open educational resources but do not share their own regularly. Almost 42% of the respondents do not share their own or hadn't heard of educational resources before the survey. However a bit more than 16% of the respondents do regularly share their own educational resources. 
 
 ```{r figure-open-education-Q3-ISS}
 
@@ -1314,6 +1319,7 @@ knitr::include_graphics(here("img", "open_education", "experience_own", "figure_
 ```
 
 ### ESHPM
+Most of the of researchers at ESHPM (almost 92%) do not share their own educational resources regularly, never, or hadn't heard of educational resources before the survey. 
 
 ```{r figure-open-education-Q3-ESHPM}
 
@@ -1322,6 +1328,7 @@ knitr::include_graphics(here("img", "open_education", "experience_own", "figure_
 ```
 
 ### ESPhil
+Researchers at ESPhil are spitted equally (37.5%) between researchers that regularly share their open educational materials, and the ones that do not. 
 
 ```{r figure-open-education-Q3-ESPhil}
 
@@ -1330,6 +1337,7 @@ knitr::include_graphics(here("img", "open_education", "experience_own", "figure_
 ```
 
 ### ESL
+Most of the of researchers at ESL (almost 67%) do not share their own educational resources regularly, never, or hadn't heard of educational resources before the survey. However, 20% of the respondents do regularly share their own  educational resources. 
 
 ```{r figure-open-education-Q3-ESL}
 
@@ -1338,6 +1346,7 @@ knitr::include_graphics(here("img", "open_education", "experience_own", "figure_
 ```
 
 ### ESSB
+Most of the of researchers at ESSB (almost 71%) do not share their own educational resources regularly, never, or hadn't heard of educational resources before the survey. However, almost 12% of the respondents do regularly share their own  educational resources. 
 
 ```{r figure-open-education-Q3-ESSB}
 
@@ -1346,6 +1355,7 @@ knitr::include_graphics(here("img", "open_education", "experience_own", "figure_
 ```
 
 ### ESHCC
+Most of the of researchers at ESHCC (a bit more than 71%) do not share their own educational resources regularly, never, or hadn't heard of educational resources before the survey. However, a bit more than 14% of the respondents do regularly share their own  educational resources.
 
 ```{r figure-open-education-Q3-ESHCC}
 
