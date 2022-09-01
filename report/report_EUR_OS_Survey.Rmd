@@ -915,6 +915,7 @@ knitr::include_graphics(here("img", "preregistration", "importance", "figure_imp
 ```
 
 ### ESHPM
+Researchers at ESHPM are equally split (almost 32%) between the respondents that preregistration is moderately important, and the same percentage of respondents that think that preregistration is not important at all. 
 
 ```{r figure-preregistration-Q1-ESHPM}
 
@@ -923,6 +924,8 @@ knitr::include_graphics(here("img", "preregistration", "importance", "figure_imp
 ```
 
 ### ESPhil
+Researchers at ESPhil most researchers, 50% of them, think that preregistration is not important at all, however there is a small percentage of respondents (almost 17%) that think preregistration is extremely important. 
+
 
 ```{r figure-preregistration-Q1-ESPhil}
 
@@ -931,6 +934,7 @@ knitr::include_graphics(here("img", "preregistration", "importance", "figure_imp
 ```
 
 ### ESL
+Most researchers at ESL (40%) think preregistration is somewhat important (combining moderately and slightly) while almost 27% of the respondents think that preregistration is not important at all. 
 
 ```{r figure-preregistration-Q1-ESL}
 
@@ -939,6 +943,7 @@ knitr::include_graphics(here("img", "preregistration", "importance", "figure_imp
 ```
 
 ### ESSB
+Most researchers at ESSB (almost 43%) think that preregistration is very important (by combining extremely and very), while a bit more than 14% of the respondents that think that preregistration is not important at all. 
 
 ```{r figure-preregistration-Q1-ESSB}
 
@@ -947,6 +952,7 @@ knitr::include_graphics(here("img", "preregistration", "importance", "figure_imp
 ```
 
 ### ESHCC
+Most researchers at ESHCC (almost 38%) think preregistration is not important at all, while 25% of the respondent think preregistration is somewhat important (combining moderately and slightly).
 
 ```{r figure-preregistration-Q1-ESHCC}
 
@@ -971,6 +977,7 @@ The question was:
 > *`r unique(EUR_OS_cluster3_Q2$question)`*
 
 ### EUR
+Regarding experience of the researchers at EUR with preregistration, most researchers (almost 62%) have not use it or were unaware of preregistration before the survey, while almost 22% of the respondents have some experience but do not use it regularly. 
 
 ```{r figure-preregistration-Q2-EUR}
 
@@ -979,6 +986,7 @@ knitr::include_graphics(here("img", "preregistration", "experience", "figure_exp
 ```
 
 ### ISS
+Researchers at ISS are mostly aware of preregistration but have not used it (a bit more than 45%), while a bit more than 36% of the respondents, were unaware of preregistration before the survey. 
 
 ```{r figure-preregistration-Q2-ISS}
 
@@ -987,6 +995,7 @@ knitr::include_graphics(here("img", "preregistration", "experience", "figure_exp
 ```
 
 ### ESHPM
+Researchers at ESHPM are mostly aware of preregistration but have not used it (a bit more than 38%), while a bit more than 30% of the respondents, have some experience with preregistration, but do not use it regularly. 
 
 ```{r figure-preregistration-Q2-ESHPM}
 
@@ -995,6 +1004,8 @@ knitr::include_graphics(here("img", "preregistration", "experience", "figure_exp
 ```
 
 ### ESPhil
+Researchers at ESPhil were mostly unaware of preregistration before the survey (almost 43%), while almost 29% of the respondents are aware of preregistration but have not used it.
+
 
 ```{r figure-preregistration-Q2-ESPhil}
 
@@ -1003,6 +1014,7 @@ knitr::include_graphics(here("img", "preregistration", "experience", "figure_exp
 ```
 
 ### ESL
+Most researchers at ESL are aware of preregistration but have not used it or were unaware of preregistration before the survey (almost 55%), while a bit more than 18% of the respondents have some experience with preregistration, but do not use it regularly. 
 
 ```{r figure-preregistration-Q2-ESL}
 
@@ -1011,6 +1023,7 @@ knitr::include_graphics(here("img", "preregistration", "experience", "figure_exp
 ```
 
 ### ESSB
+More than half (almost 53%) of the researchers at ESSB either have some experience or regularly preregister their studies, while on the other side a bit more than 42% of the respondents have not used it or were unaware of preregistration before the survey. 
 
 ```{r figure-preregistration-Q2-ESSB}
 
@@ -1019,6 +1032,7 @@ knitr::include_graphics(here("img", "preregistration", "experience", "figure_exp
 ```
 
 ### ESHCC
+Researchers at ESHCC were mostly unaware of preregistration before the survey (50%), while 25% of the respondents are aware of preregistration but have not used it. 
 
 ```{r figure-preregistration-Q2-ESHCC}
 
@@ -1126,6 +1140,7 @@ The question was:
 > *`r unique(EUR_OS_cluster4_Q1$question)`*
 
 ### EUR
+
 
 ```{r figure-open-education-Q1-EUR}
 
