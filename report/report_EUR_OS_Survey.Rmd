@@ -1469,6 +1469,8 @@ The question was:
 
 ### EUR
 
+###HERE#######
+
 ```{r figure-societal-engagement-Q1-EUR}
 
 knitr::include_graphics(here("img", "societal_engagement", "importance", "figure_importance_societal_engagement_EUR.png"))
@@ -1841,6 +1843,9 @@ The question was:
 > *`r unique(EUR_OS_cluster6_Q3$question)`*
 
 ### EUR
+
+**This question should be below FAIR (in the data section) and we should clarify that only respondents that said they are aware of them got that question, since most researchers didn't. Also I'm not sure if it is super valuable to have this figure, so maybe remove? (the numbers here are so little not sure they really mean much)..maybe worth checking.**
+
 
 ```{r figure-EUR-support-Q3-EUR}
 
