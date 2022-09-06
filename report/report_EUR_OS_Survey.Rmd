@@ -79,7 +79,7 @@ EUR_OS_cluster8 <- readRDS(here("data", "preprocessed", "rds", "cluster_8.rds"))
 ```
 
 # Introduction
-=======
+
 Open Science increases transparency throughout the research cycle -- hypothesis, methodology, observation, data collection, analysis, and publication --, resulting in increased research efficiency and enhanced research quality, visibility, and engagement. Open Science also enables the creation of new research questions and promotes collaboration and community building.
 
 Erasmus University Rotterdam (EUR) is committed to making Open Science practices the norm among its researchers.
@@ -1469,7 +1469,7 @@ The question was:
 
 ### EUR
 
-###HERE#######
+When it comes to engaging with society, a bit more than half of the researchers at EUR think is very important (by combining extremely and very), and only a bit more than 8% think it is not important at all. ISS is the school with the highest percentage (63%) of respondents that think that societal engage is very important, while ESPhil is the school with the highest (30%) respondens that think that it is not important at all. 
 
 ```{r figure-societal-engagement-Q1-EUR}
 
@@ -1479,6 +1479,8 @@ knitr::include_graphics(here("img", "societal_engagement", "importance", "figure
 
 ### ISS
 
+More than 63% of the researchers at ISS think societal engagement is very important (by combining extremely and very), and not one of them think it is not important at all.
+
 ```{r figure-societal-engagement-Q1-ISS}
 
 knitr::include_graphics(here("img", "societal_engagement", "importance", "figure_importance_societal_engagement_ISS.png"))
@@ -1486,6 +1488,8 @@ knitr::include_graphics(here("img", "societal_engagement", "importance", "figure
 ```
 
 ### ESHPM
+
+A bit more than half of the researchers at ESHPM think societal engagement is very important (by combining extremely and very), however, a considered amount of almost 18% of the respondents think it is not important at all.
 
 ```{r figure-societal-engagement-Q1-ESHPM}
 
@@ -1495,6 +1499,8 @@ knitr::include_graphics(here("img", "societal_engagement", "importance", "figure
 
 ### ESPhil
 
+Almost 43% of the researchers at ESPhil think societal engagement is very important (by combining extremely and very), while a considered amount of almost 30% of the respondents think it is not important at all.
+
 ```{r figure-societal-engagement-Q1-ESPhil}
 
 knitr::include_graphics(here("img", "societal_engagement", "importance", "figure_importance_societal_engagement_ESPhil.png"))
@@ -1502,6 +1508,8 @@ knitr::include_graphics(here("img", "societal_engagement", "importance", "figure
 ```
 
 ### ESL
+
+More than 45% of the researchers at ESL think societal engagement is very important (by combining extremely and very), and not one of them think it is not important at all.
 
 ```{r figure-societal-engagement-Q1-ESL}
 
@@ -1511,6 +1519,8 @@ knitr::include_graphics(here("img", "societal_engagement", "importance", "figure
 
 ### ESSB
 
+Exactly half of the researchers at ESSB think societal engagement is very important (by combining extremely and very), while only a small percentage (less than 5%) think it is not important at all.
+
 ```{r figure-societal-engagement-Q1-ESSB}
 
 knitr::include_graphics(here("img", "societal_engagement", "importance", "figure_importance_societal_engagement_ESSB.png"))
@@ -1518,6 +1528,8 @@ knitr::include_graphics(here("img", "societal_engagement", "importance", "figure
 ```
 
 ### ESHCC
+
+More than 57% of the researchers at ESHCC think societal engagement is very important (by combining extremely and very), while a bit more than 14% of the respondents think it is not important at all.
 
 ```{r figure-societal-engagement-Q1-ESHCC}
 
@@ -1543,6 +1555,8 @@ The question was:
 
 ### EUR
 
+Regarding the experience of EUR researchers with societal engagement, the responses are roughly divided into a third that regularly engages with society, a third that done it, but not regularly, and a third (combining have not done it and unaware of it) that has not done it yet. 
+
 ```{r figure-societal-engagement-Q2-EUR}
 
 knitr::include_graphics(here("img", "societal_engagement", "experience", "figure_experience_societal_engagement_EUR.png"))
@@ -1550,6 +1564,9 @@ knitr::include_graphics(here("img", "societal_engagement", "experience", "figure
 ```
 
 ### ISS
+
+Researchers at ISS are mostly all engaging with society, 40% of them does it regularly, and the other 40% has done it, but not very regularly. 
+There is a small 10% of the respondents that were unaware of open engagement with societal actors. 
 
 ```{r figure-societal-engagement-Q2-ISS}
 
@@ -1559,6 +1576,8 @@ knitr::include_graphics(here("img", "societal_engagement", "experience", "figure
 
 ### ESHPM
 
+A bit more than half of the researchers at ESHPM are engaging with society, almost 30% of them does it regularly, and almost 24% has done it, but not very regularly. However, there is also an almost 24% of the respondents that were unaware of open engagement with societal actors. 
+
 ```{r figure-societal-engagement-Q2-ESHPM}
 
 knitr::include_graphics(here("img", "societal_engagement", "experience", "figure_experience_societal_engagement_ESHPM.png"))
@@ -1566,6 +1585,9 @@ knitr::include_graphics(here("img", "societal_engagement", "experience", "figure
 ```
 
 ### ESPhil
+
+Researchers at ESPhil are mostly all engaging with society, 50% of them does it regularly, and the other 33% has done it, but not very regularly. 
+There is, however, an almost 17% of the respondents that were unaware of open engagement with societal actors. 
 
 ```{r figure-societal-engagement-Q2-ESPhil}
 
@@ -1575,6 +1597,9 @@ knitr::include_graphics(here("img", "societal_engagement", "experience", "figure
 
 ### ESL
 
+Almost 60% of the researchers at ESL are engaging with society, 25% of them does it regularly, and the other 33% has done it, but not very regularly. 
+There is, however, a 25% of the respondents that has not done it yet.
+
 ```{r figure-societal-engagement-Q2-ESL}
 
 knitr::include_graphics(here("img", "societal_engagement", "experience", "figure_experience_societal_engagement_ESL.png"))
@@ -1583,6 +1608,9 @@ knitr::include_graphics(here("img", "societal_engagement", "experience", "figure
 
 ### ESSB
 
+A bit more than half of the researchers at ESSB are engaging with society, 30% of them does it regularly, and the other 25% has done it, but not very regularly. 
+There is, a 15% of the respondents that were unaware of open engagement with societal actors. 
+
 ```{r figure-societal-engagement-Q2-ESSB}
 
 knitr::include_graphics(here("img", "societal_engagement", "experience", "figure_experience_societal_engagement_ESSB.png"))
@@ -1590,6 +1618,9 @@ knitr::include_graphics(here("img", "societal_engagement", "experience", "figure
 ```
 
 ### ESHCC
+
+More than 60% of the researchers at ESHCC are mostly all engaging with society, 25% of them does it regularly, and almost 38% has done it, but not very regularly. 
+However, 12.5% of the respondents were unaware of open engagement with societal actors. 
 
 ```{r figure-societal-engagement-Q2-ESHCC}
 
@@ -1700,6 +1731,8 @@ The question was:
 
 ### EUR
 
+Almost 60% of the researchers at EUR answered that they do expect support form EUR when it comes to learning open science practices, while a bit more than 27% of the respondents do not expect support form EUR. 
+
 ```{r figure-EUR-support-Q1-EUR}
 
 knitr::include_graphics(here("img", "support", "EUR", "figure_EUR_support_EUR.png"))
@@ -1707,6 +1740,7 @@ knitr::include_graphics(here("img", "support", "EUR", "figure_EUR_support_EUR.pn
 ```
 
 ### ISS
+Almost 63% of the researchers at ISS answered that they do expect support form EUR when it comes to learning open science practices, while 25% of the respondents do not expect support form EUR.
 
 ```{r figure-EUR-support-Q1-ISS}
 
@@ -1715,6 +1749,7 @@ knitr::include_graphics(here("img", "support", "EUR", "figure_EUR_support_ISS.pn
 ```
 
 ### ESHPM
+A bit more than 45% of the researchers at EUR answered that they do expect support form EUR when it comes to learning open science practices, while a bit more than 36% of the respondents do not expect support form EUR.
 
 ```{r figure-EUR-support-Q1-ESHPM}
 
@@ -1724,6 +1759,8 @@ knitr::include_graphics(here("img", "support", "EUR", "figure_EUR_support_ESHPM.
 
 ### ESPhil
 
+60% of the researchers at ESPhil answered that they do expect support form EUR when it comes to learning open science practices, while the rest (40%) of the respondents do not expect support form EUR.
+
 ```{r figure-EUR-support-Q1-ESPhil}
 
 knitr::include_graphics(here("img", "support", "EUR", "figure_EUR_support_ESPhil.png"))
@@ -1731,6 +1768,8 @@ knitr::include_graphics(here("img", "support", "EUR", "figure_EUR_support_ESPhil
 ```
 
 ### ESL
+
+Half of the researchers at ESL answered that they do expect support form EUR when it comes to learning open science practices, while 25% of the respondents do not expect support form EUR.
 
 ```{r figure-EUR-support-Q1-ESL}
 
@@ -1740,6 +1779,8 @@ knitr::include_graphics(here("img", "support", "EUR", "figure_EUR_support_ESL.pn
 
 ### ESSB
 
+Almost 55% of the researchers at ESSB answered that they do expect support form EUR when it comes to learning open science practices, while a bit more than 27% of the respondents do not expect support form EUR.
+
 ```{r figure-EUR-support-Q1-ESSB}
 
 knitr::include_graphics(here("img", "support", "EUR", "figure_EUR_support_ESSB.png"))
@@ -1747,6 +1788,8 @@ knitr::include_graphics(here("img", "support", "EUR", "figure_EUR_support_ESSB.p
 ```
 
 ### ESHCC
+
+80% of the researchers at ESHCC answered that they do expect support form EUR when it comes to learning open science practices, while the rest (20%) of the respondents do not expect support form EUR.
 
 ```{r figure-EUR-support-Q1-ESHCC}
 
@@ -1772,6 +1815,9 @@ The question was:
 
 ### EUR
 
+Researchers at EUR that expect support form EUR regarding open science practices (they answered "yes" in the previous question), responded that the top three open science practices they want support with are:
+*Pull the top 3 pracices (maybe remove the "I don't know answer)*
+
 ```{r figure-EUR-support-Q2-EUR}
 
 knitr::include_graphics(here("img", "support", "desired", "figure_desired_support_EUR.png"))
@@ -1779,6 +1825,9 @@ knitr::include_graphics(here("img", "support", "desired", "figure_desired_suppor
 ```
 
 ### ISS
+
+Researchers at ISS that expect support form EUR regarding open science practices (they answered "yes" in the previous question), responded that the top three open science practices they want support with are:
+*Pull the top 3 pracices (maybe remove the "I don't know answer)*
 
 ```{r figure-EUR-support-Q2-ISS}
 
@@ -1788,6 +1837,9 @@ knitr::include_graphics(here("img", "support", "desired", "figure_desired_suppor
 
 ### ESHPM
 
+Researchers at ESHPM that expect support form EUR regarding open science practices (they answered "yes" in the previous question), responded that the top three open science practices they want support with are:
+*Pull the top 3 practices (maybe remove the "I don't know answer)*
+
 ```{r figure-EUR-support-Q2-ESHPM}
 
 knitr::include_graphics(here("img", "support", "desired", "figure_desired_support_ESHPM.png"))
@@ -1795,6 +1847,9 @@ knitr::include_graphics(here("img", "support", "desired", "figure_desired_suppor
 ```
 
 ### ESPhil
+
+Researchers at ESPhil that expect support form EUR regarding open science practices (they answered "yes" in the previous question), responded that the only open science practices they want support with is open access publishing. 
+
 
 ```{r figure-EUR-support-Q2-ESPhil}
 
@@ -1804,6 +1859,8 @@ knitr::include_graphics(here("img", "support", "desired", "figure_desired_suppor
 
 ### ESL
 
+Researchers at ESL that expect support form EUR regarding open science practices (they answered "yes" in the previous question), responded that the only open science practices they want support with is open access publishing.
+
 ```{r figure-EUR-support-Q2-ESL}
 
 knitr::include_graphics(here("img", "support", "desired", "figure_desired_support_ESL.png"))
@@ -1812,6 +1869,9 @@ knitr::include_graphics(here("img", "support", "desired", "figure_desired_suppor
 
 ### ESSB
 
+Researchers at ESSB that expect support form EUR regarding open science practices (they answered "yes" in the previous question), responded that the top three open science practices they want support with are:
+*Pull the top 3 practices (maybe remove the "I don't know answer)*
+
 ```{r figure-EUR-support-Q2-ESSB}
 
 knitr::include_graphics(here("img", "support", "desired", "figure_desired_support_ESSB.png"))
@@ -1819,6 +1879,9 @@ knitr::include_graphics(here("img", "support", "desired", "figure_desired_suppor
 ```
 
 ### ESHCC
+
+Researchers at ESHCC that expect support form EUR regarding open science practices (they answered "yes" in the previous question), responded that the top three open science practices they want support with are:
+*Pull the top 3 practices (maybe remove the "I don't know answer)*
 
 ```{r figure-EUR-support-Q2-ESHCC}
 
@@ -1904,6 +1967,8 @@ knitr::include_graphics(here("img", "support", "FAIR", "figure_FAIR_support_ESHC
 ## {-}
 
 # Recognition & Rewards
+
+#####HERE######
 
 ## Feeling recognized for Open Science {.tabset .tabset-pills}
 
