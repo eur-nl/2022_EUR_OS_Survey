@@ -41,6 +41,8 @@ library(kableExtra)
 library(here)
 library(tidyverse)
 
+source(here("code", "functions", "recoding.R")) # recoding scheme
+
 # RMarkdown
 options(digits = 2) # number of decimal digits
 opts_chunk$set(
@@ -350,6 +352,77 @@ EUR_OS_cluster1_Q3 <-
   EUR_OS_cluster1 %>% 
   filter(question == "The following are possible concerns that researchers could have about Open Access publishing. Which of these concerns would you agree with?")
 
+### extract top 3 concerns
+
+# EUR
+EUR_OS_cluster1_Q3_concerns <- 
+  EUR_OS_cluster1_Q3 %>% 
+  count(question, response) %>%
+  mutate(response = fct_recode(response, !!!open_access_Likert_concerns_convert)) %>% 
+  filter(!(response %in% c("I do not share any of these concerns", "I don’t know/prefer not to answer", "Other"))) %>% 
+  arrange(desc(n)) %>%
+  pull(response)
+
+# ISS
+EUR_OS_cluster1_Q3_concerns_ISS <- 
+  EUR_OS_cluster1_Q3 %>% 
+  filter(School == "ISS") %>% 
+  count(question, response) %>%
+  mutate(response = fct_recode(response, !!!open_access_Likert_concerns_convert)) %>% 
+  filter(!(response %in% c("I do not share any of these concerns", "I don’t know/prefer not to answer", "Other"))) %>% 
+  arrange(desc(n)) %>%
+  pull(response)
+
+# ESHPM
+EUR_OS_cluster1_Q3_concerns_ESHPM <- 
+  EUR_OS_cluster1_Q3 %>% 
+  filter(School == "ESHPM") %>% 
+  count(question, response) %>%
+  mutate(response = fct_recode(response, !!!open_access_Likert_concerns_convert)) %>% 
+  filter(!(response %in% c("I do not share any of these concerns", "I don’t know/prefer not to answer", "Other"))) %>% 
+  arrange(desc(n)) %>%
+  pull(response)
+
+# ESPhil
+EUR_OS_cluster1_Q3_concerns_ESPhil <- 
+  EUR_OS_cluster1_Q3 %>% 
+  filter(School == "ESPhil") %>% 
+  count(question, response) %>%
+  mutate(response = fct_recode(response, !!!open_access_Likert_concerns_convert)) %>% 
+  filter(!(response %in% c("I do not share any of these concerns", "I don’t know/prefer not to answer", "Other"))) %>% 
+  arrange(desc(n)) %>%
+  pull(response)
+
+# ESL
+EUR_OS_cluster1_Q3_concerns_ESL <- 
+  EUR_OS_cluster1_Q3 %>% 
+  filter(School == "ESL") %>% 
+  count(question, response) %>%
+  mutate(response = fct_recode(response, !!!open_access_Likert_concerns_convert)) %>% 
+  filter(!(response %in% c("I do not share any of these concerns", "I don’t know/prefer not to answer", "Other"))) %>% 
+  arrange(desc(n)) %>%
+  pull(response)
+
+# ESSB
+EUR_OS_cluster1_Q3_concerns_ESSB <- 
+  EUR_OS_cluster1_Q3 %>% 
+  filter(School == "ESSB") %>% 
+  count(question, response) %>%
+  mutate(response = fct_recode(response, !!!open_access_Likert_concerns_convert)) %>% 
+  filter(!(response %in% c("I do not share any of these concerns", "I don’t know/prefer not to answer", "Other"))) %>% 
+  arrange(desc(n)) %>%
+  pull(response)
+
+# ESHCC
+EUR_OS_cluster1_Q3_concerns_ESHCC <- 
+  EUR_OS_cluster1_Q3 %>% 
+  filter(School == "ESHCC") %>% 
+  count(question, response) %>%
+  mutate(response = fct_recode(response, !!!open_access_Likert_concerns_convert)) %>% 
+  filter(!(response %in% c("I do not share any of these concerns", "I don’t know/prefer not to answer", "Other"))) %>% 
+  arrange(desc(n)) %>%
+  pull(response)
+
 ```
 
 The question was:
@@ -360,9 +433,9 @@ The question was:
 
 Regarding practicing Open Access, the top 3 concerns from researchers at EUR are: 
 
-* 
-
-**Can we just pull the top 3 concerns automatically here?**
+* *`r EUR_OS_cluster1_Q3_concerns[1]`*
+* *`r EUR_OS_cluster1_Q3_concerns[2]`*
+* *`r EUR_OS_cluster1_Q3_concerns[3]`*
 
 ```{r figure-open-access-Q3-EUR}
 
@@ -371,9 +444,12 @@ knitr::include_graphics(here("img", "open_access", "concerns", "figure_concerns_
 ```
 
 ### ISS
+
 Regarding practicing Open Access, the top 3 concerns from researchers at ISS are: 
 
-**Can we just pull the top 3 concerns automatically here?**
+* *`r EUR_OS_cluster1_Q3_concerns_ISS[1]`*
+* *`r EUR_OS_cluster1_Q3_concerns_ISS[2]`*
+* *`r EUR_OS_cluster1_Q3_concerns_ISS[3]`*
 
 ```{r figure-open-access-Q3-ISS}
 
@@ -385,7 +461,9 @@ knitr::include_graphics(here("img", "open_access", "concerns", "figure_concerns_
 
 Regarding practicing Open Access, the top 3 concerns from researchers at ESHPM are: 
 
-**Can we just pull the top 3 concerns automatically here?**
+* *`r EUR_OS_cluster1_Q3_concerns_ESHPM[1]`*
+* *`r EUR_OS_cluster1_Q3_concerns_ESHPM[2]`*
+* *`r EUR_OS_cluster1_Q3_concerns_ESHPM[3]`*
 
 ```{r figure-open-access-Q3-ESHPM}
 
@@ -394,9 +472,12 @@ knitr::include_graphics(here("img", "open_access", "concerns", "figure_concerns_
 ```
 
 ### ESPhil
+
 Regarding practicing Open Access, the top 3 concerns from researchers at ESPhil are: 
 
-**Can we just pull the top 3 concerns automatically here?**
+* *`r EUR_OS_cluster1_Q3_concerns_ESPhil[1]`*
+* *`r EUR_OS_cluster1_Q3_concerns_ESPhil[2]`*
+* *`r EUR_OS_cluster1_Q3_concerns_ESPhil[3]`*
 
 ```{r figure-open-access-Q3-ESPhil}
 
@@ -405,9 +486,12 @@ knitr::include_graphics(here("img", "open_access", "concerns", "figure_concerns_
 ```
 
 ### ESL
+
 Regarding practicing Open Access, the top 3 concerns from researchers at ESL are: 
 
-**Can we just pull the top 3 concerns automatically here?**
+* *`r EUR_OS_cluster1_Q3_concerns_ESL[1]`*
+* *`r EUR_OS_cluster1_Q3_concerns_ESL[2]`*
+* *`r EUR_OS_cluster1_Q3_concerns_ESL[3]`*
 
 ```{r figure-open-access-Q3-ESL}
 
@@ -415,32 +499,6 @@ knitr::include_graphics(here("img", "open_access", "concerns", "figure_concerns_
 
 ```
 
-**This question was only asked at ESL, not sure if we should emphasise this? And not sure if this is representative to everyone else? Maybe we keep this for the ESL tab only?**
-INSERT QUOTES HERE
-
-### ESSB
-Regarding practicing Open Access, the top 3 concerns from researchers at ESSB are: 
-
-**Can we just pull the top 3 concerns automatically here?**
-
-```{r figure-open-access-Q3-ESSB}
-
-knitr::include_graphics(here("img", "open_access", "concerns", "figure_concerns_open_access_ESSB.png"))
-
-```
-
-### ESHCC
-Regarding practicing Open Access, the top 3 concerns from researchers at ESHCC are: 
-
-**Can we just pull the top 3 concerns automatically here?**
-
-```{r figure-open-access-Q3-ESHCC}
-
-knitr::include_graphics(here("img", "open_access", "concerns", "figure_concerns_open_access_ESHCC.png"))
-
-```
-
-## {-}
 
 ```{r figure-open-access-Q4-ESL}
 
@@ -452,6 +510,40 @@ EUR_OS_cluster1_Q4 <-
   filter(question == "Is there anything you want to share with us regarding your experiences with Open Access?")
 
 ```
+
+
+**This question was only asked at ESL, not sure if we should emphasise this? And not sure if this is representative to everyone else? Maybe we keep this for the ESL tab only?**
+INSERT QUOTES HERE
+
+### ESSB
+
+Regarding practicing Open Access, the top 3 concerns from researchers at ESSB are: 
+
+* *`r EUR_OS_cluster1_Q3_concerns_ESSB[1]`*
+* *`r EUR_OS_cluster1_Q3_concerns_ESSB[2]`*
+* *`r EUR_OS_cluster1_Q3_concerns_ESSB[3]`*
+
+```{r figure-open-access-Q3-ESSB}
+
+knitr::include_graphics(here("img", "open_access", "concerns", "figure_concerns_open_access_ESSB.png"))
+
+```
+
+### ESHCC
+
+Regarding practicing Open Access, the top 3 concerns from researchers at ESHCC are: 
+
+* *`r EUR_OS_cluster1_Q3_concerns_ESHCC[1]`*
+* *`r EUR_OS_cluster1_Q3_concerns_ESHCC[2]`*
+* *`r EUR_OS_cluster1_Q3_concerns_ESHCC[3]`*
+
+```{r figure-open-access-Q3-ESHCC}
+
+knitr::include_graphics(here("img", "open_access", "concerns", "figure_concerns_open_access_ESHCC.png"))
+
+```
+
+## {-}
 
 # Open Data, Materials, and/or Code
 
