@@ -102,7 +102,6 @@ The current report shows the combined results as well as separately for each sch
 
 This is a living document that may be updated with new information and insights. For any comments or questions, please contact [Dr. Lizette Guzman-Ramirez](mailto:guzmanramirez@rsm.nl) (Research Data Steward at ERIM) or [Dr. Antonio Schettino](mailto:schettino@eur.nl) (Senior Advisor Open Science at ERS).
 
-
 # Respondents
 
 ```{r data-complete-questionnaires}
@@ -185,8 +184,7 @@ The question was:
 
 > *`r unique(EUR_OS_cluster1_Q1$question)`*
 
-
-In general researchers at EUR consider Open Access relevant, more than 60% of the respondents agree that Open Access is very important (combining extremely and very important), and only a bit more than 8% think is not at all important. 
+In general researchers at EUR consider Open Access relevant: more than 60% of the respondents agree that Open Access is very important (combining extremely and very important), and only a bit more than 8% think is not at all important. 
 When looking at the responses from the schools, ESSB and ESHCC are the ones were the majority of the respondents think Open Access is very important (80% and 75% respectively).
 
 ```{r figure-open-access-Q1-EUR}
@@ -276,7 +274,6 @@ The question was:
 Regarding the experience of all researchers from EUR making their publications Open Access almost 70% of the respondents have either extensive or some experience. However, almost 30% of the respondents have never publish Open Access or were unaware of Open Access (caveat, some of the respondents were PhD candidates that are yet to publish their article). 
 When looking at the responses from the schools, ESHCC is the one that stands out, with more than 83% of respondents have extensive or some experience, while only a bit more than 16% have not published Open Access. 
 
-
 ```{r figure-open-access-Q2-EUR}
 
 knitr::include_graphics(here("img", "open_access", "experience", "figure_experience_open_access_EUR.png"))
@@ -360,7 +357,11 @@ The question was:
 > *`r unique(EUR_OS_cluster1_Q3$question)`*
 
 ### EUR
+
 Regarding practicing Open Access, the top 3 concerns from researchers at EUR are: 
+
+* 
+
 **Can we just pull the top 3 concerns automatically here?**
 
 ```{r figure-open-access-Q3-EUR}
@@ -371,6 +372,7 @@ knitr::include_graphics(here("img", "open_access", "concerns", "figure_concerns_
 
 ### ISS
 Regarding practicing Open Access, the top 3 concerns from researchers at ISS are: 
+
 **Can we just pull the top 3 concerns automatically here?**
 
 ```{r figure-open-access-Q3-ISS}
@@ -382,6 +384,7 @@ knitr::include_graphics(here("img", "open_access", "concerns", "figure_concerns_
 ### ESHPM
 
 Regarding practicing Open Access, the top 3 concerns from researchers at ESHPM are: 
+
 **Can we just pull the top 3 concerns automatically here?**
 
 ```{r figure-open-access-Q3-ESHPM}
@@ -392,6 +395,7 @@ knitr::include_graphics(here("img", "open_access", "concerns", "figure_concerns_
 
 ### ESPhil
 Regarding practicing Open Access, the top 3 concerns from researchers at ESPhil are: 
+
 **Can we just pull the top 3 concerns automatically here?**
 
 ```{r figure-open-access-Q3-ESPhil}
@@ -402,6 +406,7 @@ knitr::include_graphics(here("img", "open_access", "concerns", "figure_concerns_
 
 ### ESL
 Regarding practicing Open Access, the top 3 concerns from researchers at ESL are: 
+
 **Can we just pull the top 3 concerns automatically here?**
 
 ```{r figure-open-access-Q3-ESL}
@@ -410,8 +415,12 @@ knitr::include_graphics(here("img", "open_access", "concerns", "figure_concerns_
 
 ```
 
+**This question was only asked at ESL, not sure if we should emphasise this? And not sure if this is representative to everyone else? Maybe we keep this for the ESL tab only?**
+INSERT QUOTES HERE
+
 ### ESSB
 Regarding practicing Open Access, the top 3 concerns from researchers at ESSB are: 
+
 **Can we just pull the top 3 concerns automatically here?**
 
 ```{r figure-open-access-Q3-ESSB}
@@ -422,6 +431,7 @@ knitr::include_graphics(here("img", "open_access", "concerns", "figure_concerns_
 
 ### ESHCC
 Regarding practicing Open Access, the top 3 concerns from researchers at ESHCC are: 
+
 **Can we just pull the top 3 concerns automatically here?**
 
 ```{r figure-open-access-Q3-ESHCC}
@@ -443,12 +453,6 @@ EUR_OS_cluster1_Q4 <-
 
 ```
 
-**This question was only asked at ESL, not sure if we should emphasise this? And not sure if this is representitative to everyone else? Maybe we keep this for the ESL tab only?**
-INSERT QUOTES HERE
-
-
-
-
 # Open Data, Materials, and/or Code
 
 ## Importance of Open Data/Materials/Code {.tabset .tabset-pills}
@@ -466,6 +470,7 @@ The question was:
 > *`r unique(EUR_OS_cluster2_Q1$question)`*
 
 ### EUR
+
 In general researchers at EUR consider Open Data/Materials/Code somewhat relevant, a bit more than 45% of the respondents agree that Open Data/Materials/Code is very important (combining extremely and very important), and only a bit more than 11% think is not at all important. 
 When looking at the responses from the schools, ESSB and ESHCC are the ones were the majority of the respondents think Open Data/Materials/Code is very important (63% and 57% respectively).
 
@@ -487,8 +492,8 @@ knitr::include_graphics(here("img", "open_data_materials_code", "importance", "f
 ```
 
 ### ESHPM
-Researchers at ESHPM are mostly split when consider Open Data/Materials/Code important, a bit less than 30% of the respondents agree that Open Data/Materials/Code is very important (combining extremely and very important), while also a bit less than 30% of the researchers think is moderately important, and almost 18% of them think is not at all important.
 
+Researchers at ESHPM are mostly split when consider Open Data/Materials/Code important, a bit less than 30% of the respondents agree that Open Data/Materials/Code is very important (combining extremely and very important), while also a bit less than 30% of the researchers think is moderately important, and almost 18% of them think is not at all important.
 
 ```{r figure-open-data-materials-code-Q1-ESHPM}
 
@@ -497,8 +502,8 @@ knitr::include_graphics(here("img", "open_data_materials_code", "importance", "f
 ```
 
 ### ESPhil
-Researchers at ESPhil are mostly split when consider Open Data/Materials/Code important, 30% of the respondents agree that Open Data/Materials/Code is very important (combining extremely and very important), while also 30% of the researchers think is somewhat important (combining moderately and slightly important), and 20% of them think is not at all important.
 
+Researchers at ESPhil are mostly split when consider Open Data/Materials/Code important, 30% of the respondents agree that Open Data/Materials/Code is very important (combining extremely and very important), while also 30% of the researchers think is somewhat important (combining moderately and slightly important), and 20% of them think is not at all important.
 
 ```{r figure-open-data-materials-code-Q1-ESPhil}
 
@@ -552,7 +557,6 @@ The question was:
 ### EUR
 Most researchers (almost 35%) at EUR are aware of open data/materials/code developed by others but have not used them. Almost 32% of the respondents have some experience with open data/materials/code, but do not use them regularly, and only a bit more than 20% of the respondents regularly use open data/materials/code. 
 
-
 ```{r figure-open-data-materials-code-Q2-EUR}
 
 knitr::include_graphics(here("img", "open_data_materials_code", "experience_others", "figure_experience_others_open_data_materials_code_EUR.png"))
@@ -592,7 +596,6 @@ knitr::include_graphics(here("img", "open_data_materials_code", "experience_othe
 ### ESL
 Researchers at ESL are equally split (25%) between awareness, some experience, and regularly using open data/materials/code developed by others. 
 
-
 ```{r figure-open-data-materials-code-Q2-ESL}
 
 knitr::include_graphics(here("img", "open_data_materials_code", "experience_others", "figure_experience_others_open_data_materials_code_ESL.png"))
@@ -611,7 +614,6 @@ knitr::include_graphics(here("img", "open_data_materials_code", "experience_othe
 ### ESHCC
 
 Researchers at ESHCC are equally split (33.33%) between regularly using, having some experience, and being aware of open data/materials/code developed by others.
-
 
 ```{r figure-open-data-materials-code-Q2-ESHCC}
 
@@ -645,8 +647,8 @@ knitr::include_graphics(here("img", "open_data_materials_code", "experience_own"
 ```
 
 ### ISS
-Most researchers at ISS (50%) have some experience with sharing their own open data/materials/code (combining regularly and some experience sharing data), while 20% of the respondents before the survey had not heard of open data/materials/code. 
 
+Most researchers at ISS (50%) have some experience with sharing their own open data/materials/code (combining regularly and some experience sharing data), while 20% of the respondents before the survey had not heard of open data/materials/code. 
 
 ```{r figure-open-data-materials-code-Q3-ISS}
 
@@ -655,6 +657,7 @@ knitr::include_graphics(here("img", "open_data_materials_code", "experience_own"
 ```
 
 ### ESHPM
+
 Researchers at ESHPM are equally split (33.33%) in opposite camps, between regularly sharing open data/materials/code, and being aware of open data/materials/code, but have not shared their own.  
 
 ```{r figure-open-data-materials-code-Q3-ESHPM}
@@ -664,8 +667,8 @@ knitr::include_graphics(here("img", "open_data_materials_code", "experience_own"
 ```
 
 ### ESPhil
-Most researchers at ESPhil (almost 43%) are aware of open data/materials/code, but have not shared their own. While almost 30% of the respondents have some experience openly sharing their data/materials/code (combining regularly and some experience). 
 
+Most researchers at ESPhil (almost 43%) are aware of open data/materials/code, but have not shared their own. While almost 30% of the respondents have some experience openly sharing their data/materials/code (combining regularly and some experience). 
 
 ```{r figure-open-data-materials-code-Q3-ESPhil}
 
@@ -674,6 +677,7 @@ knitr::include_graphics(here("img", "open_data_materials_code", "experience_own"
 ```
 
 ### ESL
+
 Most researchers at ESL (almost 40%) have some experience openly sharing their data/materials/code (combining regularly and some experience), while almost 30% of the respondents are aware of open data/materials/code, but have not shared their own. 
 
 ```{r figure-open-data-materials-code-Q3-ESL}
@@ -692,6 +696,7 @@ knitr::include_graphics(here("img", "open_data_materials_code", "experience_own"
 ```
 
 ### ESHCC
+
 Most researchers at ESHCC (a bit more than 57%) have some experience openly sharing their data/materials/code (combining regularly and some experience), while a bit less than 30% of the respondents are aware of open data/materials/code, but have not shared their own. 
 
 ```{r figure-open-data-materials-code-Q3-ESHCC}
@@ -743,7 +748,6 @@ knitr::include_graphics(here("img", "open_data_materials_code", "FAIR", "figure_
 
 Regarding the Findable, Accessible, Interoperable, and Re-usable (FAIR) principles, most researchers at ESHPM, a bit more than 33%, had not heard of the FAIR principles before the survey, however, almost 27% have some experience with the FAIR principles, but do not follow them regularly, and equally almost 27% of the respondents regularly follow the FAIR principles.
 
-
 ```{r figure-open-data-materials-code-Q4-ESHPM}
 
 knitr::include_graphics(here("img", "open_data_materials_code", "FAIR", "figure_FAIR_ESHPM.png"))
@@ -761,6 +765,7 @@ knitr::include_graphics(here("img", "open_data_materials_code", "FAIR", "figure_
 ```
 
 ### ESL
+
 Regarding the Findable, Accessible, Interoperable, and Re-usable (FAIR) principles, most researchers at ESL, a bit more than 33%, have not heard of the FAIR principles before the survey, however, 25% have some experience with the FAIR principles, but do not follow them regularly, and equally, 25% of the respondents regularly follow the FAIR principles.
 
 ```{r figure-open-data-materials-code-Q4-ESL}
@@ -773,8 +778,6 @@ knitr::include_graphics(here("img", "open_data_materials_code", "FAIR", "figure_
 
 Regarding the Findable, Accessible, Interoperable, and Re-usable (FAIR) principles, most researchers at ESSB, a bit more than 33%, have some experience with the FAIR principles, but do not follow them regularly, while almost 28% of the respondents respondents regularly follow the FAIR principles.
 
-
-
 ```{r figure-open-data-materials-code-Q4-ESSB}
 
 knitr::include_graphics(here("img", "open_data_materials_code", "FAIR", "figure_FAIR_ESSB.png"))
@@ -782,9 +785,8 @@ knitr::include_graphics(here("img", "open_data_materials_code", "FAIR", "figure_
 ```
 
 ### ESHCC
+
 Regarding the Findable, Accessible, Interoperable, and Re-usable (FAIR) principles, 60% of the researchers at ESHCC have not heard of the FAIR principles before the survey, while 40% of the respondents have some experience with the FAIR principles, but do not follow them regularly. 
-
-
 
 ```{r figure-open-data-materials-code-Q4-ESHCC}
 
@@ -820,6 +822,7 @@ knitr::include_graphics(here("img", "open_data_materials_code", "concerns", "fig
 ```
 
 ### ISS
+
 Regarding practicing Open Data/Materials/Code, the top 3 concerns from researchers at ISS are: 
 **Can we just pull the top 3 concerns automatically here?**
 
@@ -830,6 +833,7 @@ knitr::include_graphics(here("img", "open_data_materials_code", "concerns", "fig
 ```
 
 ### ESHPM
+
 Regarding practicing Open Data/Materials/Code, the top 3 concerns from researchers at ESHPM are: 
 **Can we just pull the top 3 concerns automatically here?**
 
@@ -840,6 +844,7 @@ knitr::include_graphics(here("img", "open_data_materials_code", "concerns", "fig
 ```
 
 ### ESPhil
+
 Regarding practicing Open Data/Materials/Code, the top 3 concerns from researchers at ESPhil are: 
 **Can we just pull the top 3 concerns automatically here?**
 
@@ -850,9 +855,9 @@ knitr::include_graphics(here("img", "open_data_materials_code", "concerns", "fig
 ```
 
 ### ESL
+
 Regarding practicing Open Data/Materials/Code, the top 3 concerns from researchers at ESL are: 
 **Can we just pull the top 3 concerns automatically here?**
-
 
 ```{r figure-open-data-materials-code-Q5-ESL}
 
@@ -861,6 +866,7 @@ knitr::include_graphics(here("img", "open_data_materials_code", "concerns", "fig
 ```
 
 ### ESSB
+
 Regarding practicing Open Data/Materials/Code, the top 3 concerns from researchers at ESSB are: 
 **Can we just pull the top 3 concerns automatically here?**
 
@@ -871,6 +877,7 @@ knitr::include_graphics(here("img", "open_data_materials_code", "concerns", "fig
 ```
 
 ### ESHCC
+
 Regarding practicing Open Data/Materials/Code, the top 3 concerns from researchers at ESHCC are: 
 **Can we just pull the top 3 concerns automatically here?**
 
@@ -899,8 +906,8 @@ The question was:
 > *`r unique(EUR_OS_cluster3_Q1$question)`*
 
 ### EUR
-In general researchers at EUR (almost 27%) think that preregistration is not important at all, while almost 22% of the respondents think is moderately important. However there is also a bit more than 20% of the respondents that think preregistration is very important (by combining extremely and very important). 
 
+In general researchers at EUR (almost 27%) think that preregistration is not important at all, while almost 22% of the respondents think is moderately important. However there is also a bit more than 20% of the respondents that think preregistration is very important (by combining extremely and very important). 
 
 ```{r figure-preregistration-Q1-EUR}
 
@@ -909,6 +916,7 @@ knitr::include_graphics(here("img", "preregistration", "importance", "figure_imp
 ```
 
 ### ISS
+
 Researchers at ISS (almost 31%) think that preregistration is moderately important, while a bit more than 23% of the respondents think is not important at all. 
 
 ```{r figure-preregistration-Q1-ISS}
@@ -918,6 +926,7 @@ knitr::include_graphics(here("img", "preregistration", "importance", "figure_imp
 ```
 
 ### ESHPM
+
 Researchers at ESHPM are equally split (almost 32%) between the respondents that preregistration is moderately important, and the same percentage of respondents that think that preregistration is not important at all. 
 
 ```{r figure-preregistration-Q1-ESHPM}
@@ -927,8 +936,8 @@ knitr::include_graphics(here("img", "preregistration", "importance", "figure_imp
 ```
 
 ### ESPhil
-Researchers at ESPhil most researchers, 50% of them, think that preregistration is not important at all, however there is a small percentage of respondents (almost 17%) that think preregistration is extremely important. 
 
+Researchers at ESPhil most researchers, 50% of them, think that preregistration is not important at all, however there is a small percentage of respondents (almost 17%) that think preregistration is extremely important. 
 
 ```{r figure-preregistration-Q1-ESPhil}
 
@@ -937,6 +946,7 @@ knitr::include_graphics(here("img", "preregistration", "importance", "figure_imp
 ```
 
 ### ESL
+
 Most researchers at ESL (40%) think preregistration is somewhat important (combining moderately and slightly) while almost 27% of the respondents think that preregistration is not important at all. 
 
 ```{r figure-preregistration-Q1-ESL}
@@ -946,6 +956,7 @@ knitr::include_graphics(here("img", "preregistration", "importance", "figure_imp
 ```
 
 ### ESSB
+
 Most researchers at ESSB (almost 43%) think that preregistration is very important (by combining extremely and very), while a bit more than 14% of the respondents that think that preregistration is not important at all. 
 
 ```{r figure-preregistration-Q1-ESSB}
@@ -955,6 +966,7 @@ knitr::include_graphics(here("img", "preregistration", "importance", "figure_imp
 ```
 
 ### ESHCC
+
 Most researchers at ESHCC (almost 38%) think preregistration is not important at all, while 25% of the respondent think preregistration is somewhat important (combining moderately and slightly).
 
 ```{r figure-preregistration-Q1-ESHCC}
@@ -980,6 +992,7 @@ The question was:
 > *`r unique(EUR_OS_cluster3_Q2$question)`*
 
 ### EUR
+
 Regarding experience of the researchers at EUR with preregistration, most researchers (almost 62%) have not use it or were unaware of preregistration before the survey, while almost 22% of the respondents have some experience but do not use it regularly. 
 
 ```{r figure-preregistration-Q2-EUR}
@@ -989,6 +1002,7 @@ knitr::include_graphics(here("img", "preregistration", "experience", "figure_exp
 ```
 
 ### ISS
+
 Researchers at ISS are mostly aware of preregistration but have not used it (a bit more than 45%), while a bit more than 36% of the respondents, were unaware of preregistration before the survey. 
 
 ```{r figure-preregistration-Q2-ISS}
@@ -998,6 +1012,7 @@ knitr::include_graphics(here("img", "preregistration", "experience", "figure_exp
 ```
 
 ### ESHPM
+
 Researchers at ESHPM are mostly aware of preregistration but have not used it (a bit more than 38%), while a bit more than 30% of the respondents, have some experience with preregistration, but do not use it regularly. 
 
 ```{r figure-preregistration-Q2-ESHPM}
@@ -1007,8 +1022,8 @@ knitr::include_graphics(here("img", "preregistration", "experience", "figure_exp
 ```
 
 ### ESPhil
-Researchers at ESPhil were mostly unaware of preregistration before the survey (almost 43%), while almost 29% of the respondents are aware of preregistration but have not used it.
 
+Researchers at ESPhil were mostly unaware of preregistration before the survey (almost 43%), while almost 29% of the respondents are aware of preregistration but have not used it.
 
 ```{r figure-preregistration-Q2-ESPhil}
 
@@ -1017,6 +1032,7 @@ knitr::include_graphics(here("img", "preregistration", "experience", "figure_exp
 ```
 
 ### ESL
+
 Most researchers at ESL are aware of preregistration but have not used it or were unaware of preregistration before the survey (almost 55%), while a bit more than 18% of the respondents have some experience with preregistration, but do not use it regularly. 
 
 ```{r figure-preregistration-Q2-ESL}
