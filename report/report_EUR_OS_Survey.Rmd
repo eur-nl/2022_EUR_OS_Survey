@@ -352,7 +352,7 @@ EUR_OS_cluster1_Q3 <-
   EUR_OS_cluster1 %>% 
   filter(question == "The following are possible concerns that researchers could have about Open Access publishing. Which of these concerns would you agree with?")
 
-### extract top 3 concerns
+### extract top concerns
 
 # EUR
 EUR_OS_cluster1_Q3_concerns <- 
@@ -361,7 +361,7 @@ EUR_OS_cluster1_Q3_concerns <-
   mutate(response = fct_recode(response, !!!open_access_Likert_concerns_convert)) %>% 
   filter(!(response %in% c("I do not share any of these concerns", "I don’t know/prefer not to answer", "Other"))) %>% 
   arrange(desc(n)) %>%
-  pull(response)
+  chuck(2, 1)
 
 # ISS
 EUR_OS_cluster1_Q3_concerns_ISS <- 
@@ -371,7 +371,7 @@ EUR_OS_cluster1_Q3_concerns_ISS <-
   mutate(response = fct_recode(response, !!!open_access_Likert_concerns_convert)) %>% 
   filter(!(response %in% c("I do not share any of these concerns", "I don’t know/prefer not to answer", "Other"))) %>% 
   arrange(desc(n)) %>%
-  pull(response)
+  chuck(2, 1)
 
 # ESHPM
 EUR_OS_cluster1_Q3_concerns_ESHPM <- 
@@ -381,9 +381,10 @@ EUR_OS_cluster1_Q3_concerns_ESHPM <-
   mutate(response = fct_recode(response, !!!open_access_Likert_concerns_convert)) %>% 
   filter(!(response %in% c("I do not share any of these concerns", "I don’t know/prefer not to answer", "Other"))) %>% 
   arrange(desc(n)) %>%
-  pull(response)
+  chuck(2, 1)
 
 # ESPhil
+# two concerns with same percentage of responses 
 EUR_OS_cluster1_Q3_concerns_ESPhil <- 
   EUR_OS_cluster1_Q3 %>% 
   filter(School == "ESPhil") %>% 
@@ -401,7 +402,7 @@ EUR_OS_cluster1_Q3_concerns_ESL <-
   mutate(response = fct_recode(response, !!!open_access_Likert_concerns_convert)) %>% 
   filter(!(response %in% c("I do not share any of these concerns", "I don’t know/prefer not to answer", "Other"))) %>% 
   arrange(desc(n)) %>%
-  pull(response)
+  chuck(2, 1)
 
 # ESSB
 EUR_OS_cluster1_Q3_concerns_ESSB <- 
@@ -411,7 +412,7 @@ EUR_OS_cluster1_Q3_concerns_ESSB <-
   mutate(response = fct_recode(response, !!!open_access_Likert_concerns_convert)) %>% 
   filter(!(response %in% c("I do not share any of these concerns", "I don’t know/prefer not to answer", "Other"))) %>% 
   arrange(desc(n)) %>%
-  pull(response)
+  chuck(2, 1)
 
 # ESHCC
 EUR_OS_cluster1_Q3_concerns_ESHCC <- 
@@ -421,7 +422,7 @@ EUR_OS_cluster1_Q3_concerns_ESHCC <-
   mutate(response = fct_recode(response, !!!open_access_Likert_concerns_convert)) %>% 
   filter(!(response %in% c("I do not share any of these concerns", "I don’t know/prefer not to answer", "Other"))) %>% 
   arrange(desc(n)) %>%
-  pull(response)
+  chuck(2, 1)
 
 ```
 
@@ -431,11 +432,9 @@ The question was:
 
 ### EUR
 
-Regarding practicing Open Access, the top 3 concerns from researchers at EUR are: 
+Regarding Open Access, the top concern from researchers at EUR is: 
 
-* *`r EUR_OS_cluster1_Q3_concerns[1]`*
-* *`r EUR_OS_cluster1_Q3_concerns[2]`*
-* *`r EUR_OS_cluster1_Q3_concerns[3]`*
+* *`r EUR_OS_cluster1_Q3_concerns`*
 
 ```{r figure-open-access-Q3-EUR}
 
@@ -445,11 +444,9 @@ knitr::include_graphics(here("img", "open_access", "concerns", "figure_concerns_
 
 ### ISS
 
-Regarding practicing Open Access, the top 3 concerns from researchers at ISS are: 
+Regarding Open Access, the top concern from researchers at ISS is: 
 
-* *`r EUR_OS_cluster1_Q3_concerns_ISS[1]`*
-* *`r EUR_OS_cluster1_Q3_concerns_ISS[2]`*
-* *`r EUR_OS_cluster1_Q3_concerns_ISS[3]`*
+* *`r EUR_OS_cluster1_Q3_concerns_ISS`*
 
 ```{r figure-open-access-Q3-ISS}
 
@@ -459,11 +456,9 @@ knitr::include_graphics(here("img", "open_access", "concerns", "figure_concerns_
 
 ### ESHPM
 
-Regarding practicing Open Access, the top 3 concerns from researchers at ESHPM are: 
+Regarding Open Access, the top concern from researchers at ESHPM is: 
 
-* *`r EUR_OS_cluster1_Q3_concerns_ESHPM[1]`*
-* *`r EUR_OS_cluster1_Q3_concerns_ESHPM[2]`*
-* *`r EUR_OS_cluster1_Q3_concerns_ESHPM[3]`*
+* *`r EUR_OS_cluster1_Q3_concerns_ESHPM`*
 
 ```{r figure-open-access-Q3-ESHPM}
 
@@ -473,11 +468,10 @@ knitr::include_graphics(here("img", "open_access", "concerns", "figure_concerns_
 
 ### ESPhil
 
-Regarding practicing Open Access, the top 3 concerns from researchers at ESPhil are: 
+Regarding Open Access, the top concerns from researchers at ESPhil are: 
 
 * *`r EUR_OS_cluster1_Q3_concerns_ESPhil[1]`*
 * *`r EUR_OS_cluster1_Q3_concerns_ESPhil[2]`*
-* *`r EUR_OS_cluster1_Q3_concerns_ESPhil[3]`*
 
 ```{r figure-open-access-Q3-ESPhil}
 
@@ -487,17 +481,17 @@ knitr::include_graphics(here("img", "open_access", "concerns", "figure_concerns_
 
 ### ESL
 
-Regarding practicing Open Access, the top 3 concerns from researchers at ESL are: 
+Regarding Open Access, the top concern from researchers at ESL is: 
 
-* *`r EUR_OS_cluster1_Q3_concerns_ESL[1]`*
-* *`r EUR_OS_cluster1_Q3_concerns_ESL[2]`*
-* *`r EUR_OS_cluster1_Q3_concerns_ESL[3]`*
+* *`r EUR_OS_cluster1_Q3_concerns_ESL`*
 
 ```{r figure-open-access-Q3-ESL}
 
 knitr::include_graphics(here("img", "open_access", "concerns", "figure_concerns_open_access_ESL.png"))
 
 ```
+
+
 
 
 ```{r figure-open-access-Q4-ESL}
@@ -512,16 +506,16 @@ EUR_OS_cluster1_Q4 <-
 ```
 
 
+
 **This question was only asked at ESL, not sure if we should emphasise this? And not sure if this is representative to everyone else? Maybe we keep this for the ESL tab only?**
 INSERT QUOTES HERE
 
+
 ### ESSB
 
-Regarding practicing Open Access, the top 3 concerns from researchers at ESSB are: 
+Regarding Open Access, the top concern from researchers at ESSB is: 
 
-* *`r EUR_OS_cluster1_Q3_concerns_ESSB[1]`*
-* *`r EUR_OS_cluster1_Q3_concerns_ESSB[2]`*
-* *`r EUR_OS_cluster1_Q3_concerns_ESSB[3]`*
+* *`r EUR_OS_cluster1_Q3_concerns_ESSB`*
 
 ```{r figure-open-access-Q3-ESSB}
 
@@ -531,11 +525,9 @@ knitr::include_graphics(here("img", "open_access", "concerns", "figure_concerns_
 
 ### ESHCC
 
-Regarding practicing Open Access, the top 3 concerns from researchers at ESHCC are: 
+Regarding Open Access, the top concern from researchers at ESHCC is: 
 
-* *`r EUR_OS_cluster1_Q3_concerns_ESHCC[1]`*
-* *`r EUR_OS_cluster1_Q3_concerns_ESHCC[2]`*
-* *`r EUR_OS_cluster1_Q3_concerns_ESHCC[3]`*
+* *`r EUR_OS_cluster1_Q3_concerns_ESHCC`*
 
 ```{r figure-open-access-Q3-ESHCC}
 
@@ -604,6 +596,7 @@ knitr::include_graphics(here("img", "open_data_materials_code", "importance", "f
 ```
 
 ### ESL
+
 Researchers at ESL consider Open Data/Materials/Code somewhat relevant, 50% of the respondents agree that Open Data/Materials/Code is very important (combining extremely and very important), and only a bit more than 14% think is not at all important.
 
 ```{r figure-open-data-materials-code-Q1-ESL}
@@ -613,6 +606,7 @@ knitr::include_graphics(here("img", "open_data_materials_code", "importance", "f
 ```
 
 ### ESSB
+
 Researchers at ESSB consider Open Data/Materials/Code somewhat relevant, a bit more than 63% of the respondents agree that Open Data/Materials/Code is very important (combining extremely and very important), and only a bit more than 5% think is not at all important.
 
 ```{r figure-open-data-materials-code-Q1-ESSB}
@@ -622,6 +616,7 @@ knitr::include_graphics(here("img", "open_data_materials_code", "importance", "f
 ```
 
 ### ESHCC
+
 Researchers at ESHCC consider Open Data/Materials/Code somewhat relevant, a bit more than 57% of the respondents agree that Open Data/Materials/Code is very important (combining extremely and very important), while none of them think is not at all important.
 
 ```{r figure-open-data-materials-code-Q1-ESHCC}
@@ -647,6 +642,7 @@ The question was:
 > *`r unique(EUR_OS_cluster2_Q2$question)`*
 
 ### EUR
+
 Most researchers (almost 35%) at EUR are aware of open data/materials/code developed by others but have not used them. Almost 32% of the respondents have some experience with open data/materials/code, but do not use them regularly, and only a bit more than 20% of the respondents regularly use open data/materials/code. 
 
 ```{r figure-open-data-materials-code-Q2-EUR}
@@ -686,6 +682,7 @@ knitr::include_graphics(here("img", "open_data_materials_code", "experience_othe
 ```
 
 ### ESL
+
 Researchers at ESL are equally split (25%) between awareness, some experience, and regularly using open data/materials/code developed by others. 
 
 ```{r figure-open-data-materials-code-Q2-ESL}
@@ -730,6 +727,7 @@ The question was:
 > *`r unique(EUR_OS_cluster2_Q3$question)`*
 
 ### EUR
+
 In general researchers at EUR (50%) have some experience with sharing their own open data/materials/code (combining regularly and some experience sharing data), while almost 30% of the respondents are aware of open data/materials/code, but have not shared their own. ESHCC is the faculty with the most researchers (a bit more than 57%) with some experience openly sharing their data/materials/code (combining regularly and some experience).
 
 ```{r figure-open-data-materials-code-Q3-EUR}
@@ -779,6 +777,7 @@ knitr::include_graphics(here("img", "open_data_materials_code", "experience_own"
 ```
 
 ### ESSB
+
 Most researchers at ESSB (55%) have some experience openly sharing their data/materials/code (combining regularly and some experience), while 30% of the respondents are aware of open data/materials/code, but have not shared their own. 
 
 ```{r figure-open-data-materials-code-Q3-ESSB}
@@ -896,6 +895,79 @@ EUR_OS_cluster2_Q5 <-
   EUR_OS_cluster2 %>% 
   filter(question == "The following are possible concerns that researchers could have about making data, materials, and/or code developed by them openly available. Which of these concerns would you agree with?")
 
+### extract top concerns
+
+# EUR
+EUR_OS_cluster2_Q5_concerns <- 
+  EUR_OS_cluster2_Q5 %>% 
+  count(question, response) %>%
+  mutate(response = fct_recode(response, !!!open_data_materials_code_Likert_concerns_convert)) %>% 
+  filter(!(response %in% c("I do not share any of these concerns", "I don’t know/prefer not to answer", "Other"))) %>% 
+  arrange(desc(n)) %>%
+  chuck(2, 1)
+
+# ISS
+# two concerns with same percentage of responses
+EUR_OS_cluster2_Q5_concerns_ISS <- 
+  EUR_OS_cluster2_Q5 %>% 
+  filter(School == "ISS") %>% 
+  count(question, response) %>%
+  mutate(response = fct_recode(response, !!!open_data_materials_code_Likert_concerns_convert)) %>% 
+  filter(!(response %in% c("I do not share any of these concerns", "I don’t know/prefer not to answer", "Other"))) %>% 
+  arrange(desc(n)) %>%
+  pull(response)
+
+# ESHPM
+EUR_OS_cluster2_Q5_concerns_ESHPM <- 
+  EUR_OS_cluster2_Q5 %>% 
+  filter(School == "ESHPM") %>% 
+  count(question, response) %>%
+  mutate(response = fct_recode(response, !!!open_data_materials_code_Likert_concerns_convert)) %>% 
+  filter(!(response %in% c("I do not share any of these concerns", "I don’t know/prefer not to answer", "Other"))) %>% 
+  arrange(desc(n)) %>%
+  chuck(2, 1)
+
+# ESPhil
+EUR_OS_cluster2_Q5_concerns_ESPhil <- 
+  EUR_OS_cluster2_Q5 %>% 
+  filter(School == "ESPhil") %>% 
+  count(question, response) %>%
+  mutate(response = fct_recode(response, !!!open_data_materials_code_Likert_concerns_convert)) %>% 
+  filter(!(response %in% c("I do not share any of these concerns", "I don’t know/prefer not to answer", "Other"))) %>% 
+  arrange(desc(n)) %>%
+  chuck(2, 1)
+
+# ESL
+EUR_OS_cluster2_Q5_concerns_ESL <- 
+  EUR_OS_cluster2_Q5 %>% 
+  filter(School == "ESL") %>% 
+  count(question, response) %>%
+  mutate(response = fct_recode(response, !!!open_data_materials_code_Likert_concerns_convert)) %>% 
+  filter(!(response %in% c("I do not share any of these concerns", "I don’t know/prefer not to answer", "Other"))) %>% 
+  arrange(desc(n)) %>%
+  chuck(2, 1)
+
+# ESSB
+# two concerns with same percentage of responses
+EUR_OS_cluster2_Q5_concerns_ESSB <- 
+  EUR_OS_cluster2_Q5 %>% 
+  filter(School == "ESSB") %>% 
+  count(question, response) %>%
+  mutate(response = fct_recode(response, !!!open_data_materials_code_Likert_concerns_convert)) %>% 
+  filter(!(response %in% c("I do not share any of these concerns", "I don’t know/prefer not to answer", "Other"))) %>% 
+  arrange(desc(n)) %>%
+  pull(response)
+
+# ESHCC
+EUR_OS_cluster2_Q5_concerns_ESHCC <- 
+  EUR_OS_cluster2_Q5 %>% 
+  filter(School == "ESHCC") %>% 
+  count(question, response) %>%
+  mutate(response = fct_recode(response, !!!open_data_materials_code_Likert_concerns_convert)) %>% 
+  filter(!(response %in% c("I do not share any of these concerns", "I don’t know/prefer not to answer", "Other"))) %>% 
+  arrange(desc(n)) %>%
+  chuck(2, 1)
+
 ```
 
 The question was:
@@ -904,8 +976,9 @@ The question was:
 
 ### EUR
 
-Regarding practicing Open Data/Materials/Code, the top 3 concerns from researchers at EUR are: 
-**Can we just pull the top 3 concerns automatically here?**
+Regarding Open Data/Materials/Code, the top concern from researchers at EUR is: 
+
+* `r EUR_OS_cluster2_Q5_concerns`
 
 ```{r figure-open-data-materials-code-Q5-EUR}
 
@@ -915,8 +988,10 @@ knitr::include_graphics(here("img", "open_data_materials_code", "concerns", "fig
 
 ### ISS
 
-Regarding practicing Open Data/Materials/Code, the top 3 concerns from researchers at ISS are: 
-**Can we just pull the top 3 concerns automatically here?**
+Regarding Open Data/Materials/Code, the top concerns from researchers at ISS are: 
+
+* `r EUR_OS_cluster2_Q5_concerns_ISS[1]`
+* `r EUR_OS_cluster2_Q5_concerns_ISS[2]`
 
 ```{r figure-open-data-materials-code-Q5-ISS}
 
@@ -926,8 +1001,9 @@ knitr::include_graphics(here("img", "open_data_materials_code", "concerns", "fig
 
 ### ESHPM
 
-Regarding practicing Open Data/Materials/Code, the top 3 concerns from researchers at ESHPM are: 
-**Can we just pull the top 3 concerns automatically here?**
+Regarding Open Data/Materials/Code, the top concern for researchers at ESHPM is: 
+
+* `r EUR_OS_cluster2_Q5_concerns_ESHPM`
 
 ```{r figure-open-data-materials-code-Q5-ESHPM}
 
@@ -937,8 +1013,9 @@ knitr::include_graphics(here("img", "open_data_materials_code", "concerns", "fig
 
 ### ESPhil
 
-Regarding practicing Open Data/Materials/Code, the top 3 concerns from researchers at ESPhil are: 
-**Can we just pull the top 3 concerns automatically here?**
+Regarding Open Data/Materials/Code, the top concern for researchers at ESPhil is: 
+
+* `r EUR_OS_cluster2_Q5_concerns_ESPhil`
 
 ```{r figure-open-data-materials-code-Q5-ESPhil}
 
@@ -948,8 +1025,9 @@ knitr::include_graphics(here("img", "open_data_materials_code", "concerns", "fig
 
 ### ESL
 
-Regarding practicing Open Data/Materials/Code, the top 3 concerns from researchers at ESL are: 
-**Can we just pull the top 3 concerns automatically here?**
+Regarding Open Data/Materials/Code, the top concern for researchers at ESL is: 
+
+* `r EUR_OS_cluster2_Q5_concerns_ESL`
 
 ```{r figure-open-data-materials-code-Q5-ESL}
 
@@ -959,8 +1037,10 @@ knitr::include_graphics(here("img", "open_data_materials_code", "concerns", "fig
 
 ### ESSB
 
-Regarding practicing Open Data/Materials/Code, the top 3 concerns from researchers at ESSB are: 
-**Can we just pull the top 3 concerns automatically here?**
+Regarding Open Data/Materials/Code, the top concerns for researchers at ESSB are: 
+
+* `r EUR_OS_cluster2_Q5_concerns_ESSB[1]`
+* `r EUR_OS_cluster2_Q5_concerns_ESSB[2]`
 
 ```{r figure-open-data-materials-code-Q5-ESSB}
 
@@ -970,8 +1050,9 @@ knitr::include_graphics(here("img", "open_data_materials_code", "concerns", "fig
 
 ### ESHCC
 
-Regarding practicing Open Data/Materials/Code, the top 3 concerns from researchers at ESHCC are: 
-**Can we just pull the top 3 concerns automatically here?**
+Regarding Open Data/Materials/Code, the top concern for researchers at ESHCC is: 
+
+* `r EUR_OS_cluster2_Q5_concerns_ESHCC`
 
 ```{r figure-open-data-materials-code-Q5-ESHCC}
 
@@ -1161,6 +1242,81 @@ EUR_OS_cluster3_Q3 <-
   EUR_OS_cluster3 %>% 
   filter(question == "The following are possible concerns that researchers could have about preregistering their studies. Which of these concerns would you agree with?")
 
+### extract top concerns
+
+# EUR
+EUR_OS_cluster3_Q3_concerns <- 
+  EUR_OS_cluster3_Q3 %>% 
+  count(question, response) %>%
+  mutate(response = fct_recode(response, !!!preregistration_Likert_concerns_convert)) %>% 
+  filter(!(response %in% c("I do not share any of these concerns", "I don’t know/prefer not to answer", "Other"))) %>% 
+  arrange(desc(n)) %>%
+  chuck(2, 1)
+
+# ISS
+EUR_OS_cluster3_Q3_concerns_ISS <- 
+  EUR_OS_cluster3_Q3 %>% 
+  filter(School == "ISS") %>% 
+  count(question, response) %>%
+  mutate(response = fct_recode(response, !!!preregistration_Likert_concerns_convert)) %>% 
+  filter(!(response %in% c("I do not share any of these concerns", "I don’t know/prefer not to answer", "Other"))) %>% 
+  arrange(desc(n)) %>%
+  chuck(2, 1)
+
+# ESHPM
+# two concerns with same percentage of responses
+EUR_OS_cluster3_Q3_concerns_ESHPM <- 
+  EUR_OS_cluster3_Q3 %>% 
+  filter(School == "ESHPM") %>% 
+  count(question, response) %>%
+  mutate(response = fct_recode(response, !!!preregistration_Likert_concerns_convert)) %>% 
+  filter(!(response %in% c("I do not share any of these concerns", "I don’t know/prefer not to answer", "Other"))) %>% 
+  arrange(desc(n)) %>%
+  pull(response)
+
+# ESPhil
+# three concerns with same percentage of responses
+EUR_OS_cluster3_Q3_concerns_ESPhil <- 
+  EUR_OS_cluster3_Q3 %>% 
+  filter(School == "ESPhil") %>% 
+  count(question, response) %>%
+  mutate(response = fct_recode(response, !!!preregistration_Likert_concerns_convert)) %>% 
+  filter(!(response %in% c("I do not share any of these concerns", "I don’t know/prefer not to answer", "Other"))) %>% 
+  arrange(desc(n)) %>%
+  pull(response)
+
+# ESL
+# four concerns with same percentage of responses
+EUR_OS_cluster3_Q3_concerns_ESL <- 
+  EUR_OS_cluster3_Q3 %>% 
+  filter(School == "ESL") %>% 
+  count(question, response) %>%
+  mutate(response = fct_recode(response, !!!preregistration_Likert_concerns_convert)) %>% 
+  filter(!(response %in% c("I do not share any of these concerns", "I don’t know/prefer not to answer", "Other"))) %>% 
+  arrange(desc(n)) %>%
+  pull(response)
+
+# ESSB
+# two concerns with same percentage of responses
+EUR_OS_cluster3_Q3_concerns_ESSB <- 
+  EUR_OS_cluster3_Q3 %>% 
+  filter(School == "ESSB") %>% 
+  count(question, response) %>%
+  mutate(response = fct_recode(response, !!!preregistration_Likert_concerns_convert)) %>% 
+  filter(!(response %in% c("I do not share any of these concerns", "I don’t know/prefer not to answer", "Other"))) %>% 
+  arrange(desc(n)) %>%
+  pull(response)
+
+# ESHCC
+EUR_OS_cluster3_Q3_concerns_ESHCC <- 
+  EUR_OS_cluster3_Q3 %>% 
+  filter(School == "ESHCC") %>% 
+  count(question, response) %>%
+  mutate(response = fct_recode(response, !!!preregistration_Likert_concerns_convert)) %>% 
+  filter(!(response %in% c("I do not share any of these concerns", "I don’t know/prefer not to answer", "Other"))) %>% 
+  arrange(desc(n)) %>%
+  chuck(2, 1)
+
 ```
 
 The question was:
@@ -1168,9 +1324,10 @@ The question was:
 > *`r unique(EUR_OS_cluster3_Q3$question)`*
 
 ### EUR
-Regarding practicing preregistration, the top 3 concerns from researchers at EUR are: 
-**Can we just pull the top 3 concerns automatically here?**
 
+Regarding preregistration, the top concern for researchers at EUR is: 
+
+* `r EUR_OS_cluster3_Q3_concerns`
 
 ```{r figure-preregistration-Q3-EUR}
 
@@ -1179,8 +1336,11 @@ knitr::include_graphics(here("img", "preregistration", "concerns", "figure_conce
 ```
 
 ### ISS
-Regarding practicing preregistration, the top 3 concerns from researchers at ISS are: 
-**Can we just pull the top 3 concerns automatically here?**
+
+Regarding preregistration, the top concern for researchers at ISS is: 
+
+* `r EUR_OS_cluster3_Q3_concerns_ISS`
+
 ```{r figure-preregistration-Q3-ISS}
 
 knitr::include_graphics(here("img", "preregistration", "concerns", "figure_concerns_preregistration_ISS.png"))
@@ -1188,8 +1348,12 @@ knitr::include_graphics(here("img", "preregistration", "concerns", "figure_conce
 ```
 
 ### ESHPM
-Regarding practicing preregistration, the top 3 concerns from researchers at ESHPM are: 
-**Can we just pull the top 3 concerns automatically here?**
+
+Regarding preregistration, the top concerns for researchers at ESHPM are:
+
+* `r EUR_OS_cluster3_Q3_concerns_ESHPM[1]`
+* `r EUR_OS_cluster3_Q3_concerns_ESHPM[2]`
+
 ```{r figure-preregistration-Q3-ESHPM}
 
 knitr::include_graphics(here("img", "preregistration", "concerns", "figure_concerns_preregistration_ESHPM.png"))
@@ -1197,8 +1361,13 @@ knitr::include_graphics(here("img", "preregistration", "concerns", "figure_conce
 ```
 
 ### ESPhil
-Regarding practicing preregistration, the top 3 concerns from researchers at ESPhil are: 
-**Can we just pull the top 3 concerns automatically here?**
+
+Regarding preregistration, the top concerns for researchers at ESPhil are: 
+
+* `r EUR_OS_cluster3_Q3_concerns_ESPhil[1]`
+* `r EUR_OS_cluster3_Q3_concerns_ESPhil[2]`
+* `r EUR_OS_cluster3_Q3_concerns_ESPhil[3]`
+
 ```{r figure-preregistration-Q3-ESPhil}
 
 knitr::include_graphics(here("img", "preregistration", "concerns", "figure_concerns_preregistration_ESPhil.png"))
@@ -1206,8 +1375,14 @@ knitr::include_graphics(here("img", "preregistration", "concerns", "figure_conce
 ```
 
 ### ESL
-Regarding practicing preregistration, the top 3 concerns from researchers at ESL are: 
-**Can we just pull the top 3 concerns automatically here?**
+
+Regarding preregistration, the top concerns for researchers at ESL are: 
+
+* `r EUR_OS_cluster3_Q3_concerns_ESL[1]`
+* `r EUR_OS_cluster3_Q3_concerns_ESL[2]`
+* `r EUR_OS_cluster3_Q3_concerns_ESL[3]`
+* `r EUR_OS_cluster3_Q3_concerns_ESL[4]`
+
 ```{r figure-preregistration-Q3-ESL}
 
 knitr::include_graphics(here("img", "preregistration", "concerns", "figure_concerns_preregistration_ESL.png"))
@@ -1215,8 +1390,12 @@ knitr::include_graphics(here("img", "preregistration", "concerns", "figure_conce
 ```
 
 ### ESSB
-Regarding practicing preregistration, the top 3 concerns from researchers at ESSB are: 
-**Can we just pull the top 3 concerns automatically here?**
+
+Regarding preregistration, the top concerns for researchers at ESSB are: 
+
+* `r EUR_OS_cluster3_Q3_concerns_ESSB[1]`
+* `r EUR_OS_cluster3_Q3_concerns_ESSB[2]`
+
 ```{r figure-preregistration-Q3-ESSB}
 
 knitr::include_graphics(here("img", "preregistration", "concerns", "figure_concerns_preregistration_ESSB.png"))
@@ -1224,8 +1403,11 @@ knitr::include_graphics(here("img", "preregistration", "concerns", "figure_conce
 ```
 
 ### ESHCC
-Regarding practicing preregistration, the top 3 concerns from researchers at ESHCC are: 
-**Can we just pull the top 3 concerns automatically here?**
+
+Regarding preregistration, the top concern for researchers at ESHCC is: 
+
+* `r EUR_OS_cluster3_Q3_concerns_ESHCC`
+
 ```{r figure-preregistration-Q3-ESHCC}
 
 knitr::include_graphics(here("img", "preregistration", "concerns", "figure_concerns_preregistration_ESHCC.png"))
@@ -1491,7 +1673,7 @@ The question was:
 > *`r unique(EUR_OS_cluster4_Q4$question)`*
 
 ### EUR
-Regarding sharing open educational materials, the top 3 concerns from researchers at EUR are: 
+Regarding sharing open educational materials, the top concern for researchers at EUR are: 
 **Can we just pull the top 3 concerns automatically here?**
 
 ```{r figure-open-education-Q4-EUR}
@@ -1501,7 +1683,7 @@ knitr::include_graphics(here("img", "open_education", "concerns", "figure_concer
 ```
 
 ### ISS
-Regarding sharing open educational materials, the top 3 concerns from researchers at ISS are: 
+Regarding sharing open educational materials, the top concern for researchers at ISS are: 
 **Can we just pull the top 3 concerns automatically here?**
 
 ```{r figure-open-education-Q4-ISS}
@@ -1511,7 +1693,7 @@ knitr::include_graphics(here("img", "open_education", "concerns", "figure_concer
 ```
 
 ### ESHPM
-Regarding sharing open educational materials, the top 3 concerns from researchers at ESHPM are: 
+Regarding sharing open educational materials, the top concern for researchers at ESHPM are: 
 **Can we just pull the top 3 concerns automatically here?**
 
 ```{r figure-open-education-Q4-ESHPM}
@@ -1521,7 +1703,7 @@ knitr::include_graphics(here("img", "open_education", "concerns", "figure_concer
 ```
 
 ### ESPhil
-Regarding sharing open educational materials, the top 3 concerns from researchers at ESPhil are: 
+Regarding sharing open educational materials, the top concern for researchers at ESPhil are: 
 **Can we just pull the top 3 concerns automatically here?**
 
 ```{r figure-open-education-Q4-ESPhil}
@@ -1531,7 +1713,7 @@ knitr::include_graphics(here("img", "open_education", "concerns", "figure_concer
 ```
 
 ### ESL
-Regarding sharing open educational materials, the top 3 concerns from researchers at ESL are: 
+Regarding sharing open educational materials, the top concern for researchers at ESL are: 
 **Can we just pull the top 3 concerns automatically here?**
 
 ```{r figure-open-education-Q4-ESL}
@@ -1541,7 +1723,7 @@ knitr::include_graphics(here("img", "open_education", "concerns", "figure_concer
 ```
 
 ### ESSB
-Regarding sharing open educational materials, the top 3 concerns from researchers at ESSB are: 
+Regarding sharing open educational materials, the top concern for researchers at ESSB are: 
 **Can we just pull the top 3 concerns automatically here?**
 
 ```{r figure-open-education-Q4-ESSB}
@@ -1551,7 +1733,7 @@ knitr::include_graphics(here("img", "open_education", "concerns", "figure_concer
 ```
 
 ### ESHCC
-Regarding sharing open educational materials, the top 3 concerns from researchers at ESHCC are: 
+Regarding sharing open educational materials, the top concern for researchers at ESHCC are: 
 **Can we just pull the top 3 concerns automatically here?**
 
 ```{r figure-open-education-Q4-ESHCC}
@@ -1756,7 +1938,7 @@ The question was:
 > *`r unique(EUR_OS_cluster5_Q3$question)`*
 
 ### EUR
-Regarding engaging with society, the top 3 concerns from researchers at EUR are: 
+Regarding engaging with society, the top concern for researchers at EUR are: 
 **Can we just pull the top 3 concerns automatically here?**
 
 ```{r figure-societal-engagement-Q3-EUR}
@@ -1766,7 +1948,7 @@ knitr::include_graphics(here("img", "societal_engagement", "concerns", "figure_c
 ```
 
 ### ISS
-Regarding engaging with society, the top 3 concerns from researchers at ISS are: 
+Regarding engaging with society, the top concern for researchers at ISS are: 
 **Can we just pull the top 3 concerns automatically here?**
 
 ```{r figure-societal-engagement-Q3-ISS}
@@ -1776,7 +1958,7 @@ knitr::include_graphics(here("img", "societal_engagement", "concerns", "figure_c
 ```
 
 ### ESHPM
-Regarding engaging with society, the top 3 concerns from researchers at ESHPM are: 
+Regarding engaging with society, the top concern for researchers at ESHPM are: 
 **Can we just pull the top 3 concerns automatically here?**
 ```{r figure-societal-engagement-Q3-ESHPM}
 
@@ -1785,7 +1967,7 @@ knitr::include_graphics(here("img", "societal_engagement", "concerns", "figure_c
 ```
 
 ### ESPhil
-Regarding engaging with society, the top 3 concerns from researchers at ESPhil are: 
+Regarding engaging with society, the top concern for researchers at ESPhil are: 
 **Can we just pull the top 3 concerns automatically here?**
 ```{r figure-societal-engagement-Q3-ESPhil}
 
@@ -1794,7 +1976,7 @@ knitr::include_graphics(here("img", "societal_engagement", "concerns", "figure_c
 ```
 
 ### ESL
-Regarding engaging with society, the top 3 concerns from researchers at ESL are: 
+Regarding engaging with society, the top concern for researchers at ESL are: 
 **Can we just pull the top 3 concerns automatically here?**
 ```{r figure-societal-engagement-Q3-ESL}
 
@@ -1803,7 +1985,7 @@ knitr::include_graphics(here("img", "societal_engagement", "concerns", "figure_c
 ```
 
 ### ESSB
-Regarding engaging with society, the top 3 concerns from researchers at ESSB are: 
+Regarding engaging with society, the top concern for researchers at ESSB are: 
 **Can we just pull the top 3 concerns automatically here?**
 
 ```{r figure-societal-engagement-Q3-ESSB}
@@ -1813,7 +1995,7 @@ knitr::include_graphics(here("img", "societal_engagement", "concerns", "figure_c
 ```
 
 ### ESHCC
-Regarding engaging with society, the top 3 concerns from researchers at ESHCC are: 
+Regarding engaging with society, the top concern for researchers at ESHCC are: 
 **Can we just pull the top 3 concerns automatically here?**
 
 ```{r figure-societal-engagement-Q3-ESHCC}
