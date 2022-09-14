@@ -1666,6 +1666,81 @@ EUR_OS_cluster4_Q4 <-
   EUR_OS_cluster4 %>% 
   filter(question == "The following are possible concerns that researchers could have about making educational resources developed by them openly available. Which of these concerns would you agree with?")
 
+### extract top concerns
+
+# EUR
+EUR_OS_cluster4_Q4_concerns <- 
+  EUR_OS_cluster4_Q4 %>% 
+  count(question, response) %>%
+  mutate(response = fct_recode(response, !!!open_education_Likert_concerns_convert)) %>% 
+  filter(!(response %in% c("I do not share any of these concerns", "I don’t know/prefer not to answer", "Other"))) %>% 
+  arrange(desc(n)) %>%
+  chuck(2, 1)
+
+# ISS
+EUR_OS_cluster4_Q4_concerns_ISS <- 
+  EUR_OS_cluster4_Q4 %>% 
+  filter(School == "ISS") %>% 
+  count(question, response) %>%
+  mutate(response = fct_recode(response, !!!open_education_Likert_concerns_convert)) %>% 
+  filter(!(response %in% c("I do not share any of these concerns", "I don’t know/prefer not to answer", "Other"))) %>% 
+  arrange(desc(n)) %>%
+  chuck(2, 1)
+
+# ESHPM
+# two concerns with same percentage of responses
+EUR_OS_cluster4_Q4_concerns_ESHPM <- 
+  EUR_OS_cluster4_Q4 %>% 
+  filter(School == "ESHPM") %>% 
+  count(question, response) %>%
+  mutate(response = fct_recode(response, !!!open_education_Likert_concerns_convert)) %>% 
+  filter(!(response %in% c("I do not share any of these concerns", "I don’t know/prefer not to answer", "Other"))) %>% 
+  arrange(desc(n)) %>%
+  pull(response)
+
+# ESPhil
+# two concerns with same percentage of responses
+EUR_OS_cluster4_Q4_concerns_ESPhil <- 
+  EUR_OS_cluster4_Q4 %>% 
+  filter(School == "ESPhil") %>% 
+  count(question, response) %>%
+  mutate(response = fct_recode(response, !!!open_education_Likert_concerns_convert)) %>% 
+  filter(!(response %in% c("I do not share any of these concerns", "I don’t know/prefer not to answer", "Other"))) %>% 
+  arrange(desc(n)) %>%
+  pull(response)
+
+# ESL
+# two concerns with same percentage of responses
+EUR_OS_cluster4_Q4_concerns_ESL <- 
+  EUR_OS_cluster4_Q4 %>% 
+  filter(School == "ESL") %>% 
+  count(question, response) %>%
+  mutate(response = fct_recode(response, !!!open_education_Likert_concerns_convert)) %>% 
+  filter(!(response %in% c("I do not share any of these concerns", "I don’t know/prefer not to answer", "Other"))) %>% 
+  arrange(desc(n)) %>%
+  pull(response)
+
+# ESSB
+EUR_OS_cluster4_Q4_concerns_ESSB <- 
+  EUR_OS_cluster4_Q4 %>% 
+  filter(School == "ESSB") %>% 
+  count(question, response) %>%
+  mutate(response = fct_recode(response, !!!open_education_Likert_concerns_convert)) %>% 
+  filter(!(response %in% c("I do not share any of these concerns", "I don’t know/prefer not to answer", "Other"))) %>% 
+  arrange(desc(n)) %>%
+  chuck(2, 1)
+
+# ESHCC
+# three concerns with same percentage of responses
+EUR_OS_cluster4_Q4_concerns_ESHCC <- 
+  EUR_OS_cluster4_Q4 %>% 
+  filter(School == "ESHCC") %>% 
+  count(question, response) %>%
+  mutate(response = fct_recode(response, !!!open_education_Likert_concerns_convert)) %>% 
+  filter(!(response %in% c("I do not share any of these concerns", "I don’t know/prefer not to answer", "Other"))) %>% 
+  arrange(desc(n)) %>%
+  pull(response)
+
 ```
 
 The question was:
@@ -1673,8 +1748,10 @@ The question was:
 > *`r unique(EUR_OS_cluster4_Q4$question)`*
 
 ### EUR
-Regarding sharing open educational materials, the top concern for researchers at EUR are: 
-**Can we just pull the top 3 concerns automatically here?**
+
+Regarding open educational materials, the top concern for researchers at EUR is: 
+
+* `r EUR_OS_cluster4_Q4_concerns`
 
 ```{r figure-open-education-Q4-EUR}
 
@@ -1683,8 +1760,10 @@ knitr::include_graphics(here("img", "open_education", "concerns", "figure_concer
 ```
 
 ### ISS
-Regarding sharing open educational materials, the top concern for researchers at ISS are: 
-**Can we just pull the top 3 concerns automatically here?**
+
+Regarding open educational materials, the top concern for researchers at ISS is: 
+
+* `r EUR_OS_cluster4_Q4_concerns_ISS`
 
 ```{r figure-open-education-Q4-ISS}
 
@@ -1693,8 +1772,11 @@ knitr::include_graphics(here("img", "open_education", "concerns", "figure_concer
 ```
 
 ### ESHPM
-Regarding sharing open educational materials, the top concern for researchers at ESHPM are: 
-**Can we just pull the top 3 concerns automatically here?**
+
+Regarding open educational materials, the top concerns for researchers at ESHPM are:
+
+* `r EUR_OS_cluster4_Q4_concerns_ESHPM[1]`
+* `r EUR_OS_cluster4_Q4_concerns_ESHPM[2]`
 
 ```{r figure-open-education-Q4-ESHPM}
 
@@ -1703,8 +1785,11 @@ knitr::include_graphics(here("img", "open_education", "concerns", "figure_concer
 ```
 
 ### ESPhil
-Regarding sharing open educational materials, the top concern for researchers at ESPhil are: 
-**Can we just pull the top 3 concerns automatically here?**
+
+Regarding open educational materials, the top concerns for researchers at ESPhil are: 
+
+* `r EUR_OS_cluster4_Q4_concerns_ESPhil[1]`
+* `r EUR_OS_cluster4_Q4_concerns_ESPhil[2]`
 
 ```{r figure-open-education-Q4-ESPhil}
 
@@ -1713,8 +1798,11 @@ knitr::include_graphics(here("img", "open_education", "concerns", "figure_concer
 ```
 
 ### ESL
-Regarding sharing open educational materials, the top concern for researchers at ESL are: 
-**Can we just pull the top 3 concerns automatically here?**
+
+Regarding open educational materials, the top concerns for researchers at ESL are: 
+
+* `r EUR_OS_cluster4_Q4_concerns_ESL[1]`
+* `r EUR_OS_cluster4_Q4_concerns_ESL[2]`
 
 ```{r figure-open-education-Q4-ESL}
 
@@ -1723,8 +1811,10 @@ knitr::include_graphics(here("img", "open_education", "concerns", "figure_concer
 ```
 
 ### ESSB
-Regarding sharing open educational materials, the top concern for researchers at ESSB are: 
-**Can we just pull the top 3 concerns automatically here?**
+
+Regarding open educational materials, the top concern for researchers at ESSB is: 
+
+* `r EUR_OS_cluster4_Q4_concerns_ESSB`
 
 ```{r figure-open-education-Q4-ESSB}
 
@@ -1733,8 +1823,12 @@ knitr::include_graphics(here("img", "open_education", "concerns", "figure_concer
 ```
 
 ### ESHCC
-Regarding sharing open educational materials, the top concern for researchers at ESHCC are: 
-**Can we just pull the top 3 concerns automatically here?**
+
+Regarding open educational materials, the top concerns for researchers at ESHCC are: 
+
+* `r EUR_OS_cluster4_Q4_concerns_ESHCC[1]`
+* `r EUR_OS_cluster4_Q4_concerns_ESHCC[2]`
+* `r EUR_OS_cluster4_Q4_concerns_ESHCC[3]`
 
 ```{r figure-open-education-Q4-ESHCC}
 
