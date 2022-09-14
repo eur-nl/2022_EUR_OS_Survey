@@ -2025,6 +2025,78 @@ EUR_OS_cluster5_Q3 <-
   EUR_OS_cluster5 %>% 
   filter(question == "The following are possible concerns that researchers could have about engaging with society. Which of these concerns would apply to you?")
 
+### extract top concerns
+
+# EUR
+EUR_OS_cluster5_Q3_concerns <- 
+  EUR_OS_cluster5_Q3 %>% 
+  count(question, response) %>%
+  mutate(response = fct_recode(response, !!!societal_engagement_Likert_concerns_convert)) %>% 
+  filter(!(response %in% c("I do not share any of these concerns", "I don’t know/prefer not to answer", "Other"))) %>% 
+  arrange(desc(n)) %>%
+  chuck(2, 1)
+
+# ISS
+EUR_OS_cluster5_Q3_concerns_ISS <- 
+  EUR_OS_cluster5_Q3 %>% 
+  filter(School == "ISS") %>% 
+  count(question, response) %>%
+  mutate(response = fct_recode(response, !!!societal_engagement_Likert_concerns_convert)) %>% 
+  filter(!(response %in% c("I do not share any of these concerns", "I don’t know/prefer not to answer", "Other"))) %>% 
+  arrange(desc(n)) %>%
+  chuck(2, 1)
+
+# ESHPM
+EUR_OS_cluster5_Q3_concerns_ESHPM <- 
+  EUR_OS_cluster5_Q3 %>% 
+  filter(School == "ESHPM") %>% 
+  count(question, response) %>%
+  mutate(response = fct_recode(response, !!!societal_engagement_Likert_concerns_convert)) %>% 
+  filter(!(response %in% c("I do not share any of these concerns", "I don’t know/prefer not to answer", "Other"))) %>% 
+  arrange(desc(n)) %>%
+  chuck(2, 1)
+
+# ESPhil
+EUR_OS_cluster5_Q3_concerns_ESPhil <- 
+  EUR_OS_cluster5_Q3 %>% 
+  filter(School == "ESPhil") %>% 
+  count(question, response) %>%
+  mutate(response = fct_recode(response, !!!societal_engagement_Likert_concerns_convert)) %>% 
+  filter(!(response %in% c("I do not share any of these concerns", "I don’t know/prefer not to answer", "Other"))) %>% 
+  arrange(desc(n)) %>%
+  chuck(2, 1)
+
+# ESL
+# two concerns with same percentage of responses
+EUR_OS_cluster5_Q3_concerns_ESL <- 
+  EUR_OS_cluster5_Q3 %>% 
+  filter(School == "ESL") %>% 
+  count(question, response) %>%
+  mutate(response = fct_recode(response, !!!societal_engagement_Likert_concerns_convert)) %>% 
+  filter(!(response %in% c("I do not share any of these concerns", "I don’t know/prefer not to answer", "Other"))) %>% 
+  arrange(desc(n)) %>%
+  pull(response)
+
+# ESSB
+EUR_OS_cluster5_Q3_concerns_ESSB <- 
+  EUR_OS_cluster5_Q3 %>% 
+  filter(School == "ESSB") %>% 
+  count(question, response) %>%
+  mutate(response = fct_recode(response, !!!societal_engagement_Likert_concerns_convert)) %>% 
+  filter(!(response %in% c("I do not share any of these concerns", "I don’t know/prefer not to answer", "Other"))) %>% 
+  arrange(desc(n)) %>%
+  chuck(2, 1)
+
+# ESHCC
+EUR_OS_cluster5_Q3_concerns_ESHCC <- 
+  EUR_OS_cluster5_Q3 %>% 
+  filter(School == "ESHCC") %>% 
+  count(question, response) %>%
+  mutate(response = fct_recode(response, !!!societal_engagement_Likert_concerns_convert)) %>% 
+  filter(!(response %in% c("I do not share any of these concerns", "I don’t know/prefer not to answer", "Other"))) %>% 
+  arrange(desc(n)) %>%
+  chuck(2, 1)
+
 ```
 
 The question was:
@@ -2032,8 +2104,10 @@ The question was:
 > *`r unique(EUR_OS_cluster5_Q3$question)`*
 
 ### EUR
-Regarding engaging with society, the top concern for researchers at EUR are: 
-**Can we just pull the top 3 concerns automatically here?**
+
+Regarding societal engagement, the top concern for researchers at EUR is: 
+
+* `r EUR_OS_cluster5_Q3_concerns`
 
 ```{r figure-societal-engagement-Q3-EUR}
 
@@ -2042,8 +2116,10 @@ knitr::include_graphics(here("img", "societal_engagement", "concerns", "figure_c
 ```
 
 ### ISS
-Regarding engaging with society, the top concern for researchers at ISS are: 
-**Can we just pull the top 3 concerns automatically here?**
+
+Regarding societal engagement, the top concern for researchers at ISS is: 
+
+* `r EUR_OS_cluster5_Q3_concerns_ISS`
 
 ```{r figure-societal-engagement-Q3-ISS}
 
@@ -2052,8 +2128,11 @@ knitr::include_graphics(here("img", "societal_engagement", "concerns", "figure_c
 ```
 
 ### ESHPM
-Regarding engaging with society, the top concern for researchers at ESHPM are: 
-**Can we just pull the top 3 concerns automatically here?**
+
+Regarding societal engagement, the top concern for researchers at ESHPM is: 
+
+* `r EUR_OS_cluster5_Q3_concerns_ESHPM`
+
 ```{r figure-societal-engagement-Q3-ESHPM}
 
 knitr::include_graphics(here("img", "societal_engagement", "concerns", "figure_concerns_societal_engagement_ESHPM.png"))
@@ -2061,8 +2140,11 @@ knitr::include_graphics(here("img", "societal_engagement", "concerns", "figure_c
 ```
 
 ### ESPhil
-Regarding engaging with society, the top concern for researchers at ESPhil are: 
-**Can we just pull the top 3 concerns automatically here?**
+
+Regarding societal engagement, the top concern for researchers at ESPhil is: 
+
+* `r EUR_OS_cluster5_Q3_concerns_ESPhil`
+
 ```{r figure-societal-engagement-Q3-ESPhil}
 
 knitr::include_graphics(here("img", "societal_engagement", "concerns", "figure_concerns_societal_engagement_ESPhil.png"))
@@ -2070,8 +2152,12 @@ knitr::include_graphics(here("img", "societal_engagement", "concerns", "figure_c
 ```
 
 ### ESL
-Regarding engaging with society, the top concern for researchers at ESL are: 
-**Can we just pull the top 3 concerns automatically here?**
+
+Regarding societal engagement, the top concerns for researchers at ESL are:
+
+* `r EUR_OS_cluster5_Q3_concerns_ESL[1]`
+* `r EUR_OS_cluster5_Q3_concerns_ESL[2]`
+
 ```{r figure-societal-engagement-Q3-ESL}
 
 knitr::include_graphics(here("img", "societal_engagement", "concerns", "figure_concerns_societal_engagement_ESL.png"))
@@ -2079,8 +2165,10 @@ knitr::include_graphics(here("img", "societal_engagement", "concerns", "figure_c
 ```
 
 ### ESSB
-Regarding engaging with society, the top concern for researchers at ESSB are: 
-**Can we just pull the top 3 concerns automatically here?**
+
+Regarding societal engagement, the top concern for researchers at ESSB is:
+
+* `r EUR_OS_cluster5_Q3_concerns_ESSB`
 
 ```{r figure-societal-engagement-Q3-ESSB}
 
@@ -2089,8 +2177,10 @@ knitr::include_graphics(here("img", "societal_engagement", "concerns", "figure_c
 ```
 
 ### ESHCC
-Regarding engaging with society, the top concern for researchers at ESHCC are: 
-**Can we just pull the top 3 concerns automatically here?**
+
+Regarding societal engagement, the top concern for researchers at ESHCC is:
+
+* `r EUR_OS_cluster5_Q3_concerns_ESHCC`
 
 ```{r figure-societal-engagement-Q3-ESHCC}
 
