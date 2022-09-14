@@ -80,7 +80,7 @@ EUR_OS_cluster8 <- readRDS(here("data", "preprocessed", "rds", "cluster_8.rds"))
 
 ```
 
-# Introduction
+# Introduction {#intro}
 
 Open Science increases transparency throughout the research cycle -- hypothesis, methodology, observation, data collection, analysis, and publication --, resulting in increased research efficiency and enhanced research quality, visibility, and engagement. Open Science also enables the creation of new research questions and promotes collaboration and community building.
 
@@ -92,19 +92,19 @@ The EUR Open Science Survey (adapted from the [Swinburne Open Science Survey](ht
 
 The survey explored how researchers consider open science practices in the context of their discipline, their direct experience, as well as their concerns. Seven topics were covered:
 
-1. Open Access
-2. Open Data, Materials, and/or Code
-3. Preregistration
-4. Open Education
-5. Societal Engagement
-6. Support at EUR
-7. Recognition and Rewards
+1. [Open Access](#oa)
+2. [Open Data, Materials, and/or Code](#open-materials)
+3. [Preregistration](#prereg)
+4. [Open Education](#open-education)
+5. [Societal Engagement](#society)
+6. [Support at EUR](#support)
+7. [Recognition and Rewards](#rr)
 
 The current report shows the combined results as well as separately for each school.
 
 This is a living document that may be updated with new information and insights. For any comments or questions, please contact [Dr. Lizette Guzman-Ramirez](mailto:guzmanramirez@rsm.nl) (Research Data Steward at ERIM) or [Dr. Antonio Schettino](mailto:schettino@eur.nl) (Senior Advisor Open Science at ERS).
 
-# Respondents
+# Respondents {#resp}
 
 ```{r data-complete-questionnaires}
 
@@ -170,9 +170,9 @@ EUR_OS_school %>%
 
 ```
 
-# Open Access
+# Open Access {#oa}
 
-## Importance of Open Access {.tabset .tabset-pills}
+## Importance of Open Access {#oa-importance .tabset .tabset-pills}
 
 ```{r data-open-access-Q1}
 
@@ -186,6 +186,8 @@ The question was:
 
 > *`r unique(EUR_OS_cluster1_Q1$question)`*
 
+### EUR
+
 In general researchers at EUR consider Open Access relevant: more than 60% of the respondents agree that Open Access is very important (combining extremely and very important), and only a bit more than 8% think is not at all important. 
 When looking at the responses from the schools, ESSB and ESHCC are the ones were the majority of the respondents think Open Access is very important (80% and 75% respectively).
 
@@ -196,6 +198,7 @@ knitr::include_graphics(here("img", "open_access", "importance", "figure_importa
 ```
 
 ### ISS
+
 Researchers at ISS consider Open Access relevant, more than 66% of the respondents agree that Open Access is very important (combining extremely and very important), and none of them think is not at all important. 
 
 
@@ -257,7 +260,7 @@ knitr::include_graphics(here("img", "open_access", "importance", "figure_importa
 
 ## {-}
 
-## Experience with Open Access {.tabset .tabset-pills}
+## Experience with Open Access {#oa-experience .tabset .tabset-pills}
 
 ```{r data-open-access-Q2}
 
@@ -344,7 +347,7 @@ knitr::include_graphics(here("img", "open_access", "experience", "figure_experie
 
 ## {-}
 
-## Concerns around Open Access {.tabset .tabset-pills}
+## Concerns around Open Access {#oa-concerns .tabset .tabset-pills}
 
 ```{r data-open-access-Q3}
 
@@ -491,9 +494,6 @@ knitr::include_graphics(here("img", "open_access", "concerns", "figure_concerns_
 
 ```
 
-
-
-
 ```{r figure-open-access-Q4-ESL}
 
 # this free-text question does not have figures
@@ -501,15 +501,22 @@ knitr::include_graphics(here("img", "open_access", "concerns", "figure_concerns_
 
 EUR_OS_cluster1_Q4 <-
   EUR_OS_cluster1 %>% 
-  filter(question == "Is there anything you want to share with us regarding your experiences with Open Access?")
+  filter(question == "Is there anything you want to share with us regarding your experiences with Open Access?") %>% 
+  drop_na()
 
 ```
 
+ESL respondents were presented with an additional free-text question: 
 
+> *`r unique(EUR_OS_cluster1_Q4$question)`*
 
-**This question was only asked at ESL, not sure if we should emphasise this? And not sure if this is representative to everyone else? Maybe we keep this for the ESL tab only?**
-INSERT QUOTES HERE
+Here are some answers:
 
+* *`r EUR_OS_cluster1_Q4[2, "response"]`*
+* *`r EUR_OS_cluster1_Q4[6, "response"]`*
+* *`r EUR_OS_cluster1_Q4[4, "response"]`*
+* *`r EUR_OS_cluster1_Q4[11, "response"]`*
+* *`r EUR_OS_cluster1_Q4[1, "response"]`*
 
 ### ESSB
 
@@ -537,9 +544,9 @@ knitr::include_graphics(here("img", "open_access", "concerns", "figure_concerns_
 
 ## {-}
 
-# Open Data, Materials, and/or Code
+# Open Data, Materials, and/or Code {#open-materials}
 
-## Importance of Open Data/Materials/Code {.tabset .tabset-pills}
+## Importance of Open Data/Materials/Code {#open-materials-importance .tabset .tabset-pills}
 
 ```{r data-open-data-materials-code-Q1}
 
@@ -627,7 +634,7 @@ knitr::include_graphics(here("img", "open_data_materials_code", "importance", "f
 
 ## {-}
 
-## Experience with others' Open Data/Materials/Code {.tabset .tabset-pills}
+## Experience with others' Open Data/Materials/Code {#open-materials-experience-others .tabset .tabset-pills}
 
 ```{r data-open-data-materials-code-Q2}
 
@@ -712,7 +719,7 @@ knitr::include_graphics(here("img", "open_data_materials_code", "experience_othe
 
 ## {-}
 
-## Experience with own Open Data/Materials/Code {.tabset .tabset-pills}
+## Experience with own Open Data/Materials/Code {#open-materials-experience-own .tabset .tabset-pills}
 
 ```{r data-open-data-materials-code-Q3}
 
@@ -798,7 +805,7 @@ knitr::include_graphics(here("img", "open_data_materials_code", "experience_own"
 
 ## {-}
 
-## FAIR principles {.tabset .tabset-pills}
+## FAIR principles {#fair .tabset .tabset-pills}
 
 ```{r data-open-data-materials-code-Q4}
 
@@ -816,8 +823,7 @@ The question was:
 
 Regarding the Findable, Accessible, Interoperable, and Re-usable (FAIR) principles, most researchers at EUR, almost 33%, had not heard of the FAIR principles before the survey, however, a bit more than 26% have some experience with the FAIR principles, but do not follow them regularly, while a bit more than 15% of the respondents regularly follow the FAIR principles.
 
-Respondents that answered "I regularly follow the FAIR principles", and "I have some experience with the FAIR principles, but do not follow them regularly" got an extra question about the support to follow the FAIR principles. 
-####Link here to the support on FAIR######
+Respondents that answered "I regularly follow the FAIR principles", and "I have some experience with the FAIR principles, but do not follow them regularly" got an extra question about the [support to follow the FAIR principles](#support-fair). 
 
 ```{r figure-open-data-materials-code-Q4-EUR}
 
@@ -887,7 +893,7 @@ knitr::include_graphics(here("img", "open_data_materials_code", "FAIR", "figure_
 
 ## {-}
 
-## Concerns around Open Data/Materials/Code {.tabset .tabset-pills}
+## Concerns around Open Data/Materials/Code {#open-materials-concerns .tabset .tabset-pills}
 
 ```{r data-open-data-materials-code-Q5}
 
@@ -1062,9 +1068,9 @@ knitr::include_graphics(here("img", "open_data_materials_code", "concerns", "fig
 
 ## {-}
 
-# Preregistration
+# Preregistration {#prereg}
 
-## Importance of Preregistration {.tabset .tabset-pills}
+## Importance of Preregistration {#prereg-importance .tabset .tabset-pills}
 
 ```{r data-preregistration-Q1}
 
@@ -1150,7 +1156,7 @@ knitr::include_graphics(here("img", "preregistration", "importance", "figure_imp
 
 ## {-}
 
-## Experience with Preregistration {.tabset .tabset-pills}
+## Experience with Preregistration {#prereg-experience .tabset .tabset-pills}
 
 ```{r data-preregistration-Q2}
 
@@ -1215,6 +1221,7 @@ knitr::include_graphics(here("img", "preregistration", "experience", "figure_exp
 ```
 
 ### ESSB
+
 More than half (almost 53%) of the researchers at ESSB either have some experience or regularly preregister their studies, while on the other side a bit more than 42% of the respondents have not used it or were unaware of preregistration before the survey. 
 
 ```{r figure-preregistration-Q2-ESSB}
@@ -1224,6 +1231,7 @@ knitr::include_graphics(here("img", "preregistration", "experience", "figure_exp
 ```
 
 ### ESHCC
+
 Researchers at ESHCC were mostly unaware of preregistration before the survey (50%), while 25% of the respondents are aware of preregistration but have not used it. 
 
 ```{r figure-preregistration-Q2-ESHCC}
@@ -1234,7 +1242,7 @@ knitr::include_graphics(here("img", "preregistration", "experience", "figure_exp
 
 ## {-}
 
-## Concerns around Preregistration {.tabset .tabset-pills}
+## Concerns around Preregistration {#prereg-concerns .tabset .tabset-pills}
 
 ```{r data-preregistration-Q3}
 
@@ -1416,9 +1424,9 @@ knitr::include_graphics(here("img", "preregistration", "concerns", "figure_conce
 
 ## {-}
 
-# Open Education
+# Open Education {#open-education}
 
-## Importance of Open Education {.tabset .tabset-pills}
+## Importance of Open Education {#open-education-importance .tabset .tabset-pills}
 
 ```{r data-open-education-Q1}
 
@@ -1433,6 +1441,7 @@ The question was:
 > *`r unique(EUR_OS_cluster4_Q1$question)`*
 
 ### EUR
+
 Regarding the importance of open education, almost 43% of researchers at EUR think open education is very important (combining extremely and very), while only a bit more than 11% think is not important at all. 
 
 ```{r figure-open-education-Q1-EUR}
@@ -1442,6 +1451,7 @@ knitr::include_graphics(here("img", "open_education", "importance", "figure_impo
 ```
 
 ### ISS
+
 Regarding the importance of open education, the majority (60%) of the researchers at ISS think open education is very important (combining extremely and very), while none of them think is not important at all. 
 
 ```{r figure-open-education-Q1-ISS}
@@ -1451,6 +1461,7 @@ knitr::include_graphics(here("img", "open_education", "importance", "figure_impo
 ```
 
 ### ESHPM
+
 Regarding the importance of open education, almost 32% of the researchers at ESHPM think open education is very important (combining extremely and very), while a bit more than 21% think that open education is not important at all. 
 
 ```{r figure-open-education-Q1-ESHPM}
@@ -1460,6 +1471,7 @@ knitr::include_graphics(here("img", "open_education", "importance", "figure_impo
 ```
 
 ### ESPhil
+
 Regarding the importance of open education, almost 45% of the researchers at ESPhil think open education is very important (combining extremely and very), while a bit more than 11% think that open education is not important at all.
 
 ```{r figure-open-education-Q1-ESPhil}
@@ -1469,6 +1481,7 @@ knitr::include_graphics(here("img", "open_education", "importance", "figure_impo
 ```
 
 ### ESL
+
 Regarding the importance of open education, a bit more than 41% of the researchers at ESL think open education is very important (combining extremely and very), while almost 12% of the respondents think that open education is not important at all.
 
 ```{r figure-open-education-Q1-ESL}
@@ -1478,6 +1491,7 @@ knitr::include_graphics(here("img", "open_education", "importance", "figure_impo
 ```
 
 ### ESSB
+
 Regarding the importance of open education, 38% of the researchers at ESSB think open education is very important (combining extremely and very), while a bit more than 14% think that open education is not important at all.
 
 ```{r figure-open-education-Q1-ESSB}
@@ -1487,6 +1501,7 @@ knitr::include_graphics(here("img", "open_education", "importance", "figure_impo
 ```
 
 ### ESHCC
+
 Regarding the importance of open education, the majority (a bit more than 57%) of the researchers at ESHCC think open education is very important (combining extremely and very), while none of them think that open education is not important at all.
 
 ```{r figure-open-education-Q1-ESHCC}
@@ -1497,7 +1512,7 @@ knitr::include_graphics(here("img", "open_education", "importance", "figure_impo
 
 ## {-}
 
-## Experience with others' Open Education {.tabset .tabset-pills}
+## Experience with others' Open Education {#open-education-experience-others .tabset .tabset-pills}
 
 ```{r data-open-education-Q2}
 
@@ -1512,6 +1527,7 @@ The question was:
 > *`r unique(EUR_OS_cluster4_Q2$question)`*
 
 ### EUR
+
 Regarding the use of openly available educational materials, almost 54% of the researchers at EUR either have never used or not regularly use them, while a bit more than 21% of the respondents regularly use educational resources developed by others. 
 
 ```{r figure-open-education-Q2-EUR}
@@ -1521,6 +1537,7 @@ knitr::include_graphics(here("img", "open_education", "experience_others", "figu
 ```
 
 ### ISS
+
 Regarding the use of openly available educational materials, 60% of the researchers at ISS either have never used or were not aware of them, while 20% of the respondents regularly use educational resources developed by others. 
 
 ```{r figure-open-education-Q2-ISS}
@@ -1530,6 +1547,7 @@ knitr::include_graphics(here("img", "open_education", "experience_others", "figu
 ```
 
 ### ESHPM
+
 Regarding the use of openly available educational materials, almost 60% of the researchers at ESHPM either have never used or not regularly use them, while a bit more than 17% of the respondents regularly use educational resources developed by others. 
 
 ```{r figure-open-education-Q2-ESHPM}
@@ -1539,6 +1557,7 @@ knitr::include_graphics(here("img", "open_education", "experience_others", "figu
 ```
 
 ### ESPhil
+
 Regarding the use of openly available educational materials, a bit more than 37% of the researchers at ESPhil regularly use educational resources developed by others, while 25% of the respondents have some experience but do not use educational materials developed by others regularly. 
 
 ```{r figure-open-education-Q2-ESPhil}
@@ -1548,6 +1567,7 @@ knitr::include_graphics(here("img", "open_education", "experience_others", "figu
 ```
 
 ### ESL
+
 Regarding the use of openly available educational materials, almost 67% of the researchers at ESHPM either have never, not regularly, or were unaware of open educational resources, while 20% of the respondents regularly use educational resources developed by others.
 
 ```{r figure-open-education-Q2-ESL}
@@ -1557,6 +1577,7 @@ knitr::include_graphics(here("img", "open_education", "experience_others", "figu
 ```
 
 ### ESSB
+
 Regarding the use of openly available educational materials, 50% of the researchers at ESSB either have never used or were unaware of them, while almost 19% of the respondents regularly use educational resources developed by others.
 
 ```{r figure-open-education-Q2-ESSB}
@@ -1566,6 +1587,7 @@ knitr::include_graphics(here("img", "open_education", "experience_others", "figu
 ```
 
 ### ESHCC
+
 Regarding the use of openly available educational materials, a bit more than 71% of the researchers at ESHCC either have never used or not regularly use them, while almost 29% of the respondents regularly use educational resources developed by others.
 
 ```{r figure-open-education-Q2-ESHCC}
@@ -1576,7 +1598,7 @@ knitr::include_graphics(here("img", "open_education", "experience_others", "figu
 
 ## {-}
 
-## Experience with own Open Education {.tabset .tabset-pills}
+## Experience with own Open Education {#open-education-experience-own .tabset .tabset-pills}
 
 ```{r data-open-education-Q3}
 
@@ -1591,10 +1613,8 @@ The question was:
 > *`r unique(EUR_OS_cluster4_Q3$question)`*
 
 ### EUR
+
 When it comes to sharing their own educational resources, researchers at EUR mostly do not share them regularly, not at all, or they were not aware of open educational materials at all (70%), however, 16% of the respondents do regularly share their own educational resources. 
-
-
-
 
 ```{r figure-open-education-Q3-EUR}
 
@@ -1603,6 +1623,7 @@ knitr::include_graphics(here("img", "open_education", "experience_own", "figure_
 ```
 
 ### ISS
+
 A bit more than 33% of researchers at ISS have some experience with open educational resources but do not share their own regularly. Almost 42% of the respondents do not share their own or hadn't heard of educational resources before the survey. However a bit more than 16% of the respondents do regularly share their own educational resources. 
 
 ```{r figure-open-education-Q3-ISS}
@@ -1612,6 +1633,7 @@ knitr::include_graphics(here("img", "open_education", "experience_own", "figure_
 ```
 
 ### ESHPM
+
 Most of the of researchers at ESHPM (almost 92%) do not share their own educational resources regularly, never, or hadn't heard of educational resources before the survey. 
 
 ```{r figure-open-education-Q3-ESHPM}
@@ -1621,6 +1643,7 @@ knitr::include_graphics(here("img", "open_education", "experience_own", "figure_
 ```
 
 ### ESPhil
+
 Researchers at ESPhil are spitted equally (37.5%) between researchers that regularly share their open educational materials, and the ones that do not. 
 
 ```{r figure-open-education-Q3-ESPhil}
@@ -1630,6 +1653,7 @@ knitr::include_graphics(here("img", "open_education", "experience_own", "figure_
 ```
 
 ### ESL
+
 Most of the of researchers at ESL (almost 67%) do not share their own educational resources regularly, never, or hadn't heard of educational resources before the survey. However, 20% of the respondents do regularly share their own  educational resources. 
 
 ```{r figure-open-education-Q3-ESL}
@@ -1639,6 +1663,7 @@ knitr::include_graphics(here("img", "open_education", "experience_own", "figure_
 ```
 
 ### ESSB
+
 Most of the of researchers at ESSB (almost 71%) do not share their own educational resources regularly, never, or hadn't heard of educational resources before the survey. However, almost 12% of the respondents do regularly share their own  educational resources. 
 
 ```{r figure-open-education-Q3-ESSB}
@@ -1648,6 +1673,7 @@ knitr::include_graphics(here("img", "open_education", "experience_own", "figure_
 ```
 
 ### ESHCC
+
 Most of the of researchers at ESHCC (a bit more than 71%) do not share their own educational resources regularly, never, or hadn't heard of educational resources before the survey. However, a bit more than 14% of the respondents do regularly share their own  educational resources.
 
 ```{r figure-open-education-Q3-ESHCC}
@@ -1658,7 +1684,7 @@ knitr::include_graphics(here("img", "open_education", "experience_own", "figure_
 
 ## {-}
 
-## Concerns around Open Education {.tabset .tabset-pills}
+## Concerns around Open Education {#open-education-concerns .tabset .tabset-pills}
 
 ```{r data-open-education-Q4}
 
@@ -1838,9 +1864,9 @@ knitr::include_graphics(here("img", "open_education", "concerns", "figure_concer
 
 ## {-}
 
-# Societal Engagement
+# Societal Engagement {#society}
 
-## Importance of Societal Engagement {.tabset .tabset-pills}
+## Importance of Societal Engagement {#society-importance .tabset .tabset-pills}
 
 ```{r data-societal-engagement-Q1}
 
@@ -1926,7 +1952,7 @@ knitr::include_graphics(here("img", "societal_engagement", "importance", "figure
 
 ## {-}
 
-## Experience with Societal Engagement {.tabset .tabset-pills}
+## Experience with Societal Engagement {#society-experience .tabset .tabset-pills}
 
 ```{r data-societal-engagement-Q2}
 
@@ -2017,7 +2043,7 @@ knitr::include_graphics(here("img", "societal_engagement", "experience", "figure
 
 ## {-}
 
-## Concerns around Societal Engagement {.tabset .tabset-pills}
+## Concerns around Societal Engagement {#society-concerns .tabset .tabset-pills}
 
 ```{r data-societal-engagement-Q3}
 
@@ -2190,9 +2216,9 @@ knitr::include_graphics(here("img", "societal_engagement", "concerns", "figure_c
 
 ## {-}
 
-# Support at EUR
+# Support at EUR {#support}
 
-## Expected Support {.tabset .tabset-pills}
+## Expected Support {#support-expected .tabset .tabset-pills}
 
 ```{r data-EUR-support-Q1}
 
@@ -2217,6 +2243,7 @@ knitr::include_graphics(here("img", "support", "EUR", "figure_EUR_support_EUR.pn
 ```
 
 ### ISS
+
 Almost 63% of the researchers at ISS answered that they do expect support form EUR when it comes to learning open science practices, while 25% of the respondents do not expect support form EUR.
 
 ```{r figure-EUR-support-Q1-ISS}
@@ -2226,6 +2253,7 @@ knitr::include_graphics(here("img", "support", "EUR", "figure_EUR_support_ISS.pn
 ```
 
 ### ESHPM
+
 A bit more than 45% of the researchers at EUR answered that they do expect support form EUR when it comes to learning open science practices, while a bit more than 36% of the respondents do not expect support form EUR.
 
 ```{r figure-EUR-support-Q1-ESHPM}
@@ -2276,7 +2304,7 @@ knitr::include_graphics(here("img", "support", "EUR", "figure_EUR_support_ESHCC.
 
 ## {-}
 
-## Desired Open Science support {.tabset .tabset-pills}
+## Desired Open Science support {#support-desired .tabset .tabset-pills}
 
 ```{r data-EUR-support-Q2}
 
@@ -2326,7 +2354,6 @@ knitr::include_graphics(here("img", "support", "desired", "figure_desired_suppor
 
 Researchers at ESPhil that expect support form EUR regarding open science practices (they answered "yes" in the previous question), responded that the only open science practices they want support with is open access publishing. 
 
-
 ```{r figure-EUR-support-Q2-ESPhil}
 
 knitr::include_graphics(here("img", "support", "desired", "figure_desired_support_ESPhil.png"))
@@ -2367,11 +2394,9 @@ knitr::include_graphics(here("img", "support", "desired", "figure_desired_suppor
 
 ## {-}
 
-## FAIR support {.tabset .tabset-pills}
+## FAIR support {#support-fair .tabset .tabset-pills}
 
-Respondents that answered "I regularly follow the FAIR principles", and "I have some experience with the FAIR principles, but do not follow them regularly" in the question on familiarity towards the FAIR principles 
-####Link here to the question about FAIR######
-got this extra question regarding the support that EUR already provides about the FAIR principles. 
+Respondents that answered "I regularly follow the FAIR principles", and "I have some experience with the FAIR principles, but do not follow them regularly" in the [question on familiarity towards the FAIR principles](#fair) got this extra question regarding the support that EUR already provides about the FAIR principles. 
 
 ```{r data-EUR-support-Q3}
 
@@ -2388,8 +2413,6 @@ The question was:
 ### EUR
 
 More than half of the respondents from EUR that follow the FAIR principles didn't know or didn't want to answer their use of EUR support services to make their data FAIR. While a bit more than 20% of the respondents got support from a research data management workshop.
-
-
 
 ```{r figure-EUR-support-Q3-EUR}
 
@@ -2459,11 +2482,11 @@ knitr::include_graphics(here("img", "support", "FAIR", "figure_FAIR_support_ESHC
 
 ## {-}
 
-# Recognition & Rewards
+# Recognition & Rewards {#rr}
 
 #####HERE######
 
-## Feeling recognized for Open Science {.tabset .tabset-pills}
+## Feeling recognized for Open Science {#rr-feeling-recognized .tabset .tabset-pills}
 
 ```{r data-recognition-rewards-Q1}
 
@@ -2557,7 +2580,7 @@ knitr::include_graphics(here("img", "recognition_rewards", "feeling_recognized",
 
 ## {-}
 
-## Current recognition for Open Science {.tabset .tabset-pills}
+## Current recognition for Open Science {#rr-current-recognition .tabset .tabset-pills}
 
 For the respondents that answered "Yes" to the question above about feeling recognized and rewarded for the open science activities they undertake, we asked them the following question.  
 
@@ -2633,7 +2656,7 @@ knitr::include_graphics(here("img", "recognition_rewards", "current_recognition"
 
 ## {-}
 
-## Expected recognition for Open Science {.tabset .tabset-pills}
+## Expected recognition for Open Science {#rr-expected-recognition .tabset .tabset-pills}
 
 For the respondents that answered "No" to the question above about feeling recognized and rewarded for the open science activities they undertake, we asked them the following question. 
 
@@ -2708,7 +2731,6 @@ knitr::include_graphics(here("img", "recognition_rewards", "expected_recognition
 ## {-}
 
 # Conclusions
-
 
 Highlight what ORS is and will do
 -MOOC
