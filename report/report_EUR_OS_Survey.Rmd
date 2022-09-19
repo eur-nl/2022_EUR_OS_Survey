@@ -2769,10 +2769,20 @@ knitr::include_graphics(here("img", "recognition_rewards", "expected_recognition
 
 # Conclusions
 
-Highlight what ORS is and will do
--MOOC
--Campaigns
--Awards 
--we are happy to provide support and advice to factuly specifc strategy to increase the awareness and training 
+Open Science increases transparency throughout the research cycle, resulting in increased research efficiency and enhanced research quality, visibility, and engagement. For these reasons, EUR is committed to making Open Science practices the norm among its researchers.
 
-EUR 2024 strategy on OS 
+And it is not surprise that Open and Responsible Science (ORS) is one of the pillars for the EUR strategy 2024. Because of this, EUR created an Open and Responsible Science Program.
+
+The first deliverable of the Open and Responsible Science Program are the Open Science initiative, geared towards making our scientific routines more open and engaged with our scholarly and societal stakeholders.
+This initiative will focus on researcher behavior and on stimulating the active use of open science tools and infrastructure.
+
+The ORS program has also together withe Open Science Ambassadors of each faculty co-created an Open Science white paper, that presents the current state of Open Science at EUR. 
+
+And this survey was an initiative of the ORS program, so that we know what our researchers struggle with and what practices do they want to know more about. 
+
+The Open and Responsible Science program will also promote and encourage the Open Science Massive Online Open Course (MOOC) that will be launched in the autumn of 2022. 
+
+And to recognize and reward Open Science practices, the ORS program created the Open Science Awards, that will be given for the first time on November 2022. 
+
+When it comes to faculty specif strategy, the ORS program group would be happy to provide support and advice to increase the awareness and training regarding Open Science practices. 
+
