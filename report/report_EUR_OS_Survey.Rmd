@@ -2747,7 +2747,7 @@ knitr::include_graphics(here("img", "recognition_rewards", "expected_recognition
 
 ### ESSB
 
-Half of the respondents from ISS did not know or preferred not to answer this question, for the rest, 20% of the respondents would like to get more time for open science activities as a reward, 10% of the respondents will like to be rewarded with a salary raise, then same percentage of respondents want to receive a promotion, and the same percentage selected that the way they get recognized and rewarded for doing open science was the freedom to choice and initiate their own projects.
+Almost 32% of the respondents from ESSB did not know or preferred not to answer this question, a bit more than 26% of the respondents would like to get more time for open science activities as a reward, almost 16% of the respondents selected that the way they get recognized and rewarded for doing open science was the freedom to choice and initiate their own projects.
 
 ```{r figure-recognition-rewards-Q3-ESSB}
 
@@ -2756,6 +2756,8 @@ knitr::include_graphics(here("img", "recognition_rewards", "expected_recognition
 ```
 
 ### ESHCC
+
+More than 57% of the respondents from ESHCC did not know or preferred not to answer this question, for the rest, a bit more than 14% of the respondents want to receive a promotion, the exact same percentage, would like to get more time for open science activities as a reward, and the same percentage selected that the way they get recognized and rewarded for doing open science was the freedom to choice and initiate their own projects.
 
 ```{r figure-recognition-rewards-Q3-ESHCC}
 
