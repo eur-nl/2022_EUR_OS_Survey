@@ -2117,7 +2117,10 @@ The question was:
 
 ### EUR
 
-###HERE#####
+More than half of the respondents did not know or preferred not to answer this question, while almost a third of the respondents at EUR selected that the way they get recognized and rewarded for doing open science was the freedom to choice and initiate their own projects. 
+Almost 10% of the respondents said that they get more trust from colleagues/supervisor/manager, while only a bit more than 5% said that they are recognized by praise from colleagues/supervisor/manager. 
+
+
 
 ```{r figure-recognition-rewards-Q2-EUR}
 
@@ -2127,6 +2130,10 @@ knitr::include_graphics(here("img", "recognition_rewards", "current_recognition"
 
 ### ISS
 
+Half of the respondents did not know or preferred not to answer this question, while 20% of the respondents at ISS selected that the way they get recognized and rewarded for doing open science was the freedom to choice and initiate their own projects. 
+10% of the respondents said that they get more trust from colleagues/supervisor/manager, while the same percentage said that they are recognized by praise from colleagues/supervisor/manager.
+
+
 ```{r figure-recognition-rewards-Q2-ISS}
 
 knitr::include_graphics(here("img", "recognition_rewards", "current_recognition", "figure_current_recognition_rewards_ISS.png"))
@@ -2134,6 +2141,9 @@ knitr::include_graphics(here("img", "recognition_rewards", "current_recognition"
 ```
 
 ### ESHPM
+
+Almost 40% of the respondents did not know or preferred not to answer this question, while the same percentage of the respondents at ESHPM selected that the way they get recognized and rewarded for doing open science was the freedom to choice and initiate their own projects. 
+And a bit more than 15% of the respondents said that they get more trust from colleagues/supervisor/manager.
 
 ```{r figure-recognition-rewards-Q2-ESHPM}
 
@@ -2143,6 +2153,8 @@ knitr::include_graphics(here("img", "recognition_rewards", "current_recognition"
 
 ### ESPhil
 
+The majority of the respondents (60%) did not know or preferred not to answer this question, while the rest of the respondents at ESPhil selected that the way they get recognized and rewarded for doing open science was the freedom to choice and initiate their own projects. 
+
 ```{r figure-recognition-rewards-Q2-ESPhil}
 
 knitr::include_graphics(here("img", "recognition_rewards", "current_recognition", "figure_current_recognition_rewards_ESPhil.png"))
@@ -2150,6 +2162,8 @@ knitr::include_graphics(here("img", "recognition_rewards", "current_recognition"
 ```
 
 ### ESL
+
+The majority of the respondents (80%) did not know or preferred not to answer this question, while the rest of the respondents at ESL selected that the way they get recognized and rewarded for doing open science was the freedom to choice and initiate their own projects.
 
 ```{r figure-recognition-rewards-Q2-ESL}
 
@@ -2159,6 +2173,9 @@ knitr::include_graphics(here("img", "recognition_rewards", "current_recognition"
 
 ### ESSB
 
+Almost 43% of the respondents did not know or preferred not to answer this question, while almost 30% of the respondents at ESSB selected that the way they get recognized and rewarded for doing open science was the freedom to choice and initiate their own projects. 
+A bit more than 14% of the respondents said that they get more trust from colleagues/supervisor/manager, while the same percentage said that they are recognized by praise from colleagues/supervisor/manager.
+
 ```{r figure-recognition-rewards-Q2-ESSB}
 
 knitr::include_graphics(here("img", "recognition_rewards", "current_recognition", "figure_current_recognition_rewards_ESSB.png"))
@@ -2166,6 +2183,8 @@ knitr::include_graphics(here("img", "recognition_rewards", "current_recognition"
 ```
 
 ### ESHCC
+
+The majority of the respondents (80%) did not know or preferred not to answer this question, while the rest of the respondents at ESHCC selected that the way they get recognized and rewarded for doing open science was the freedom to choice and initiate their own projects.
 
 ```{r figure-recognition-rewards-Q2-ESHCC}
 
@@ -2193,6 +2212,9 @@ The question was:
 
 ### EUR
 
+Almost 43% of the respondents from EUR did not know or preferred not to answer this question, for the rest, almost 18% of the respondents would like to get more time for open science activities as a reward, and the same percentage of respondents selected that the way they get recognized and rewarded for doing open science was the freedom to choice and initiate their own projects.
+
+
 ```{r figure-recognition-rewards-Q3-EUR}
 
 knitr::include_graphics(here("img", "recognition_rewards", "expected_recognition", "figure_expected_recognition_rewards_EUR.png"))
@@ -2200,6 +2222,8 @@ knitr::include_graphics(here("img", "recognition_rewards", "expected_recognition
 ```
 
 ### ISS
+
+Half of the respondents from ISS did not know or preferred not to answer this question, for the rest, 20% of the respondents would like to get more time for open science activities as a reward, 10% of the respondents will like to be rewarded with a salary raise, then same percentage of respondents want to receive a promotion, and the same percentage selected that the way they get recognized and rewarded for doing open science was the freedom to choice and initiate their own projects.
 
 ```{r figure-recognition-rewards-Q3-ISS}
 
@@ -2209,6 +2233,9 @@ knitr::include_graphics(here("img", "recognition_rewards", "expected_recognition
 
 ### ESHPM
 
+Almost 40% of the respondents from ESHPM did not know or preferred not to answer this question, for the rest, a bit more than 23% of the respondents would like to get more time for open science activities as a reward, and a bit more than 15% of respondents selected that the way they get recognized and rewarded for doing open science was the freedom to choice and initiate their own projects.
+
+
 ```{r figure-recognition-rewards-Q3-ESHPM}
 
 knitr::include_graphics(here("img", "recognition_rewards", "expected_recognition", "figure_expected_recognition_rewards_ESHPM.png"))
@@ -2216,6 +2243,9 @@ knitr::include_graphics(here("img", "recognition_rewards", "expected_recognition
 ```
 
 ### ESPhil
+
+60% of the respondents from ESPhil did not know or preferred not to answer this question, while 20% of the respondents selected that the way they get recognized and rewarded for doing open science was the freedom to choice and initiate their own projects.
+
 
 ```{r figure-recognition-rewards-Q3-ESPhil}
 
@@ -2225,6 +2255,9 @@ knitr::include_graphics(here("img", "recognition_rewards", "expected_recognition
 
 ### ESL
 
+40% of the respondents from ESL did not know or preferred not to answer this question, for the rest, 30% of the respondents selected that the way they get recognized and rewarded for doing open science was the freedom to choice and initiate their own projects, 10% of them would like to receive a salary rise, and the same percentage of respondents would like to get more time for open science activities as a reward.
+
+
 ```{r figure-recognition-rewards-Q3-ESL}
 
 knitr::include_graphics(here("img", "recognition_rewards", "expected_recognition", "figure_expected_recognition_rewards_ESL.png"))
@@ -2232,6 +2265,8 @@ knitr::include_graphics(here("img", "recognition_rewards", "expected_recognition
 ```
 
 ### ESSB
+
+Half of the respondents from ISS did not know or preferred not to answer this question, for the rest, 20% of the respondents would like to get more time for open science activities as a reward, 10% of the respondents will like to be rewarded with a salary raise, then same percentage of respondents want to receive a promotion, and the same percentage selected that the way they get recognized and rewarded for doing open science was the freedom to choice and initiate their own projects.
 
 ```{r figure-recognition-rewards-Q3-ESSB}
 
