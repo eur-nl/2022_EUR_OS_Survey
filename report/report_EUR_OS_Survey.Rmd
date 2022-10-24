@@ -170,6 +170,13 @@ EUR_OS_school %>%
 
 ```
 
+# Excecutive Summary {#es}
+### EUR
+
+Most researchers at EUR have experience publishing their publications Open Access. Regarding open data/materials/code, most researchers at EUR have not re-used public data. A considerable percentage of respondents have published their data/materials/code openly, however, most of these open data/materials/code is not FAIR. 
+The majority of EUR researchers 
+
+
 # Open Access {#oa}
 
 ## Importance of Open Access {#oa-importance .tabset .tabset-pills}
