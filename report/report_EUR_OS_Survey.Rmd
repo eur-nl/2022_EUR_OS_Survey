@@ -171,10 +171,108 @@ EUR_OS_school %>%
 ```
 
 # Excecutive Summary {#es}
+
 ### EUR
 
-Most researchers at EUR have experience publishing their publications Open Access. Regarding open data/materials/code, most researchers at EUR have not re-used public data. A considerable percentage of respondents have published their data/materials/code openly, however, most of these open data/materials/code is not FAIR. 
-The majority of EUR researchers 
+*Open Access*: most researchers at EUR have experience publishing their publications Open Access.
+
+*Open data/materials/code*: most researchers at EUR have not re-used public data. A considerable percentage of respondents have published their data/materials/code openly, however, most of these open data/materials/code is not FAIR. 
+
+*Preregistration*: the majority of EUR researchers think preregistration is not relevant and have little to no experience with it. 
+
+*Open Education*: most researchers think is important, but the majority have not used open education materials and have also not shared their own. 
+
+*Societal engagement*: most researchers at EUR think is important, but a third of the respondents engage with society regularly.
+
+*Open Science support*: the majority of researchers at EUR want support on Open Access publishing. 
+
+### ISS
+
+*Open Access*: most researchers at ISS have experience publishing their publications Open Access.
+
+*Open data/materials/code*: some researchers at ISS have  re-used public data. A considerable percentage of respondents have published their data/materials/code openly, however, only a small percentage of these open data/materials/code is FAIR. 
+
+*Preregistration*: the majority of ISS researchers think preregistration is not relevant and have little to no experience with it. 
+
+*Open Education*: most researchers think is important, but the majority have not used open education materials, and only a few have shared their own. 
+
+*Societal engagement*: most researchers at ISS think is important, and also the majority of the respondents engage with society regularly.
+
+*Open Science support*: the majority of researchers at ISS want support on Open Access publishing. 
+
+### ESHPM
+
+*Open Access*: most researchers at ESHPM have experience publishing their publications Open Access.
+
+*Open data/materials/code*: most researchers at ESHPM have not re-used public data. A considerable percentage of respondents have published their data/materials/code openly, and a third of these open data/materials/code is FAIR. 
+
+*Preregistration*: some researchers at ESHPM think preregistration is relevant but the majority have little to no experience with it. 
+
+*Open Education*: researchers think is moderately important, but the majority have not used open education materials, and only a few have shared their own. 
+
+*Societal engagement*: most researchers at ESHPM think is important, but the majority of the respondents does not engage with society regularly.
+
+*Open Science support*: the majority of researchers at ESHPM want support on Open Access publishing. 
+
+
+### ESPhil
+
+*Open Access*: most researchers at ESPhil have experience publishing their publications Open Access.
+
+*Open data/materials/code*: a few researchers at ESPhil have re-used public data. The majority of respondents have not published their data/materials/code openly. 
+
+*Preregistration*: the majority of ESPhil researchers think preregistration is not at all important and have little to no experience with it. 
+
+*Open Education*: most researchers think is important, the majority have used open education materials, and also have shared their own. 
+
+*Societal engagement*: most researchers at ESPhil think is important, and also the majority of the respondents engage with society regularly.
+
+*Open Science support*: researchers at ESPhil only want support on Open Access publishing. 
+
+
+### ESL
+
+*Open Access*: most researchers at ESL have experience publishing their publications Open Access.
+
+*Open data/materials/code*: some researchers at ESL have re-used public data. The majority of respondents have not published their data/materials/code openly.
+
+*Preregistration*: the majority of ESL researchers think preregistration is not relevant and have little to no experience with it. 
+
+*Open Education*: most researchers think is important, some have used open education materials, and the same percentage have shared their own. 
+
+*Societal engagement*: most researchers at ESL think is important, but only a quarter of the respondents engage with society regularly.
+
+*Open Science support*: the majority of researchers at ESL only want support on Open Access publishing. 
+
+
+### ESSB
+
+*Open Access*: most researchers at ESSB have experience publishing their publications Open Access.
+
+*Open data/materials/code*: some researchers at ESSB have re-used public data. A considerable percentage of respondents have published their data/materials/code openly, and some of these open data/materials/code is FAIR. 
+
+*Preregistration*: the majority of ESSB researchers think preregistration is important, but only a few have experience with it. 
+
+*Open Education*: most researchers think is important, but the majority have not used open education materials, and also the majority have not shared their own. 
+
+*Societal engagement*: most researchers at ESSB think is important, and the majority of the respondents engage with society.
+
+*Open Science support*: researchers at ESSB want support on Open Access publishing and also support on Open data, materials, and/or code.  
+
+
+### ESHCC
+
+*Open Access*: most researchers at ESHCC have some experience publishing their publications Open Access.
+
+*Open data/materials/code*: a third researchers at ESHCC have re-used public data, but the majority of respondents have not published their data/materials/code openly. 
+
+*Preregistration*: the majority of ESHCC researchers think preregistration is not relevant and have little to no experience with it. 
+
+*Open Education*: most researchers think is important, but the majority have not used open education materials, and only a few have shared their own. 
+
+*Societal engagement*: most researchers at ESHCC think is extremely important, but the majority of the respondents do not engage with society regularly.
+
+*Open Science support*: researchers at ESHCC want support on Open Access publishing and also support on Open data, materials, and/or code.
 
 
 # Open Access {#oa}
@@ -2490,8 +2588,6 @@ knitr::include_graphics(here("img", "support", "FAIR", "figure_FAIR_support_ESHC
 ## {-}
 
 # Recognition & Rewards {#rr}
-
-#####HERE######
 
 ## Feeling recognized for Open Science {#rr-feeling-recognized .tabset .tabset-pills}
 
