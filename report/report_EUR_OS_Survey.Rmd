@@ -104,87 +104,21 @@ The current report shows the combined results as well as separately for each sch
 
 This is a living document that may be updated with new information and insights. For any comments or questions, please contact [Dr. Lizette Guzman-Ramirez](mailto:guzmanramirez@rsm.nl) (Research Data Steward at ERIM) or [Dr. Antonio Schettino](mailto:schettino@eur.nl) (Senior Advisor Open Science at ERS).
 
-# Respondents {#resp}
-
-```{r data-complete-questionnaires}
-
-# percentage of (in)complete surveys
-EUR_OS_incomplete <-
-  EUR_OS_cluster0 %>% 
-  count(Finished) %>% 
-  mutate(
-    survey = ifelse(Finished == TRUE, "complete", "incomplete"),
-    lab_perc = paste(round(n / sum(n) * 100, 2), "%", sep = "") # percentage
-  ) %>% 
-  select(survey, n, lab_perc) %>% 
-  arrange(desc(n))
-
-```
-
-A total of `r sum(EUR_OS_incomplete$n)` respondents started the survey, and `r pull(filter(EUR_OS_incomplete, survey == "complete"), n)` completed it (`r pull(filter(EUR_OS_incomplete, survey == "complete"), lab_perc)`).
- 
-Considering only the completed surveys, Figure \@ref(fig:figure-school-position) shows the percentage of respondents separately for each school and position. Table \@ref(tab:table-school-position-response-rate) shows the percentage of respondents relative to the total number of employees.
-
-(ref:figure-school-position-caption) Response rate per school and position.
-
-```{r figure-school-position, fig.cap = "(ref:figure-school-position-caption)"}
-
-knitr::include_graphics(here("img", "figure_school_position.png"))
-
-```
-
-(ref:table-school-position-response-rate) Response rate per school relative to total staff. Source: [EUR Annual Report 2020](https://jaarverslag2020.eur.nl/en), [Appendix 4](https://jaarverslag2020.eur.nl/en/appendix-4-staff-composition), accessed on June 3rd 2022.
-
-(ref:footnote-table-school-position-response-rate) According to the EUR Annual Report 2020, ESL has 351 employees but the survey was sent to 244 of them.
-
-```{r table-school-position-response-rate}
-
-# total number of researchers in each school
-total_researchers <- 
-  tibble(
-    School = c("ESHPM", "ESHCC", "ESL", "ESPhil", "ESSB", "ISS"),
-    N_staff = c(170, 166, 244, 64, 460, 64)
-  )
-
-EUR_OS_school <-
-  EUR_OS_cluster0 %>% 
-  filter(Finished == TRUE) %>% # only completed surveys
-  count(School) %>% 
-  filter(School != "Other") %>% 
-  right_join(total_researchers, by = "School") %>% 
-  mutate(lab_perc = paste(round(n / N_staff * 100, 2), "%", sep = "")) %>%
-  arrange(desc(parse_number(lab_perc)))
-  
-# table
-EUR_OS_school %>%
-  rename(
-    "Respondents" = n,
-    "Total Staff" = N_staff,
-    "Percentage of Respondents" = lab_perc
-    ) %>% 
-  kable_custom(caption = "(ref:table-school-position-response-rate)") %>% 
-  footnote(
-    general = "(ref:footnote-table-school-position-response-rate)",
-    footnote_as_chunk = TRUE
-  )
-
-```
-
-# Excecutive Summary {#es}
+# Executive Summary {#es}
 
 ### EUR
 
-*Open Access*: most researchers at EUR have experience publishing their publications Open Access.
+**Open Access**: most researchers at EUR have experience publishing their publications Open Access.
 
-*Open data/materials/code*: most researchers at EUR have not re-used public data. A considerable percentage of respondents have published their data/materials/code openly, however, most of these open data/materials/code is not FAIR. 
+**Open data/materials/code**: most researchers at EUR have not re-used public data. A considerable percentage of respondents have published their data/materials/code openly, however, most of these open data/materials/code is not FAIR. 
 
-*Preregistration*: the majority of EUR researchers think preregistration is not relevant and have little to no experience with it. 
+**Preregistration**: the majority of EUR researchers think preregistration is not relevant and have little to no experience with it. 
 
-*Open Education*: most researchers think is important, but the majority have not used open education materials and have also not shared their own. 
+**Open Education**: most researchers think is important, but the majority have not used open education materials and have also not shared their own. 
 
 *Societal engagement*: most researchers at EUR think is important, but a third of the respondents engage with society regularly.
 
-*Open Science support*: the majority of researchers at EUR want support on Open Access publishing. 
+**Open Science support**: the majority of researchers at EUR want support on Open Access publishing. 
 
 ### ISS
 
@@ -273,6 +207,88 @@ EUR_OS_school %>%
 *Societal engagement*: most researchers at ESHCC think is extremely important, but the majority of the respondents do not engage with society regularly.
 
 *Open Science support*: researchers at ESHCC want support on Open Access publishing and also support on Open data, materials, and/or code.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Respondents {#resp}
+
+```{r data-complete-questionnaires}
+
+# percentage of (in)complete surveys
+EUR_OS_incomplete <-
+  EUR_OS_cluster0 %>% 
+  count(Finished) %>% 
+  mutate(
+    survey = ifelse(Finished == TRUE, "complete", "incomplete"),
+    lab_perc = paste(round(n / sum(n) * 100, 2), "%", sep = "") # percentage
+  ) %>% 
+  select(survey, n, lab_perc) %>% 
+  arrange(desc(n))
+
+```
+
+A total of `r sum(EUR_OS_incomplete$n)` respondents started the survey, and `r pull(filter(EUR_OS_incomplete, survey == "complete"), n)` completed it (`r pull(filter(EUR_OS_incomplete, survey == "complete"), lab_perc)`).
+ 
+Considering only the completed surveys, Figure \@ref(fig:figure-school-position) shows the percentage of respondents separately for each school and position. Table \@ref(tab:table-school-position-response-rate) shows the percentage of respondents relative to the total number of employees.
+
+(ref:figure-school-position-caption) Response rate per school and position.
+
+```{r figure-school-position, fig.cap = "(ref:figure-school-position-caption)"}
+
+knitr::include_graphics(here("img", "figure_school_position.png"))
+
+```
+
+(ref:table-school-position-response-rate) Response rate per school relative to total staff. Source: [EUR Annual Report 2020](https://jaarverslag2020.eur.nl/en), [Appendix 4](https://jaarverslag2020.eur.nl/en/appendix-4-staff-composition), accessed on June 3rd 2022.
+
+(ref:footnote-table-school-position-response-rate) According to the EUR Annual Report 2020, ESL has 351 employees but the survey was sent to 244 of them.
+
+```{r table-school-position-response-rate}
+
+# total number of researchers in each school
+total_researchers <- 
+  tibble(
+    School = c("ESHPM", "ESHCC", "ESL", "ESPhil", "ESSB", "ISS"),
+    N_staff = c(170, 166, 244, 64, 460, 64)
+  )
+
+EUR_OS_school <-
+  EUR_OS_cluster0 %>% 
+  filter(Finished == TRUE) %>% # only completed surveys
+  count(School) %>% 
+  filter(School != "Other") %>% 
+  right_join(total_researchers, by = "School") %>% 
+  mutate(lab_perc = paste(round(n / N_staff * 100, 2), "%", sep = "")) %>%
+  arrange(desc(parse_number(lab_perc)))
+  
+# table
+EUR_OS_school %>%
+  rename(
+    "Respondents" = n,
+    "Total Staff" = N_staff,
+    "Percentage of Respondents" = lab_perc
+    ) %>% 
+  kable_custom(caption = "(ref:table-school-position-response-rate)") %>% 
+  footnote(
+    general = "(ref:footnote-table-school-position-response-rate)",
+    footnote_as_chunk = TRUE
+  )
+
+```
 
 
 # Open Access {#oa}
