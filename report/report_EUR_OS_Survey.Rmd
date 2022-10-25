@@ -1,7 +1,7 @@
 ---
 title: "Report of the 2022 EUR Open Science Survey"
 author: '[Dr. Lizette Guzman-Ramirez](https://www.linkedin.com/in/drlizguzman/), [Dr. Antonio Schettino](https://antonio-schettino.com/)'
-date: 2022-07-01
+date: 2022-11-01
 output:
   bookdown::html_document2:
     # # appearance
@@ -104,125 +104,121 @@ The current report shows the combined results as well as separately for each sch
 
 This is a living document that may be updated with new information and insights. For any comments or questions, please contact [Dr. Lizette Guzman-Ramirez](mailto:guzmanramirez@rsm.nl) (Research Data Steward at ERIM) or [Dr. Antonio Schettino](mailto:schettino@eur.nl) (Senior Advisor Open Science at ERS).
 
-# Executive Summary {#es}
+# Executive Summary {#es .tabset .tabset-pills}
 
-### EUR
+## EUR
 
 **Open Access**: most researchers at EUR have experience publishing their publications Open Access.
 
-**Open data/materials/code**: most researchers at EUR have not re-used public data. A considerable percentage of respondents have published their data/materials/code openly, however, most of these open data/materials/code is not FAIR. 
+**Open Data, Materials, and/or Code**: most researchers at EUR have not re-used public data. A considerable percentage of respondents have published their data/materials/code openly, however, most of these open data/materials/code is not FAIR.
 
-**Preregistration**: the majority of EUR researchers think preregistration is not relevant and have little to no experience with it. 
+**Preregistration**: the majority of EUR researchers think preregistration is not relevant and have little to no experience with it.
 
-**Open Education**: most researchers think is important, but the majority have not used open education materials and have also not shared their own. 
+**Open Education**: most researchers think is important, but the majority have not used open education materials and have also not shared their own.
 
-*Societal engagement*: most researchers at EUR think is important, but a third of the respondents engage with society regularly.
+**Societal Engagement**: most researchers at EUR think is important, but a third of the respondents engage with society regularly.
 
-**Open Science support**: the majority of researchers at EUR want support on Open Access publishing. 
+**Support at EUR**: the majority of researchers at EUR want support on Open Access publishing.
 
-### ISS
+**Recognition and Rewards**: 
 
-*Open Access*: most researchers at ISS have experience publishing their publications Open Access.
+## ISS
 
-*Open data/materials/code*: some researchers at ISS have  re-used public data. A considerable percentage of respondents have published their data/materials/code openly, however, only a small percentage of these open data/materials/code is FAIR. 
+**Open Access**: most researchers at ISS have experience publishing their publications Open Access.
 
-*Preregistration*: the majority of ISS researchers think preregistration is not relevant and have little to no experience with it. 
+**Open Data, Materials, and/or Code**: some researchers at ISS have  re-used public data. A considerable percentage of respondents have published their data/materials/code openly, however, only a small percentage of these open data/materials/code is FAIR. 
 
-*Open Education*: most researchers think is important, but the majority have not used open education materials, and only a few have shared their own. 
+**Preregistration**: the majority of ISS researchers think preregistration is not relevant and have little to no experience with it.
 
-*Societal engagement*: most researchers at ISS think is important, and also the majority of the respondents engage with society regularly.
+**Open Education**: most researchers think is important, but the majority have not used open education materials, and only a few have shared their own.
 
-*Open Science support*: the majority of researchers at ISS want support on Open Access publishing. 
+**Societal Engagement**: most researchers at ISS think is important, and also the majority of the respondents engage with society regularly.
 
-### ESHPM
+**Support at EUR**: the majority of researchers at ISS want support on Open Access publishing.
 
-*Open Access*: most researchers at ESHPM have experience publishing their publications Open Access.
+**Recognition and Rewards**: 
 
-*Open data/materials/code*: most researchers at ESHPM have not re-used public data. A considerable percentage of respondents have published their data/materials/code openly, and a third of these open data/materials/code is FAIR. 
+## ESHPM
 
-*Preregistration*: some researchers at ESHPM think preregistration is relevant but the majority have little to no experience with it. 
+**Open Access**: most researchers at ESHPM have experience publishing their publications Open Access.
 
-*Open Education*: researchers think is moderately important, but the majority have not used open education materials, and only a few have shared their own. 
+**Open Data, Materials, and/or Code**: most researchers at ESHPM have not re-used public data. A considerable percentage of respondents have published their data/materials/code openly, and a third of these open data/materials/code is FAIR.
 
-*Societal engagement*: most researchers at ESHPM think is important, but the majority of the respondents does not engage with society regularly.
+**Preregistration**: some researchers at ESHPM think preregistration is relevant but the majority have little to no experience with it.
 
-*Open Science support*: the majority of researchers at ESHPM want support on Open Access publishing. 
+**Open Education**: researchers think is moderately important, but the majority have not used open education materials, and only a few have shared their own.
 
+**Societal Engagement**: most researchers at ESHPM think is important, but the majority of the respondents does not engage with society regularly.
 
-### ESPhil
+**Support at EUR**: the majority of researchers at ESHPM want support on Open Access publishing.
 
-*Open Access*: most researchers at ESPhil have experience publishing their publications Open Access.
+**Recognition and Rewards**: 
 
-*Open data/materials/code*: a few researchers at ESPhil have re-used public data. The majority of respondents have not published their data/materials/code openly. 
+## ESPhil
 
-*Preregistration*: the majority of ESPhil researchers think preregistration is not at all important and have little to no experience with it. 
+**Open Access**: most researchers at ESPhil have experience publishing their publications Open Access.
 
-*Open Education*: most researchers think is important, the majority have used open education materials, and also have shared their own. 
+**Open Data, Materials, and/or Code**: a few researchers at ESPhil have re-used public data. The majority of respondents have not published their data/materials/code openly.
 
-*Societal engagement*: most researchers at ESPhil think is important, and also the majority of the respondents engage with society regularly.
+**Preregistration**: the majority of ESPhil researchers think preregistration is not at all important and have little to no experience with it.
 
-*Open Science support*: researchers at ESPhil only want support on Open Access publishing. 
+**Open Education**: most researchers think is important, the majority have used open education materials, and also have shared their own.
 
+**Societal Engagement**: most researchers at ESPhil think is important, and also the majority of the respondents engage with society regularly.
 
-### ESL
+**Support at EUR**: researchers at ESPhil only want support on Open Access publishing.
 
-*Open Access*: most researchers at ESL have experience publishing their publications Open Access.
+**Recognition and Rewards**: 
 
-*Open data/materials/code*: some researchers at ESL have re-used public data. The majority of respondents have not published their data/materials/code openly.
+## ESL
 
-*Preregistration*: the majority of ESL researchers think preregistration is not relevant and have little to no experience with it. 
+**Open Access**: most researchers at ESL have experience publishing their publications Open Access.
 
-*Open Education*: most researchers think is important, some have used open education materials, and the same percentage have shared their own. 
+**Open Data, Materials, and/or Code**: some researchers at ESL have re-used public data. The majority of respondents have not published their data/materials/code openly.
 
-*Societal engagement*: most researchers at ESL think is important, but only a quarter of the respondents engage with society regularly.
+**Preregistration**: the majority of ESL researchers think preregistration is not relevant and have little to no experience with it.
 
-*Open Science support*: the majority of researchers at ESL only want support on Open Access publishing. 
+**Open Education**: most researchers think is important, some have used open education materials, and the same percentage have shared their own.
 
+**Societal Engagement**: most researchers at ESL think is important, but only a quarter of the respondents engage with society regularly.
 
-### ESSB
+**Support at EUR**: the majority of researchers at ESL only want support on Open Access publishing.
 
-*Open Access*: most researchers at ESSB have experience publishing their publications Open Access.
+**Recognition and Rewards**: 
 
-*Open data/materials/code*: some researchers at ESSB have re-used public data. A considerable percentage of respondents have published their data/materials/code openly, and some of these open data/materials/code is FAIR. 
+## ESSB
 
-*Preregistration*: the majority of ESSB researchers think preregistration is important, but only a few have experience with it. 
+**Open Access**: most researchers at ESSB have experience publishing their publications Open Access.
 
-*Open Education*: most researchers think is important, but the majority have not used open education materials, and also the majority have not shared their own. 
+**Open Data, Materials, and/or Code**: some researchers at ESSB have re-used public data. A considerable percentage of respondents have published their data/materials/code openly, and some of these open data/materials/code is FAIR.
 
-*Societal engagement*: most researchers at ESSB think is important, and the majority of the respondents engage with society.
+**Preregistration**: the majority of ESSB researchers think preregistration is important, but only a few have experience with it.
 
-*Open Science support*: researchers at ESSB want support on Open Access publishing and also support on Open data, materials, and/or code.  
+**Open Education**: most researchers think is important, but the majority have not used open education materials, and also the majority have not shared their own.
 
+**Societal Engagement**: most researchers at ESSB think is important, and the majority of the respondents engage with society.
 
-### ESHCC
+**Support at EUR**: researchers at ESSB want support on Open Access publishing and also support on Open data, materials, and/or code.
 
-*Open Access*: most researchers at ESHCC have some experience publishing their publications Open Access.
+**Recognition and Rewards**: 
 
-*Open data/materials/code*: a third researchers at ESHCC have re-used public data, but the majority of respondents have not published their data/materials/code openly. 
+## ESHCC
 
-*Preregistration*: the majority of ESHCC researchers think preregistration is not relevant and have little to no experience with it. 
+**Open Access**: most researchers at ESHCC have some experience publishing their publications Open Access.
 
-*Open Education*: most researchers think is important, but the majority have not used open education materials, and only a few have shared their own. 
+**Open Data, Materials, and/or Code**: a third researchers at ESHCC have re-used public data, but the majority of respondents have not published their data/materials/code openly.
 
-*Societal engagement*: most researchers at ESHCC think is extremely important, but the majority of the respondents do not engage with society regularly.
+**Preregistration**: the majority of ESHCC researchers think preregistration is not relevant and have little to no experience with it.
 
-*Open Science support*: researchers at ESHCC want support on Open Access publishing and also support on Open data, materials, and/or code.
+**Open Education**: most researchers think is important, but the majority have not used open education materials, and only a few have shared their own.
 
+**Societal Engagement**: most researchers at ESHCC think is extremely important, but the majority of the respondents do not engage with society regularly.
 
+**Support at EUR**: researchers at ESHCC want support on Open Access publishing and also support on Open data, materials, and/or code.
 
+**Recognition and Rewards**: 
 
-
-
-
-
-
-
-
-
-
-
-
-
+# {-}
 
 # Respondents {#resp}
 
@@ -290,7 +286,6 @@ EUR_OS_school %>%
 
 ```
 
-
 # Open Access {#oa}
 
 ## Importance of Open Access {#oa-importance .tabset .tabset-pills}
@@ -309,8 +304,7 @@ The question was:
 
 ### EUR
 
-In general researchers at EUR consider Open Access relevant: more than 60% of the respondents agree that Open Access is very important (combining extremely and very important), and only a bit more than 8% think is not at all important. 
-When looking at the responses from the schools, ESSB and ESHCC are the ones were the majority of the respondents think Open Access is very important (80% and 75% respectively).
+In general researchers at EUR consider Open Access relevant: more than 60% of the respondents agree that Open Access is very important (combining extremely and very important), and only a bit more than 8% think is not at all important.
 
 ```{r figure-open-access-Q1-EUR}
 
@@ -320,8 +314,7 @@ knitr::include_graphics(here("img", "open_access", "importance", "figure_importa
 
 ### ISS
 
-Researchers at ISS consider Open Access relevant, more than 66% of the respondents agree that Open Access is very important (combining extremely and very important), and none of them think is not at all important. 
-
+Researchers at ISS consider Open Access relevant: more than 66% of the respondents agree that Open Access is very important (combining extremely and very important), and none of them think it is not at all important.
 
 ```{r figure-open-access-Q1-ISS}
 
@@ -331,7 +324,7 @@ knitr::include_graphics(here("img", "open_access", "importance", "figure_importa
 
 ### ESHPM
 
-Researchers at ESHPM consider Open Access relevant, more than half of the respondents agree that Open Access is very important (combining extremely and very important), but a large percentage of respondents (more than 17%) think is not at all important. 
+Researchers at ESHPM consider Open Access relevant: more than half of the respondents agree that Open Access is very important (combining extremely and very important), but a large percentage of respondents (more than 17%) think it is not at all important.
 
 ```{r figure-open-access-Q1-ESHPM}
 
@@ -341,7 +334,7 @@ knitr::include_graphics(here("img", "open_access", "importance", "figure_importa
 
 ### ESPhil
 
-Researchers at ESPhil consider Open Access somewhat less relevant, only a bit more than 37% of the respondents agree that Open Access is very important (combining extremely and very important), while 12.5% think is not at all important. 
+Researchers at ESPhil consider Open Access somewhat less relevant: only a bit more than 37% of the respondents agree that Open Access is very important (combining extremely and very important), while 12.5% think it is not at all important. 
 
 ```{r figure-open-access-Q1-ESPhil}
 
@@ -351,7 +344,7 @@ knitr::include_graphics(here("img", "open_access", "importance", "figure_importa
 
 ### ESL
 
-Researchers at ESL consider Open Access relevant, a little less than 60% of the respondents agree that Open Access is very important (combining extremely and very important), and only a bit more than 14% of respondents think is not at all important. 
+Researchers at ESL consider Open Access relevant: a little less than 60% of the respondents agree that Open Access is very important (combining extremely and very important), and only a bit more than 14% of respondents think it is not at all important. 
 
 ```{r figure-open-access-Q1-ESL}
 
@@ -361,7 +354,7 @@ knitr::include_graphics(here("img", "open_access", "importance", "figure_importa
 
 ### ESSB
 
-Researchers at ESSB consider Open Access very relevant, 80% of the respondents agree that Open Access is very important (combining extremely and very important), and none of them think is not at all important. 
+Researchers at ESSB consider Open Access very relevant: 80% of the respondents agree that Open Access is very important (combining extremely and very important), and none of them think it is not at all important. 
 
 ```{r figure-open-access-Q1-ESSB}
 
@@ -371,7 +364,7 @@ knitr::include_graphics(here("img", "open_access", "importance", "figure_importa
 
 ### ESHCC
 
-Researchers at ESHCC consider Open Access very relevant, 75% of the respondents agree that Open Access is very important (combining extremely and very important), and none of them think is not at all important.
+Researchers at ESHCC consider Open Access very relevant: 75% of the respondents agree that Open Access is very important (combining extremely and very important), and none of them think it is not at all important.
 
 ```{r figure-open-access-Q1-ESHCC}
 
@@ -397,8 +390,7 @@ The question was:
 
 ### EUR
 
-Regarding the experience of all researchers from EUR making their publications Open Access almost 70% of the respondents have either extensive or some experience. However, almost 30% of the respondents have never publish Open Access or were unaware of Open Access (caveat, some of the respondents were PhD candidates that are yet to publish their article). 
-When looking at the responses from the schools, ESHCC is the one that stands out, with more than 83% of respondents have extensive or some experience, while only a bit more than 16% have not published Open Access. 
+Regarding the experience of all researchers from EUR making their publications Open Access almost 70% of the respondents have either extensive or some experience. However, almost 30% of the respondents have never published Open Access or were unaware of Open Access.
 
 ```{r figure-open-access-Q2-EUR}
 
@@ -408,7 +400,7 @@ knitr::include_graphics(here("img", "open_access", "experience", "figure_experie
 
 ### ISS
 
-Regarding the experience of researchers at ISS making their publications Open Access, 75% of the respondents have either extensive or some experience. While 25% of the respondents have never publish Open Access or preferred not to answer (caveat, some of the respondents were PhD candidates that are yet to publish their article). 
+Regarding the experience of researchers at ISS making their publications Open Access, 75% of the respondents have either extensive or some experience. 25% of the respondents have never published Open Access or preferred not to answer.
 
 ```{r figure-open-access-Q2-ISS}
 
@@ -418,7 +410,7 @@ knitr::include_graphics(here("img", "open_access", "experience", "figure_experie
 
 ### ESHPM
 
-Regarding the experience of researchers at ESHPM making their publications Open Access, 75% of the respondents have either extensive or some experience. While 25% of the respondents have never publish Open Access or were unaware of Open Access (caveat, some of the respondents were PhD candidates that are yet to publish their article). 
+Regarding the experience of researchers at ESHPM making their publications Open Access, 75% of the respondents have either extensive or some experience. 25% of the respondents have never published Open Access or were unaware of Open Access. 
 
 ```{r figure-open-access-Q2-ESHPM}
 
@@ -428,7 +420,7 @@ knitr::include_graphics(here("img", "open_access", "experience", "figure_experie
 
 ### ESPhil
 
-Regarding the experience of researchers at ESPhil making their publications Open Access, slightly more than 57% of the respondents have either extensive or some experience. While almost 43% of the respondents have never publish Open Access or were unaware of Open Access (caveat, some of the respondents were PhD candidates that are yet to publish their article). 
+Regarding the experience of researchers at ESPhil making their publications Open Access, slightly more than 57% of the respondents have either extensive or some experience. Almost 43% of the respondents have never published Open Access or were unaware of Open Access.
 
 ```{r figure-open-access-Q2-ESPhil}
 
@@ -438,7 +430,7 @@ knitr::include_graphics(here("img", "open_access", "experience", "figure_experie
 
 ### ESL
 
-Regarding the experience of researchers at ESHPM making their publications Open Access, 60% of the respondents have either extensive or some experience. While 40% of the respondents have never publish Open Access or were unaware of Open Access (caveat, some of the respondents were PhD candidates that are yet to publish their article). 
+Regarding the experience of researchers at ESHPM making their publications Open Access, 60% of the respondents have either extensive or some experience. 40% of the respondents have never published Open Access or were unaware of Open Access. 
 
 ```{r figure-open-access-Q2-ESL}
 
@@ -448,7 +440,7 @@ knitr::include_graphics(here("img", "open_access", "experience", "figure_experie
 
 ### ESSB
 
-Regarding the experience of researchers at ESSB making their publications Open Access, a bit more than 73% of the respondents have either extensive or some experience. While almost 27% of the respondents have never publish Open Access or were unaware of Open Access (caveat, some of the respondents were PhD candidates that are yet to publish their article). 
+Regarding the experience of researchers at ESSB making their publications Open Access, slightly more than 73% of the respondents have either extensive or some experience. Almost 27% of the respondents have never published Open Access or were unaware of Open Access. 
 
 ```{r figure-open-access-Q2-ESSB}
 
@@ -458,7 +450,7 @@ knitr::include_graphics(here("img", "open_access", "experience", "figure_experie
 
 ### ESHCC
 
-Regarding the experience of researchers at ESHCC making their publications Open Access, more than 83% of the respondents have either extensive or some experience. While only a bit more than 16% of the respondents have never publish Open Access (caveat, some of the respondents were PhD candidates that are yet to publish their article). 
+Regarding the experience of researchers at ESHCC making their publications Open Access, more than 83% of the respondents have either extensive or some experience. Only slightly more than 16% of the respondents have never published Open Access. 
 
 ```{r figure-open-access-Q2-ESHCC}
 
@@ -683,9 +675,7 @@ The question was:
 
 ### EUR
 
-In general researchers at EUR consider Open Data/Materials/Code somewhat relevant, a bit more than 45% of the respondents agree that Open Data/Materials/Code is very important (combining extremely and very important), and only a bit more than 11% think is not at all important. 
-When looking at the responses from the schools, ESSB and ESHCC are the ones were the majority of the respondents think Open Data/Materials/Code is very important (63% and 57% respectively).
-
+Researchers at EUR consider Open Data/Materials/Code somewhat relevant: slightly more than 45% of the respondents agree that Open Data/Materials/Code is very important (combining extremely and very important), and only slightly more than 11% think it is not at all important. 
 
 ```{r figure-open-data-materials-code-Q1-EUR}
 
@@ -695,7 +685,7 @@ knitr::include_graphics(here("img", "open_data_materials_code", "importance", "f
 
 ### ISS
 
-Researchers at ISS consider Open Data/Materials/Code somewhat relevant, a bit more than 45% of the respondents agree that Open Data/Materials/Code is very important (combining extremely and very important), and only a bit more than 9% think is not at all important.
+Researchers at ISS consider Open Data/Materials/Code somewhat relevant: slightly more than 45% of the respondents agree that Open Data/Materials/Code is very important (combining extremely and very important), and only slightly more than 9% think it is not at all important.
 
 ```{r figure-open-data-materials-code-Q1-ISS}
 
@@ -705,7 +695,7 @@ knitr::include_graphics(here("img", "open_data_materials_code", "importance", "f
 
 ### ESHPM
 
-Researchers at ESHPM are mostly split when consider Open Data/Materials/Code important, a bit less than 30% of the respondents agree that Open Data/Materials/Code is very important (combining extremely and very important), while also a bit less than 30% of the researchers think is moderately important, and almost 18% of them think is not at all important.
+Researchers at ESHPM are split when consider Open Data/Materials/Code important: slightly less than 30% of the respondents agree that Open Data/Materials/Code is very important (combining extremely and very important), while slightly less than 30% of the researchers think it is moderately important. Almost 18% of them think it is not at all important.
 
 ```{r figure-open-data-materials-code-Q1-ESHPM}
 
@@ -715,7 +705,7 @@ knitr::include_graphics(here("img", "open_data_materials_code", "importance", "f
 
 ### ESPhil
 
-Researchers at ESPhil are mostly split when consider Open Data/Materials/Code important, 30% of the respondents agree that Open Data/Materials/Code is very important (combining extremely and very important), while also 30% of the researchers think is somewhat important (combining moderately and slightly important), and 20% of them think is not at all important.
+Researchers at ESPhil are split when consider Open Data/Materials/Code important: 30% of the respondents agree that Open Data/Materials/Code is very important (combining extremely and very important), while 30% of the researchers think it is somewhat important (combining moderately and slightly important). 20% of them think it is not at all important.
 
 ```{r figure-open-data-materials-code-Q1-ESPhil}
 
@@ -725,7 +715,7 @@ knitr::include_graphics(here("img", "open_data_materials_code", "importance", "f
 
 ### ESL
 
-Researchers at ESL consider Open Data/Materials/Code somewhat relevant, 50% of the respondents agree that Open Data/Materials/Code is very important (combining extremely and very important), and only a bit more than 14% think is not at all important.
+Researchers at ESL consider Open Data/Materials/Code somewhat relevant: 50% of the respondents agree that Open Data/Materials/Code is very important (combining extremely and very important), and only slightly more than 14% think it is not at all important.
 
 ```{r figure-open-data-materials-code-Q1-ESL}
 
@@ -735,7 +725,7 @@ knitr::include_graphics(here("img", "open_data_materials_code", "importance", "f
 
 ### ESSB
 
-Researchers at ESSB consider Open Data/Materials/Code somewhat relevant, a bit more than 63% of the respondents agree that Open Data/Materials/Code is very important (combining extremely and very important), and only a bit more than 5% think is not at all important.
+Researchers at ESSB consider Open Data/Materials/Code somewhat relevant: slightly more than 63% of the respondents agree that Open Data/Materials/Code is very important (combining extremely and very important), and only slightly more than 5% think it is not at all important.
 
 ```{r figure-open-data-materials-code-Q1-ESSB}
 
@@ -745,7 +735,7 @@ knitr::include_graphics(here("img", "open_data_materials_code", "importance", "f
 
 ### ESHCC
 
-Researchers at ESHCC consider Open Data/Materials/Code somewhat relevant, a bit more than 57% of the respondents agree that Open Data/Materials/Code is very important (combining extremely and very important), while none of them think is not at all important.
+Researchers at ESHCC consider Open Data/Materials/Code somewhat relevant: slightly more than 57% of the respondents agree that Open Data/Materials/Code is very important (combining extremely and very important), while none of them think it is not at all important.
 
 ```{r figure-open-data-materials-code-Q1-ESHCC}
 
@@ -771,7 +761,7 @@ The question was:
 
 ### EUR
 
-Most researchers (almost 35%) at EUR are aware of open data/materials/code developed by others but have not used them. Almost 32% of the respondents have some experience with open data/materials/code, but do not use them regularly, and only a bit more than 20% of the respondents regularly use open data/materials/code. 
+Around 35% of the respondents are aware of open data/materials/code developed by others but have not used them. Almost 32% of the respondents have some experience with open data/materials/code, but do not use them regularly. Only slightly more than 20% of the respondents regularly use open data/materials/code.
 
 ```{r figure-open-data-materials-code-Q2-EUR}
 
@@ -781,7 +771,7 @@ knitr::include_graphics(here("img", "open_data_materials_code", "experience_othe
 
 ### ISS
 
-Most researchers (almost 34%) at ISS have some experience with open data/materials/code, but do not use them regularly, while 25% of them are aware of open data/materials/code, but have not used them. 
+Almost 34% of respondents at ISS have some experience with open data/materials/code but do not use them regularly, while 25% of them are aware of open data/materials/code but have not used them.
 
 ```{r figure-open-data-materials-code-Q2-ISS}
 
@@ -791,7 +781,7 @@ knitr::include_graphics(here("img", "open_data_materials_code", "experience_othe
 
 ### ESHPM
 
-Researchers at ESHPM are split equally (almost 42%) between some experience with open data/materials/code, but do not use them regularly, and awareness of open data/materials/code, but have not used them. 
+Most researchers at ESHPM are split equally (almost 42%) between having some experience with open data/materials/code but not using them regularly and awareness without having used them.
 
 ```{r figure-open-data-materials-code-Q2-ESHPM}
 
@@ -801,7 +791,7 @@ knitr::include_graphics(here("img", "open_data_materials_code", "experience_othe
 
 ### ESPhil
 
-Most researchers (almost 38%) at ESPhil are aware of open data/materials/code, but have not used them, however 25% of the respondents regularly uses open data/materials/code developed by others.  
+Most researchers (almost 38%) at ESPhil are aware of open data/materials/code, but have not used them. However, 25% of the respondents regularly use open data/materials/code developed by others.
 
 ```{r figure-open-data-materials-code-Q2-ESPhil}
 
@@ -811,7 +801,7 @@ knitr::include_graphics(here("img", "open_data_materials_code", "experience_othe
 
 ### ESL
 
-Researchers at ESL are equally split (25%) between awareness, some experience, and regularly using open data/materials/code developed by others. 
+Researchers at ESL are equally split (25%) between awareness, some experience, and regularly using open data/materials/code developed by others.
 
 ```{r figure-open-data-materials-code-Q2-ESL}
 
@@ -820,7 +810,8 @@ knitr::include_graphics(here("img", "open_data_materials_code", "experience_othe
 ```
 
 ### ESSB
-Most researchers (40%) at ESSB have some experience with open data/materials/code developed by others, but do not use them regularly, while a bit more thn 33% are aware of open data/materials/code developed by others, but have not used them, and almost 27% of the respondents regularly uses open data/materials/code developed by others.
+
+Most respondents (40%) at ESSB have some experience with open data/materials/code developed by others, but do not use them regularly, while a bit more than 33% are aware of open data/materials/code developed by others but have not used them. Almost 27% of the respondents regularly use open data/materials/code developed by others.
 
 ```{r figure-open-data-materials-code-Q2-ESSB}
 
@@ -856,7 +847,7 @@ The question was:
 
 ### EUR
 
-In general researchers at EUR (50%) have some experience with sharing their own open data/materials/code (combining regularly and some experience sharing data), while almost 30% of the respondents are aware of open data/materials/code, but have not shared their own. ESHCC is the faculty with the most researchers (a bit more than 57%) with some experience openly sharing their data/materials/code (combining regularly and some experience).
+In general, 50% of respondents have some experience with sharing their own open data/materials/code (combining regularly and some experience sharing data), while almost 30% of the respondents are aware of open data/materials/code but have not shared their own.
 
 ```{r figure-open-data-materials-code-Q3-EUR}
 
@@ -866,7 +857,7 @@ knitr::include_graphics(here("img", "open_data_materials_code", "experience_own"
 
 ### ISS
 
-Most researchers at ISS (50%) have some experience with sharing their own open data/materials/code (combining regularly and some experience sharing data), while 20% of the respondents before the survey had not heard of open data/materials/code. 
+Most researchers at ISS (50%) have some experience with sharing their own open data/materials/code (combining regularly and some experience sharing data), while 20% of the respondents had not heard of open data/materials/code before the survey.
 
 ```{r figure-open-data-materials-code-Q3-ISS}
 
@@ -876,7 +867,7 @@ knitr::include_graphics(here("img", "open_data_materials_code", "experience_own"
 
 ### ESHPM
 
-Researchers at ESHPM are equally split (33.33%) in opposite camps, between regularly sharing open data/materials/code, and being aware of open data/materials/code, but have not shared their own.  
+Researchers at ESHPM are equally split (33.33%) between regularly sharing open data/materials/code and being aware of open data/materials/code but not sharing their own.
 
 ```{r figure-open-data-materials-code-Q3-ESHPM}
 
@@ -886,7 +877,7 @@ knitr::include_graphics(here("img", "open_data_materials_code", "experience_own"
 
 ### ESPhil
 
-Most researchers at ESPhil (almost 43%) are aware of open data/materials/code, but have not shared their own. While almost 30% of the respondents have some experience openly sharing their data/materials/code (combining regularly and some experience). 
+Most researchers at ESPhil (almost 43%) are aware of open data/materials/code but have not shared their own. Almost 30% of the respondents have some experience openly sharing their data/materials/code (combining regularly and some experience).
 
 ```{r figure-open-data-materials-code-Q3-ESPhil}
 
@@ -896,7 +887,7 @@ knitr::include_graphics(here("img", "open_data_materials_code", "experience_own"
 
 ### ESL
 
-Most researchers at ESL (almost 40%) have some experience openly sharing their data/materials/code (combining regularly and some experience), while almost 30% of the respondents are aware of open data/materials/code, but have not shared their own. 
+Most researchers at ESL (almost 40%) have some experience openly sharing their data/materials/code (combining regularly and some experience), while almost 30% of the respondents are aware of open data/materials/code but have not shared their own.
 
 ```{r figure-open-data-materials-code-Q3-ESL}
 
@@ -906,7 +897,7 @@ knitr::include_graphics(here("img", "open_data_materials_code", "experience_own"
 
 ### ESSB
 
-Most researchers at ESSB (55%) have some experience openly sharing their data/materials/code (combining regularly and some experience), while 30% of the respondents are aware of open data/materials/code, but have not shared their own. 
+Most researchers at ESSB (55%) have some experience openly sharing their data/materials/code (combining regularly and some experience), while 30% of the respondents are aware of open data/materials/code but have not shared their own.
 
 ```{r figure-open-data-materials-code-Q3-ESSB}
 
@@ -916,7 +907,7 @@ knitr::include_graphics(here("img", "open_data_materials_code", "experience_own"
 
 ### ESHCC
 
-Most researchers at ESHCC (a bit more than 57%) have some experience openly sharing their data/materials/code (combining regularly and some experience), while a bit less than 30% of the respondents are aware of open data/materials/code, but have not shared their own. 
+Most researchers at ESHCC (slightly more than 57%) have some experience openly sharing their data/materials/code (combining regularly and some experience), while slightly less than 30% of the respondents are aware of open data/materials/code but have not shared their own.
 
 ```{r figure-open-data-materials-code-Q3-ESHCC}
 
@@ -942,9 +933,9 @@ The question was:
 
 ### EUR
 
-Regarding the Findable, Accessible, Interoperable, and Re-usable (FAIR) principles, most researchers at EUR, almost 33%, had not heard of the FAIR principles before the survey, however, a bit more than 26% have some experience with the FAIR principles, but do not follow them regularly, while a bit more than 15% of the respondents regularly follow the FAIR principles.
+Regarding the Findable, Accessible, Interoperable, and Re-usable (FAIR) principles, most respondents (almost 33%) had not heard of the FAIR principles before the survey. Slightly more than 26% have some experience with the FAIR principles but do not follow them regularly, while slightly more than 15% of the respondents regularly follow the FAIR principles.
 
-Respondents that answered "I regularly follow the FAIR principles", and "I have some experience with the FAIR principles, but do not follow them regularly" got an extra question about the [support to follow the FAIR principles](#support-fair). 
+Respondents that answered "I regularly follow the FAIR principles", and "I have some experience with the FAIR principles, but do not follow them regularly" answered an extra question about the [support to follow the FAIR principles](#support-fair).
 
 ```{r figure-open-data-materials-code-Q4-EUR}
 
@@ -954,7 +945,7 @@ knitr::include_graphics(here("img", "open_data_materials_code", "FAIR", "figure_
 
 ### ISS
 
-Regarding the Findable, Accessible, Interoperable, and Re-usable (FAIR) principles, most researchers at ISS, a bit more than 30%, had not heard of the FAIR principles before the survey, however, a bit more than 15% have some experience with the FAIR principles, but do not follow them regularly, while a bit more than 15% of the respondents regularly follow the FAIR principles.
+Regarding the FAIR principles, slightly more than 30% of respondents at ISS had not heard of the FAIR principles before the survey. Slightly more than 15% have some experience with the FAIR principles but do not follow them regularly, while slightly more than 15% of the respondents regularly follow the FAIR principles.
 
 ```{r figure-open-data-materials-code-Q4-ISS}
 
@@ -964,7 +955,7 @@ knitr::include_graphics(here("img", "open_data_materials_code", "FAIR", "figure_
 
 ### ESHPM
 
-Regarding the Findable, Accessible, Interoperable, and Re-usable (FAIR) principles, most researchers at ESHPM, a bit more than 33%, had not heard of the FAIR principles before the survey, however, almost 27% have some experience with the FAIR principles, but do not follow them regularly, and equally almost 27% of the respondents regularly follow the FAIR principles.
+Regarding the FAIR principles, slightly more than 33% of respondents at ESHPM had not heard of the FAIR principles before the survey. Almost 27% have some experience with the FAIR principles but do not follow them regularly. Similarly, almost 27% of the respondents regularly follow the FAIR principles.
 
 ```{r figure-open-data-materials-code-Q4-ESHPM}
 
@@ -974,7 +965,7 @@ knitr::include_graphics(here("img", "open_data_materials_code", "FAIR", "figure_
 
 ### ESPhil
 
-Regarding the Findable, Accessible, Interoperable, and Re-usable (FAIR) principles, most researchers at ESPhil, almost 43%, have not heard of the FAIR principles before the survey, however, a bit more than 14% have some experience with the FAIR principles, but do not follow them regularly, while equally a bit more than 14% of the respondents regularly follow the FAIR principles.
+Regarding the FAIR principles, almost 43% of respondents at ESPhil have not heard of the FAIR principles before the survey. Slightly more than 14% have some experience with the FAIR principles but do not follow them regularly. Similarly, slightly more than 14% of the respondents regularly follow the FAIR principles.
 
 ```{r figure-open-data-materials-code-Q4-ESPhil}
 
@@ -984,7 +975,7 @@ knitr::include_graphics(here("img", "open_data_materials_code", "FAIR", "figure_
 
 ### ESL
 
-Regarding the Findable, Accessible, Interoperable, and Re-usable (FAIR) principles, most researchers at ESL, a bit more than 33%, have not heard of the FAIR principles before the survey, however, 25% have some experience with the FAIR principles, but do not follow them regularly, and equally, 25% of the respondents regularly follow the FAIR principles.
+Regarding the FAIR principles, slightly more than 33% of respondents at ESL have not heard of the FAIR principles before the survey. 25% of respondents have some experience with the FAIR principles but do not follow them regularly. Similarly, 25% of the respondents regularly follow the FAIR principles.
 
 ```{r figure-open-data-materials-code-Q4-ESL}
 
@@ -994,7 +985,7 @@ knitr::include_graphics(here("img", "open_data_materials_code", "FAIR", "figure_
 
 ### ESSB
 
-Regarding the Findable, Accessible, Interoperable, and Re-usable (FAIR) principles, most researchers at ESSB, a bit more than 33%, have some experience with the FAIR principles, but do not follow them regularly, while almost 28% of the respondents respondents regularly follow the FAIR principles.
+Regarding the FAIR principles, slightly more than 33% of respondents at ESSB have some experience with the FAIR principles but do not follow them regularly, while almost 28% of the respondents regularly follow the FAIR principles.
 
 ```{r figure-open-data-materials-code-Q4-ESSB}
 
@@ -1004,7 +995,7 @@ knitr::include_graphics(here("img", "open_data_materials_code", "FAIR", "figure_
 
 ### ESHCC
 
-Regarding the Findable, Accessible, Interoperable, and Re-usable (FAIR) principles, 60% of the researchers at ESHCC have not heard of the FAIR principles before the survey, while 40% of the respondents have some experience with the FAIR principles, but do not follow them regularly. 
+Regarding the FAIR principles, 60% of respondents at ESHCC have not heard of the FAIR principles before the survey, while 40% of the respondents have some experience with the FAIR principles but do not follow them regularly.
 
 ```{r figure-open-data-materials-code-Q4-ESHCC}
 
@@ -1207,7 +1198,7 @@ The question was:
 
 ### EUR
 
-In general researchers at EUR (almost 27%) think that preregistration is not important at all, while almost 22% of the respondents think is moderately important. However there is also a bit more than 20% of the respondents that think preregistration is very important (by combining extremely and very important). 
+In general, almost 27% of respondents think that preregistration is not important at all, while almost 22% of the respondents think it is moderately important. Slightly more than 20% of the respondents think that preregistration is very important (by combining extremely and very important).
 
 ```{r figure-preregistration-Q1-EUR}
 
@@ -1217,7 +1208,7 @@ knitr::include_graphics(here("img", "preregistration", "importance", "figure_imp
 
 ### ISS
 
-Researchers at ISS (almost 31%) think that preregistration is moderately important, while a bit more than 23% of the respondents think is not important at all. 
+Almost 31% of respondents at ISS think that preregistration is moderately important, while slightly more than 23% of the respondents think it is not important at all.
 
 ```{r figure-preregistration-Q1-ISS}
 
@@ -1227,7 +1218,7 @@ knitr::include_graphics(here("img", "preregistration", "importance", "figure_imp
 
 ### ESHPM
 
-Researchers at ESHPM are equally split (almost 32%) between the respondents that preregistration is moderately important, and the same percentage of respondents that think that preregistration is not important at all. 
+Respondents at ESHPM are equally split (almost 32%) between considering preregistration as moderately important and not important at all.
 
 ```{r figure-preregistration-Q1-ESHPM}
 
@@ -1237,7 +1228,7 @@ knitr::include_graphics(here("img", "preregistration", "importance", "figure_imp
 
 ### ESPhil
 
-Researchers at ESPhil most researchers, 50% of them, think that preregistration is not important at all, however there is a small percentage of respondents (almost 17%) that think preregistration is extremely important. 
+50% of respondents at ESPhil think that preregistration is not important at all, while a small percentage of respondents (around 17%) think that preregistration is extremely important.
 
 ```{r figure-preregistration-Q1-ESPhil}
 
@@ -1247,7 +1238,7 @@ knitr::include_graphics(here("img", "preregistration", "importance", "figure_imp
 
 ### ESL
 
-Most researchers at ESL (40%) think preregistration is somewhat important (combining moderately and slightly) while almost 27% of the respondents think that preregistration is not important at all. 
+Most respondents at ESL (40%) think that preregistration is somewhat important (combining moderately and slightly), while almost 27% of the respondents think that preregistration is not important at all.
 
 ```{r figure-preregistration-Q1-ESL}
 
@@ -1257,7 +1248,7 @@ knitr::include_graphics(here("img", "preregistration", "importance", "figure_imp
 
 ### ESSB
 
-Most researchers at ESSB (almost 43%) think that preregistration is very important (by combining extremely and very), while a bit more than 14% of the respondents that think that preregistration is not important at all. 
+Most respondents at ESSB (almost 43%) think that preregistration is very important (by combining extremely and very), while slightly more than 14% of the respondents think that preregistration is not important at all.
 
 ```{r figure-preregistration-Q1-ESSB}
 
@@ -1267,7 +1258,7 @@ knitr::include_graphics(here("img", "preregistration", "importance", "figure_imp
 
 ### ESHCC
 
-Most researchers at ESHCC (almost 38%) think preregistration is not important at all, while 25% of the respondent think preregistration is somewhat important (combining moderately and slightly).
+Most researchers at ESHCC (almost 38%) think that preregistration is not important at all, while 25% of the respondent think preregistration is somewhat important (combining moderately and slightly).
 
 ```{r figure-preregistration-Q1-ESHCC}
 
@@ -1293,7 +1284,7 @@ The question was:
 
 ### EUR
 
-Regarding experience of the researchers at EUR with preregistration, most researchers (almost 62%) have not use it or were unaware of preregistration before the survey, while almost 22% of the respondents have some experience but do not use it regularly. 
+Regarding respondents' experience with preregistration at EUR, most researchers (almost 62%) have not used it or were unaware of preregistration before the survey, while almost 22% of the respondents have some experience but do not use it regularly.
 
 ```{r figure-preregistration-Q2-EUR}
 
@@ -1303,7 +1294,7 @@ knitr::include_graphics(here("img", "preregistration", "experience", "figure_exp
 
 ### ISS
 
-Researchers at ISS are mostly aware of preregistration but have not used it (a bit more than 45%), while a bit more than 36% of the respondents, were unaware of preregistration before the survey. 
+Slightly more than 45% of respondents at ISS are aware of preregistration but have not used it, while slightly more than 36% of the respondents were unaware of preregistration before the survey.
 
 ```{r figure-preregistration-Q2-ISS}
 
@@ -1313,7 +1304,7 @@ knitr::include_graphics(here("img", "preregistration", "experience", "figure_exp
 
 ### ESHPM
 
-Researchers at ESHPM are mostly aware of preregistration but have not used it (a bit more than 38%), while a bit more than 30% of the respondents, have some experience with preregistration, but do not use it regularly. 
+Respondents at ESHPM (slightly more than 38%) are aware of preregistration but have not used it, while slightly more than 30% of the respondents have some experience with preregistration but do not use it regularly.
 
 ```{r figure-preregistration-Q2-ESHPM}
 
@@ -1323,7 +1314,7 @@ knitr::include_graphics(here("img", "preregistration", "experience", "figure_exp
 
 ### ESPhil
 
-Researchers at ESPhil were mostly unaware of preregistration before the survey (almost 43%), while almost 29% of the respondents are aware of preregistration but have not used it.
+Almost 43% of respondents at ESPhil were unaware of preregistration before the survey, while almost 29% of the respondents are aware of preregistration but have not used it.
 
 ```{r figure-preregistration-Q2-ESPhil}
 
@@ -1333,7 +1324,7 @@ knitr::include_graphics(here("img", "preregistration", "experience", "figure_exp
 
 ### ESL
 
-Most researchers at ESL are aware of preregistration but have not used it or were unaware of preregistration before the survey (almost 55%), while a bit more than 18% of the respondents have some experience with preregistration, but do not use it regularly. 
+Many respondents at ESL (almost 55%) were unaware of preregistration before the survey or are aware of preregistration but have not used it, while slightly more than 18% of the respondents have some experience with preregistration but do not use it regularly.
 
 ```{r figure-preregistration-Q2-ESL}
 
@@ -1343,7 +1334,7 @@ knitr::include_graphics(here("img", "preregistration", "experience", "figure_exp
 
 ### ESSB
 
-More than half (almost 53%) of the researchers at ESSB either have some experience or regularly preregister their studies, while on the other side a bit more than 42% of the respondents have not used it or were unaware of preregistration before the survey. 
+Almost 53% of respondents at ESSB either have some experience or regularly preregister their studies. On the other hand, slightly more than 42% of the respondents have not used it or were unaware of preregistration before the survey.
 
 ```{r figure-preregistration-Q2-ESSB}
 
@@ -1353,7 +1344,7 @@ knitr::include_graphics(here("img", "preregistration", "experience", "figure_exp
 
 ### ESHCC
 
-Researchers at ESHCC were mostly unaware of preregistration before the survey (50%), while 25% of the respondents are aware of preregistration but have not used it. 
+Half of respondents at ESHCC were unaware of preregistration before the survey, while 25% of the respondents are aware of preregistration but have not used it.
 
 ```{r figure-preregistration-Q2-ESHCC}
 
@@ -1563,7 +1554,7 @@ The question was:
 
 ### EUR
 
-Regarding the importance of open education, almost 43% of researchers at EUR think open education is very important (combining extremely and very), while only a bit more than 11% think is not important at all. 
+Regarding the importance of open education, almost 43% of respondents at EUR think open education is very important (combining extremely and very), while only slightly more than 11% think it is not important at all. 
 
 ```{r figure-open-education-Q1-EUR}
 
@@ -1573,7 +1564,7 @@ knitr::include_graphics(here("img", "open_education", "importance", "figure_impo
 
 ### ISS
 
-Regarding the importance of open education, the majority (60%) of the researchers at ISS think open education is very important (combining extremely and very), while none of them think is not important at all. 
+Regarding the importance of open education, the majority (60%) of respondents at ISS think open education is very important (combining extremely and very), while none of them think it is not important at all.
 
 ```{r figure-open-education-Q1-ISS}
 
@@ -1583,7 +1574,7 @@ knitr::include_graphics(here("img", "open_education", "importance", "figure_impo
 
 ### ESHPM
 
-Regarding the importance of open education, almost 32% of the researchers at ESHPM think open education is very important (combining extremely and very), while a bit more than 21% think that open education is not important at all. 
+Regarding the importance of open education, almost 32% of respondents at ESHPM think open education is very important (combining extremely and very), while slightly more than 21% think that open education is not important at all.
 
 ```{r figure-open-education-Q1-ESHPM}
 
@@ -1593,7 +1584,7 @@ knitr::include_graphics(here("img", "open_education", "importance", "figure_impo
 
 ### ESPhil
 
-Regarding the importance of open education, almost 45% of the researchers at ESPhil think open education is very important (combining extremely and very), while a bit more than 11% think that open education is not important at all.
+Regarding the importance of open education, almost 45% of respondents at ESPhil think open education is very important (combining extremely and very), while slightly more than 11% think that open education is not important at all.
 
 ```{r figure-open-education-Q1-ESPhil}
 
@@ -1603,7 +1594,7 @@ knitr::include_graphics(here("img", "open_education", "importance", "figure_impo
 
 ### ESL
 
-Regarding the importance of open education, a bit more than 41% of the researchers at ESL think open education is very important (combining extremely and very), while almost 12% of the respondents think that open education is not important at all.
+Regarding the importance of open education, slightly more than 41% of respondents at ESL think open education is very important (combining extremely and very), while almost 12% of the respondents think that open education is not important at all.
 
 ```{r figure-open-education-Q1-ESL}
 
@@ -1613,7 +1604,7 @@ knitr::include_graphics(here("img", "open_education", "importance", "figure_impo
 
 ### ESSB
 
-Regarding the importance of open education, 38% of the researchers at ESSB think open education is very important (combining extremely and very), while a bit more than 14% think that open education is not important at all.
+Regarding the importance of open education, 38% of respondents at ESSB think open education is very important (combining extremely and very), while slightly more than 14% think that open education is not important at all.
 
 ```{r figure-open-education-Q1-ESSB}
 
@@ -1623,7 +1614,7 @@ knitr::include_graphics(here("img", "open_education", "importance", "figure_impo
 
 ### ESHCC
 
-Regarding the importance of open education, the majority (a bit more than 57%) of the researchers at ESHCC think open education is very important (combining extremely and very), while none of them think that open education is not important at all.
+Regarding the importance of open education, slightly more than 57% of respondents at ESHCC think open education is very important (combining extremely and very), while none of them think that open education is not important at all.
 
 ```{r figure-open-education-Q1-ESHCC}
 
@@ -1649,7 +1640,7 @@ The question was:
 
 ### EUR
 
-Regarding the use of openly available educational materials, almost 54% of the researchers at EUR either have never used or not regularly use them, while a bit more than 21% of the respondents regularly use educational resources developed by others. 
+Regarding the use of openly available educational materials, almost 54% of respondents at EUR either have never used or not regularly use them, while slightly more than 21% of the respondents regularly use educational resources developed by others.
 
 ```{r figure-open-education-Q2-EUR}
 
@@ -1659,7 +1650,7 @@ knitr::include_graphics(here("img", "open_education", "experience_others", "figu
 
 ### ISS
 
-Regarding the use of openly available educational materials, 60% of the researchers at ISS either have never used or were not aware of them, while 20% of the respondents regularly use educational resources developed by others. 
+Regarding the use of openly available educational materials, 60% of respondents at ISS either have never used or were not aware of them, while 20% of the respondents regularly use educational resources developed by others.
 
 ```{r figure-open-education-Q2-ISS}
 
@@ -1669,7 +1660,7 @@ knitr::include_graphics(here("img", "open_education", "experience_others", "figu
 
 ### ESHPM
 
-Regarding the use of openly available educational materials, almost 60% of the researchers at ESHPM either have never used or not regularly use them, while a bit more than 17% of the respondents regularly use educational resources developed by others. 
+Regarding the use of openly available educational materials, almost 60% of respondents at ESHPM either have never used or do not regularly use them, while slightly more than 17% of the respondents regularly use educational resources developed by others.
 
 ```{r figure-open-education-Q2-ESHPM}
 
@@ -1679,7 +1670,7 @@ knitr::include_graphics(here("img", "open_education", "experience_others", "figu
 
 ### ESPhil
 
-Regarding the use of openly available educational materials, a bit more than 37% of the researchers at ESPhil regularly use educational resources developed by others, while 25% of the respondents have some experience but do not use educational materials developed by others regularly. 
+Regarding the use of openly available educational materials, slightly more than 37% of respondents at ESPhil regularly use educational resources developed by others, while 25% of the respondents have some experience but do not regularly use educational materials developed by others.
 
 ```{r figure-open-education-Q2-ESPhil}
 
@@ -1689,7 +1680,7 @@ knitr::include_graphics(here("img", "open_education", "experience_others", "figu
 
 ### ESL
 
-Regarding the use of openly available educational materials, almost 67% of the researchers at ESHPM either have never, not regularly, or were unaware of open educational resources, while 20% of the respondents regularly use educational resources developed by others.
+Regarding the use of openly available educational materials, almost 67% of respondents at ESHPM were unaware of open educational resources, have never used them, or do not use them regularly. 20% of the respondents regularly use educational resources developed by others.
 
 ```{r figure-open-education-Q2-ESL}
 
@@ -1699,7 +1690,7 @@ knitr::include_graphics(here("img", "open_education", "experience_others", "figu
 
 ### ESSB
 
-Regarding the use of openly available educational materials, 50% of the researchers at ESSB either have never used or were unaware of them, while almost 19% of the respondents regularly use educational resources developed by others.
+Regarding the use of openly available educational materials, 50% of respondents at ESSB either have never used or were unaware of them, while almost 19% of the respondents regularly use educational resources developed by others.
 
 ```{r figure-open-education-Q2-ESSB}
 
@@ -1709,7 +1700,7 @@ knitr::include_graphics(here("img", "open_education", "experience_others", "figu
 
 ### ESHCC
 
-Regarding the use of openly available educational materials, a bit more than 71% of the researchers at ESHCC either have never used or not regularly use them, while almost 29% of the respondents regularly use educational resources developed by others.
+Regarding the use of openly available educational materials, slightly  more than 71% of respondents at ESHCC either have never used or do not regularly use them, while almost 29% of the respondents regularly use educational resources developed by others.
 
 ```{r figure-open-education-Q2-ESHCC}
 
@@ -1735,7 +1726,7 @@ The question was:
 
 ### EUR
 
-When it comes to sharing their own educational resources, researchers at EUR mostly do not share them regularly, not at all, or they were not aware of open educational materials at all (70%), however, 16% of the respondents do regularly share their own educational resources. 
+When it comes to sharing their own educational resources, respondents at EUR mostly do not share them regularly, not at all, or they were not aware of open educational materials at all (70%). However, 16% of respondents do regularly share their own educational resources.
 
 ```{r figure-open-education-Q3-EUR}
 
@@ -1745,7 +1736,7 @@ knitr::include_graphics(here("img", "open_education", "experience_own", "figure_
 
 ### ISS
 
-A bit more than 33% of researchers at ISS have some experience with open educational resources but do not share their own regularly. Almost 42% of the respondents do not share their own or hadn't heard of educational resources before the survey. However a bit more than 16% of the respondents do regularly share their own educational resources. 
+Slightly more than 33% of respondents at ISS have some experience with open educational resources but do not share their own regularly. Almost 42% of the respondents do not share their own or hadn't heard of educational resources before the survey. However, slightly more than 16% of the respondents do regularly share their own educational resources.
 
 ```{r figure-open-education-Q3-ISS}
 
@@ -1755,7 +1746,7 @@ knitr::include_graphics(here("img", "open_education", "experience_own", "figure_
 
 ### ESHPM
 
-Most of the of researchers at ESHPM (almost 92%) do not share their own educational resources regularly, never, or hadn't heard of educational resources before the survey. 
+Most respondents at ESHPM (almost 92%) do not share their own educational resources regularly, never, or hadn't heard of educational resources before the survey.
 
 ```{r figure-open-education-Q3-ESHPM}
 
@@ -1765,7 +1756,7 @@ knitr::include_graphics(here("img", "open_education", "experience_own", "figure_
 
 ### ESPhil
 
-Researchers at ESPhil are spitted equally (37.5%) between researchers that regularly share their open educational materials, and the ones that do not. 
+Respondents at ESPhil are splitted equally (37.5%) between regularly sharing their open educational materials and not doing it.
 
 ```{r figure-open-education-Q3-ESPhil}
 
@@ -1775,7 +1766,7 @@ knitr::include_graphics(here("img", "open_education", "experience_own", "figure_
 
 ### ESL
 
-Most of the of researchers at ESL (almost 67%) do not share their own educational resources regularly, never, or hadn't heard of educational resources before the survey. However, 20% of the respondents do regularly share their own  educational resources. 
+Most respondents at ESL (almost 67%) never share their own educational resources, do not do it regularly, or had not heard of open educational resources before the survey. However, 20% of the respondents do regularly share their own educational resources.
 
 ```{r figure-open-education-Q3-ESL}
 
@@ -1785,7 +1776,7 @@ knitr::include_graphics(here("img", "open_education", "experience_own", "figure_
 
 ### ESSB
 
-Most of the of researchers at ESSB (almost 71%) do not share their own educational resources regularly, never, or hadn't heard of educational resources before the survey. However, almost 12% of the respondents do regularly share their own  educational resources. 
+Most respondents at ESSB (almost 71%) never share their own educational resources, do not do it regularly, or had not heard of open educational resources before the survey. However, almost 12% of the respondents do regularly share their own educational resources. 
 
 ```{r figure-open-education-Q3-ESSB}
 
@@ -1795,7 +1786,7 @@ knitr::include_graphics(here("img", "open_education", "experience_own", "figure_
 
 ### ESHCC
 
-Most of the of researchers at ESHCC (a bit more than 71%) do not share their own educational resources regularly, never, or hadn't heard of educational resources before the survey. However, a bit more than 14% of the respondents do regularly share their own  educational resources.
+Most respondents at ESHCC (slightly more than 71%) never share their own educational resources, do not do it regularly, or had not heard of open educational resources before the survey. However, slightly more than 14% of the respondents regularly share their own  educational resources.
 
 ```{r figure-open-education-Q3-ESHCC}
 
@@ -2003,7 +1994,7 @@ The question was:
 
 ### EUR
 
-When it comes to engaging with society, a bit more than half of the researchers at EUR think is very important (by combining extremely and very), and only a bit more than 8% think it is not important at all. ISS is the school with the highest percentage (63%) of respondents that think that societal engage is very important, while ESPhil is the school with the highest (30%) respondens that think that it is not important at all. 
+When it comes to engaging with society, slightly more than half of the respondents at EUR think is very important (by combining extremely and very), and only slightly more than 8% think it is not important at all.
 
 ```{r figure-societal-engagement-Q1-EUR}
 
@@ -2013,7 +2004,7 @@ knitr::include_graphics(here("img", "societal_engagement", "importance", "figure
 
 ### ISS
 
-More than 63% of the researchers at ISS think societal engagement is very important (by combining extremely and very), and not one of them think it is not important at all.
+More than 63% of respondents at ISS think societal engagement is very important (by combining extremely and very), and not one of them think it is not important at all.
 
 ```{r figure-societal-engagement-Q1-ISS}
 
@@ -2023,7 +2014,7 @@ knitr::include_graphics(here("img", "societal_engagement", "importance", "figure
 
 ### ESHPM
 
-A bit more than half of the researchers at ESHPM think societal engagement is very important (by combining extremely and very), however, a considered amount of almost 18% of the respondents think it is not important at all.
+Slightly more than half of the respondents at ESHPM think societal engagement is very important (by combining extremely and very). However, almost 18% of the respondents think it is not important at all.
 
 ```{r figure-societal-engagement-Q1-ESHPM}
 
@@ -2033,7 +2024,7 @@ knitr::include_graphics(here("img", "societal_engagement", "importance", "figure
 
 ### ESPhil
 
-Almost 43% of the researchers at ESPhil think societal engagement is very important (by combining extremely and very), while a considered amount of almost 30% of the respondents think it is not important at all.
+Almost 43% of the respondents at ESPhil think societal engagement is very important (by combining extremely and very), while almost 30% of the respondents think it is not important at all.
 
 ```{r figure-societal-engagement-Q1-ESPhil}
 
@@ -2043,7 +2034,7 @@ knitr::include_graphics(here("img", "societal_engagement", "importance", "figure
 
 ### ESL
 
-More than 45% of the researchers at ESL think societal engagement is very important (by combining extremely and very), and not one of them think it is not important at all.
+More than 45% of the respondents at ESL think societal engagement is very important (by combining extremely and very), and not one of them think it is not important at all.
 
 ```{r figure-societal-engagement-Q1-ESL}
 
@@ -2053,7 +2044,7 @@ knitr::include_graphics(here("img", "societal_engagement", "importance", "figure
 
 ### ESSB
 
-Exactly half of the researchers at ESSB think societal engagement is very important (by combining extremely and very), while only a small percentage (less than 5%) think it is not important at all.
+Half of the respondents at ESSB think societal engagement is very important (by combining extremely and very), while only a small percentage (less than 5%) think it is not important at all.
 
 ```{r figure-societal-engagement-Q1-ESSB}
 
@@ -2063,7 +2054,7 @@ knitr::include_graphics(here("img", "societal_engagement", "importance", "figure
 
 ### ESHCC
 
-More than 57% of the researchers at ESHCC think societal engagement is very important (by combining extremely and very), while a bit more than 14% of the respondents think it is not important at all.
+More than 57% of the respondents at ESHCC think societal engagement is very important (by combining extremely and very), while slightly more than 14% of the respondents think it is not important at all.
 
 ```{r figure-societal-engagement-Q1-ESHCC}
 
@@ -2089,7 +2080,7 @@ The question was:
 
 ### EUR
 
-Regarding the experience of EUR researchers with societal engagement, the responses are roughly divided into a third that regularly engages with society, a third that done it, but not regularly, and a third (combining have not done it and unaware of it) that has not done it yet. 
+Regarding the experience of EUR respondents with societal engagement, the responses are roughly divided into a third that regularly engages with society, a third that does it but not regularly, and a third (combining have not done it and unaware of it) that has not done it yet.
 
 ```{r figure-societal-engagement-Q2-EUR}
 
@@ -2099,8 +2090,8 @@ knitr::include_graphics(here("img", "societal_engagement", "experience", "figure
 
 ### ISS
 
-Researchers at ISS are mostly all engaging with society, 40% of them does it regularly, and the other 40% has done it, but not very regularly. 
-There is a small 10% of the respondents that were unaware of open engagement with societal actors. 
+Most respondents at ISS are engaging with society: 40% of them does it regularly and 40% has done it but not very regularly. 
+There is a small 10% of the respondents that were unaware of open engagement with societal actors.
 
 ```{r figure-societal-engagement-Q2-ISS}
 
@@ -2110,7 +2101,7 @@ knitr::include_graphics(here("img", "societal_engagement", "experience", "figure
 
 ### ESHPM
 
-A bit more than half of the researchers at ESHPM are engaging with society, almost 30% of them does it regularly, and almost 24% has done it, but not very regularly. However, there is also an almost 24% of the respondents that were unaware of open engagement with societal actors. 
+Slightly more than half of the respondents at ESHPM are engaging with society, almost 30% of them does it regularly, and almost 24% has done it but not regularly. However, around 24% of the respondents were unaware of open engagement with societal actors.
 
 ```{r figure-societal-engagement-Q2-ESHPM}
 
@@ -2120,8 +2111,8 @@ knitr::include_graphics(here("img", "societal_engagement", "experience", "figure
 
 ### ESPhil
 
-Researchers at ESPhil are mostly all engaging with society, 50% of them does it regularly, and the other 33% has done it, but not very regularly. 
-There is, however, an almost 17% of the respondents that were unaware of open engagement with societal actors. 
+Most respondents at ESPhil are engaging with society: 50% of them does it regularly, and the other 33% has done it but not regularly. 
+However around 17% of the respondents were unaware of open engagement with societal actors.
 
 ```{r figure-societal-engagement-Q2-ESPhil}
 
@@ -2131,8 +2122,7 @@ knitr::include_graphics(here("img", "societal_engagement", "experience", "figure
 
 ### ESL
 
-Almost 60% of the researchers at ESL are engaging with society, 25% of them does it regularly, and the other 33% has done it, but not very regularly. 
-There is, however, a 25% of the respondents that has not done it yet.
+Almost 60% of the respondents at ESL are engaging with society: 25% of them does it regularly, and 33% has done it but not regularly. 25% of the respondents have not done it yet.
 
 ```{r figure-societal-engagement-Q2-ESL}
 
@@ -2142,8 +2132,7 @@ knitr::include_graphics(here("img", "societal_engagement", "experience", "figure
 
 ### ESSB
 
-A bit more than half of the researchers at ESSB are engaging with society, 30% of them does it regularly, and the other 25% has done it, but not very regularly. 
-There is, a 15% of the respondents that were unaware of open engagement with societal actors. 
+Slightly more than half of the respondents at ESSB are engaging with society: 30% of them does it regularly, and 25% has done it but not regularly. 15% of the respondents were unaware of open engagement with societal actors.
 
 ```{r figure-societal-engagement-Q2-ESSB}
 
@@ -2153,8 +2142,7 @@ knitr::include_graphics(here("img", "societal_engagement", "experience", "figure
 
 ### ESHCC
 
-More than 60% of the researchers at ESHCC are mostly all engaging with society, 25% of them does it regularly, and almost 38% has done it, but not very regularly. 
-However, 12.5% of the respondents were unaware of open engagement with societal actors. 
+More than 60% of the respondents at ESHCC are engaging with society: 25% of them does it regularly, and almost 38% has done it but not regularly. Around 13% of the respondents were unaware of open engagement with societal actors.
 
 ```{r figure-societal-engagement-Q2-ESHCC}
 
@@ -2355,7 +2343,7 @@ The question was:
 
 ### EUR
 
-Almost 60% of the researchers at EUR answered that they do expect support form EUR when it comes to learning open science practices, while a bit more than 27% of the respondents do not expect support form EUR. 
+Almost 60% of the respondents at EUR answered that they do expect support from EUR when it comes to learning open science practices, while slightly more than 27% of the respondents do not expect support from EUR. 
 
 ```{r figure-EUR-support-Q1-EUR}
 
@@ -2365,7 +2353,7 @@ knitr::include_graphics(here("img", "support", "EUR", "figure_EUR_support_EUR.pn
 
 ### ISS
 
-Almost 63% of the researchers at ISS answered that they do expect support form EUR when it comes to learning open science practices, while 25% of the respondents do not expect support form EUR.
+Almost 63% of the respondents at ISS answered that they do expect support from EUR when it comes to learning open science practices, while 25% of the respondents do not expect such support.
 
 ```{r figure-EUR-support-Q1-ISS}
 
@@ -2375,7 +2363,7 @@ knitr::include_graphics(here("img", "support", "EUR", "figure_EUR_support_ISS.pn
 
 ### ESHPM
 
-A bit more than 45% of the researchers at EUR answered that they do expect support form EUR when it comes to learning open science practices, while a bit more than 36% of the respondents do not expect support form EUR.
+Slightly more than 45% of the respondents at EUR answered that they do expect support from EUR when it comes to learning open science practices, while slightly more than 36% of the respondents do not expect such support.
 
 ```{r figure-EUR-support-Q1-ESHPM}
 
@@ -2385,7 +2373,7 @@ knitr::include_graphics(here("img", "support", "EUR", "figure_EUR_support_ESHPM.
 
 ### ESPhil
 
-60% of the researchers at ESPhil answered that they do expect support form EUR when it comes to learning open science practices, while the rest (40%) of the respondents do not expect support form EUR.
+60% of the respondents at ESPhil answered that they do expect support from EUR when it comes to learning open science practices, while the rest (40%) do not expect such support.
 
 ```{r figure-EUR-support-Q1-ESPhil}
 
@@ -2395,7 +2383,7 @@ knitr::include_graphics(here("img", "support", "EUR", "figure_EUR_support_ESPhil
 
 ### ESL
 
-Half of the researchers at ESL answered that they do expect support form EUR when it comes to learning open science practices, while 25% of the respondents do not expect support form EUR.
+Half of the respondents at ESL answered that they do expect support from EUR when it comes to learning open science practices, while 25% of the respondents do not expect such support.
 
 ```{r figure-EUR-support-Q1-ESL}
 
@@ -2405,7 +2393,7 @@ knitr::include_graphics(here("img", "support", "EUR", "figure_EUR_support_ESL.pn
 
 ### ESSB
 
-Almost 55% of the researchers at ESSB answered that they do expect support form EUR when it comes to learning open science practices, while a bit more than 27% of the respondents do not expect support form EUR.
+Almost 55% of the respondents at ESSB answered that they do expect support from EUR when it comes to learning open science practices, while slightly more than 27% of the respondents do not expect such support.
 
 ```{r figure-EUR-support-Q1-ESSB}
 
@@ -2415,7 +2403,7 @@ knitr::include_graphics(here("img", "support", "EUR", "figure_EUR_support_ESSB.p
 
 ### ESHCC
 
-80% of the researchers at ESHCC answered that they do expect support form EUR when it comes to learning open science practices, while the rest (20%) of the respondents do not expect support form EUR.
+80% of the respondents at ESHCC answered that they do expect support from EUR when it comes to learning open science practices, while the rest (20%) do not expect such support.
 
 ```{r figure-EUR-support-Q1-ESHCC}
 
@@ -2439,9 +2427,11 @@ The question was:
 
 > *`r unique(EUR_OS_cluster6_Q2$question)`*
 
+This question was presented to respondents who answered "yes" in the previous question, i.e., they expect support from EUR regarding open science practices.
+
 ### EUR
 
-The majority of researchers at EUR that expect support form EUR regarding open science practices (they answered "yes" in the previous question), responded that the support they want is in open access publishing, almost 41% of the respondents.
+Almost 41% of the respondents expressed their desire to be supported on open access publishing, followed by open data, materials, and/or code (around 17%).
 
 ```{r figure-EUR-support-Q2-EUR}
 
@@ -2451,8 +2441,7 @@ knitr::include_graphics(here("img", "support", "desired", "figure_desired_suppor
 
 ### ISS
 
-A little bit more than a third of researchers at ISS that expect support form EUR regarding open science practices (they answered "yes" in the previous question), responded that the support they want is in open access publishing, a bit more than 36% of the respondents.
-While a bit more than 18% of the respondents wants support with open educational resources, and the same number of respondents wants support with open data, materials, and/or code. 
+Slightly more than a third of respondents at ISS would like support on open access publishing. Around 18% of the respondents would like support on open educational resources, and the same percentage of respondents would like support on open data, materials, and/or code.
 
 ```{r figure-EUR-support-Q2-ISS}
 
@@ -2462,8 +2451,7 @@ knitr::include_graphics(here("img", "support", "desired", "figure_desired_suppor
 
 ### ESHPM
 
-A bit less than a third of researchers at ESHPM that expect support form EUR regarding open science practices (they answered "yes" in the previous question), responded that the support they want is in open access publishing, almost 27% of the respondents.
-While 20% of the respondents wants support with open data, materials, and/or code, and a bit more than 13% wants support with open educational resources.
+Slightly more than a third of respondents at ESHPM would like support on open access publishing. 20% of the respondents would like support on open data, materials, and/or code, and slightly more than 13% would like support with open educational resources.
 
 ```{r figure-EUR-support-Q2-ESHPM}
 
@@ -2473,7 +2461,7 @@ knitr::include_graphics(here("img", "support", "desired", "figure_desired_suppor
 
 ### ESPhil
 
-Researchers at ESPhil that expect support form EUR regarding open science practices (they answered "yes" in the previous question), responded that the only open science practices they want support with is open access publishing. 
+Most respondents at ESPhil would like support on open access publishing.
 
 ```{r figure-EUR-support-Q2-ESPhil}
 
@@ -2483,7 +2471,7 @@ knitr::include_graphics(here("img", "support", "desired", "figure_desired_suppor
 
 ### ESL
 
-Researchers at ESL that expect support form EUR regarding open science practices (they answered "yes" in the previous question), responded that the only open science practices they want support with is open access publishing.
+Most respondents at ESL would like support on open access publishing.
 
 ```{r figure-EUR-support-Q2-ESL}
 
@@ -2493,8 +2481,7 @@ knitr::include_graphics(here("img", "support", "desired", "figure_desired_suppor
 
 ### ESSB
 
-Almost a third of researchers at ESSB that expect support form EUR regarding open science practices (they answered "yes" in the previous question), responded that the support they want is in open access publishing.
-While 21% of the respondents wants support with open data, materials, and/or code, and a bit more than 10% wants support with open engagement of societal actors.
+Around a third of respondents at ESSB would like support on open access publishing, followed by open data, materials, and/or code (21%), open engagement of societal actors (around 10%) and open educational resources (around 10%).
 
 ```{r figure-EUR-support-Q2-ESSB}
 
@@ -2504,8 +2491,7 @@ knitr::include_graphics(here("img", "support", "desired", "figure_desired_suppor
 
 ### ESHCC
 
-Half of researchers at ESHCC that expect support form EUR regarding open science practices (they answered "yes" in the previous question), responded that the support they want is in open access publishing.
-While a third of the respondents wants support with open data, materials, and/or code.
+Half of respondents at ESHCC would like support on open access publishing, followed by open data, materials, and/or code (around 33%).
 
 ```{r figure-EUR-support-Q2-ESHCC}
 
@@ -2533,7 +2519,7 @@ The question was:
 
 ### EUR
 
-More than half of the respondents from EUR that follow the FAIR principles didn't know or didn't want to answer their use of EUR support services to make their data FAIR. While a bit more than 20% of the respondents got support from a research data management workshop.
+More than half of the respondents at EUR that follow the FAIR principles did not know about (or did not want to answer to) their use of EUR support services to make their data FAIR. Slightly more than 20% of the respondents got support by lattending a research data management workshop.
 
 ```{r figure-EUR-support-Q3-EUR}
 
@@ -2543,7 +2529,7 @@ knitr::include_graphics(here("img", "support", "FAIR", "figure_FAIR_support_EUR.
 
 ### ISS
 
-Most of the respondents from ISS that follow the FAIR principles didn't know or didn't want to answer their use of EUR support services to make their data FAIR. While a bit more than 10% of the respondents got support from the EUR website.
+Most respondents at ISS that follow the FAIR principles did not know about (or did not want to answer to) their use of EUR support services to make their data FAIR. Slightly more than 10% of the respondents got support by browsing the EUR website.
 
 ```{r figure-EUR-support-Q3-ISS}
 
@@ -2553,7 +2539,7 @@ knitr::include_graphics(here("img", "support", "FAIR", "figure_FAIR_support_ISS.
 
 ### ESHPM
 
-A bit more than 40% of the respondents from ESHPM that follow the FAIR principles didn't know or didn't want to answer their use of EUR support services to make their data FAIR. While almost 30% of the respondents got support from a research data management workshop.
+Slightly more than 40% of respondents at ESHPM that follow the FAIR principles did not know about (or did not want to answer to) their use of EUR support services to make their data FAIR. Almost 30% of the respondents got support by attending a research data management workshop.
 
 ```{r figure-EUR-support-Q3-ESHPM}
 
@@ -2563,7 +2549,7 @@ knitr::include_graphics(here("img", "support", "FAIR", "figure_FAIR_support_ESHP
 
 ### ESPhil
 
-All of the respondents from ESPhil that follow the FAIR principles didn't know or didn't want to answer their use of EUR support services to make their data FAIR. 
+All of the respondents at ESPhil that follow the FAIR principles did not know about (or did not want to answer to) their use of EUR support services to make their data FAIR.
 
 ```{r figure-EUR-support-Q3-ESPhil}
 
@@ -2573,7 +2559,7 @@ knitr::include_graphics(here("img", "support", "FAIR", "figure_FAIR_support_ESPh
 
 ### ESL
 
-Half of the respondents from ESL that follow the FAIR principles didn't know or didn't want to answer their use of EUR support services to make their data FAIR. While 25% of the respondents got support from a research data management workshop.
+Half of the respondents from ESL that follow the FAIR principles did not know about (or did not want to answer to) their use of EUR support services to make their data FAIR. 25% of respondents got support by attending a research data management workshop.
 
 ```{r figure-EUR-support-Q3-ESL}
 
@@ -2583,7 +2569,7 @@ knitr::include_graphics(here("img", "support", "FAIR", "figure_FAIR_support_ESL.
 
 ### ESSB
 
-Almost 40% of the respondents from ESSB that follow the FAIR principles didn't know or didn't want to answer their use of EUR support services to make their data FAIR. While a bit more than 17% of the respondents got support from an expert (e.g. research data steward).
+Almost 40% of the respondents from ESSB that follow the FAIR principles did not know about (or did not want to answer to) their use of EUR support services to make their data FAIR. Slightly more than 17% of respondents got support from an expert (e.g., research data steward).
 
 ```{r figure-EUR-support-Q3-ESSB}
 
@@ -2593,7 +2579,7 @@ knitr::include_graphics(here("img", "support", "FAIR", "figure_FAIR_support_ESSB
 
 ### ESHCC
 
-60% of the respondents from ESHCC that follow the FAIR principles didn't know or didn't want to answer their use of EUR support services to make their data FAIR. While the rest of the respondents got support from a research data management workshop.
+60% of the respondents from ESHCC that follow the FAIR principles did not know about (or did not want to answer to) their use of EUR support services to make their data FAIR. 40% of respondents got support by attending a research data management workshop.
 
 ```{r figure-EUR-support-Q3-ESHCC}
 
@@ -2621,9 +2607,7 @@ The question was:
 
 ### EUR
 
-A third of the researchers at EUR didn't know or prefer not to answer if they felt recognized for open science activities. 
-28% of them do not feel recognized, and only around 23% of the respondents do feel recognized for and rewarded for undertaking open science activities. 
-The rest of the respondents answered that they do not undertake any open science activities (16%).
+A third of the respondents at EUR did not know or preferred not to answer. 28% of them do not feel recognized, and only around 23% of the respondents do feel recognized and rewarded for undertaking open science activities. The rest of the respondents (16%) answered that they do not undertake any open science activities.
 
 ```{r figure-recognition-rewards-Q1-EUR}
 
@@ -2633,8 +2617,7 @@ knitr::include_graphics(here("img", "recognition_rewards", "feeling_recognized",
 
 ### ISS
 
-Most researchers from ISS are split into 3 different answers with the exact same percentage of respondents (a bit more than 27%). They are split into, feeling recognized, not feeling recognized, and didn't know or prefer not to answer if they felt recognized for open science activities. 
-While the rest of the respondents answered that they do not undertake any open science activities (a bit more than 18%).
+Most respondents at ISS are split into 3 different answers with the same percentage of respondents (around 27%): feeling recognized, not feeling recognized, and did not know/prefer not to answer. The rest of the respondents (around 18%) answered that they do not undertake any open science activities.
 
 ```{r figure-recognition-rewards-Q1-ISS}
 
@@ -2644,8 +2627,7 @@ knitr::include_graphics(here("img", "recognition_rewards", "feeling_recognized",
 
 ### ESHPM
 
-Most researchers from ESHPM are split into 2 different answers with the exact same percentage of respondents (a bit more than 31%). They are split into, feeling recognized, and didn't know or prefer not to answer if they felt recognized for open science activities. 
-While almost 19% of the respondents answered that they do not feel recognized for undertaking open science activities.
+Most respondents at ESHPM are split into 2 different answers with the same percentage of respondents (around 31%): feeling recognized and did not know/prefer not to answer. Almost 19% of respondents answered that they do not feel recognized for undertaking open science activities.
 
 ```{r figure-recognition-rewards-Q1-ESHPM}
 
@@ -2655,8 +2637,7 @@ knitr::include_graphics(here("img", "recognition_rewards", "feeling_recognized",
 
 ### ESPhil
 
-Most researchers from ESPhil are split into 3 different answers with the exact same percentage of respondents (almost 29%). They are split into, feeling recognized, not undertaking any open science activities, and didn't know or prefer not to answer if they felt recognized for open science activities. 
-While the rest of the respondents answered that they do not feel recognized for the open science activities they undertake (a bit more than 14%).
+Most respondents at ESPhil are split into 3 different answers with the same percentage of respondents (around 29%): feeling recognized, not undertaking any open science activities, and did not know/prefer not to answer. The rest of the respondents (around14%) answered that they do not feel recognized for the open science activities they undertake.
 
 ```{r figure-recognition-rewards-Q1-ESPhil}
 
@@ -2666,8 +2647,7 @@ knitr::include_graphics(here("img", "recognition_rewards", "feeling_recognized",
 
 ### ESL
 
-Most researchers from ESL are split into 2 different answers with the exact same percentage of respondents (a third). They are split into, not feeling recognized, and didn't know or prefer not to answer if they felt recognized for open science activities. 
-While 25%  of the respondents answered that they do not undertake any open science activities, and only a bit more than 8% feels recognized for the open science activities they undertake.
+Most respondents at ESL are split into 2 different answers with the same percentage of respondents (around 33%): not feeling recognized and did not know/prefer not to answer. 25% of the respondents answered that they do not undertake any open science activities, and only slightly more than 8% feels recognized for the open science activities they undertake.
 
 ```{r figure-recognition-rewards-Q1-ESL}
 
@@ -2677,8 +2657,7 @@ knitr::include_graphics(here("img", "recognition_rewards", "feeling_recognized",
 
 ### ESSB
 
-Most researchers from ESSB are split into 3 different answers with the exact same percentage of respondents (almost 30%). They are split into, feeling recognized, not feeling recognized, and didn't know or prefer not to answer if they felt recognized for open science activities. 
-While the rest of the respondents answered that they do not undertake any open science activities (almost 12%).
+Most respondents at ESSB are split into 3 different answers with the same percentage of respondents (around 30%): feeling recognized, not feeling recognized, and did not know/prefer not to answer. The rest of the respondents (almost 12%) answered that they do not undertake any open science activities.
 
 ```{r figure-recognition-rewards-Q1-ESSB}
 
@@ -2688,8 +2667,7 @@ knitr::include_graphics(here("img", "recognition_rewards", "feeling_recognized",
 
 ### ESHCC
 
-Most researchers at ESCHH didn't know or prefer not to answer if they felt recognized for the open science activities they undertake (50%). 
-While the the other half of the respondents were split not feeling recognized (37.5%) and feeling recognized (12.5%) for the open science activities they undertake. 
+Half of respondents at ESHCC did not know or preferred not to answer, 37.5% do not feel recognized, and 12.5% feel recognized for the open science activities they undertake.
 
 ```{r figure-recognition-rewards-Q1-ESHCC}
 
@@ -2701,7 +2679,7 @@ knitr::include_graphics(here("img", "recognition_rewards", "feeling_recognized",
 
 ## Current recognition for Open Science {#rr-current-recognition .tabset .tabset-pills}
 
-For the respondents that answered "Yes" to the question above about feeling recognized and rewarded for the open science activities they undertake, we asked them the following question.  
+This question was presented to respondents who indicated that they **do** feel recognized and rewarded for the open science activities they undertake.
 
 ```{r data-recognition-rewards-Q2}
 
@@ -2717,10 +2695,7 @@ The question was:
 
 ### EUR
 
-More than half of the respondents did not know or preferred not to answer this question, while almost a third of the respondents at EUR selected that the way they get recognized and rewarded for doing open science was the freedom to choice and initiate their own projects. 
-Almost 10% of the respondents said that they get more trust from colleagues/supervisor/manager, while only a bit more than 5% said that they are recognized by praise from colleagues/supervisor/manager. 
-
-
+More than half of the respondents did not know or preferred not to answer this question, while almost a third of the respondents at EUR indicated that the way they get recognized and rewarded for doing open science is the freedom to choose and initiate their own projects. Almost 10% of the respondents said that they get more trust from colleagues/supervisor/manager, while only slightly more than 5% said that they feel recognized by praise from colleagues/supervisor/manager. 
 
 ```{r figure-recognition-rewards-Q2-EUR}
 
@@ -2730,9 +2705,7 @@ knitr::include_graphics(here("img", "recognition_rewards", "current_recognition"
 
 ### ISS
 
-Half of the respondents did not know or preferred not to answer this question, while 20% of the respondents at ISS selected that the way they get recognized and rewarded for doing open science was the freedom to choice and initiate their own projects. 
-10% of the respondents said that they get more trust from colleagues/supervisor/manager, while the same percentage said that they are recognized by praise from colleagues/supervisor/manager.
-
+Half of the respondents at ISS did not know or preferred not to answer this question, while 20% of the respondents selected that the way they get recognized and rewarded for doing open science is the freedom to choose and initiate their own projects. 10% of the respondents said that they get more trust from colleagues/supervisor/manager, and the same percentage of respondents said that they feel recognized by praise from colleagues/supervisor/manager.
 
 ```{r figure-recognition-rewards-Q2-ISS}
 
@@ -2742,8 +2715,7 @@ knitr::include_graphics(here("img", "recognition_rewards", "current_recognition"
 
 ### ESHPM
 
-Almost 40% of the respondents did not know or preferred not to answer this question, while the same percentage of the respondents at ESHPM selected that the way they get recognized and rewarded for doing open science was the freedom to choice and initiate their own projects. 
-And a bit more than 15% of the respondents said that they get more trust from colleagues/supervisor/manager.
+Almost 40% of the respondents at ESHPM did not know or preferred not to answer this question, while the same percentage of respondents selected that the way they get recognized and rewarded for doing open science is the freedom to choose and initiate their own projects. Slightly more than 15% of the respondents said that they get more trust from colleagues/supervisor/manager.
 
 ```{r figure-recognition-rewards-Q2-ESHPM}
 
@@ -2753,7 +2725,7 @@ knitr::include_graphics(here("img", "recognition_rewards", "current_recognition"
 
 ### ESPhil
 
-The majority of the respondents (60%) did not know or preferred not to answer this question, while the rest of the respondents at ESPhil selected that the way they get recognized and rewarded for doing open science was the freedom to choice and initiate their own projects. 
+The majority of respondents at ESPhil (60%) did not know or preferred not to answer this question, while the rest selected that the way they get recognized and rewarded for doing open science is the freedom to choose and initiate their own projects.
 
 ```{r figure-recognition-rewards-Q2-ESPhil}
 
@@ -2763,7 +2735,7 @@ knitr::include_graphics(here("img", "recognition_rewards", "current_recognition"
 
 ### ESL
 
-The majority of the respondents (80%) did not know or preferred not to answer this question, while the rest of the respondents at ESL selected that the way they get recognized and rewarded for doing open science was the freedom to choice and initiate their own projects.
+The majority of respondents at ESL (80%) did not know or preferred not to answer this question, while the rest selected that the way they get recognized and rewarded for doing open science is the freedom to choose and initiate their own projects.
 
 ```{r figure-recognition-rewards-Q2-ESL}
 
@@ -2773,8 +2745,7 @@ knitr::include_graphics(here("img", "recognition_rewards", "current_recognition"
 
 ### ESSB
 
-Almost 43% of the respondents did not know or preferred not to answer this question, while almost 30% of the respondents at ESSB selected that the way they get recognized and rewarded for doing open science was the freedom to choice and initiate their own projects. 
-A bit more than 14% of the respondents said that they get more trust from colleagues/supervisor/manager, while the same percentage said that they are recognized by praise from colleagues/supervisor/manager.
+Almost 43% of respondents at ESSB did not know or preferred not to answer this question, while almost 30% selected that the way they get recognized and rewarded for doing open science is the freedom to choose and initiate their own projects. Slightly more than 14% of respondents said that they get more trust from colleagues/supervisor/manager, while the same percentage said that they feel recognized by praise from colleagues/supervisor/manager.
 
 ```{r figure-recognition-rewards-Q2-ESSB}
 
@@ -2784,7 +2755,7 @@ knitr::include_graphics(here("img", "recognition_rewards", "current_recognition"
 
 ### ESHCC
 
-The majority of the respondents (80%) did not know or preferred not to answer this question, while the rest of the respondents at ESHCC selected that the way they get recognized and rewarded for doing open science was the freedom to choice and initiate their own projects.
+The majority of respondents at ESHCC (80%) did not know or preferred not to answer this question, while the rest selected that the way they get recognized and rewarded for doing open science is the freedom to choose and initiate their own projects.
 
 ```{r figure-recognition-rewards-Q2-ESHCC}
 
@@ -2796,7 +2767,7 @@ knitr::include_graphics(here("img", "recognition_rewards", "current_recognition"
 
 ## Expected recognition for Open Science {#rr-expected-recognition .tabset .tabset-pills}
 
-For the respondents that answered "No" to the question above about feeling recognized and rewarded for the open science activities they undertake, we asked them the following question. 
+This question was presented to respondents who indicated that they **do not** feel recognized and rewarded for the open science activities they undertake.
 
 ```{r data-recognition-rewards-Q3}
 
@@ -2812,8 +2783,7 @@ The question was:
 
 ### EUR
 
-Almost 43% of the respondents from EUR did not know or preferred not to answer this question, for the rest, almost 18% of the respondents would like to get more time for open science activities as a reward, and the same percentage of respondents selected that the way they get recognized and rewarded for doing open science was the freedom to choice and initiate their own projects.
-
+Almost 43% of respondents at EUR did not know or preferred not to answer this question. Almost 18% of the respondents would like to get more time for open science activities as a reward, and the same percentage of respondents selected that the way they would like to be recognized and rewarded for doing open science would be the freedom to choose and initiate their own projects.
 
 ```{r figure-recognition-rewards-Q3-EUR}
 
@@ -2823,7 +2793,7 @@ knitr::include_graphics(here("img", "recognition_rewards", "expected_recognition
 
 ### ISS
 
-Half of the respondents from ISS did not know or preferred not to answer this question, for the rest, 20% of the respondents would like to get more time for open science activities as a reward, 10% of the respondents will like to be rewarded with a salary raise, then same percentage of respondents want to receive a promotion, and the same percentage selected that the way they get recognized and rewarded for doing open science was the freedom to choice and initiate their own projects.
+Half of the respondents at ISS did not know or preferred not to answer this question. 20% of the respondents would like to get more time for open science activities as a reward, 10% would like to be rewarded with a salary raise, 10% would like to receive a promotion, and 10% indicated that the way they would like to be recognized and rewarded for doing open science would be the freedom to choose and initiate their own projects.
 
 ```{r figure-recognition-rewards-Q3-ISS}
 
@@ -2833,8 +2803,7 @@ knitr::include_graphics(here("img", "recognition_rewards", "expected_recognition
 
 ### ESHPM
 
-Almost 40% of the respondents from ESHPM did not know or preferred not to answer this question, for the rest, a bit more than 23% of the respondents would like to get more time for open science activities as a reward, and a bit more than 15% of respondents selected that the way they get recognized and rewarded for doing open science was the freedom to choice and initiate their own projects.
-
+Almost 40% of respondents at ESHPM did not know or preferred not to answer this question. Slightly more than 23% of respondents would like to get more time for open science activities as a reward, and slightly more than 15% indicated that the way they would like to be recognized and rewarded for doing open science would be the freedom to choose and initiate their own projects.
 
 ```{r figure-recognition-rewards-Q3-ESHPM}
 
@@ -2844,8 +2813,7 @@ knitr::include_graphics(here("img", "recognition_rewards", "expected_recognition
 
 ### ESPhil
 
-60% of the respondents from ESPhil did not know or preferred not to answer this question, while 20% of the respondents selected that the way they get recognized and rewarded for doing open science was the freedom to choice and initiate their own projects.
-
+60% of the respondents at ESPhil did not know or preferred not to answer this question, while 20% selected that the way they would like to be recognized and rewarded for doing open science would be the freedom to choose and initiate their own projects.
 
 ```{r figure-recognition-rewards-Q3-ESPhil}
 
@@ -2855,8 +2823,7 @@ knitr::include_graphics(here("img", "recognition_rewards", "expected_recognition
 
 ### ESL
 
-40% of the respondents from ESL did not know or preferred not to answer this question, for the rest, 30% of the respondents selected that the way they get recognized and rewarded for doing open science was the freedom to choice and initiate their own projects, 10% of them would like to receive a salary rise, and the same percentage of respondents would like to get more time for open science activities as a reward.
-
+40% of the respondents at ESL did not know or preferred not to answer this question, while 30% selected that the way they would like to be recognized and rewarded for doing open science would be the freedom to choose and initiate their own projects. 10% would like to receive a salary raise, and the same percentage would like to get more time for open science activities as a reward.
 
 ```{r figure-recognition-rewards-Q3-ESL}
 
@@ -2866,7 +2833,7 @@ knitr::include_graphics(here("img", "recognition_rewards", "expected_recognition
 
 ### ESSB
 
-Almost 32% of the respondents from ESSB did not know or preferred not to answer this question, a bit more than 26% of the respondents would like to get more time for open science activities as a reward, almost 16% of the respondents selected that the way they get recognized and rewarded for doing open science was the freedom to choice and initiate their own projects.
+Almost 32% of the respondents from ESSB did not know or preferred not to answer this question. Around 26% of respondents would like to get more time for open science activities as a reward, and almost 16% of respondents indicated that the way they would like to be recognized and rewarded for doing open science would be the freedom to choose and initiate their own projects.
 
 ```{r figure-recognition-rewards-Q3-ESSB}
 
@@ -2876,7 +2843,7 @@ knitr::include_graphics(here("img", "recognition_rewards", "expected_recognition
 
 ### ESHCC
 
-More than 57% of the respondents from ESHCC did not know or preferred not to answer this question, for the rest, a bit more than 14% of the respondents want to receive a promotion, the exact same percentage, would like to get more time for open science activities as a reward, and the same percentage selected that the way they get recognized and rewarded for doing open science was the freedom to choice and initiate their own projects.
+More than 57% of respondents from ESHCC did not know or preferred not to answer this question. Around 14% of the respondents would like to receive a promotion, 14% would like to get more time for open science activities as a reward, and 14% indicated that the way they would like to be recognized and rewarded for doing open science would be the freedom to choose and initiate their own projects.
 
 ```{r figure-recognition-rewards-Q3-ESHCC}
 
@@ -2888,12 +2855,11 @@ knitr::include_graphics(here("img", "recognition_rewards", "expected_recognition
 
 # Conclusions
 
-Open Science increases transparency throughout the research cycle, resulting in increased research efficiency and enhanced research quality, visibility, and engagement. For these reasons, EUR is committed to making Open Science practices the norm among its researchers.And it is not surprise that Open and Responsible Science (ORS) is one of the pillars for the EUR strategy 2024. Because of this, EUR created an Open and Responsible Science Program.
+Open Science increases transparency throughout the research cycle, resulting in increased research efficiency and enhanced research quality, visibility, and engagement. For these reasons, EUR is committed to making Open Science practices the norm among its researchers. It is no surprise that Open and Responsible Science (ORS) is one of the pillars for the EUR strategy 2024.
 
-The first deliverable of the Open and Responsible Science Program is the Open Science initiative, geared towards making our scientific routines more open and engaged with our scholarly and societal stakeholders.
-This initiative will focus on researcher behavior and on stimulating the active use of open science tools and infrastructure.
+The first deliverable of the Open and Responsible Science Program is the Open Science initiative, geared towards making our scientific routines more open and engaged with our scholarly and societal stakeholders. This initiative will focus on researcher behavior and on stimulating the active use of open science tools and infrastructure.
 
-The ORS program has also together withe Open Science Ambassadors of each faculty co-created an Open Science white paper, that presents the current state of Open Science at EUR. 
+The ORS program has also together withe Open Science Ambassadors of each faculty co-created an Open Science white paper that presents the current state of Open Science at EUR and future plans. 
 
 Also, this survey was an initiative of the ORS program, in order to gather information on what our researchers struggle with and what practices do they want to know more about. 
 
