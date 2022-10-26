@@ -82,7 +82,7 @@ EUR_OS_cluster8 <- readRDS(here("data", "preprocessed", "rds", "cluster_8.rds"))
 
 # Introduction {#intro}
 
-Open Science increases transparency throughout the research cycle -- hypothesis, methodology, observation, data collection, analysis, and publication --, resulting in increased research efficiency and enhanced research quality, visibility, and engagement. Open Science also enables the creation of new research questions and promotes collaboration and community building.
+Open Science increases transparency throughout the research cycle -- hypothesis, methodology, observation, data collection, analysis, and publication --, resulting in increased efficiency and enhanced quality, visibility, and engagement. Open Science also enables the creation of new research questions while promoting collaboration and community building.
 
 Erasmus University Rotterdam (EUR) is committed to making Open Science practices the norm among its researchers.
 
@@ -100,7 +100,7 @@ The survey explored how researchers consider open science practices in the conte
 6. [Support at EUR](#support)
 7. [Recognition and Rewards](#rr)
 
-The current report shows the combined results as well as separately for each school.
+The present report shows the results combined across the whole institution as well as separately for each school: [International Institute of Social Studies](https://www.iss.nl/en) (ISS), [Erasmus School of Health Policy & Management](https://www.eur.nl/en/eshpm) (ESHPM), [Erasmus School of Philosophy](https://www.eur.nl/en/esphil) (ESPhil), [Erasmus School of Law](https://www.eur.nl/en/esl) (ESL), [Erasmus School of Social and Behavioural Sciences](https://www.eur.nl/en/essb) (ESSB), and [Erasmus School of History, Culture and Communication](https://www.eur.nl/en/eshcc) (ESHCC).[^1]
 
 This is a living document that may be updated with new information and insights. For any comments or questions, please contact [Dr. Lizette Guzman-Ramirez](mailto:guzmanramirez@rsm.nl) (Research Data Steward at ERIM) or [Dr. Antonio Schettino](mailto:schettino@eur.nl) (Senior Advisor Open Science at ERS).
 
@@ -108,35 +108,35 @@ This is a living document that may be updated with new information and insights.
 
 ## EUR
 
-**Open Access**: most researchers at EUR have experience publishing their publications Open Access.
+**Open Access**: most respondents consider Open Access publishing important and have at least some experience publishing Open Access. The top concern is that some journals might not publish findings that are uploaded to a pre-publication archive.
 
-**Open Data, Materials, and/or Code**: most researchers at EUR have not re-used public data. A considerable percentage of respondents have published their data/materials/code openly, however, most of these open data/materials/code is not FAIR.
+**Open Data, Materials, and/or Code**: most respondents consider Open Data, Materials, and/or Code important. They have some experience re-using data/materials/code developed by others, and some of them share their own data/materials/code. However, such research output is not often shared following the FAIR principles. The top concern is that others might find it difficult to understand their data, materials, and/or code.
 
-**Preregistration**: the majority of EUR researchers think preregistration is not relevant and have little to no experience with it.
+**Preregistration**: the majority of respondents think preregistration is not very relevant for their research and have little experience with it. The top concern is that respondents feel that they need to look at their data before they can decide how to best analyse it.
 
-**Open Education**: most researchers think is important, but the majority have not used open education materials and have also not shared their own.
+**Open Education**: most respondents think that open educational resources are important and have at least some experience with education materials developed by others. However, they seldom share their own educational materials. The top concern is that they might lose control over the use of their educational resources.
 
-**Societal Engagement**: most researchers at EUR think is important, but only a third of the respondents engage with society regularly.
+**Societal Engagement**: most respondents think it is important to open the research process to non-academic stakeholders, and a third of them regularly engage with society. The top concern is that it might require too much time, effort, and resources.
 
-**Support at EUR**: the majority of researchers at EUR want support on Open Access publishing.
+**Support at EUR**: the majority of respondents expect institutional support, in particular on open access publishing. Regarding support on how to make data FAIR, some respondents have benefited from attending workshops on good research data management practices.
 
-**Recognition and Rewards**: A third of the researchers at EUR didn't know or preferred not to answer if they felt recognized for following Open Science practices, also the majority of respondents answered the same for current and expected recognition.
+**Recognition and Rewards**: some respondents declared to feel recognized for their open science activities by being given enough freedom to initiate their own projects. A slightly larger percentage of respondents said that they do not feel recognized for their open science activities and would like more time to dedicate to these practices, as well as get more freedom to initiate their own projects.
 
 ## ISS
 
-**Open Access**: most researchers at ISS have experience publishing their publications Open Access.
+**Open Access**: most respondents consider Open Access publishing important and have quite some experience publishing Open Access. The top concern is that some journals might not publish findings that are uploaded to a pre-publication archive.
 
-**Open Data, Materials, and/or Code**: some researchers at ISS have  re-used public data. A considerable percentage of respondents have published their data/materials/code openly, however, only a small percentage of these open data/materials/code is FAIR. 
+**Open Data, Materials, and/or Code**: most respondents consider Open Data, Materials, and/or Code quite important. They have some experience re-using data/materials/code developed by others, but do not regularly share their own data/materials/code. Their research output rarely follows the FAIR principles. The top concern is that others might find it difficult to understand their data, materials, and/or code. In addition, they consider reuse of data/materials/code as violating the epistemological framework of their research.
 
-**Preregistration**: the majority of ISS researchers think preregistration is not relevant and have little to no experience with it.
+**Preregistration**: respondents think preregistration is important for their research but have almost no experience with it. The top concern is that respondents feel that they need to look at their data before they can decide how to best analyse it.
 
-**Open Education**: most researchers think is important, but the majority have not used open education materials, and only a few have shared their own.
+**Open Education**: respondents think that open educational resources are important and have some (infrequent) experience with education materials developed by others. They share their own educational materials, although not regularly. The top concern is that they might lose control over the use of their educational resources.
 
-**Societal Engagement**: most researchers at ISS think is important, and also the majority of the respondents engage with society regularly.
+**Societal Engagement**: respondents think it is important to open the research process to non-academic stakeholders, and many of them engage with society. The top concern is that it might require too much time, effort, and resources.
 
-**Support at EUR**: the majority of researchers at ISS want support on Open Access publishing.
+**Support at EUR**: the majority of respondents expect institutional support, in particular on open access publishing. Regarding support on how to make data FAIR, most respondents do not know or preferred not to answer, while some of them from attending workshops on good research data management practices or information on institutional websites.
 
-**Recognition and Rewards**: Researchers at ISS were equally divided into feeling recognized, not feeling recognized, and didn't know or preferred not to answer if they felt recognized for following Open Science practices. The majority of respondents answered "don't know/preferred not to answer" to the current and expected recognition.
+**Recognition and Rewards**: some respondents declared to feel recognized for their open science activities by being given enough freedom to initiate their own projects, as well as by getting trust and praise from colleagues/supervisor/manager. An equal percentage of respondents said that they do not feel recognized for their open science activities and would like more time to dedicate to these practices, as well as get more freedom to initiate their own projects, receive a salary raise, and/or a promotion.
 
 ## ESHPM
 
@@ -2871,5 +2871,8 @@ When it comes to faculty specif strategy, the ORS program group would be happy t
 
 The main take away of this survey is that most researchers want support for Open Access Publishing. The EUR library has been instrumental in providing support regarding Open Access, they have information sessions and provide one-to-one support to all EUR researchers, more information on the services can be provided here (https://www.eur.nl/en/library/research-support/open-access).
 
+***
+***
 
+[^1]: The results of Erasmus School of Economics (ESE) and Rotterdam School of Management (RSM) can be found in the report of the [2021 ERIM Open Science Spring Survey](https://eur-nl.github.io/2021_ERIM_OS_Survey/)).
 
