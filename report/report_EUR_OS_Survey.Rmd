@@ -134,41 +134,41 @@ This is a living document that may be updated with new information and insights.
 
 **Societal Engagement**: respondents think it is important to open the research process to non-academic stakeholders, and many of them engage with society. The top concern is that it might require too much time, effort, and resources.
 
-**Support at EUR**: the majority of respondents expect institutional support, in particular on open access publishing. Regarding support on how to make data FAIR, most respondents do not know or preferred not to answer, while some of them from attending workshops on good research data management practices or information on institutional websites.
+**Support at EUR**: the majority of respondents expect institutional support, in particular on open access publishing. Regarding support on how to make data FAIR, most respondents do not know or preferred not to answer, while some of them benefited from attending workshops on good research data management practices or information on institutional websites.
 
 **Recognition and Rewards**: some respondents declared to feel recognized for their open science activities by being given enough freedom to initiate their own projects, as well as by getting trust and praise from colleagues/supervisor/manager. An equal percentage of respondents said that they do not feel recognized for their open science activities and would like more time to dedicate to these practices, as well as get more freedom to initiate their own projects, receive a salary raise, and/or a promotion.
 
 ## ESHPM
 
-**Open Access**: most researchers at ESHPM have experience publishing their publications Open Access.
+**Open Access**: most respondents consider Open Access publishing important and have experience publishing Open Access. The top concern is that some journals might not publish findings that are uploaded to a pre-publication archive.
 
-**Open Data, Materials, and/or Code**: most researchers at ESHPM have not re-used public data. A considerable percentage of respondents have published their data/materials/code openly, and a third of these open data/materials/code is FAIR.
+**Open Data, Materials, and/or Code**: respondents consider Open Data, Materials, and/or Code moderately important. They have little experience re-using data/materials/code developed by others, and sometimes share their own data/materials/code. Their research output sometimes follows the FAIR principles. The top concern is that others might find it difficult to understand their data, materials, and/or code.
 
-**Preregistration**: some researchers at ESHPM think preregistration is relevant but the majority have little to no experience with it.
+**Preregistration**: one third of respondents think preregistration is important for their research, and one third thinks it is not important. They have infrequent experience with it. The top concern is that respondents feel that they need to look at their data before they can decide how to best analyse it. In addition, they believe that preregistration might delay data collection.
 
-**Open Education**: researchers think is moderately important, but the majority have not used open education materials, and only a few have shared their own.
+**Open Education**: respondents think that open educational resources are important, although one fifth of them think it is not at all important. They have infrequent experience with education materials developed by others and do not typically share their own. The top concern is that they might lose control over the use of their educational resources. In addition, they worry that they might not receive appropriate credit for their educational resources if they make them openly available.
 
-**Societal Engagement**: most researchers at ESHPM think is important, but the majority of the respondents does not engage with society regularly.
+**Societal Engagement**: many respondents think it is important to open the research process to non-academic stakeholders, while some of them think it is not important at all. They have at least some experience engaging with society. The top concern is that it might require too much time, effort, and resources.
 
-**Support at EUR**: the majority of researchers at ESHPM want support on Open Access publishing.
+**Support at EUR**: many respondents expect institutional support, in particular on open access publishing and open data/materials/code. However, more than one-third of respondents do not expect support from EUR. Regarding support on how to make data FAIR, many respondents do not know or preferred not to answer, while some of them benefited from attending workshops on good research data management practices or information on institutional websites.
 
-**Recognition and Rewards**:The majority of researchers at ESHPM were divided equally into feeling recognized, and didn't know or preferred not to answer if they felt recognized for conducting Open Science practices. The majority of respondents answered "don't know/preferred not to answer" and "freedom to choose and initiate my own projects" to the current recognition of Open Science practices, and the majority responded "don't know/preferred not to answer" to the expected recognition for Open Science practices. 
+**Recognition and Rewards**: many respondents declared to feel recognized for their open science activities by being given enough freedom to initiate their own projects, as well as by getting trust from colleagues/supervisor/manager. Some respondents said that they do not feel recognized for their open science activities and would like more time to dedicate to these practices, as well as get more freedom to initiate their own projects.
 
 ## ESPhil
 
-**Open Access**: most researchers at ESPhil have experience publishing their publications Open Access.
+**Open Access**: many respondents consider Open Access publishing important and have some experience publishing Open Access. However, not all respondents consider it important and/or have experience with it. The top concern is that some journals might not publish findings that are uploaded to a pre-publication archive. In addition, respondents might not have enough funding to pay Article Processing Charges for Open Access journals.
 
-**Open Data, Materials, and/or Code**: a few researchers at ESPhil have re-used public data. The majority of respondents have not published their data/materials/code openly.
+**Open Data, Materials, and/or Code**: respondents consider Open Data, Materials, and/or Code somewhat important, but one-fifth of them do not consider it important. They have little experience re-using data/materials/code developed by others, and rarely share their own. They are not often aware of the FAIR principles. The top concern is that others might find it difficult to understand their data, materials, and/or code.
 
-**Preregistration**: the majority of ESPhil researchers think preregistration is not at all important and have little to no experience with it.
+**Preregistration**: most respondents think preregistration is not important for their work. Most of them are unaware of this open science practice. The top concern is that respondents feel that they need to look at their data before they can decide how to best analyse it. In addition, they believe that preregistration might delay data collection and/or lead other people to take their research idea and implement their plan.
 
-**Open Education**: most researchers think is important, the majority have used open education materials, and also have shared their own.
+**Open Education**: most respondents think that open educational resources are important. They often use educational materials developed by others and share their own. The top concern is that they might not receive appropriate credit for their educational resources if they make them openly available. In addition, they worry that others would ask them to provide assistance for their courses/workshops.
 
-**Societal Engagement**: most researchers at ESPhil think is important, and also the majority of the respondents engage with society regularly.
+**Societal Engagement**: many respondents think it is important to open the research process to non-academic stakeholders, while a third of them think it is not important at all. Most of them regularly engage with society. The top concern is that it might require too much time, effort, and resources.
 
-**Support at EUR**: researchers at ESPhil only want support on Open Access publishing.
+**Support at EUR**: many respondents expect institutional support, in particular on open access publishing. A sizeable percentage of respondents do not expect support from EUR. Regarding support on how to make data FAIR, all respondents do not know or preferred not to answer.
 
-**Recognition and Rewards**: The majority of researchers at ESPhil were equally divided equally into feeling recognized, not undertaking any Open Science activities, and didn't know or preferred not to answer if they felt recognized for conducting Open Science practices. The majority of respondents answered "don't know/preferred not to answer" to the current and the expected recognition for Open Science practices. 
+**Recognition and Rewards**: many respondents said that they do not engage in any open science activities. A similar percentage of respondents declared to feel recognized for their open science activities by being given enough freedom to initiate their own projects. A few respondents said that they do not feel recognized for their open science activities and would like more freedom to initiate their own projects.
 
 ## ESL
 
