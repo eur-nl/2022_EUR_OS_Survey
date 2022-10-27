@@ -1,7 +1,7 @@
 ---
 title: "Report of the 2022 EUR Open Science Survey"
 author: '[Dr. Lizette Guzman-Ramirez](https://www.linkedin.com/in/drlizguzman/), [Dr. Antonio Schettino](https://antonio-schettino.com/)'
-date: 2022-11-01
+date: "`r Sys.Date()`"
 output:
   bookdown::html_document2:
     # # appearance
