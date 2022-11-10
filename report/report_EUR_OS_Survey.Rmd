@@ -2853,26 +2853,21 @@ knitr::include_graphics(here("img", "recognition_rewards", "expected_recognition
 
 ## {-}
 
-# Conclusions
+# Conclusions[^2]
 
-Open Science increases transparency throughout the research cycle, resulting in increased research efficiency and enhanced research quality, visibility, and engagement. For these reasons, EUR is committed to making Open Science practices the norm among its researchers. It is no surprise that Open and Responsible Science (ORS) is one of the pillars for the EUR strategy 2024.
+Open Science increases transparency throughout the research cycle, resulting in increased research efficiency and enhanced research quality, visibility, and engagement. For these reasons, EUR is committed to making Open Science practices the norm among its researchers. It is no surprise that Open and Responsible Science (ORS) is one of the pillars of the [EUR Strategy 2024](https://www.eur.nl/sites/corporate/files/2019-09/eur-strategy-2020-2024_creating-positive-societal-impact_the-erasmian-way.pdf).
 
-The first deliverable of the Open and Responsible Science Program is the Open Science initiative, geared towards making our scientific routines more open and engaged with our scholarly and societal stakeholders. This initiative will focus on researcher behavior and on stimulating the active use of open science tools and infrastructure.
+The ORS program created this survey in order to gather information on what our researchers struggle with and what practices they want to know more about. The main takeaway of the survey is that most researchers would like more support for Open Access Publishing. The EUR Library has been instrumental in providing support regarding Open Access: they have information sessions and provide one-on-one support to all EUR researchers. These efforts and the recent implementation of the Open Access Regulation have led to 95% of peer-reviewed academic articles published Open Access at the EUR. The library has also initiated a fund for the Open Access publication of books. More information on the services can be found [here](https://www.eur.nl/en/library/research-support/open-access).
 
-The ORS program has also together withe Open Science Ambassadors of each faculty co-created an Open Science white paper that presents the current state of Open Science at EUR and future plans. 
+Besides Open Access, researchers indicated that they may not always have experience with Open Science practices. For instance, a substantial percentage of researchers indicated that they had not heard of the FAIR principles before taking this survey. The university has a number of initiatives planned to increase awareness of the various aspects of Open Science, and Open Data in particular. Individual support is available to researchers and is provided by the data stewards (as part of the Digital Competence Center) and the EUR Data Repository team.
 
-Also, this survey was an initiative of the ORS program, in order to gather information on what our researchers struggle with and what practices do they want to know more about. 
+To recognize and reward Open Science practices, the ORS program created the Open Science Awards, that will be given for the first time in November 2022. The survey results, however, suggest that more attention is needed in the field of rewards and recognition, since most respondents stated that they are unaware of the current and expected recognition for Open Science at the EUR. More tangible benefits for practicing Open Science are needed.
 
-The Open and Responsible Science program will also promote and encourage the Open Science Massive Online Open Course (MOOC) created and developed by members of EUR. 
-
-To recognize and reward Open Science practices, the ORS program created the Open Science Awards, that will be given for the first time on November 2022. 
-
-When it comes to faculty specif strategy, the ORS program group would be happy to provide support and advice to increase the awareness and training regarding Open Science practices. 
-
-The main take away of this survey is that most researchers want support for Open Access Publishing. The EUR library has been instrumental in providing support regarding Open Access, they have information sessions and provide one-to-one support to all EUR researchers, more information on the services can be found [here](https://www.eur.nl/en/library/research-support/open-access).
+There are efforts underway to further foster and promote Open Science at the EUR. The ORS program endorses the Massive Online Open Course on Open Science (MOOC), currently being developed by an interdiscplinary team based at ERIM and ERS. Additionally, the Open Science Ambassadors of each faculty were asked to write an Open Science white paper that will present a shared vision of Open Science at EUR, which will inspire future plans.
 
 ***
 ***
 
 [^1]: The results of Erasmus School of Economics (ESE) and Rotterdam School of Management (RSM) can be found in the report of the [2021 ERIM Open Science Spring Survey](https://eur-nl.github.io/2021_ERIM_OS_Survey/)).
 
+[^2]: We are grateful to [Mutaleni Nadimi](https://nl.linkedin.com/in/mutaleninadimi), [Ava Irani](https://libguides.eur.nl/prf.php?account_id=151665), [Joy Dijksman](https://nl.linkedin.com/in/joy-dijksman-6a169378), and [Andrea Tarchi](https://nl.linkedin.com/in/andrea-tarchi-5b9343146) for their valuable contribution to this section.
